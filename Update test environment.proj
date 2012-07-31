@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="CopyToProductionStagingArea;Test" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+	<ItemGroup>
+		<XmlReport Include="TestResult.xml" />
+		<XmlReport Include="Coverage.xml" />
+		<XmlReport Include="Coverage.log" />
+		<XmlReport Include="CoverageReport.xml" />
+		<XmlReport Include="CoverageReport.xsl" />
+		<XmlReport Include="Simian.xml" />
+	</ItemGroup>
+	<!--various-->
+	<PropertyGroup>
+		<!-- test settings-->
+		<NUnitExe>"c:\Program Files\NUnit 2.4.1\bin\nunit-console.exe"</NUnitExe>
+		<NUnitArgs>/nologo</NUnitArgs>
+		<!--SqlSettings-->
+		<SqlConnectionString>Trusted_Connection=True;Server=$(SqlServer);Database=$(SqlDatabase)</SqlConnectionString>
+		<!--DirectorySettings-->
+	</PropertyGroup>
+	<ItemGroup>
+		<DatabaseAssemblyPath Include=".\Utilities\Cache\CacheTriggers\bin\CacheTriggers.dll" />
+		<!--DatabaseAssemblyPath Include=".\Utilities\Spatial\bin\Spatial.dll" /-->
+	</ItemGroup>
+	<ItemGroup>
+		<SqlScriptProject Include="Bobs" />
+		<SqlScriptProject Include="Utilities\Cache\CacheTriggers" />
+	</ItemGroup>
+	<Target Name="Clean">
+		<Attrib Files="@(XmlReport)" ReadOnly="false" />
+		<Delete Files="@(XmlReport)" />
+	</Target>
+	<Target Name="UpdateConfiguration" DependsOnTargets="Clean">
+		<Attrib Files="Spotted\Spotted\web.config" ReadOnly="false" />
+		<XmlUpdate XmlFileName="Spotted\Spotted\web.config" XPath="/configuration/appSettings/add[@key = 'ConnectionString']/@value" Value="$(SqlConnectionString)" />
+		<Attrib Files="Spotted\Spotted\web.config" ReadOnly="true" />
+		<Attrib Files="Utilities\JobProcessorService\app.config" ReadOnly="false" />
+		<XmlUpdate XmlFileName="Utilities\JobProcessorService\app.config" XPath="/configuration/appSettings/add[@key = 'ConnectionString']/@value" Value="$(SqlConnectionString)" />
+		<Attrib Files="Utilities\JobProcessorService\app.config" ReadOnly="true" />
+	</Target>
+	<Target Name="UpdateDatabase" DependsOnTargets="UpdateConfiguration">
+		<DatabaseAssemblyLoader Server="$(SqlServer)" Database="$(SqlDatabase)" AssemblyPath="%(DatabaseAssemblyPath.Identity)" PathToFolderOnRemoteServer="$(TempFolderForDatabaseClrAssemblies)" />
+		<SqlScriptRunner ProjectPath="%(SqlScriptProject.Identity)" Server="$(SqlServer)" Database="$(SqlDatabase)" />
+	</Target>
+	<Target Name="Test" DependsOnTargets="UpdateDatabase">
+		<MakeWebRequest ContinueOnError="true" Url="$(SiteUri)" TimeoutInSeconds="120" TextThatMustBeInResponse="Welcome to DontStayIn" MaxNumberOfAttempts="10" />
+		<Attrib Files="Spotted\SpottedTests\bin\SpottedTests.dll.config" Normal="true" />
+		<XmlUpdate XmlFileName="Spotted\SpottedTests\bin\SpottedTests.dll.config" XPath="/configuration/appSettings/add[@key = 'SpottedUri']/@value" Value="$(SiteUri)" />
+		<Exec Command="$(NUnitEXE) $(NUnitArgs) Spotted\SpottedTests\bin\SpottedTests.dll" />
+	</Target>
+		<Target Name="CopyToProductionStagingArea" DependsOnTargets="Test" Condition="'$(ProductionStagingArea)' != ''">
+		<SyncFolderUsingRobocopy SourceFolder="." DestinationFolder="$(ProductionStagingArea)" />
+		<Attrib Files="$(ProductionStagingArea)Spotted\Spotted\web.config" ReadOnly="false" />
+		<XmlUpdate XmlFileName="$(ProductionStagingArea)Spotted\Spotted\web.config" XPath="/configuration/appSettings/add[@key = 'ConnectionString']/@value" Value=" " />
+		<XmlUpdate XmlFileName="$(ProductionStagingArea)Spotted\Spotted\web.config" XPath="/configuration/system.web/identity/@impersonate" Value="true" />
+		<XmlUpdate XmlFileName="$(ProductionStagingArea)Spotted\Spotted\web.config" XPath="/configuration/system.web/compilation/@debug" Value="false" />
+		<Attrib Files="$(ProductionStagingArea)Spotted\Spotted\web.config" ReadOnly="true" />
+		<Attrib Files="$(ProductionStagingArea)Utilities\JobProcessorService\app.config" ReadOnly="false" />
+		<XmlUpdate XmlFileName="$(ProductionStagingArea)Utilities\JobProcessorService\app.config" XPath="/configuration/appSettings/add[@key = 'ConnectionString']/@value" Value=" " />
+		<Attrib Files="$(ProductionStagingArea)Utilities\JobProcessorService\app.config" ReadOnly="true" />
+	</Target>
+	<Import Project="C:\Program Files\MSBuild\MSBuildCommunityTasks\MSBuild.Community.Tasks.Targets" />
+	<UsingTask TaskName="MSBuild.Community.Tasks.Attrib" AssemblyFile="C:\Program Files\MSBuild\MSBuildCommunityTasks\MSBuild.Community.Tasks.dll" />
+	<UsingTask TaskName="MSBuild.Community.Tasks.XmlUpdate" AssemblyFile="C:\Program Files\MSBuild\MSBuildCommunityTasks\MSBuild.Community.Tasks.dll" />
+	<UsingTask TaskName="MSBuildTasks.SqlScriptRunner" AssemblyFile="C:\release\MSBuildTasks\MSBuildTasks.dll" />
+	<UsingTask TaskName="MSBuildTasks.SyncFolderUsingRobocopy" AssemblyFile="C:\release\MSBuildTasks\MSBuildTasks.dll" />
+	<UsingTask TaskName="MSBuildTasks.DatabaseAssemblyLoader" AssemblyFile="C:\release\MSBuildTasks\MSBuildTasks.dll" />
+	<UsingTask TaskName="MSBuildTasks.MakeWebRequest" AssemblyFile="C:\release\MSBuildTasks\MSBuildTasks.dll" />
+</Project>

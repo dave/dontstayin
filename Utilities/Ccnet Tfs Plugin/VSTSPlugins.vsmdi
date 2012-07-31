@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TestLists xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2006" xmlns:custom="http://microsoft.com/schemas/VisualStudio/TeamTest/2006/XsltFunctions">
+  <TestList name="Lists of Tests" id="8c43106b-9dc1-4907-a29f-aa66a61bf5b6">
+    <RunConfiguration name="Local Test Run" storage="c:\projects\opensource\vstsplugins\source\localtestrun.testrunconfig" id="f2e1f5d2-2a68-4802-aaec-1b40179cbc7a" type="Microsoft.VisualStudio.QualityTools.Common.TestRunConfiguration, Microsoft.VisualStudio.QualityTools.Common,   PublicKeyToken=b03f5f7f11d50a3a" />
+  </TestList>
+</TestLists>

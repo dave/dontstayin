@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:s0="http://tempuri.org/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" targetNamespace="http://tempuri.org/" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="GetLatestBuild">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="LicensingProductK" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetLatestBuildResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetLatestBuildResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="string" nillable="true" type="s:string" />
+    </s:schema>
+  </types>
+  <message name="GetLatestBuildSoapIn">
+    <part name="parameters" element="s0:GetLatestBuild" />
+  </message>
+  <message name="GetLatestBuildSoapOut">
+    <part name="parameters" element="s0:GetLatestBuildResponse" />
+  </message>
+  <message name="GetLatestBuildHttpGetIn">
+    <part name="LicensingProductK" type="s:string" />
+  </message>
+  <message name="GetLatestBuildHttpGetOut">
+    <part name="Body" element="s0:string" />
+  </message>
+  <message name="GetLatestBuildHttpPostIn">
+    <part name="LicensingProductK" type="s:string" />
+  </message>
+  <message name="GetLatestBuildHttpPostOut">
+    <part name="Body" element="s0:string" />
+  </message>
+  <portType name="wsLatestBuildSoap">
+    <operation name="GetLatestBuild">
+      <input message="s0:GetLatestBuildSoapIn" />
+      <output message="s0:GetLatestBuildSoapOut" />
+    </operation>
+  </portType>
+  <portType name="wsLatestBuildHttpGet">
+    <operation name="GetLatestBuild">
+      <input message="s0:GetLatestBuildHttpGetIn" />
+      <output message="s0:GetLatestBuildHttpGetOut" />
+    </operation>
+  </portType>
+  <portType name="wsLatestBuildHttpPost">
+    <operation name="GetLatestBuild">
+      <input message="s0:GetLatestBuildHttpPostIn" />
+      <output message="s0:GetLatestBuildHttpPostOut" />
+    </operation>
+  </portType>
+  <binding name="wsLatestBuildSoap" type="s0:wsLatestBuildSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document" />
+    <operation name="GetLatestBuild">
+      <soap:operation soapAction="http://tempuri.org/GetLatestBuild" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+  </binding>
+  <binding name="wsLatestBuildHttpGet" type="s0:wsLatestBuildHttpGet">
+    <http:binding verb="GET" />
+    <operation name="GetLatestBuild">
+      <http:operation location="/GetLatestBuild" />
+      <input>
+        <http:urlEncoded />
+      </input>
+      <output>
+        <mime:mimeXml part="Body" />
+      </output>
+    </operation>
+  </binding>
+  <binding name="wsLatestBuildHttpPost" type="s0:wsLatestBuildHttpPost">
+    <http:binding verb="POST" />
+    <operation name="GetLatestBuild">
+      <http:operation location="/GetLatestBuild" />
+      <input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </input>
+      <output>
+        <mime:mimeXml part="Body" />
+      </output>
+    </operation>
+  </binding>
+  <service name="wsLatestBuild">
+    <port name="wsLatestBuildSoap" binding="s0:wsLatestBuildSoap">
+      <soap:address location="http://www.dbcombo.net/wsLatestBuild.asmx" />
+    </port>
+    <port name="wsLatestBuildHttpGet" binding="s0:wsLatestBuildHttpGet">
+      <http:address location="http://www.dbcombo.net/wsLatestBuild.asmx" />
+    </port>
+    <port name="wsLatestBuildHttpPost" binding="s0:wsLatestBuildHttpPost">
+      <http:address location="http://www.dbcombo.net/wsLatestBuild.asmx" />
+    </port>
+  </service>
+</definitions>

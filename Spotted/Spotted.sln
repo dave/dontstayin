@@ -1,0 +1,70 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio Codename Orcas
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bobs", "..\Bobs\Bobs.csproj", "{4DE1194A-CFBE-4604-ADDA-CE6EC0183345}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Spotted", "Spotted\Spotted.csproj", "{D104531B-5D5C-4E1A-86F9-E4C8657750EC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTestUtilities", "..\Utilities\UnitTestUtilities\UnitTestUtilities.csproj", "{06B0C07E-8F12-4E6B-8893-BBF4FE82D802}"
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 4
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = http://corellia:8080/
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = ..\\Bobs\\Bobs.csproj
+		SccProjectName1 = ../Bobs
+		SccLocalPath1 = ..\\Bobs
+		SccProjectUniqueName2 = Spotted\\Spotted.csproj
+		SccProjectName2 = Spotted
+		SccLocalPath2 = Spotted
+		SccProjectUniqueName3 = ..\\Utilities\\UnitTestUtilities\\UnitTestUtilities.csproj
+		SccProjectName3 = ../Utilities/UnitTestUtilities
+		SccLocalPath3 = ..\\Utilities\\UnitTestUtilities
+	EndGlobalSection
+	GlobalSection(TextTemplating) = postSolution
+		TextTemplating = 1
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|.NET = Debug|.NET
+		Debug|Any CPU = Debug|Any CPU
+		Debug|Mixed Platforms = Debug|Mixed Platforms
+		Release|.NET = Release|.NET
+		Release|Any CPU = Release|Any CPU
+		Release|Mixed Platforms = Release|Mixed Platforms
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4DE1194A-CFBE-4604-ADDA-CE6EC0183345}.Debug|.NET.ActiveCfg = Debug|Any CPU
+		{4DE1194A-CFBE-4604-ADDA-CE6EC0183345}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4DE1194A-CFBE-4604-ADDA-CE6EC0183345}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4DE1194A-CFBE-4604-ADDA-CE6EC0183345}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{4DE1194A-CFBE-4604-ADDA-CE6EC0183345}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{4DE1194A-CFBE-4604-ADDA-CE6EC0183345}.Release|.NET.ActiveCfg = Release|Any CPU
+		{4DE1194A-CFBE-4604-ADDA-CE6EC0183345}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4DE1194A-CFBE-4604-ADDA-CE6EC0183345}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4DE1194A-CFBE-4604-ADDA-CE6EC0183345}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{D104531B-5D5C-4E1A-86F9-E4C8657750EC}.Debug|.NET.ActiveCfg = Debug|Any CPU
+		{D104531B-5D5C-4E1A-86F9-E4C8657750EC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D104531B-5D5C-4E1A-86F9-E4C8657750EC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D104531B-5D5C-4E1A-86F9-E4C8657750EC}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{D104531B-5D5C-4E1A-86F9-E4C8657750EC}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{D104531B-5D5C-4E1A-86F9-E4C8657750EC}.Release|.NET.ActiveCfg = Release|Any CPU
+		{D104531B-5D5C-4E1A-86F9-E4C8657750EC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D104531B-5D5C-4E1A-86F9-E4C8657750EC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D104531B-5D5C-4E1A-86F9-E4C8657750EC}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{06B0C07E-8F12-4E6B-8893-BBF4FE82D802}.Debug|.NET.ActiveCfg = Debug|Any CPU
+		{06B0C07E-8F12-4E6B-8893-BBF4FE82D802}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{06B0C07E-8F12-4E6B-8893-BBF4FE82D802}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{06B0C07E-8F12-4E6B-8893-BBF4FE82D802}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{06B0C07E-8F12-4E6B-8893-BBF4FE82D802}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{06B0C07E-8F12-4E6B-8893-BBF4FE82D802}.Release|.NET.ActiveCfg = Release|Any CPU
+		{06B0C07E-8F12-4E6B-8893-BBF4FE82D802}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{06B0C07E-8F12-4E6B-8893-BBF4FE82D802}.Release|Any CPU.Build.0 = Release|Any CPU
+		{06B0C07E-8F12-4E6B-8893-BBF4FE82D802}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{06B0C07E-8F12-4E6B-8893-BBF4FE82D802}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

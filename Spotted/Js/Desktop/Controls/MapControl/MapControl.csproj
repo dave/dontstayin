@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+  	<DeploymentPath>..\..\..\..\Spotted\Misc\Js\Desktop\Controls</DeploymentPath>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{DB4F1C5C-EF90-448B-A3A7-FB6C9513D473}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <NoStdLib>True</NoStdLib>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile />
+    <LangVersion>ISO-2</LangVersion>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MapControl</RootNamespace>
+    <AssemblyName>MapControl</AssemblyName>
+    <TemplateFile>Properties\MapControl.script</TemplateFile>
+    <CodeAnalysisRuleSet>Properties\MapControl.ruleset</CodeAnalysisRuleSet>
+    <ReferencePath>$(ProgramFiles)\ScriptSharp\v1.0\Framework\</ReferencePath>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;CODE_ANALYSIS;SCRIPTSHARP</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <NoWarn>0028, 1591, 1684</NoWarn>
+    <DocumentationFile>bin\Debug\MapControl.xml</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>CODE_ANALYSIS;SCRIPTSHARP</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <NoWarn>0028, 1591, 1684</NoWarn>
+    <DocumentationFile>bin\Release\MapControl.xml</DocumentationFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="mscorlib, Version=0.7.0.0, Culture=neutral, PublicKeyToken=8fc0e3af5abcb6c4, processorArchitecture=MSIL" />
+    <Reference Include="Script.Web" />
+    <Reference Include="Script.jQuery" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Properties\MapControl.ruleset" />
+    <Content Include="Properties\MapControl.script" />
+    <Compile Include="MapControl.Controller.cs" />
+    <Compile Include="MapControl.View.cs" />
+    <Compile Include="MapItem.Shared.cs" />
+    <Compile Include="Marker.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\GoogleMaps\GoogleMaps.csproj">
+      <Project>{99C30455-4C1C-4105-A2E5-210470101ABF}</Project>
+      <Name>GoogleMaps</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Library\Library.csproj">
+      <Project>{0A6817CD-7C7D-4C78-AB45-18226D9B1A09}</Project>
+      <Name>Library</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(ProgramFiles)\ScriptSharp\v1.0\ScriptSharp.targets" />
+</Project>

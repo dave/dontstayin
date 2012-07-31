@@ -1,0 +1,7 @@
+Type.registerNamespace('SpottedScript.Pages.PlacesIVisit');
+SpottedScript.Pages.PlacesIVisit.Controller=function(view){this.$0=view;this.$0.get_uiPlacesChooser().view.get_uiPlacesMultiSelector().itemAdded=Function.createDelegate(this,this.$1);this.$0.get_uiPlacesChooser().view.get_uiPlacesMultiSelector().itemRemoved=Function.createDelegate(this,this.$1);}
+SpottedScript.Pages.PlacesIVisit.Controller.prototype={$0:null,$1:function($p0,$p1){if(this.$0.get_uiPlacesChooser().view.get_uiPlacesMultiSelector().getSelections().get_count()>0){this.$0.get_uiSaveButton().disabled=false;}else{this.$0.get_uiSaveButton().disabled=true;}}}
+SpottedScript.Pages.PlacesIVisit.View=function(clientId){SpottedScript.Pages.PlacesIVisit.View.initializeBase(this,[clientId]);this.clientId=clientId;}
+SpottedScript.Pages.PlacesIVisit.View.prototype={clientId:null,get_h11:function(){return document.getElementById(this.clientId+'_H11');},get_uiPlacesChooser:function(){return eval(this.clientId+'_uiPlacesChooserController');},get_uiSaveButton:function(){return document.getElementById(this.clientId+'_uiSaveButton');},get_genericContainerPage:function(){return document.getElementById(this.clientId+'_GenericContainerPage');}}
+SpottedScript.Pages.PlacesIVisit.Controller.registerClass('SpottedScript.Pages.PlacesIVisit.Controller');
+SpottedScript.Pages.PlacesIVisit.View.registerClass('SpottedScript.Pages.PlacesIVisit.View',SpottedScript.DsiUserControl.View);

@@ -1,0 +1,4 @@
+Rebuild Utilities\Spatial
+Rebuild Data\SqlScriptRunner
+Rebuild solution
+Rebuild solution again

@@ -1,0 +1,4 @@
+Type.registerNamespace('SpottedScript.Pages.Rooms');
+SpottedScript.Pages.Rooms.View=function(clientId){SpottedScript.Pages.Rooms.View.initializeBase(this,[clientId]);this.clientId=clientId;}
+SpottedScript.Pages.Rooms.View.prototype={clientId:null,get_messagesHeader:function(){return document.getElementById(this.clientId+'_MessagesHeader');},get_popupAminationsOn:function(){return document.getElementById(this.clientId+'_PopupAminationsOn');},get_popupAminationsOff:function(){return document.getElementById(this.clientId+'_PopupAminationsOff');},get_testing:function(){return document.getElementById(this.clientId+'_Testing');},get_genericContainerPage:function(){return document.getElementById(this.clientId+'_GenericContainerPage');}}
+SpottedScript.Pages.Rooms.View.registerClass('SpottedScript.Pages.Rooms.View',SpottedScript.DsiUserControl.View);

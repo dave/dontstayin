@@ -1,0 +1,4 @@
+Type.registerNamespace('SpottedScript.Blank.DrinkingAge');
+SpottedScript.Blank.DrinkingAge.View=function(clientId){SpottedScript.Blank.DrinkingAge.View.initializeBase(this,[clientId]);this.clientId=clientId;}
+SpottedScript.Blank.DrinkingAge.View.prototype={clientId:null,get_day:function(){return document.getElementById(this.clientId+'_Day');},get_month:function(){return document.getElementById(this.clientId+'_Month');},get_year:function(){return document.getElementById(this.clientId+'_Year');},get_countryDrop:function(){return document.getElementById(this.clientId+'_CountryDrop');},get_entryVal:function(){return document.getElementById(this.clientId+'_EntryVal');},get_genericContainerPage:function(){return document.getElementById(this.clientId+'_GenericContainerPage');}}
+SpottedScript.Blank.DrinkingAge.View.registerClass('SpottedScript.Blank.DrinkingAge.View',SpottedScript.BlankUserControl.View);

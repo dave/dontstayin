@@ -1,0 +1,76 @@
+[jsc compiler]
+
+compiles MSIL into 
+- javascript
+- php 
+- java
+- ansi c
+- (actionscript?)
+- (vb6?)
+- (c#?)
+
+version history:
+28 06 2006
+	php: interface support
+07.08.2006
+	java: normalize unsafe variable names
+08.08.2006
+	java: non virtual methods are marked as final
+09.08.2006
+	php: fileinfo.delete added
+25.08.2006
+	improved commandline arguments
+30.08.2006
+	java: added is operator support
+31.08.2006
+	jsc.exe: signing turned off for linq
+	java: better path handling
+	java: better Implements/ImplementationType, IDisposable handling
+05.09.2006
+    java: fixed implicit operator naming
+07.09.2006
+    java: added method synchronized support [MethodImpl(MethodImplOptions.Synchronized)]
+15.09.2006
+    jsc: added -jmc flag
+24.10.2006
+    java: added ldelem.i8
+01.01.2007
+    php: xor opcode
+    php: not opcode
+12.01.2007
+    jsc: instanceof/as/is operator disambuigation
+22.01.2007
+    java: conv.r4, ldc.r4 opcodes
+23.01.2007
+    java: ExternalTarget may now use * to indicate its property name.
+    java: Implicit operators now translate to 'ToType' and 'Of'
+    HexAttribute added for parameters which may be used to indicate hextype integers.
+    java: added bool unboxing
+    java: added boxed Float support
+04.02.2007
+    jsc: added embedded resource extraction (ScriptResourceAttribute)
+07.02.2007
+    java: added/fixed base call support
+    jsc+js: updating ctor implementation'
+01.03.2007
+    jsc: automatic delegate implementation, users can now define new delegate types.
+03.03.2007:
+    js: static classes no longer emit constructors
+28.05.2007
+    jsc: local variable struct ctor fix
+06.06.2007
+    jsc: extracts resource streams
+    jsc: disabled packing
+29.06.2007
+    full release, source code open.
+25.12.2007
+	js: anonymous types yet again supported, assembly and type reflection
+29.12.2007
+	js: added linq orderby, thenby extension methods
+	jsc: fixed reference sorting
+11.01.2008
+	jsc: starting actionscript 3 support development
+13.01.2008
+	actionscript: added support for properties
+03.02.2008
+	actionscript: added try/catch support

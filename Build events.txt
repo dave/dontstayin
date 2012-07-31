@@ -1,0 +1,96 @@
+
+(BobsPrecompileApp) =>
+Data\LinqToSqlDbmlScript\DbSpotted.dbml.before
+
+(LinqToSqlDbmlScript) =>
+Data\LinqToSqlClassTemplate\DbSpotted.dbml.after
+
+(LinqToSqlClassTemplate) =>
+Data\LinqToSql\Classes\Generated.cs
+Domain\Model\Entities\Generated.cs
+
+
+
+Data/BobsCommonFileGenerator:
+post:
+	BobsCommonFileGenerator.exe /common:..\..\..\Bobs\Main\Common.cs /f
+
+
+Data/BobsPrecompileApp:
+pre:
+	..\..\SqlScriptRunner\bin\SqlScriptRunner.exe /p:..\..\..\Bobs /data:true
+post:
+	attrib -R ..\..\..\Data\LinqToSqlDbmlScript\DbSpotted.dbml.before
+	..\..\ToolRunner\bin\ToolRunner.exe ..\SqlMetal.exe "/server:*SERVER* /database:*DATABASE* /dbml:..\..\..\Data\LinqToSqlDbmlScript\DbSpotted.dbml.before /pluralize /functions /views /sprocs /context:DbSpottedDataContext" /runondbupdated
+	attrib +R ..\..\..\Data\LinqToSqlDbmlScript\DbSpotted.dbml.before
+
+
+Data/LinqToSqlClassTemplate:
+post:
+	attrib -R ..\..\LinqToSql\Classes\Generated.cs 
+	"C:\Program Files\Common Files\Microsoft Shared\TextTemplating\1.2\TextTransform.exe" -out ..\..\LinqToSql\Classes\Generated.cs ..\DataClassesContext.tt
+	attrib +R ..\..\LinqToSql\Classes\Generated.cs 
+	attrib -R ..\..\..\Domain\Model\Entities\Generated.cs 
+	"C:\Program Files\Common Files\Microsoft Shared\TextTemplating\1.2\TextTransform.exe" -out ..\..\..\Domain\Model\Entities\Generated.cs  ..\ModelAbstractClasses.tt
+	attrib +R ..\..\..\Domain\Model\Entities\Generated.cs
+
+
+Data/LinqToSqlDbmlScript:
+post:
+	attrib -R ..\..\LinqToSqlClassTemplate\DbSpotted.dbml.after
+	del ..\..\LinqToSqlClassTemplate\DbSpotted.dbml.after
+	..\..\LinqToDbmlRunner\bin\LinqToDbmlRunner.exe $(TargetFileName) ..\DbSpotted.dbml.before ..\..\LinqToSqlClassTemplate\DbSpotted.dbml.after
+	attrib +R ..\..\LinqToSqlClassTemplate\DbSpotted.dbml.after
+
+
+Spotted/GenerateJavascript:
+post:
+	GenerateJavascript.exe
+
+
+Spotted/Spotted:
+post:
+	..\..\..\Utilities\Script\WebServiceStubGenerator\bin\WebServiceStubGenerator.exe /a:..\..\..\Spotted\Spotted\bin\Spotted.dll /o:..\..\..\Spotted\SpottedScript\WebServices\Generated.cs
+	..\..\..\Utilities\Script\ViewGenerator\bin\ViewScriptGenerator.exe /a:..\..\..\Spotted\Spotted\bin\Spotted.dll /o:..\..\..\Spotted\SpottedScript\Views\Generated.cs
+
+
+Utilities/Cache/CacheTriggers:
+pre:
+	..\..\..\BobsCommonFileGenerator\bin\BobsCommonFileGenerator.exe /triggers:..\Generated.cs
+post:
+	REM Sql server does not realise when references are updated when 
+	REM trying to update a CLR assembly, so we ilmerge it into a single dll
+	del CacheTriggers.dll
+	..\..\..\..\Dll\ILMerge.exe /wildcards /out:CacheTriggers.dll *.dll
+
+
+Utilities/Cache/Caching:
+pre:
+	..\..\..\BobsCommonFileGenerator\bin\BobsCommonFileGenerator.exe /template:ParentChildCacheKeys /output:..\CacheKeys\Generated.cs /HasSinglePrimaryKey:true /HasKColumn:true
+
+
+Utilities/Script/ScriptFileSplitter:
+post:
+	ScriptFileSplitter.exe /i:..\..\..\..\Spotted\SpottedScript\bin\SpottedScript.js /o:..\..\..\..\Spotted\Spotted\Misc\SpottedScript\
+	ScriptFileSplitter.exe /i:..\..\..\..\Spotted\SpottedScript\bin\SpottedScript.debug.js /o:..\..\..\..\Spotted\Spotted\Misc\SpottedScript\
+
+
+Utilities/Script/ViewScriptGenerator:
+post:
+	ViewScriptGenerator.exe /a:..\..\..\..\Spotted\Spotted\bin\Spotted.dll /o:..\..\..\..\Spotted\SpottedScript\Views\Generated.cs
+
+
+Utilities/Script/WebServiceStubGenerator:
+post:
+	WebServiceStubGenerator.exe /a:..\..\..\..\Spotted\Spotted\bin\Spotted.dll /o:..\..\..\..\Spotted\SpottedScript\WebServices\Generated.cs
+
+
+Utilities/Spatial:
+post:
+	REM ..\..\DatabaseAssemblyLoader\Bin\DatabaseAssemblyLoader.exe /a:Spatial.dll
+
+
+Bobs:
+pre:
+	..\..\Utilities\BobsCommonFileGenerator\bin\BobsCommonFileGenerator.exe /common:..\Main\Common.cs /f
+does it need /f?

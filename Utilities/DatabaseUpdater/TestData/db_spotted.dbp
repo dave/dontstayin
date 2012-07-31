@@ -1,0 +1,30 @@
+# Microsoft Developer Studio Project File - Database Project
+Begin DataProject = "db_spotted"
+   MSDTVersion = "80"
+   SccProjectName = "SAK"
+   SccLocalPath = "SAK"
+   SccAuxPath = "SAK"
+   SccProvider = "SAK"
+   Begin Folder = "Change Scripts"
+      Script = "0001 - initial database setup.sql"
+   End
+   Begin Folder = "Create Scripts"
+      Begin Folder = "prc"
+      End
+      Begin Folder = "trg"
+      End
+      Begin Folder = "udf"
+      End
+      Begin Folder = "viw"
+      End
+   End
+   Begin Folder = "Data Scripts"
+      Script = "Country.sql"
+      Script = "Usr.data.sql"
+   End
+   Begin DBRefFolder = "Database References"
+   End
+   Node = "db_spotted.build"
+   Begin Folder = "Queries"
+   End
+End

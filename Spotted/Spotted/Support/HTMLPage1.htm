@@ -1,0 +1,25 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" style="overflow-y: scroll;">
+<head>
+    <title>Untitled Page</title>
+    <link rel="stylesheet" type="text/css" href="/support/style.css?a=1"/>
+</head>
+<body>
+	
+<div style="background-color:Red; width:200px; height:200px;" id="TestDiv" onclick="ShowCursor()">
+    Click me!
+</div>
+<script>
+    function ShowCursor()
+    {
+        document.getElementById("TestDiv").style.cursor = "wait";
+        setTimeout("HideCursor()", 1000);
+    }
+    function HideCursor()
+    {
+        document.getElementById("TestDiv").style.cursor = "default";
+        document.getElementById("TestDiv").innerHTML = "Cursor should have changed back now, but it hasn't. Move the mouse and it'll change back.";
+    }
+</script>
+</body>
+</html>

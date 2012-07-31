@@ -1,0 +1,20 @@
+﻿
+namespace Caching.CacheKeys
+{
+#foreach ($table in $tables)
+	public static partial class ${table.Name}
+	{
+		public static BobCacheKey Bob(int ${table.Name.ToLower()}K)
+		{
+			return new BobCacheKey("${table.Name}", ${table.Name.ToLower()}K, "${table.Hash}");
+		}
+#foreach ($childTable in $table.ChildTables)
+	
+		public static BobChildren ${childTable.Name}s(int ${table.Name.ToLower()}K)
+		{
+			return new BobChildren("${table.Name}", ${table.Name.ToLower()}K, "${childTable.Name}", "${childTable.Hash}");
+		}
+#end
+	}
+#end
+}

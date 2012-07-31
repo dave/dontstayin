@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+  <!--partner id-->
+  <add key="CLIENT_ID">2431</add>
+  <!--Site host-->
+  <add key="CONFIG_HOST">http://www.dontstayin.com/cellpic/</add>
+  <!--changing the background image-->
+  <add key="BACKGROUND_IMAGE">http://www.moblin.com/cellpic/images/bgimage.jpg</add>
+  <!--changing the logo image (watermark)-->
+  <add key="LOGO_IMAGE">http://www.moblin.com/cellpic/images/logo.jpg</add>
+  <!--changing the logo image location (watermark)-->
+  <add key="LOGO_POSITION">BL</add>
+  <add key="LOGO_BLEND_MODE">6</add>
+  <!--changing the background color-->
+  <add key="BACKGROUND_MASTER">0xB5B5B5</add>
+  <add key="BACKGROUND_COLOR">0x000000</add>
+  <add key="BOTTOMBAR_BACKGROUND_IMAGE">http://www.moblin.com/cellpic/images/bottomAppBar.png</add>
+  <add key="TOPBAR_BACKGROUND_IMAGE">http://www.moblin.com/cellpic/images/topAppBar.png</add>
+  <add key="PANEL_BACKGROUND_COLOR">0xFFFFFF</add>
+  <add key="PANEL_BACKGROUND_ALPHA">40</add>
+  <add key="PANEL_BACKGROUND_ROUNDCORNERS">1</add>
+  <add key="PANEL_BACKGROUND_BORDERCOLOR">0x000000</add>
+  <add key="PANEL_BACKGROUND_BORDERALPHA">80</add>
+  <add key="PANEL_BACKGROUND_BORDERTHICKNESS">1</add>
+  <add key="TITLE_FRAME_BACKGROUND_COLOR">0x000000</add>
+  <add key="TITLE_FRAME_BACKGROUND_ALPHA">100</add>
+  <add key="TITLE_FRAME_TEXT_COLOR">0xFFFFFF</add>
+  <add key="TITLE_FRAME_BACKGROUND_ROUNDCORNERS">0</add>
+  <add key="INNER_LABELS_COLOR">0x000000</add>
+  <add key="INDICATOR_THEME_COLOR">0x000000</add>
+  <add key="INDICATOR_BORDER_COLOR">0xFFFFFF</add>
+  <add key="SHOW_COLOR_DESIGN_TOOLS">1</add>
+</configuration>

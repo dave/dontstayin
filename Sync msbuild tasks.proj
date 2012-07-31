@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Copy" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Target Name="Copy">
+    <Exec Command="c:\windows\robocopy.exe \\kamino\projects\development\utilities\MsBuildTasks\bin \\kamino\release\MsbuildTasks /mir" IgnoreExitCode="true" />
+  </Target>
+</Project>

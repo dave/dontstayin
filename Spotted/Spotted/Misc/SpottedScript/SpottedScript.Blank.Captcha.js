@@ -1,0 +1,4 @@
+Type.registerNamespace('SpottedScript.Blank.Captcha');
+SpottedScript.Blank.Captcha.View=function(clientId){SpottedScript.Blank.Captcha.View.initializeBase(this,[clientId]);this.clientId=clientId;}
+SpottedScript.Blank.Captcha.View.prototype={clientId:null,get_hipImage:function(){return document.getElementById(this.clientId+'_HipImage');},get_hipChallengeTextBox:function(){return document.getElementById(this.clientId+'_HipChallengeTextBox');},get_doneButton:function(){return document.getElementById(this.clientId+'_DoneButton');},get_customvalidator10:function(){return document.getElementById(this.clientId+'_Customvalidator10');},get_genericContainerPage:function(){return document.getElementById(this.clientId+'_GenericContainerPage');}}
+SpottedScript.Blank.Captcha.View.registerClass('SpottedScript.Blank.Captcha.View',SpottedScript.BlankUserControl.View);

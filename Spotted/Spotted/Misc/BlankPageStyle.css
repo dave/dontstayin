@@ -1,0 +1,143 @@
+﻿body {
+}
+
+tr.dataGridFooter td
+{
+	border-top:solid 1px #000000;
+}
+
+tr.dataGridHeader td
+{
+	border-bottom:solid 1px #000000;
+	border-left:solid 1px #000000;
+	vertical-align:bottom;
+}
+
+tr.dataGridHeader th
+{
+	border-bottom:solid 1px #000000;
+	border-left:solid 0px #000000;
+	vertical-align:bottom;
+	
+}
+
+tr.dataGridSelectedItem td 
+{
+	background-color:#eeeeee; 
+}
+
+tr.dataGridAltItem td 
+{
+	background-color:#FED551;
+}
+
+.dataGridDate td 
+{
+	
+	border-top:solid 1px #000000;
+	border-left:solid 1px #000000;
+}
+
+.dataGridDate th 
+{
+	
+	border-top:solid 1px #000000;
+	text-align:right;
+}
+.dataGridDateError
+{
+	color:Red;
+	font-weight:bold;
+}
+.dataGridRightAlign td
+{
+	text-align:right;
+	border-right:solid 1px #000000;
+}
+
+.dataGrid td
+{
+	border-left: solid 1px #000000;
+	border-bottom:solid 1px #999999;
+}
+
+.dataGrid
+{
+	border-right: solid 1px #000000;
+	border-top: solid 1px #000000;
+	border-bottom: solid 1px #000000;
+}
+
+td.dataGridPlainCell
+{
+	border:solid 0px #ffffff;
+}
+
+td.dataGridPlainCellTight
+{
+	background-color:Transparent;
+	border:solid 0px #ffffff;
+	padding-left:0px;
+	padding-right:0px;
+	padding-top:2px;
+	padding-bottom:2px;
+}
+
+td.dataGridThread
+{
+	border-left:solid 0px #CBA21E;
+	border-top:solid 1px #CBA21E;
+}
+td.dataGridThreadAuthor
+{
+	border-left:solid 0px #CBA21E;
+	border-top:solid 1px #CBA21E;
+	width:20px;
+	overflow:scroll;
+}
+td.dataGridThreadReplies
+{
+	border-left:solid 0px #CBA21E;
+	border-top:solid 1px #CBA21E;
+	width:20px;
+	overflow:scroll;
+}
+.dataGridRuledRow td
+{
+	border-top:solid 1px #CBA21E;
+}
+td.dataGridThreadTitlesTight
+{
+	border-left:solid 0px #CBA21E;
+	border-top:solid 1px #CBA21E;
+	padding-left:0px;
+	padding-right:0px;
+	padding-top:2px;
+	padding-bottom:2px;
+}
+td.dataGridThreadTitlesTight a
+{
+	text-decoration:none;
+}
+td.dataGridThreadTitlesTight a:hover
+{
+	text-decoration:underline;
+}
+
+td.dataGridTightImg
+{
+	border-left:solid 0px #CBA21E;
+	border-top:solid 1px #CBA21E;
+	padding-left:0px;
+	padding-right:0px;
+	padding-top:0px;
+	padding-bottom:0px;
+}
+td.dataGridTightImg a
+{
+	text-decoration:none;
+}
+td.dataGridTightImg a:hover
+{
+	text-decoration:underline;
+}

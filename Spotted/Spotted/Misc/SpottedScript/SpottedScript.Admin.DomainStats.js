@@ -1,0 +1,4 @@
+Type.registerNamespace('SpottedScript.Admin.DomainStats');
+SpottedScript.Admin.DomainStats.View=function(clientId){SpottedScript.Admin.DomainStats.View.initializeBase(this,[clientId]);this.clientId=clientId;}
+SpottedScript.Admin.DomainStats.View.prototype={clientId:null,get_uiPromoterHtmlAutoComplete:function(){return eval(this.clientId+'_uiPromoterHtmlAutoCompleteBehaviour');},get_uiDomainsList:function(){return document.getElementById(this.clientId+'_uiDomainsList');},get_uiSelectDomainButton:function(){return document.getElementById(this.clientId+'_uiSelectDomainButton');},get_uiGridView:function(){return document.getElementById(this.clientId+'_uiGridView');},get_genericContainerPage:function(){return document.getElementById(this.clientId+'_GenericContainerPage');}}
+SpottedScript.Admin.DomainStats.View.registerClass('SpottedScript.Admin.DomainStats.View',SpottedScript.AdminUserControl.View);

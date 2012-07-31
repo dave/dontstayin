@@ -1,0 +1,4 @@
+Type.registerNamespace('SpottedScript.Admin.BannerImpressionStats');
+SpottedScript.Admin.BannerImpressionStats.View=function(clientId){SpottedScript.Admin.BannerImpressionStats.View.initializeBase(this,[clientId]);this.clientId=clientId;}
+SpottedScript.Admin.BannerImpressionStats.View.prototype={clientId:null,get_uiFirstDate:function(){return eval(this.clientId+'_uiFirstDateController');},get_uiSecondDate:function(){return eval(this.clientId+'_uiSecondDateController');},get_uiChangeDateRange:function(){return document.getElementById(this.clientId+'_uiChangeDateRange');},get_gridView:function(){return document.getElementById(this.clientId+'_GridView');},get_genericContainerPage:function(){return document.getElementById(this.clientId+'_GenericContainerPage');}}
+SpottedScript.Admin.BannerImpressionStats.View.registerClass('SpottedScript.Admin.BannerImpressionStats.View',SpottedScript.AdminUserControl.View);

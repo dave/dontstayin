@@ -1,0 +1,344 @@
+﻿<head>
+	<style type="text/css">
+		table th
+		{
+			background: black;
+			color: White;
+			text-align: left;
+			font-size: xx-small;
+		}
+		.field
+		{
+			font-size: xx-small;
+		}
+		.fieldname
+		{
+			font-size: xx-small;
+			font-weight: 700;
+		}
+	</style>
+</head>
+$PageHeader
+<form id='form1' runat='server'>
+<div style='font-family: Verdana;'>
+	<table width='100%' border='0' cellspacing='0' cellpadding='0' height='100%'>
+		<tr>
+			<td valign='top'>
+				<table width='100%'>
+					<table width='100%' border="1" cellpadding="3" cellspacing="0" style="border-collapse:separate">
+						<tr>
+							<th colspan='2'>
+								Reference details</th>
+							<th colspan='2'>
+								Sales contact</th>
+							<th colspan='2'>
+								Trafficking contact</th>
+						</tr>
+						<tr>
+							<td class='fieldname'>
+								DontStayIn IO number</td>
+							<td class='field'>
+								$InsertionOrder.K</td>
+							<td class='fieldname'>
+								Name</td>
+							<td class='field'>
+								$InsertionOrder.ActionUsr.FirstName $InsertionOrder.ActionUsr.LastName</td>
+							<td class='fieldname'>
+								Name</td>
+							<td class='field'>
+								$InsertionOrder.TrafficUsr.FirstName $InsertionOrder.TrafficUsr.LastName</td>
+						</tr>
+						<tr>
+							<td class='fieldname'>
+								Date</td>
+							<td class='field'>
+								$InsertionOrder.DateTimeCreated</td>
+							<td class='fieldname'>
+								Phone</td>
+							<td class='field'>
+								$PhoneNumber</td>
+							<td class='fieldname'>
+								Phone</td>
+							<td class='field'>
+								$PhoneNumber</td>
+						</tr>
+						<tr>
+							<td class='fieldname'>
+								Client Ref/PO</td>
+							<td class='field'>
+								$InsertionOrder.ClientRef</td>
+							<td class='fieldname'>
+								Fax</td>
+							<td class='field'>
+								$FaxNumber</td>
+							<td class='fieldname'>
+								Fax</td>
+							<td class='field'>
+								$FaxNumber</td>
+						</tr>
+						<tr>
+							<td class='fieldname'>
+								Campaign start date</td>
+							<td class='field'>
+								$InsertionOrder.CampaignStartDate</td>
+							<td class='fieldname'>
+								Email</td>
+							<td class='field'>
+								<a href='mailto:$InsertionOrder.ActionUsr.Email'>$InsertionOrder.ActionUsr.Email</a></td>
+							<td class='fieldname'>
+								Email</td>
+							<td class='field'>
+								<a href='mailto:$InsertionOrder.TrafficUsr.Email'>$InsertionOrder.TrafficUsr.Email</a></td>
+						</tr>
+						<tr>
+							<td class='fieldname'>
+								Campaign end date</td>
+							<td class='field'>
+								$InsertionOrder.CampaignEndDate</td>
+							<td class='fieldname'>
+								&nbsp;</td>
+							<td class='field'>
+								&nbsp;</td>
+							<td class='fieldname'>
+								Creative Arrival Date</td>
+							<td class='field'>
+								ASAP</td>
+						</tr>
+						<tr>
+							<td class='fieldname'>
+								Campaign name</td>
+							<td class='field'>
+								$InsertionOrder.CampaignName</td>
+							<td class='fieldname'>
+								&nbsp;</td>
+							<td class='field'>
+								&nbsp;</td>
+							<td class='fieldname'>
+								&nbsp;</td>
+							<td class='field'>
+								&nbsp;</td>
+						</tr>
+					</table>
+					<br />
+					<table width='100%' border="1" cellpadding="3" cellspacing="0">
+						<tr>
+							<th colspan='4'>
+								Agency</th>
+						</tr>
+						<tr>
+							<td class='fieldname'>
+								Name</td>
+							<td class='field'>
+								$InsertionOrder.Promoter.Name</td>
+							<td class='fieldname'>
+								Name of advertiser contact</td>
+							<td class='field'>
+								$Agency_ContactName</td>
+						</tr>
+						<tr>
+							<td class='fieldname'>
+								Address</td>
+							<td class='field'>
+								$InsertionOrder.Promoter.AddressStreet</td>
+							<td class='fieldname'>
+								VAT number</td>
+							<td class='field'>
+								$InsertionOrder.Promoter.VatNumber</td>
+						</tr>
+						<tr>
+							<td class='fieldname'>
+								Line 2</td>
+							<td class='field'>
+								$InsertionOrder.Promoter.AddressArea</td>
+							<td class='fieldname'>
+								Telephone number</td>
+							<td class='field'>
+								$InsertionOrder.Promoter.PhoneNumber</td>
+						</tr>
+						<tr>
+							<td class='fieldname'>
+								Line 3</td>
+							<td class='field'>
+								$InsertionOrder.Promoter.AddressTown</td>
+							<td class='fieldname'>
+								Email address</td>
+							<td class='field'>
+								<a href='mailto:$InsertionOrder.Promoter.AccountsEmail'>$InsertionOrder.Promoter.AccountsEmail</a></td>
+						</tr>
+						<tr>
+							<td class='fieldname'>
+								Postcode</td>
+							<td class='field'>
+								$InsertionOrder.Promoter.AddressPostcode</td>
+							<td class='fieldname'></td>
+							<td class='field'></td>
+						</tr>
+						</table>
+					<br />
+					<table width='100%' border="1" cellpadding="3" cellspacing="0">
+						<tr>
+							<th colspan='2'>
+								Invoice details</th>
+						</tr>
+						<tr>
+							<td class='fieldname'>
+								Invoice currency</td>
+							<td class='field'>
+								&pound; UK STERLING</td>
+						</tr>
+						<tr>
+							<td class='fieldname'>
+								Payment terms</td>
+							<td class='field'>
+								$InsertionOrder.PaymentTerms</td>
+						</tr>
+						<tr>
+							<td class='fieldname'>
+								Invoice period</td>
+							<td class='field'>
+								$InsertionOrder.InvoicePeriod</td>
+						</tr>
+					</table>
+					<br />
+					<table width='100%' border="1" cellpadding="3" cellspacing="0">
+						<tr>
+							<th>
+								Description</th>
+							<th>
+								Impressions</th>
+							<th>
+								CPM</th>
+							<th>
+								Gross Cost</th>
+							<th>
+								Agency Discount</th>
+							<th>
+								Net Cost</th>
+						</tr>
+						#foreach ($Item in $InsertionOrder.InsertionOrderItems)
+						<tr>
+							<td class='field'>
+								#if ($Item.Description != "") $Item.Description #else &nbsp; #end								
+							</td>
+							<td class='field'>
+								#if ($Item.BannerPosition != 0) $Item.ImpressionQuantity #else &nbsp; #end</td>
+							<td class='field'>
+								#if ($Item.BannerPosition != 0) $Item.Cpm.ToString("c") #else &nbsp;  #end</td>
+							<td class='field' style="width: 331px">
+								$Item.PriceBeforeAgencyDiscount.ToString("c")</td>
+							<td class='field'>
+								$Item.AgencyDiscount.ToString("p")</td>
+							<td class='field'>
+								$Item.Price.ToString("c")
+							</td>
+						</tr>
+						#end
+						<tr>
+							<td class='field'></td>
+							<td class='field'></td>
+							<td class='field'></td>
+							<td class='field' style="width: 331px">
+								$InsertionOrder.PriceBeforeAgencyDiscount.ToString("c")</td>
+							<td class='field'>$InsertionOrder.AgencyDiscount.ToString("p")</td>
+							<td class='field'>
+								$InsertionOrder.Price.ToString("c")
+							</td>
+							
+						</tr>
+					</table>
+					<br />
+					<table width='100%' border="1" cellpadding="3" cellspacing="0">
+						<tr>
+							<th>
+								Additional matters</th>
+						</tr>
+						<tr>
+							<td class='field'>
+								$InsertionOrder.Notes</td>
+						</tr>
+					</table>
+					<font size='1'><b>
+					<br />Reporting:</b> Available, please contact DontStayIn Traffic team.<br />
+						<b>Terms and Conditions:</b> This Insertion Order is subject ot the DontStayIn Advertiser
+						Terms and Conditions attached. The Advertiser/Agency represents that it has read
+						and agrees to the DontStayIn Advertiser Terms and Conditions. This Insertion Order
+						hereby incorporates by reference, and is subject to, any additional terms enclosed.<br />
+						<br />
+						<b>DontStayIn does not enter into verbal contracts or verbal Insertion Orders.</b><br />
+						<b>Written Insertion Orders are the only binding authorisations to variations.</b></font>
+					<br />
+					<table width='100%' border="1" cellpadding="3" cellspacing="0">
+						<tr>
+							<td width='25%' class='fieldname'>
+								Advertiser Authorised signature</td>
+							<td width='25%'>
+								&nbsp;</td>
+							<td width='25%' class='fieldname'>
+								DontStayIn Authorised signature</td>
+							<td width='25%'>
+								&nbsp;</td>
+						</tr>
+						<tr>
+							<td class='fieldname'>
+								Print name</td>
+							<td>
+								&nbsp;</td>
+							<td class='fieldname'>
+								Print name</td>
+							<td class='field'>
+								$InsertionOrder.ActionUsr.FirstName $InsertionOrder.ActionUsr.LastName</td>
+						</tr>
+						<tr>
+							<td class='fieldname'>
+								Position</td>
+							<td>
+								&nbsp;</td>
+							<td class='fieldname'>
+								Position</td>
+							<td class='field'>
+								&nbsp;</td>
+						</tr>
+						<tr>
+							<td class='fieldname'>
+								On behalf of the contracting party</td>
+							<td>
+								&nbsp;</td>
+							<td class='fieldname'>
+								On behalf of DontStayIn</td>
+							<td class='field'>
+								&nbsp;</td>
+						</tr>
+						<tr>
+							<td class='fieldname'>
+								Date</td>
+							<td>
+								&nbsp;</td>
+							<td class='fieldname'>
+								Date</td>
+							<td class='field'>
+								&nbsp;</td>
+						</tr>
+						<tr>
+							<td class='fieldname'>
+								Email</td>
+							<td>
+								&nbsp;</td>
+							<td class='fieldname'>
+								Email</td>
+							<td class='field'>
+								<a href='mailto:$InsertionOrder.ActionUsr.Email'>$InsertionOrder.ActionUsr.Email</a></td>
+						</tr>
+						<tr>
+							<td class='fieldname'>
+								Phone</td>
+							<td>
+								&nbsp;</td>
+							<td class='fieldname'>
+								FAX</td>
+							<td class='field'>
+								$FaxNumber</td>
+						</tr>
+					</table>
+				</table>
+</div>
+</form>

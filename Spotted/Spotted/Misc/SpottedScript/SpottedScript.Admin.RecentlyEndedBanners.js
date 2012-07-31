@@ -1,0 +1,4 @@
+Type.registerNamespace('SpottedScript.Admin.RecentlyEndedBanners');
+SpottedScript.Admin.RecentlyEndedBanners.View=function(clientId){SpottedScript.Admin.RecentlyEndedBanners.View.initializeBase(this,[clientId]);this.clientId=clientId;}
+SpottedScript.Admin.RecentlyEndedBanners.View.prototype={clientId:null,get_uiFirstDate:function(){return eval(this.clientId+'_uiFirstDateController');},get_uiSecondDate:function(){return eval(this.clientId+'_uiSecondDateController');},get_uiChangeDateRange:function(){return document.getElementById(this.clientId+'_uiChangeDateRange');},get_uiBanners:function(){return document.getElementById(this.clientId+'_uiBanners');},get_genericContainerPage:function(){return document.getElementById(this.clientId+'_GenericContainerPage');}}
+SpottedScript.Admin.RecentlyEndedBanners.View.registerClass('SpottedScript.Admin.RecentlyEndedBanners.View',SpottedScript.AdminUserControl.View);

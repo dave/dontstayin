@@ -1,0 +1,4 @@
+Type.registerNamespace('SpottedScript.Pages.Events.Merge');
+SpottedScript.Pages.Events.Merge.View=function(clientId){SpottedScript.Pages.Events.Merge.View.initializeBase(this,[clientId]);this.clientId=clientId;}
+SpottedScript.Pages.Events.Merge.View.prototype={clientId:null,get_panelMerge:function(){return document.getElementById(this.clientId+'_PanelMerge');},get_h11:function(){return document.getElementById(this.clientId+'_H11');},get_uiMainEventFinder:function(){return eval(this.clientId+'_uiMainEventFinderController');},get_uiMergeEventFinder:function(){return eval(this.clientId+'_uiMergeEventFinderController');},get_mergeButton:function(){return document.getElementById(this.clientId+'_MergeButton');},get_genericContainerPage:function(){return document.getElementById(this.clientId+'_GenericContainerPage');}}
+SpottedScript.Pages.Events.Merge.View.registerClass('SpottedScript.Pages.Events.Merge.View',SpottedScript.DsiUserControl.View);

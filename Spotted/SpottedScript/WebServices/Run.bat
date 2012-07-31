@@ -1,0 +1,1 @@
+C:\source\Development\Utilities\WebServiceStubGenerator\bin\WebServiceStubGenerator.exe /a:C:\source\Development\Spotted\Spotted\bin\Spotted.dll /o:c:\source\Development\Spotted\SpottedScript\WebServices\Generated.cs

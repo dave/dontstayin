@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="UpdateWebServers" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <UsingTask TaskName="MSBuildTasks.SqlScriptRunner" AssemblyFile="C:\release\MSBuildTasks\MSBuildTasks.dll" />
+  <UsingTask TaskName="MSBuildTasks.DatabaseAssemblyLoader" AssemblyFile="C:\release\MSBuildTasks\MSBuildTasks.dll" />
+  <UsingTask TaskName="MSBuildTasks.SyncFolderUsingRobocopy" AssemblyFile="C:\release\MSBuildTasks\MSBuildTasks.dll" />
+  <!--TfsSettings-->
+  <PropertyGroup>
+    <TfsServer>corellia</TfsServer>
+    <TfsBinDirectory>"c:\Program Files\Microsoft Visual Studio 9.0\Common7\IDE"</TfsBinDirectory>
+    <TfsSourcePath>$/Development</TfsSourcePath>
+		<UserName>EXTRA\DsiUsr</UserName>
+		<Password>toobusy319hello</Password>
+  </PropertyGroup>
+  <!--WebServers-->
+  <ItemGroup>
+    <!--WebServer Include="1" /-->
+    <!--WebServer Include="2" /-->
+		<!--WebServer Include="3" /-->
+		<!--WebServer Include="4" /-->
+		<WebServer Include="5" />
+		<WebServer Include="6" />
+		<WebServer Include="7" />
+		<!--WebServer Include="8" /-->
+  </ItemGroup>
+	<ItemGroup>
+		<BackEndServer Include="extra.dontstayin.com" />
+	</ItemGroup>
+	<ItemGroup>
+		<VideoEncoderServer Include="server1.dontstayin.com" />
+	</ItemGroup>
+	<ItemGroup>
+		<PhotoEncoderServer Include="server2.dontstayin.com" />
+	</ItemGroup>
+
+	<ItemGroup>
+    <EmbeddedAssembly Include=".\Utilities\Cache\CacheTriggers\bin\CacheTriggers.dll" />
+  </ItemGroup>
+  <Target Name="LabelSourceControlAndBackupFolder" Condition="'$(CCNetLabel)' != ''">
+    <ReadLinesFromFile File="BuildTimestamp.log">
+      <Output TaskParameter="Lines" PropertyName="buildTime" />
+    </ReadLinesFromFile>
+    <Exec Command="$(TfsBinDirectory)\tf.exe  label &quot;Deployment v$(CCNetLabel)&quot; $(TfsSourcePath) /version:D&quot;$(buildTime)&quot; /recursive" WorkingDirectory="c:\source\Development" />
+  </Target>
+  <Target Name="UpdateWebServers" DependsOnTargets="UpdateDatabase">
+		
+		<MSBuild Properties="CCNetLabel=$(CCNetLabel);ServerNumber=%(WebServer.Identity);SourceDirectory=.\Spotted\Spotted" Projects="Update web server 2.proj" />
+  </Target>
+  <Target Name="UpdateBackEndServers" DependsOnTargets="LabelSourceControlAndBackupFolder">
+		
+		<SyncFolderUsingRobocopy SourceFolder=".\Tasks\" DestinationFolder="\\%(BackEndServer.Identity)\c$\release\Tasks\" ExtraArgs="/XF $(ExcludedFiles) /XD $(ExcludedDirectories)" />
+
+		<!--
+		<ServiceController Action="Stop" ServiceNa me="Dsi Job Processor" MachineName="%(BackEndServer.Identity)" />
+		<SyncFolderUsingRobocopy SourceFolder=".\Utilities\JobProcessorService\bin\" DestinationFolder="\\%(BackEndServer.Identity)\c$\release\JobProcessorService" ExtraArgs="/XF $(ExcludedFiles) /XD $(ExcludedDirectories)" />
+		<ServiceController Action="Start" ServiceName="Dsi Job Processor" MachineName="%(BackEndServer.Identity)" />
+		-->
+		<!-- //Hardly ever updated and takes ages...
+		<ServiceController Action="Stop" ServiceName="VideoEncoder" MachineName="%(VideoEncoderServer.Identity)" />
+		<SyncFolderUsingRobocopy SourceFolder=".\Media\Service\VideoEncoderService\bin\" DestinationFolder="\\%(VideoEncoderServer.Identity)\c$\release\VideoEncoderService" ExtraArgs="/XF $(ExcludedFiles) /XD $(ExcludedDirectories)" />
+		<ServiceController Action="Start" ServiceName="VideoEncoder" MachineName="%(VideoEncoderServer.Identity)" />
+
+		<ServiceController Action="Stop" ServiceName="PhotoEncoder" MachineName="%(PhotoEncoderServer.Identity)" />
+		<SyncFolderUsingRobocopy SourceFolder=".\Media\Service\PhotoEncoderService\bin\" DestinationFolder="\\%(PhotoEncoderServer.Identity)\c$\release\PhotoEncoderService" ExtraArgs="/XF $(ExcludedFiles) /XD $(ExcludedDirectories)" />
+		<ServiceController Action="Start" ServiceName="PhotoEncoder" MachineName="%(PhotoEncoderServer.Identity)" />
+		-->
+
+	</Target>
+  <Target Name="UpdateDatabase" DependsOnTargets="UpdateBackEndServers">
+    <MSBuild Projects="Update database.proj" />
+  </Target>
+  <!--BackupSettings-->
+  <PropertyGroup>
+		<ExcludedFiles>thumbs.db *.user *.pdb robots.txt *.vsdisco *.vspscc *.scc *.cs *.resx _vti* *.csproj *.csproj.webinfo *.build *.cd live.web.config</ExcludedFiles>
+		<ExcludedDirectories>_sgbak _vti* dll obj aspnet_client properties</ExcludedDirectories>
+	</PropertyGroup>
+  <UsingTask TaskName="MSBuild.Community.Tasks.ServiceController" AssemblyFile="C:\Program Files\MSBuild\MSBuildCommunityTasks\MSBuild.Community.Tasks.dll" />
+	<UsingTask TaskName="Microsoft.Sdc.Tasks.Folder.Share.Create" AssemblyFile="C:\release\MSBuildTasks\Ext\Microsoft.Sdc.Tasks.dll" />
+	<UsingTask TaskName="Microsoft.Sdc.Tasks.Folder.Share.DeleteShare" AssemblyFile="C:\release\MSBuildTasks\Ext\Microsoft.Sdc.Tasks.dll" />
+
+</Project>

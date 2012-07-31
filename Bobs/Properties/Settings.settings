@@ -1,0 +1,15 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="Bobs.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="Spotted_com_secpay_www_SECVPNService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">https://www.secpay.com/java-bin/services/SECCardService</Value>
+    </Setting>
+    <Setting Name="Bobs_com_dontstayin_hoth_Phone1" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://hoth.dontstayin.com/Phones/Phone.asmx</Value>
+    </Setting>
+    <Setting Name="Bobs_com_dontstayin_hoth_Phone" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://hoth.dontstayin.com/phones/phone.asmx</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

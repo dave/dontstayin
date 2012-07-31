@@ -1,0 +1,4 @@
+Type.registerNamespace('SpottedScript.Admin.BannerHitViewer');
+SpottedScript.Admin.BannerHitViewer.View=function(clientId){SpottedScript.Admin.BannerHitViewer.View.initializeBase(this,[clientId]);this.clientId=clientId;}
+SpottedScript.Admin.BannerHitViewer.View.prototype={clientId:null,get_timeslotStart:function(){return document.getElementById(this.clientId+'_TimeslotStart');},get_timeslotEnd:function(){return document.getElementById(this.clientId+'_TimeslotEnd');},get_timeslotInfoRepeater:function(){return document.getElementById(this.clientId+'_TimeslotInfoRepeater');},get_bannerInfoRepeater:function(){return document.getElementById(this.clientId+'_BannerInfoRepeater');},get_genericContainerPage:function(){return document.getElementById(this.clientId+'_GenericContainerPage');}}
+SpottedScript.Admin.BannerHitViewer.View.registerClass('SpottedScript.Admin.BannerHitViewer.View',SpottedScript.AdminUserControl.View);

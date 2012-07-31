@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TestRunConfiguration id="f2e1f5d2-2a68-4802-aaec-1b40179cbc7a" name="Local Test Run" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2006">
+  <Description>This is a template of test run configuration for local test run.</Description>
+  <Timeouts deploymentTimeout="300000" />
+  <Deployment />
+  <NamingScheme />
+  <Hosts />
+</TestRunConfiguration>

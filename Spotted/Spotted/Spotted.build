@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+<project name="spotted" default="build" xmlns="http://nant.sf.net/release/0.85/nant.xsd">
+	<property name="project.file"   value="Spotted.csproj"/>
+	<property name="configuration"   value="release"/>
+	<property name="dll.name" value="bin\spotted.dll"/>
+	<property name="config.path" value="web.config"/>
+
+	<target name="build">
+		<call target="buildProjectUsingMsbuild"/>
+		<call target="runGenerateJavascript"                 if="${not property::exists('nant.buildonly')}"/>
+		<call target="setWebConfigSettingsToPointToTestData" if="${not property::exists('nant.buildonly')}"/>
+		<call target="runTests"															 if="${not property::exists('nant.buildonly')}"/>
+		
+	</target>
+
+	<target name="buildProjectUsingMsbuild">
+		<exec program="${framework.directory}\msbuild.exe"
+			commandline='"${project.file}" /v:q /nologo /p:Configuration=${configuration}' />
+	</target>
+
+	<target name="runGenerateJavascript">
+		<exec program="GenerateJavascript.exe" basedir="..\GenerateJavascript\bin\debug" workingdir="..\GenerateJavascript\bin\debug"></exec>
+	</target>
+
+	<target name="setWebConfigSettingsToPointToTestData">
+		<xmlpoke
+				file="${config.path}"
+				xpath="/configuration/appSettings/add[@key = 'ConnectionStringName']/@value"
+				value="dev_testData" />
+		<xmlpoke
+			file="${config.path}"
+			xpath="/configuration/system.web/identity/@impersonate"
+			value="false"/>
+	</target>
+
+	<target name="runTests">
+		<exec program="nunit-console.exe" basedir="${nunit.path}" workingdir="." commandline="${dll.name} /xml:NUnit-results.xml /nologo"/>
+	</target>
+
+	<!--target name="setWebConfigSettingsToPointToRealData">
+		<xmlpoke
+				file="${config.path}"
+				xpath="/configuration/appSettings/add[@key = 'ConnectionStringName']/@value"
+				value="dev_realData" />
+
+
+	</target-->
+
+</project>

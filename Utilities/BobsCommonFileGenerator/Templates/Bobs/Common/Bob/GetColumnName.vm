@@ -1,0 +1,10 @@
+﻿		public static string GetColumnName(${table.Name}.Columns columnEnum)
+		{
+			switch (columnEnum)
+			{
+		#foreach ($column in $table.Columns)
+				case ${table.Name}.Columns.${column.Name}: return "${column.Name}";
+		#end
+				default: return "";
+			}
+		}

@@ -1,0 +1,4 @@
+Type.registerNamespace('SpottedScript.Pages.ClearMyInbox');
+SpottedScript.Pages.ClearMyInbox.View=function(clientId){SpottedScript.Pages.ClearMyInbox.View.initializeBase(this,[clientId]);this.clientId=clientId;}
+SpottedScript.Pages.ClearMyInbox.View.prototype={clientId:null,get_confirmDiv:function(){return document.getElementById(this.clientId+'_ConfirmDiv');},get_password:function(){return document.getElementById(this.clientId+'_Password');},get_error:function(){return document.getElementById(this.clientId+'_Error');},get_done:function(){return document.getElementById(this.clientId+'_Done');},get_genericContainerPage:function(){return document.getElementById(this.clientId+'_GenericContainerPage');}}
+SpottedScript.Pages.ClearMyInbox.View.registerClass('SpottedScript.Pages.ClearMyInbox.View',SpottedScript.DsiUserControl.View);

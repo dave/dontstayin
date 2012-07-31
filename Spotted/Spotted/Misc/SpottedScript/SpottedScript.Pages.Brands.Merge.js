@@ -1,0 +1,4 @@
+Type.registerNamespace('SpottedScript.Pages.Brands.Merge');
+SpottedScript.Pages.Brands.Merge.View=function(clientId){SpottedScript.Pages.Brands.Merge.View.initializeBase(this,[clientId]);this.clientId=clientId;}
+SpottedScript.Pages.Brands.Merge.View.prototype={clientId:null,get_panelMerge:function(){return document.getElementById(this.clientId+'_PanelMerge');},get_header:function(){return document.getElementById(this.clientId+'_Header');},get_uiMasterBrandUrl:function(){return eval(this.clientId+'_uiMasterBrandUrlBehaviour');},get_uiMergeBrandUrl:function(){return eval(this.clientId+'_uiMergeBrandUrlBehaviour');},get_mergeButton:function(){return document.getElementById(this.clientId+'_MergeButton');},get_genericContainerPage:function(){return document.getElementById(this.clientId+'_GenericContainerPage');}}
+SpottedScript.Pages.Brands.Merge.View.registerClass('SpottedScript.Pages.Brands.Merge.View',SpottedScript.DsiUserControl.View);

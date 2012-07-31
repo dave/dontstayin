@@ -1,0 +1,4 @@
+Type.registerNamespace('SpottedScript.Admin.ChangePassword');
+SpottedScript.Admin.ChangePassword.View=function(clientId){SpottedScript.Admin.ChangePassword.View.initializeBase(this,[clientId]);this.clientId=clientId;}
+SpottedScript.Admin.ChangePassword.View.prototype={clientId:null,get_usrK:function(){return document.getElementById(this.clientId+'_UsrK');},get_usrPassword:function(){return document.getElementById(this.clientId+'_UsrPassword');},get_button2:function(){return document.getElementById(this.clientId+'_Button2');},get_outLabel:function(){return document.getElementById(this.clientId+'_OutLabel');},get_genericContainerPage:function(){return document.getElementById(this.clientId+'_GenericContainerPage');}}
+SpottedScript.Admin.ChangePassword.View.registerClass('SpottedScript.Admin.ChangePassword.View',SpottedScript.AdminUserControl.View);

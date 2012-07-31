@@ -1,0 +1,4 @@
+<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="EventHomeToday.ascx.cs" Inherits="Spotted.Templates.Events.EventHomeToday" %>
+<p class="EventHomeToday" runat="server" id="MainP">
+<a href="<%#CurrentEvent.Url()%>" runat="server" id="TicketsIconAnchor"><img src="/gfx/icon-tickets-small.png" width="20" height="16" align="left" border="0" style="margin-top:2px;margin-right:3px;" onmouseover="stt('Tickets available');" onmouseout="htm();" /></a><a href="<%#CurrentEvent.Url()%>" runat="server" id="FreeGuestlistIconAnchor"><img src="/gfx/icon-freeguestlist-small.png" width="20" height="16" align="left" border="0" style="margin-top:2px;margin-right:3px;" onmouseover="stt('Free Guestlist available');" onmouseout="htm();" /></a><%#CurrentEvent.TitleNoteHtml%><a href="<%#CurrentEvent.Url()%>"><%#CurrentEvent.Name%></a> <small> @ <a href="<%#CurrentEvent.Venue.Url()%>"><%#CurrentEvent.Venue.Name%></a> (<%#CurrentEvent.MusicTypesString%>)</small>
+</p>

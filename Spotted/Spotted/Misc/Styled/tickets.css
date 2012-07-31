@@ -1,0 +1,162 @@
+.WelcomeDiv
+{
+	text-align:right;
+	font-size: 70%;
+	margin-bottom:16px;
+}
+
+#CalendarFilterP
+{
+	text-align:center;
+}
+.CalendarMonthSpacer
+{
+	margin-left:6px;
+	margin-right:6px;
+}
+#CalendarCurrentMonth
+{
+	font-weight:bold;
+}
+
+#EventText
+{
+}
+
+#CalendarCurrentMonth
+{
+	
+}
+
+#PaymentDiv
+{
+	border:solid 1px white;
+}
+
+#BringCardDiv
+{
+	font-size: 0.7em;
+	font-style:italic;	
+}
+
+#BuyButton
+{
+	padding-left:8px;
+	padding-right:8px;
+	margin-bottom:2px;
+	margin-top:12px;
+}
+
+.EventShortDescription
+{
+	margin-top:30px;
+	margin-bottom:10px;
+}
+
+.TicketsDropDownList
+{
+	margin-left:1px;	
+}
+
+.TicketText
+{
+	padding-bottom:6px;	
+}
+
+.EventDate
+{
+}
+.EventLink
+{
+	margin-bottom:4px;
+}
+.EventLink a:hover
+{
+	text-decoration:none;
+}
+.EventLinkSpacer
+{
+	margin-left:3px;
+	margin-right:3px;
+}
+#Footer
+{
+	padding-top:10px;
+}
+
+#FooterLinks
+{
+	margin-left:8px;
+}
+
+#MainImage
+{
+	background-image: url('gfx/frantic-main.jpg');
+	width:800px;
+	height:210px;
+	margin-bottom:4px;
+	cursor:pointer;
+}
+
+#EventPic
+{
+	width:100px;
+	height:100px;
+	margin-right:10px;
+}
+
+.CalendarTable
+{
+	background:#000000;
+	border-bottom:1px solid #000000;
+}
+.CalendarCell
+{
+	border:1px solid #000000;
+}
+.CalendarDayHeadRow
+{
+	background-color:#333333;
+	font-weight:bold;
+	border-top:1px solid #000000;
+	border-bottom:1px solid #000000;
+}
+.CalendarDayEventRow
+{
+	height:80px;
+}
+.CalendarDayEventRow td
+{
+	vertical-align:top;
+}
+
+.CalendarMonthLinks
+{
+	text-align:center;
+	font-weight:bold;
+	margin-right:8px;
+	margin-left:8px;
+}
+#TicketDetails
+{
+	padding-bottom:8px;
+}
+
+#PoweredByDSI
+{
+	text-align:right;
+	margin-right:8px;
+}
+
+#PoweredByDSI a, .PoweredByDSI a:hover
+{
+	font-size: 10pt;
+	text-decoration: none;
+	color: #FFFFFF;
+}
+.CityName
+{
+	display:none;
+	
+}
+

@@ -1,0 +1,19 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using DataInterface;
+using Model.Entities;
+
+namespace Model.Repositories
+{
+	public interface IVenues : ITable<Venue>
+	{
+
+	}
+	public interface IThemes : ITable<Theme>
+	{
+		
+	}
+
+}

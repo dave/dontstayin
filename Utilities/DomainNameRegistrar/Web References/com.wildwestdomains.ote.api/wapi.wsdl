@@ -1,0 +1,1537 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:s0="http://wildwestdomains.com/webservices/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" targetNamespace="http://wildwestdomains.com/webservices/" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://wildwestdomains.com/webservices/">
+      <s:element name="ProcessRequest">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sRequestXML" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ProcessRequestResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ProcessRequestResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Describe">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sCLTRID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="credential" type="s0:Credential" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="Credential">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Account" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="DescribeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DescribeResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CheckAvailability">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sCLTRID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="credential" type="s0:Credential" />
+            <s:element minOccurs="0" maxOccurs="1" name="sDomainArray" type="s0:ArrayOfString" />
+            <s:element minOccurs="0" maxOccurs="1" name="sHostArray" type="s0:ArrayOfString" />
+            <s:element minOccurs="0" maxOccurs="1" name="sNSArray" type="s0:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfString">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="CheckAvailabilityResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CheckAvailabilityResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Info">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sCLTRID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="credential" type="s0:Credential" />
+            <s:element minOccurs="0" maxOccurs="1" name="sResourceID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sType" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sDomain" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sOrderID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="InfoResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="NameGen">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sCLTRID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="credential" type="s0:Credential" />
+            <s:element minOccurs="0" maxOccurs="1" name="sSLD" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sTLD" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sTLDs" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="nRows" type="s:unsignedShort" />
+            <s:element minOccurs="1" maxOccurs="1" name="bHypens" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="bNumbers" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="nMaxLen" type="s:unsignedShort" />
+            <s:element minOccurs="1" maxOccurs="1" name="bIntelliSearch" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="nPage" type="s:unsignedShort" />
+            <s:element minOccurs="0" maxOccurs="1" name="sTime" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="NameGenResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="NameGenResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="NameGenDB">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sCLTRID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="credential" type="s0:Credential" />
+            <s:element minOccurs="0" maxOccurs="1" name="sKey" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="nMaxResults" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="bExcludeTaken" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="sTLDs" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="bAddPrefix" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="bAddSuffix" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="bAddDashes" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="bAddRelated" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="bAdvancedSplit" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="bBaseOnTop" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="NameGenDBResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="NameGenDBResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Poll">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sCLTRID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="credential" type="s0:Credential" />
+            <s:element minOccurs="0" maxOccurs="1" name="sOp" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PollResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="PollResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="OrderCredits">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sCLTRID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="credential" type="s0:Credential" />
+            <s:element minOccurs="0" maxOccurs="1" name="shopper" type="s0:Shopper" />
+            <s:element minOccurs="0" maxOccurs="1" name="items" type="s0:ArrayOfOrderItem" />
+            <s:element minOccurs="0" maxOccurs="1" name="sROID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="Shopper">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="user" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="pwd" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="pwdhint" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="email" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="firstname" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="lastname" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="phone" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="dbpuser" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="dbppwd" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="dbppwdhint" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="dbpemail" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfOrderItem">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="OrderItem" nillable="true" type="s0:OrderItem" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="OrderItem">
+        <s:complexContent mixed="false">
+          <s:extension base="s0:Order">
+            <s:sequence>
+              <s:element minOccurs="1" maxOccurs="1" name="productid" type="s:int" />
+              <s:element minOccurs="1" maxOccurs="1" name="quantity" type="s:unsignedInt" />
+              <s:element minOccurs="0" maxOccurs="1" name="riid" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="duration" type="s:double" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="Order" abstract="true" />
+      <s:element name="OrderCreditsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="OrderCreditsResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="OrderDomains">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sCLTRID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="credential" type="s0:Credential" />
+            <s:element minOccurs="0" maxOccurs="1" name="shopper" type="s0:Shopper" />
+            <s:element minOccurs="0" maxOccurs="1" name="items" type="s0:ArrayOfDomainRegistration" />
+            <s:element minOccurs="0" maxOccurs="1" name="dbpItems" type="s0:ArrayOfDomainByProxy" />
+            <s:element minOccurs="0" maxOccurs="1" name="sROID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfDomainRegistration">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="DomainRegistration" nillable="true" type="s0:DomainRegistration" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="DomainRegistration">
+        <s:complexContent mixed="false">
+          <s:extension base="s0:Order">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="order" type="s0:OrderItem" />
+              <s:element minOccurs="0" maxOccurs="1" name="sld" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="tld" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="period" type="s:int" />
+              <s:element minOccurs="0" maxOccurs="1" name="registrant" type="s0:ContactInfo" />
+              <s:element minOccurs="0" maxOccurs="1" name="nexus" type="s0:Nexus" />
+              <s:element minOccurs="0" maxOccurs="1" name="nsArray" type="s0:ArrayOfNS" />
+              <s:element minOccurs="0" maxOccurs="1" name="admin" type="s0:ContactInfo" />
+              <s:element minOccurs="0" maxOccurs="1" name="billing" type="s0:ContactInfo" />
+              <s:element minOccurs="0" maxOccurs="1" name="tech" type="s0:ContactInfo" />
+              <s:element minOccurs="1" maxOccurs="1" name="autorenewflag" type="s:int" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="ContactInfo">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="fname" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="lname" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="org" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="email" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="sa1" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="sa2" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="city" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="sp" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="pc" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cc" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="phone" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="fax" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Nexus">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="category" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="use" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="country" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfNS">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="NS" nillable="true" type="s0:NS" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="NS">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="name" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfDomainByProxy">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="DomainByProxy" nillable="true" type="s0:DomainByProxy" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="DomainByProxy">
+        <s:complexContent mixed="false">
+          <s:extension base="s0:Order">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="order" type="s0:OrderItem" />
+              <s:element minOccurs="0" maxOccurs="1" name="sld" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="tld" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="resourceid" type="s:string" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:element name="OrderDomainsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="OrderDomainsResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="OrderDomainRenewals">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sCLTRID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="credential" type="s0:Credential" />
+            <s:element minOccurs="0" maxOccurs="1" name="shopper" type="s0:Shopper" />
+            <s:element minOccurs="0" maxOccurs="1" name="items" type="s0:ArrayOfDomainRenewal" />
+            <s:element minOccurs="0" maxOccurs="1" name="sROID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfDomainRenewal">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="DomainRenewal" nillable="true" type="s0:DomainRenewal" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="DomainRenewal">
+        <s:complexContent mixed="false">
+          <s:extension base="s0:Order">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="order" type="s0:OrderItem" />
+              <s:element minOccurs="0" maxOccurs="1" name="resourceid" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="sld" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="tld" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="period" type="s:int" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:element name="OrderDomainRenewalsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="OrderDomainRenewalsResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="OrderPrivateDomainRenewals">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sCLTRID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="credential" type="s0:Credential" />
+            <s:element minOccurs="0" maxOccurs="1" name="shopper" type="s0:Shopper" />
+            <s:element minOccurs="0" maxOccurs="1" name="items" type="s0:ArrayOfDomainRenewal" />
+            <s:element minOccurs="0" maxOccurs="1" name="dbpItems" type="s0:ArrayOfResourceRenewal" />
+            <s:element minOccurs="0" maxOccurs="1" name="sROID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfResourceRenewal">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ResourceRenewal" nillable="true" type="s0:ResourceRenewal" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ResourceRenewal">
+        <s:complexContent mixed="false">
+          <s:extension base="s0:Order">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="order" type="s0:OrderItem" />
+              <s:element minOccurs="0" maxOccurs="1" name="resourceid" type="s:string" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:element name="OrderPrivateDomainRenewalsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="OrderPrivateDomainRenewalsResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="OrderDomainTransfers">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sCLTRID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="credential" type="s0:Credential" />
+            <s:element minOccurs="0" maxOccurs="1" name="shopper" type="s0:Shopper" />
+            <s:element minOccurs="0" maxOccurs="1" name="items" type="s0:ArrayOfDomainTransfer" />
+            <s:element minOccurs="0" maxOccurs="1" name="sROID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfDomainTransfer">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="DomainTransfer" nillable="true" type="s0:DomainTransfer" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="DomainTransfer">
+        <s:complexContent mixed="false">
+          <s:extension base="s0:Order">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="order" type="s0:OrderItem" />
+              <s:element minOccurs="0" maxOccurs="1" name="sld" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="tld" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="authInfo" type="s:string" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:element name="OrderDomainTransfersResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="OrderDomainTransfersResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="OrderDomainPrivacy">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sCLTRID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="credential" type="s0:Credential" />
+            <s:element minOccurs="0" maxOccurs="1" name="shopper" type="s0:Shopper" />
+            <s:element minOccurs="0" maxOccurs="1" name="items" type="s0:ArrayOfDomainByProxy" />
+            <s:element minOccurs="0" maxOccurs="1" name="sROID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="OrderDomainPrivacyResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="OrderDomainPrivacyResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="OrderResourceRenewals">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sCLTRID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="credential" type="s0:Credential" />
+            <s:element minOccurs="0" maxOccurs="1" name="shopper" type="s0:Shopper" />
+            <s:element minOccurs="0" maxOccurs="1" name="items" type="s0:ArrayOfResourceRenewal" />
+            <s:element minOccurs="0" maxOccurs="1" name="sROID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="OrderResourceRenewalsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="OrderResourceRenewalsResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="OrderDomainBackOrders">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sCLTRID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="credential" type="s0:Credential" />
+            <s:element minOccurs="0" maxOccurs="1" name="shopper" type="s0:Shopper" />
+            <s:element minOccurs="0" maxOccurs="1" name="items" type="s0:ArrayOfDomainBackOrder" />
+            <s:element minOccurs="0" maxOccurs="1" name="sROID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfDomainBackOrder">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="DomainBackOrder" nillable="true" type="s0:DomainBackOrder" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="DomainBackOrder">
+        <s:complexContent mixed="false">
+          <s:extension base="s0:Order">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="order" type="s0:OrderItem" />
+              <s:element minOccurs="1" maxOccurs="1" name="privateBackOrder" type="s:boolean" />
+              <s:element minOccurs="0" maxOccurs="1" name="sld" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="tld" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="registrant" type="s0:ContactInfo" />
+              <s:element minOccurs="0" maxOccurs="1" name="nexus" type="s0:Nexus" />
+              <s:element minOccurs="0" maxOccurs="1" name="admin" type="s0:ContactInfo" />
+              <s:element minOccurs="0" maxOccurs="1" name="billing" type="s0:ContactInfo" />
+              <s:element minOccurs="0" maxOccurs="1" name="tech" type="s0:ContactInfo" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:element name="OrderDomainBackOrdersResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="OrderDomainBackOrdersResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Cancel">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sCLTRID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="credential" type="s0:Credential" />
+            <s:element minOccurs="0" maxOccurs="1" name="sType" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sIDArray" type="s0:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CancelResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CancelResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateDomainOwnership">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sCLTRID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="credential" type="s0:Credential" />
+            <s:element minOccurs="0" maxOccurs="1" name="sResourceID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sLosingOwner" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="gaining" type="s0:GainingOwner" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="GainingOwner">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="shopperNoDBP" type="s0:ShopperNoDBP" />
+          <s:element minOccurs="0" maxOccurs="1" name="registrant" type="s0:ContactInfo" />
+          <s:element minOccurs="0" maxOccurs="1" name="admin" type="s0:ContactInfo" />
+          <s:element minOccurs="0" maxOccurs="1" name="billing" type="s0:ContactInfo" />
+          <s:element minOccurs="0" maxOccurs="1" name="tech" type="s0:ContactInfo" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ShopperNoDBP">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="user" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="pwd" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="pwdhint" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="email" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="firstname" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="lastname" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="phone" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="UpdateDomainOwnershipResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UpdateDomainOwnershipResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ResetPassword">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sCLTRID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="credential" type="s0:Credential" />
+            <s:element minOccurs="0" maxOccurs="1" name="sUser" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sPwd" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sEmail" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sPwdHint" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ResetPasswordResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ResetPasswordResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetShopperInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sCLTRID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="credential" type="s0:Credential" />
+            <s:element minOccurs="0" maxOccurs="1" name="sUser" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sEmail" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sFirstName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sLastName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sPhone" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sFax" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sCompany" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sAddress" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sCity" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sState" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sZip" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sCountry" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sShopperPin" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetShopperInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SetShopperInfoResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CheckUser">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sCLTRID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="credential" type="s0:Credential" />
+            <s:element minOccurs="0" maxOccurs="1" name="sType" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sUser" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sPwd" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CheckUserResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CheckUserResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetupDomainAlert">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sCLTRID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="credential" type="s0:Credential" />
+            <s:element minOccurs="0" maxOccurs="1" name="domainAlert" type="s0:DomainAlert" />
+            <s:element minOccurs="0" maxOccurs="1" name="registrant" type="s0:ContactInfo" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="DomainAlert">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="user" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="domain" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="email" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="tld" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="privateReg" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="backorder" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="SetupDomainAlertResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SetupDomainAlertResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateDomainAlert">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sCLTRID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="credential" type="s0:Credential" />
+            <s:element minOccurs="0" maxOccurs="1" name="domainAlert" type="s0:DomainAlert" />
+            <s:element minOccurs="0" maxOccurs="1" name="sDomainMonitorID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="registrant" type="s0:ContactInfo" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateDomainAlertResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UpdateDomainAlertResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RemoveDomainAlert">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sCLTRID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="credential" type="s0:Credential" />
+            <s:element minOccurs="0" maxOccurs="1" name="sDomainMonitorID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sUser" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RemoveDomainAlertResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RemoveDomainAlertResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDomainAlertCredits">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sCLTRID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="credential" type="s0:Credential" />
+            <s:element minOccurs="0" maxOccurs="1" name="sUser" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDomainAlertCreditsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetDomainAlertCreditsResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetMonitoredDomainList">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sCLTRID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="credential" type="s0:Credential" />
+            <s:element minOccurs="0" maxOccurs="1" name="sUser" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="nPage" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="nRowsPerPage" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetMonitoredDomainListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetMonitoredDomainListResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetExpiringNameList">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sCLTRID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="credential" type="s0:Credential" />
+            <s:element minOccurs="0" maxOccurs="1" name="sUser" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="nLength" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="sDashes" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sNumbers" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sWildCardSearch" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sSearchCriteria" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sTLDs" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="nPage" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="nRowsPerPage" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetExpiringNameListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetExpiringNameListResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DomainForwarding">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sCLTRID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="credential" type="s0:Credential" />
+            <s:element minOccurs="0" maxOccurs="1" name="sUser" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="nDomainID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="sForwardingURL" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sMngTRID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DomainForwardingResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DomainForwardingResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateNameServer">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sCLTRID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="credential" type="s0:Credential" />
+            <s:element minOccurs="0" maxOccurs="1" name="domainArray" type="s0:ArrayOfDomain" />
+            <s:element minOccurs="0" maxOccurs="1" name="nsArray" type="s0:ArrayOfNS" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfDomain">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Domain" nillable="true" type="s0:Domain" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Domain">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="resourceid" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="mngTRID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="transferKey" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="newAuthInfo" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="UpdateNameServerResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UpdateNameServerResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateDomainContact">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sCLTRID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="credential" type="s0:Credential" />
+            <s:element minOccurs="0" maxOccurs="1" name="domainArray" type="s0:ArrayOfDomain" />
+            <s:element minOccurs="0" maxOccurs="1" name="registrant" type="s0:ContactInfo" />
+            <s:element minOccurs="0" maxOccurs="1" name="admin" type="s0:ContactInfo" />
+            <s:element minOccurs="0" maxOccurs="1" name="billing" type="s0:ContactInfo" />
+            <s:element minOccurs="0" maxOccurs="1" name="tech" type="s0:ContactInfo" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateDomainContactResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UpdateDomainContactResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetDomainLocking">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sCLTRID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="credential" type="s0:Credential" />
+            <s:element minOccurs="0" maxOccurs="1" name="domainArray" type="s0:ArrayOfDomain" />
+            <s:element minOccurs="0" maxOccurs="1" name="sLock" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetDomainLockingResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SetDomainLockingResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ManageTransfer">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sCLTRID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="credential" type="s0:Credential" />
+            <s:element minOccurs="0" maxOccurs="1" name="domainArray" type="s0:ArrayOfDomain" />
+            <s:element minOccurs="0" maxOccurs="1" name="sAction" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ManageTransferResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ManageTransferResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateDomainForwarding">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sCLTRID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="credential" type="s0:Credential" />
+            <s:element minOccurs="0" maxOccurs="1" name="domainArray" type="s0:ArrayOfDomain" />
+            <s:element minOccurs="0" maxOccurs="1" name="sAction" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sForwardingURL" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateDomainForwardingResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UpdateDomainForwardingResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ModifyDNS">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sCLTRID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="credential" type="s0:Credential" />
+            <s:element minOccurs="0" maxOccurs="1" name="dnsRequestArray" type="s0:ArrayOfDNSRequest" />
+            <s:element minOccurs="0" maxOccurs="1" name="sDomain" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfDNSRequest">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="DNSRequest" nillable="true" type="s0:DNSRequest" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="DNSRequest">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="recType" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="action" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="key" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="ttl" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="recValue" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ModifyDNSResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ModifyDNSResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </types>
+  <message name="ProcessRequestSoapIn">
+    <part name="parameters" element="s0:ProcessRequest" />
+  </message>
+  <message name="ProcessRequestSoapOut">
+    <part name="parameters" element="s0:ProcessRequestResponse" />
+  </message>
+  <message name="DescribeSoapIn">
+    <part name="parameters" element="s0:Describe" />
+  </message>
+  <message name="DescribeSoapOut">
+    <part name="parameters" element="s0:DescribeResponse" />
+  </message>
+  <message name="CheckAvailabilitySoapIn">
+    <part name="parameters" element="s0:CheckAvailability" />
+  </message>
+  <message name="CheckAvailabilitySoapOut">
+    <part name="parameters" element="s0:CheckAvailabilityResponse" />
+  </message>
+  <message name="InfoSoapIn">
+    <part name="parameters" element="s0:Info" />
+  </message>
+  <message name="InfoSoapOut">
+    <part name="parameters" element="s0:InfoResponse" />
+  </message>
+  <message name="NameGenSoapIn">
+    <part name="parameters" element="s0:NameGen" />
+  </message>
+  <message name="NameGenSoapOut">
+    <part name="parameters" element="s0:NameGenResponse" />
+  </message>
+  <message name="NameGenDBSoapIn">
+    <part name="parameters" element="s0:NameGenDB" />
+  </message>
+  <message name="NameGenDBSoapOut">
+    <part name="parameters" element="s0:NameGenDBResponse" />
+  </message>
+  <message name="PollSoapIn">
+    <part name="parameters" element="s0:Poll" />
+  </message>
+  <message name="PollSoapOut">
+    <part name="parameters" element="s0:PollResponse" />
+  </message>
+  <message name="OrderCreditsSoapIn">
+    <part name="parameters" element="s0:OrderCredits" />
+  </message>
+  <message name="OrderCreditsSoapOut">
+    <part name="parameters" element="s0:OrderCreditsResponse" />
+  </message>
+  <message name="OrderDomainsSoapIn">
+    <part name="parameters" element="s0:OrderDomains" />
+  </message>
+  <message name="OrderDomainsSoapOut">
+    <part name="parameters" element="s0:OrderDomainsResponse" />
+  </message>
+  <message name="OrderDomainRenewalsSoapIn">
+    <part name="parameters" element="s0:OrderDomainRenewals" />
+  </message>
+  <message name="OrderDomainRenewalsSoapOut">
+    <part name="parameters" element="s0:OrderDomainRenewalsResponse" />
+  </message>
+  <message name="OrderPrivateDomainRenewalsSoapIn">
+    <part name="parameters" element="s0:OrderPrivateDomainRenewals" />
+  </message>
+  <message name="OrderPrivateDomainRenewalsSoapOut">
+    <part name="parameters" element="s0:OrderPrivateDomainRenewalsResponse" />
+  </message>
+  <message name="OrderDomainTransfersSoapIn">
+    <part name="parameters" element="s0:OrderDomainTransfers" />
+  </message>
+  <message name="OrderDomainTransfersSoapOut">
+    <part name="parameters" element="s0:OrderDomainTransfersResponse" />
+  </message>
+  <message name="OrderDomainPrivacySoapIn">
+    <part name="parameters" element="s0:OrderDomainPrivacy" />
+  </message>
+  <message name="OrderDomainPrivacySoapOut">
+    <part name="parameters" element="s0:OrderDomainPrivacyResponse" />
+  </message>
+  <message name="OrderResourceRenewalsSoapIn">
+    <part name="parameters" element="s0:OrderResourceRenewals" />
+  </message>
+  <message name="OrderResourceRenewalsSoapOut">
+    <part name="parameters" element="s0:OrderResourceRenewalsResponse" />
+  </message>
+  <message name="OrderDomainBackOrdersSoapIn">
+    <part name="parameters" element="s0:OrderDomainBackOrders" />
+  </message>
+  <message name="OrderDomainBackOrdersSoapOut">
+    <part name="parameters" element="s0:OrderDomainBackOrdersResponse" />
+  </message>
+  <message name="CancelSoapIn">
+    <part name="parameters" element="s0:Cancel" />
+  </message>
+  <message name="CancelSoapOut">
+    <part name="parameters" element="s0:CancelResponse" />
+  </message>
+  <message name="UpdateDomainOwnershipSoapIn">
+    <part name="parameters" element="s0:UpdateDomainOwnership" />
+  </message>
+  <message name="UpdateDomainOwnershipSoapOut">
+    <part name="parameters" element="s0:UpdateDomainOwnershipResponse" />
+  </message>
+  <message name="ResetPasswordSoapIn">
+    <part name="parameters" element="s0:ResetPassword" />
+  </message>
+  <message name="ResetPasswordSoapOut">
+    <part name="parameters" element="s0:ResetPasswordResponse" />
+  </message>
+  <message name="SetShopperInfoSoapIn">
+    <part name="parameters" element="s0:SetShopperInfo" />
+  </message>
+  <message name="SetShopperInfoSoapOut">
+    <part name="parameters" element="s0:SetShopperInfoResponse" />
+  </message>
+  <message name="CheckUserSoapIn">
+    <part name="parameters" element="s0:CheckUser" />
+  </message>
+  <message name="CheckUserSoapOut">
+    <part name="parameters" element="s0:CheckUserResponse" />
+  </message>
+  <message name="SetupDomainAlertSoapIn">
+    <part name="parameters" element="s0:SetupDomainAlert" />
+  </message>
+  <message name="SetupDomainAlertSoapOut">
+    <part name="parameters" element="s0:SetupDomainAlertResponse" />
+  </message>
+  <message name="UpdateDomainAlertSoapIn">
+    <part name="parameters" element="s0:UpdateDomainAlert" />
+  </message>
+  <message name="UpdateDomainAlertSoapOut">
+    <part name="parameters" element="s0:UpdateDomainAlertResponse" />
+  </message>
+  <message name="RemoveDomainAlertSoapIn">
+    <part name="parameters" element="s0:RemoveDomainAlert" />
+  </message>
+  <message name="RemoveDomainAlertSoapOut">
+    <part name="parameters" element="s0:RemoveDomainAlertResponse" />
+  </message>
+  <message name="GetDomainAlertCreditsSoapIn">
+    <part name="parameters" element="s0:GetDomainAlertCredits" />
+  </message>
+  <message name="GetDomainAlertCreditsSoapOut">
+    <part name="parameters" element="s0:GetDomainAlertCreditsResponse" />
+  </message>
+  <message name="GetMonitoredDomainListSoapIn">
+    <part name="parameters" element="s0:GetMonitoredDomainList" />
+  </message>
+  <message name="GetMonitoredDomainListSoapOut">
+    <part name="parameters" element="s0:GetMonitoredDomainListResponse" />
+  </message>
+  <message name="GetExpiringNameListSoapIn">
+    <part name="parameters" element="s0:GetExpiringNameList" />
+  </message>
+  <message name="GetExpiringNameListSoapOut">
+    <part name="parameters" element="s0:GetExpiringNameListResponse" />
+  </message>
+  <message name="DomainForwardingSoapIn">
+    <part name="parameters" element="s0:DomainForwarding" />
+  </message>
+  <message name="DomainForwardingSoapOut">
+    <part name="parameters" element="s0:DomainForwardingResponse" />
+  </message>
+  <message name="UpdateNameServerSoapIn">
+    <part name="parameters" element="s0:UpdateNameServer" />
+  </message>
+  <message name="UpdateNameServerSoapOut">
+    <part name="parameters" element="s0:UpdateNameServerResponse" />
+  </message>
+  <message name="UpdateDomainContactSoapIn">
+    <part name="parameters" element="s0:UpdateDomainContact" />
+  </message>
+  <message name="UpdateDomainContactSoapOut">
+    <part name="parameters" element="s0:UpdateDomainContactResponse" />
+  </message>
+  <message name="SetDomainLockingSoapIn">
+    <part name="parameters" element="s0:SetDomainLocking" />
+  </message>
+  <message name="SetDomainLockingSoapOut">
+    <part name="parameters" element="s0:SetDomainLockingResponse" />
+  </message>
+  <message name="ManageTransferSoapIn">
+    <part name="parameters" element="s0:ManageTransfer" />
+  </message>
+  <message name="ManageTransferSoapOut">
+    <part name="parameters" element="s0:ManageTransferResponse" />
+  </message>
+  <message name="UpdateDomainForwardingSoapIn">
+    <part name="parameters" element="s0:UpdateDomainForwarding" />
+  </message>
+  <message name="UpdateDomainForwardingSoapOut">
+    <part name="parameters" element="s0:UpdateDomainForwardingResponse" />
+  </message>
+  <message name="ModifyDNSSoapIn">
+    <part name="parameters" element="s0:ModifyDNS" />
+  </message>
+  <message name="ModifyDNSSoapOut">
+    <part name="parameters" element="s0:ModifyDNSResponse" />
+  </message>
+  <portType name="WAPISoap">
+    <operation name="ProcessRequest">
+      <documentation>Provide support for calling WWD services using request XMLs. (Refer to https://www.resellerextranet.com/docs/API_Instructions.pdf.)</documentation>
+      <input message="s0:ProcessRequestSoapIn" />
+      <output message="s0:ProcessRequestSoapOut" />
+    </operation>
+    <operation name="Describe">
+      <documentation>Returns activity timeout and version information from the server.</documentation>
+      <input message="s0:DescribeSoapIn" />
+      <output message="s0:DescribeSoapOut" />
+    </operation>
+    <operation name="CheckAvailability">
+      <documentation>Checks the availability of domains, hosts and name servers.</documentation>
+      <input message="s0:CheckAvailabilitySoapIn" />
+      <output message="s0:CheckAvailabilitySoapOut" />
+    </operation>
+    <operation name="Info">
+      <documentation>Gets information about items that have been previously ordered.</documentation>
+      <input message="s0:InfoSoapIn" />
+      <output message="s0:InfoSoapOut" />
+    </operation>
+    <operation name="NameGen">
+      <documentation>Used to get the list of alternative domain names based on a given name.</documentation>
+      <input message="s0:NameGenSoapIn" />
+      <output message="s0:NameGenSoapOut" />
+    </operation>
+    <operation name="NameGenDB">
+      <documentation>Used to get the list of alternative domain names based on a given name (Domains Bot Service).</documentation>
+      <input message="s0:NameGenDBSoapIn" />
+      <output message="s0:NameGenDBSoapOut" />
+    </operation>
+    <operation name="Poll">
+      <documentation>Used to retrieve status notifications about pending orders.</documentation>
+      <input message="s0:PollSoapIn" />
+      <output message="s0:PollSoapOut" />
+    </operation>
+    <operation name="OrderCredits">
+      <documentation>Used to place an order on items that do not require customization (non-domain).</documentation>
+      <input message="s0:OrderCreditsSoapIn" />
+      <output message="s0:OrderCreditsSoapOut" />
+    </operation>
+    <operation name="OrderDomains">
+      <documentation>Used for registering new domain names.</documentation>
+      <input message="s0:OrderDomainsSoapIn" />
+      <output message="s0:OrderDomainsSoapOut" />
+    </operation>
+    <operation name="OrderDomainRenewals">
+      <documentation>Used for renewing registration for existing public domain names.</documentation>
+      <input message="s0:OrderDomainRenewalsSoapIn" />
+      <output message="s0:OrderDomainRenewalsSoapOut" />
+    </operation>
+    <operation name="OrderPrivateDomainRenewals">
+      <documentation>Used for renewing registration for existing private domain names.</documentation>
+      <input message="s0:OrderPrivateDomainRenewalsSoapIn" />
+      <output message="s0:OrderPrivateDomainRenewalsSoapOut" />
+    </operation>
+    <operation name="OrderDomainTransfers">
+      <documentation>Used for transfering ownership of a domain from one user to another.</documentation>
+      <input message="s0:OrderDomainTransfersSoapIn" />
+      <output message="s0:OrderDomainTransfersSoapOut" />
+    </operation>
+    <operation name="OrderDomainPrivacy">
+      <documentation>Used for adding privacy to a domain registration.</documentation>
+      <input message="s0:OrderDomainPrivacySoapIn" />
+      <output message="s0:OrderDomainPrivacySoapOut" />
+    </operation>
+    <operation name="OrderResourceRenewals">
+      <documentation>Used for renewing non-domain items.</documentation>
+      <input message="s0:OrderResourceRenewalsSoapIn" />
+      <output message="s0:OrderResourceRenewalsSoapOut" />
+    </operation>
+    <operation name="OrderDomainBackOrders">
+      <documentation>Used for back ordering an existing (public or private) domain name.</documentation>
+      <input message="s0:OrderDomainBackOrdersSoapIn" />
+      <output message="s0:OrderDomainBackOrdersSoapOut" />
+    </operation>
+    <operation name="Cancel">
+      <documentation>Used for cancelling existing resources.</documentation>
+      <input message="s0:CancelSoapIn" />
+      <output message="s0:CancelSoapOut" />
+    </operation>
+    <operation name="UpdateDomainOwnership">
+      <documentation>Used for changing the ownership of a resource from one end user to another (both must be end-users of the currently logged in reseller).</documentation>
+      <input message="s0:UpdateDomainOwnershipSoapIn" />
+      <output message="s0:UpdateDomainOwnershipSoapOut" />
+    </operation>
+    <operation name="ResetPassword">
+      <documentation>Used for resetting the user's password in the WWD system.</documentation>
+      <input message="s0:ResetPasswordSoapIn" />
+      <output message="s0:ResetPasswordSoapOut" />
+    </operation>
+    <operation name="SetShopperInfo">
+      <documentation>Used for allowing the reseller to modify the user information for either their top-level account or any of its sub-accounts.</documentation>
+      <input message="s0:SetShopperInfoSoapIn" />
+      <output message="s0:SetShopperInfoSoapOut" />
+    </operation>
+    <operation name="CheckUser">
+      <documentation>Used for checking whether the account information for the specified user is valid or not.</documentation>
+      <input message="s0:CheckUserSoapIn" />
+      <output message="s0:CheckUserSoapOut" />
+    </operation>
+    <operation name="SetupDomainAlert">
+      <documentation>Used for setting domain alert credit or backorder a domain.</documentation>
+      <input message="s0:SetupDomainAlertSoapIn" />
+      <output message="s0:SetupDomainAlertSoapOut" />
+    </operation>
+    <operation name="UpdateDomainAlert">
+      <documentation>Used for updating an existing domain alert record.</documentation>
+      <input message="s0:UpdateDomainAlertSoapIn" />
+      <output message="s0:UpdateDomainAlertSoapOut" />
+    </operation>
+    <operation name="RemoveDomainAlert">
+      <documentation>Used for removing an existing domain alert record.</documentation>
+      <input message="s0:RemoveDomainAlertSoapIn" />
+      <output message="s0:RemoveDomainAlertSoapOut" />
+    </operation>
+    <operation name="GetDomainAlertCredits">
+      <documentation>Used for querying the number of domain alert, private backorder, and backorder credits.</documentation>
+      <input message="s0:GetDomainAlertCreditsSoapIn" />
+      <output message="s0:GetDomainAlertCreditsSoapOut" />
+    </operation>
+    <operation name="GetMonitoredDomainList">
+      <documentation>Used for querying a list of monitored domains.</documentation>
+      <input message="s0:GetMonitoredDomainListSoapIn" />
+      <output message="s0:GetMonitoredDomainListSoapOut" />
+    </operation>
+    <operation name="GetExpiringNameList">
+      <documentation>This method is used to get the list of expiring domain names for users that have an Investors Edge subscription.</documentation>
+      <input message="s0:GetExpiringNameListSoapIn" />
+      <output message="s0:GetExpiringNameListSoapOut" />
+    </operation>
+    <operation name="DomainForwarding">
+      <documentation>This method is used for forwarding a domain to a specified URL.</documentation>
+      <input message="s0:DomainForwardingSoapIn" />
+      <output message="s0:DomainForwardingSoapOut" />
+    </operation>
+    <operation name="UpdateNameServer">
+      <documentation>This method is used for modifying associated name servers for the given domains.</documentation>
+      <input message="s0:UpdateNameServerSoapIn" />
+      <output message="s0:UpdateNameServerSoapOut" />
+    </operation>
+    <operation name="UpdateDomainContact">
+      <documentation>This method is used for modifying associated contact information for the given domains.</documentation>
+      <input message="s0:UpdateDomainContactSoapIn" />
+      <output message="s0:UpdateDomainContactSoapOut" />
+    </operation>
+    <operation name="SetDomainLocking">
+      <documentation>This method is used for setting or clearing the lock on a list of domains.</documentation>
+      <input message="s0:SetDomainLockingSoapIn" />
+      <output message="s0:SetDomainLockingSoapOut" />
+    </operation>
+    <operation name="ManageTransfer">
+      <documentation>This method is used for managing the transfer of domains.</documentation>
+      <input message="s0:ManageTransferSoapIn" />
+      <output message="s0:ManageTransferSoapOut" />
+    </operation>
+    <operation name="UpdateDomainForwarding">
+      <documentation>This method is used for performing multiple domain forwarding.</documentation>
+      <input message="s0:UpdateDomainForwardingSoapIn" />
+      <output message="s0:UpdateDomainForwardingSoapOut" />
+    </operation>
+    <operation name="ModifyDNS">
+      <documentation>This method is used for modifying DNS settings for a given domain.</documentation>
+      <input message="s0:ModifyDNSSoapIn" />
+      <output message="s0:ModifyDNSSoapOut" />
+    </operation>
+  </portType>
+  <binding name="WAPISoap" type="s0:WAPISoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="ProcessRequest">
+      <soap:operation soapAction="http://wildwestdomains.com/webservices/ProcessRequest" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="Describe">
+      <soap:operation soapAction="http://wildwestdomains.com/webservices/Describe" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="CheckAvailability">
+      <soap:operation soapAction="http://wildwestdomains.com/webservices/CheckAvailability" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="Info">
+      <soap:operation soapAction="http://wildwestdomains.com/webservices/Info" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="NameGen">
+      <soap:operation soapAction="http://wildwestdomains.com/webservices/NameGen" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="NameGenDB">
+      <soap:operation soapAction="http://wildwestdomains.com/webservices/NameGenDB" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="Poll">
+      <soap:operation soapAction="http://wildwestdomains.com/webservices/Poll" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="OrderCredits">
+      <soap:operation soapAction="http://wildwestdomains.com/webservices/OrderCredits" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="OrderDomains">
+      <soap:operation soapAction="http://wildwestdomains.com/webservices/OrderDomains" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="OrderDomainRenewals">
+      <soap:operation soapAction="http://wildwestdomains.com/webservices/OrderDomainRenewals" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="OrderPrivateDomainRenewals">
+      <soap:operation soapAction="http://wildwestdomains.com/webservices/OrderPrivateDomainRenewals" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="OrderDomainTransfers">
+      <soap:operation soapAction="http://wildwestdomains.com/webservices/OrderDomainTransfers" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="OrderDomainPrivacy">
+      <soap:operation soapAction="http://wildwestdomains.com/webservices/OrderDomainPrivacy" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="OrderResourceRenewals">
+      <soap:operation soapAction="http://wildwestdomains.com/webservices/OrderResourceRenewals" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="OrderDomainBackOrders">
+      <soap:operation soapAction="http://wildwestdomains.com/webservices/OrderDomainBackOrders" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="Cancel">
+      <soap:operation soapAction="http://wildwestdomains.com/webservices/Cancel" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="UpdateDomainOwnership">
+      <soap:operation soapAction="http://wildwestdomains.com/webservices/UpdateDomainOwnership" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="ResetPassword">
+      <soap:operation soapAction="http://wildwestdomains.com/webservices/ResetPassword" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="SetShopperInfo">
+      <soap:operation soapAction="http://wildwestdomains.com/webservices/SetShopperInfo" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="CheckUser">
+      <soap:operation soapAction="http://wildwestdomains.com/webservices/CheckUser" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="SetupDomainAlert">
+      <soap:operation soapAction="http://wildwestdomains.com/webservices/SetupDomainAlert" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="UpdateDomainAlert">
+      <soap:operation soapAction="http://wildwestdomains.com/webservices/UpdateDomainAlert" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="RemoveDomainAlert">
+      <soap:operation soapAction="http://wildwestdomains.com/webservices/RemoveDomainAlert" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="GetDomainAlertCredits">
+      <soap:operation soapAction="http://wildwestdomains.com/webservices/GetDomainAlertCredits" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="GetMonitoredDomainList">
+      <soap:operation soapAction="http://wildwestdomains.com/webservices/GetMonitoredDomainList" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="GetExpiringNameList">
+      <soap:operation soapAction="http://wildwestdomains.com/webservices/GetExpiringNameList" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="DomainForwarding">
+      <soap:operation soapAction="http://wildwestdomains.com/webservices/DomainForwarding" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="UpdateNameServer">
+      <soap:operation soapAction="http://wildwestdomains.com/webservices/UpdateNameServer" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="UpdateDomainContact">
+      <soap:operation soapAction="http://wildwestdomains.com/webservices/UpdateDomainContact" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="SetDomainLocking">
+      <soap:operation soapAction="http://wildwestdomains.com/webservices/SetDomainLocking" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="ManageTransfer">
+      <soap:operation soapAction="http://wildwestdomains.com/webservices/ManageTransfer" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="UpdateDomainForwarding">
+      <soap:operation soapAction="http://wildwestdomains.com/webservices/UpdateDomainForwarding" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="ModifyDNS">
+      <soap:operation soapAction="http://wildwestdomains.com/webservices/ModifyDNS" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+  </binding>
+  <service name="WAPI">
+    <port name="WAPISoap" binding="s0:WAPISoap">
+      <soap:address location="https://api.ote.wildwestdomains.com/wswwdapi/wapi.asmx" />
+    </port>
+  </service>
+</definitions>

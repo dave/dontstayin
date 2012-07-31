@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+  	<DeploymentPath>..\..\..\..\Spotted\Misc\Js\Desktop\Controls</DeploymentPath>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{FE864BBF-7F42-44ED-ABFA-DEAEE0D4998A}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <NoStdLib>True</NoStdLib>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile />
+    <LangVersion>ISO-2</LangVersion>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>AddThread</RootNamespace>
+    <AssemblyName>AddThread</AssemblyName>
+    <TemplateFile>Properties\AddThread.script</TemplateFile>
+    <CodeAnalysisRuleSet>Properties\AddThread.ruleset</CodeAnalysisRuleSet>
+    <ReferencePath>$(ProgramFiles)\ScriptSharp\v1.0\Framework\</ReferencePath>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;CODE_ANALYSIS;SCRIPTSHARP</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <NoWarn>0028, 1591, 1684</NoWarn>
+    <DocumentationFile>bin\Debug\AddThread.xml</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>CODE_ANALYSIS;SCRIPTSHARP</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <NoWarn>0028, 1591, 1684</NoWarn>
+    <DocumentationFile>bin\Release\AddThread.xml</DocumentationFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="mscorlib, Version=0.7.0.0, Culture=neutral, PublicKeyToken=8fc0e3af5abcb6c4, processorArchitecture=MSIL" />
+    <Reference Include="Script.Web" />
+    <Reference Include="Script.jQuery" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Properties\AddThread.ruleset" />
+    <Content Include="Properties\AddThread.script" />
+    <Compile Include="AddThread.Controller.cs" />
+    <Compile Include="AddThread.View.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\AutoCompleteLibrary\AutoCompleteLibrary.csproj">
+      <Project>{56588612-9D82-462E-AC56-C9205E255961}</Project>
+      <Name>AutoCompleteLibrary</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\ClientControls\ClientControls.csproj">
+      <Project>{2004FD9A-8F05-49BD-95B3-A53D6CE7837A}</Project>
+      <Name>ClientControls</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Library\Library.csproj">
+      <Project>{0A6817CD-7C7D-4C78-AB45-18226D9B1A09}</Project>
+      <Name>Library</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Html\Html.csproj">
+      <Project>{65CF8756-2D74-4989-AFD6-4958742C7E29}</Project>
+      <Name>Html</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Login\Login.csproj">
+      <Project>{CFA953C2-CA50-4AD0-AFB2-4D71E090BF18}</Project>
+      <Name>Login</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MultiBuddyChooser\MultiBuddyChooser.csproj">
+      <Project>{65595DBF-837B-4743-BA2D-06D069E45A0C}</Project>
+      <Name>MultiBuddyChooser</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(ProgramFiles)\ScriptSharp\v1.0\ScriptSharp.targets" />
+</Project>

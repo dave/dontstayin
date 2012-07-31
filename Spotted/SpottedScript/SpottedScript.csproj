@@ -1,0 +1,339 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{7ED254EF-4C76-4016-89B3-6286C189B0D4}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SpottedScript</RootNamespace>
+    <AssemblyName>SpottedScript</AssemblyName>
+    <NoStdLib>True</NoStdLib>
+    <CopyReferences>True</CopyReferences>
+    <TemplateFile>Properties\Script.jst</TemplateFile>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <IsWebBootstrapper>true</IsWebBootstrapper>
+    <RunPostBuildEvent>OnOutputUpdated</RunPostBuildEvent>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <PublishUrl>http://localhost/SpottedScript/</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Web</InstallFrom>
+    <UpdateEnabled>true</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;SCRIPT</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <NoWarn>0028, 1591</NoWarn>
+    <DocumentationFile>bin\Debug\SpottedScript.xml</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>SCRIPT</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <NoWarn>0028, 1591</NoWarn>
+    <DocumentationFile>bin\Release\SpottedScript.xml</DocumentationFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Content Include="Properties\Script.jst" />
+    <Compile Include="..\..\Domain\Model\Entities\EnumsShared.cs">
+      <Link>EnumsShared.cs</Link>
+    </Compile>
+    <Compile Include="..\SpottedLibrary\Pages\MapBrowser\MapInfoResult.cs">
+      <Link>Controls\MapBrowser\MapInfoResult.cs</Link>
+    </Compile>
+    <Compile Include="Behaviours\CreateUsersFromEmails\Controller.cs" />
+    <Compile Include="Behaviours\CreateUsersFromEmails\EmailsSuggestionValue.cs" />
+    <Compile Include="Behaviours\CreateUserFromEmail\Controller.cs" />
+    <Compile Include="Behaviours\CreateUserFromEmail\EmailSuggestionValue.cs" />
+    <Compile Include="ClientControls\CometProxy.cs" />
+    <Compile Include="ClientControls\CometRequest.cs" />
+    <Compile Include="ClientControls\HelloWorld.cs" />
+    <Compile Include="ClientControls\HtmlAutoCompleteAttributes.cs" />
+    <Compile Include="ClientControls\HtmlAutoCompleteBehaviour.cs" />
+    <Compile Include="ClientControls\HtmlAutoComplete\CometRemoteSuggestionsGetter.cs" />
+    <Compile Include="ClientControls\HtmlAutoComplete\RemoteSuggestionsGetter.cs" />
+    <Compile Include="ClientControls\HtmlAutoComplete\WebServiceRemoteSuggestionsGetter.cs" />
+    <Compile Include="Controls\Banners\Generator\BannerRenderInfo.cs" />
+    <Compile Include="Controls\Banners\Generator\Controller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Controls\ChatClient\Items\TopPhoto.cs" />
+    <Compile Include="Controls\ChatClient\Popup.cs" />
+    <Compile Include="Controls\ChatClient\Shared\ArchiveStub.cs" />
+    <Compile Include="Controls\ChatClient\Shared\TopPhotoStub.cs" />
+    <Compile Include="Controls\ChatClient\Shared\UnPinStub.cs" />
+    <Compile Include="Controls\ClientSideRepeater\Template\Controller.cs" />
+    <Compile Include="Controls\CommentsDisplay\CommentStub.cs" />
+    <Compile Include="Controls\CommentsDisplay\Controller.cs" />
+    <Compile Include="Controls\CommentsDisplay\ThreadCommentsProvider.cs" />
+    <Compile Include="Controls\EventBox\Controller.cs" />
+    <Compile Include="Controls\EventBox\Server.cs" />
+    <Compile Include="Controls\EventBox\Shared\Event.cs" />
+    <Compile Include="Controls\EventBox\Shared\EventPage.cs" />
+    <Compile Include="Controls\EventBox\Shared\Misc.cs" />
+    <Compile Include="Controls\EventCreator\Controller.cs" />
+    <Compile Include="Controls\EventCreator\EventInfo.cs" />
+    <Compile Include="Controls\EventGetter\Controller.cs" />
+    <Compile Include="Controls\LatestChat\Controller.cs" />
+    <Compile Include="Controls\LatestChat\LatestThreadsProvider.cs" />
+    <Compile Include="Controls\LatestChat\ThreadStub.cs" />
+    <Compile Include="Controls\MusicTypeDropDownList3\Controller.cs" />
+    <Compile Include="Controls\Navigation\Login\Controller.cs" />
+    <Compile Include="Controls\PagedData\Display\Controller.cs" />
+    <Compile Include="Controls\PagedData\Templates\Events\Header\Controller.cs" />
+    <Compile Include="Controls\PagedData\IParameterSource.cs" />
+    <Compile Include="Controls\Picker\Controller.cs" />
+    <Compile Include="Controls\Picker\Shared.cs" />
+    <Compile Include="Controls\SiteSearchBox\Controller.cs" />
+    <Compile Include="Controls\Tabbing\Tab\ITabController.cs" />
+    <Compile Include="Controls\VenueCreator\CountryInfo.cs" />
+    <Compile Include="Controls\VenueCreator\PlaceInfo.cs" />
+    <Compile Include="Controls\VenueCreator\VenueInfo.cs" />
+    <Compile Include="Controls\VenueGetter\Controller.cs" />
+    <Compile Include="Controls\VenueCreator\Controller.cs" />
+    <Compile Include="CustomControls\Cal\Controller.cs" />
+    <Compile Include="CustomControls\DsiCalendar\Controller.cs" />
+    <Compile Include="Facebook\Facebook.cs" />
+    <Compile Include="JQuery\JQuery.cs" />
+    <Compile Include="ClientControls\KeyValuePair.cs" />
+    <Compile Include="ClientControls\MultiSelectorAttributes.cs" />
+    <Compile Include="ClientControls\MultiSelectorBehaviour.cs" />
+    <Compile Include="ClientControls\PairListField.cs" />
+    <Compile Include="ClientControls\PopupMenu.cs" />
+    <Compile Include="ClientControls\Suggestion.cs" />
+    <Compile Include="ClientControls\SuggestionsCollection.cs" />
+    <Compile Include="ClientControls\SuggestionsGetter.cs" />
+    <Compile Include="ClientControls\Trace.cs" />
+    <Compile Include="ClientControls\WatermarkExtender.cs" />
+    <Compile Include="Controls\AddThread\Controller.cs" />
+    <Compile Include="Controls\BuddyChooser\Controller.cs" />
+    <Compile Include="Controls\ChatClient\Items\CommentMessage.cs" />
+    <Compile Include="Controls\ChatClient\Items\Alert.cs" />
+    <Compile Include="Controls\ChatClient\Items\Laugh.cs" />
+    <Compile Include="Controls\ChatClient\Items\Logout.cs" />
+    <Compile Include="Controls\ChatClient\Items\Login.cs" />
+    <Compile Include="Controls\ChatClient\Shared\CommentMessageStub.cs" />
+    <Compile Include="Controls\ChatClient\Shared\MoreInfoStub.cs" />
+    <Compile Include="Controls\ClientSideRepeater\Repeater\Controller.cs" />
+    <Compile Include="Controls\MapBrowser\Map\Controller.cs" />
+    <Compile Include="Controls\Tabbing\Tabs\Controller.cs" />
+    <Compile Include="Controls\Tabbing\Tabs\View.cs" />
+    <Compile Include="Controls\MapControl\Controller.cs" />
+    <Compile Include="Controls\MapControl\Marker.cs" />
+    <Compile Include="Controls\PlacesChooser\Controller.cs" />
+    <Compile Include="GoogleMaps\GClientGeocoder.cs" />
+    <Compile Include="GoogleMaps\GLargeMapControl.cs" />
+    <Compile Include="GoogleMaps\GControl.cs" />
+    <Compile Include="GoogleMaps\GDraggableObject.cs" />
+    <Compile Include="GoogleMaps\GEvent.cs" />
+    <Compile Include="GoogleMaps\GIcon.cs" />
+    <Compile Include="GoogleMaps\GLatLng.cs" />
+    <Compile Include="GoogleMaps\GLatLngBounds.cs" />
+    <Compile Include="GoogleMaps\GMap2.cs" />
+    <Compile Include="GoogleMaps\GMapTypeControl.cs" />
+    <Compile Include="GoogleMaps\GMarker.cs" />
+    <Compile Include="GoogleMaps\GMarkerOptions.cs" />
+    <Compile Include="GoogleMaps\GPoint.cs" />
+    <Compile Include="GoogleMaps\GSize.cs" />
+    <Compile Include="GoogleMaps\GSmallMapControl.cs" />
+    <Compile Include="Controls\ChatClient\Shared\AlertStub.cs" />
+    <Compile Include="Controls\ChatClient\Shared\LaughStub.cs" />
+    <Compile Include="JQuery\JSON.cs" />
+    <Compile Include="MixmagGreatest\Home\Controller.cs" />
+    <Compile Include="MixmagVote\Entry\Controller.cs" />
+    <Compile Include="Controller-facebook-template.cs" />
+    <Compile Include="MixmagVote\Home\Controller.cs" />
+    <Compile Include="MixmagVote\Repost\Controller.cs" />
+    <Compile Include="MixmagVote\Vote\Controller.cs" />
+    <Compile Include="Pages\Articles\Home\Controller.cs" />
+    <Compile Include="Pages\Blank\Controller.cs" />
+    <Compile Include="Pages\CaptionCompetition\Controller.cs" />
+    <Compile Include="Pages\Blank1\Controller.cs" />
+    <Compile Include="Pages\FreeGuestlist\Controller.cs" />
+    <Compile Include="Pages\UploadPhotos\Controller.cs" />
+    <Compile Include="Pages\DavesTest\Controller.cs" />
+    <Compile Include="Pages\FindEvents\Controller.cs" />
+    <Compile Include="Pages\FindYourPhoto\Controller.cs" />
+    <Compile Include="Pages\Groups\Photos\Controller.cs" />
+    <Compile Include="Pages\PlacesIVisit\Controller.cs" />
+    <Compile Include="Controls\PlacesChooser\PlaceStub.cs" />
+    <Compile Include="Pages\Promoters\BannerTargetting\Controller.cs" />
+    <Compile Include="Pages\Usrs\FavouritePhotos\Controller.cs" />
+    <Compile Include="Pages\Usrs\Photos\Controller.cs" />
+    <Compile Include="Pages\Videos\Controller.cs" />
+    <Compile Include="Utils\Utilities.cs" />
+    <Compile Include="Utils\Provider.cs" />
+    <Compile Include="Controls\PagedData\Templates\Articles\ItemTemplate\Controller.cs" />
+    <Compile Include="Controls\PagedData\Templates\Threads\ItemTemplate\Controller.cs" />
+    <Compile Include="Controls\PagedData\Templates\Events\ItemTemplate\Controller.cs" />
+    <Compile Include="Controls\PagedData\Templates\Galleries\ItemTemplate\Controller.cs" />
+    <Compile Include="Controls\PagedData\Templates\Venues\ItemTemplate\Controller.cs" />
+    <Compile Include="Utils\Trace.cs" />
+    <Compile Include="BCL\System\Text\StringBuilder.cs" />
+    <Compile Include="Controls\ChatClient\Controller.cs" />
+    <Compile Include="Controls\ChatClient\Items\Debug.cs" />
+    <Compile Include="Controls\ChatClient\Items\Newable.cs" />
+    <Compile Include="Controls\ChatClient\Items\Photo.cs" />
+    <Compile Include="Controls\ChatClient\Items\Error.cs" />
+    <Compile Include="Controls\ChatClient\Items\Html.cs" />
+    <Compile Include="Controls\ChatClient\Items\Item.cs" />
+    <Compile Include="Controls\ChatClient\Items\Private.cs" />
+    <Compile Include="Controls\ChatClient\Shared\GuestRefreshStub.cs" />
+    <Compile Include="Controls\ChatClient\Shared\GetStateStub.cs" />
+    <Compile Include="Controls\ChatClient\Shared\PrivateStub.cs" />
+    <Compile Include="Controls\ChatClient\Shared\StateStub.cs" />
+    <Compile Include="Controls\ChatClient\Shared\RoomHtml.cs" />
+    <Compile Include="Controls\ChatClient\Shared\SendStub.cs" />
+    <Compile Include="Controls\ChatClient\Shared\RoomType.cs" />
+    <Compile Include="Controls\ChatClient\Shared\PinStub.cs" />
+    <Compile Include="Controls\ChatClient\Shared\ItemType.cs" />
+    <Compile Include="Controls\ChatClient\Items\Message.cs" />
+    <Compile Include="Controls\ChatClient\Room.cs" />
+    <Compile Include="Controls\ChatClient\Server.cs" />
+    <Compile Include="Controls\ChatClient\Shared\ItemStub.cs" />
+    <Compile Include="Controls\ChatClient\Shared\MessageStub.cs" />
+    <Compile Include="Controls\ChatClient\Shared\PhotoStub.cs" />
+    <Compile Include="Controls\ChatClient\Shared\RefreshStub.cs" />
+    <Compile Include="Controls\ChatClient\Shared\RoomStub.cs" />
+    <Compile Include="Controls\Html\Controller.cs" />
+    <Compile Include="Controls\MultiBuddyChooser\Controller.cs" />
+    <Compile Include="Controls\MultiUsrDrop\Controller.cs" />
+    <Compile Include="Controls\PaginationControl2\Controller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Controls\PhotoControl\BannerStub.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Controls\PhotoBrowser\Controller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Controls\PhotoBrowser\EventArgs.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Controls\PhotoControl\PhotoStub.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Controls\PhotoBrowser\PhotoBrowsingUsingKeysControl.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Controls\PhotoBrowser\PhotoProviders.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Controls\PhotoBrowser\PhotosController.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Controls\PhotoControl\Controller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Controls\TaggingControl\Controller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Controls\TaggingControl\TagStub.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Controls\ThreadControl\Controller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Controls\MultiBuddyChooser\MusicTypeKAndPlaceK.cs" />
+    <Compile Include="Controls\MultiBuddyChooser\GetMusicTypesAndPlacesResult.cs" />
+    <Compile Include="Misc.cs" />
+    <Compile Include="Pages\Articles\Photos\Controller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Pages\Events\Photos\Controller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Pages\TagSearch\Controller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Views\Generated.cs" />
+    <Compile Include="CustomControls\Cal\View.cs" />
+    <Compile Include="WebServices\Generated.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 2.0 %28x86%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="WebServices\Run.bat" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="ClientControls\VenueCreator\" />
+    <Folder Include="Templates\Events\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="aacorlib, Version=0.5.5.0, Culture=neutral, PublicKeyToken=8fc0e3af5abcb6c4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Dll\aacorlib.dll</HintPath>
+    </Reference>
+    <Reference Include="MicrosoftAjax, Version=0.5.5.0, Culture=neutral, PublicKeyToken=8fc0e3af5abcb6c4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Dll\MicrosoftAjax.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <Import Project="$(ProgramFiles)\nStuff\ScriptSharp\v1.0\nStuff.ScriptSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+  <PropertyGroup>
+    <PrepareForRunDependsOn>
+			$(PrepareForRunDependsOn);
+			Split
+		</PrepareForRunDependsOn>
+  </PropertyGroup>
+  <Target Name="Split">
+    <Exec WorkingDirectory="..\..\Utilities\Script\ScriptFileSplitter\bin\" Command="ScriptFileSplitter.exe /i:..\..\..\..\Spotted\SpottedScript\bin\SpottedScript.js /o:..\..\..\..\Spotted\Spotted\Misc\SpottedScript\">
+    </Exec>
+    <Exec WorkingDirectory="..\..\Utilities\Script\ScriptFileSplitter\bin\" Command="ScriptFileSplitter.exe /i:..\..\..\..\Spotted\SpottedScript\bin\SpottedScript.debug.js /o:..\..\..\..\Spotted\Spotted\Misc\SpottedScript\">
+    </Exec>
+  </Target>
+</Project>

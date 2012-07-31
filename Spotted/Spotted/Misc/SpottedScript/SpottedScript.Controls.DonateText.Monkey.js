@@ -1,0 +1,4 @@
+Type.registerNamespace('SpottedScript.Controls.DonateText.Monkey');
+SpottedScript.Controls.DonateText.Monkey.View=function(clientId){SpottedScript.Controls.DonateText.Monkey.View.initializeBase(this,[clientId]);this.clientId=clientId;}
+SpottedScript.Controls.DonateText.Monkey.View.prototype={clientId:null,get_uiBasic:function(){return document.getElementById(this.clientId+'_uiBasic');},get_uiDefault:function(){return document.getElementById(this.clientId+'_uiDefault');},get_uiMonkey:function(){return document.getElementById(this.clientId+'_uiMonkey');},get_genericContainerPage:function(){return document.getElementById(this.clientId+'_GenericContainerPage');}}
+SpottedScript.Controls.DonateText.Monkey.View.registerClass('SpottedScript.Controls.DonateText.Monkey.View',SpottedScript.Controls.DonateText.DonateTextControl.View);

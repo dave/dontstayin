@@ -1,0 +1,4 @@
+Type.registerNamespace('SpottedScript.Blank.UnsubscribeEflyers');
+SpottedScript.Blank.UnsubscribeEflyers.View=function(clientId){SpottedScript.Blank.UnsubscribeEflyers.View.initializeBase(this,[clientId]);this.clientId=clientId;}
+SpottedScript.Blank.UnsubscribeEflyers.View.prototype={clientId:null,get_uiOptionsPanel:function(){return document.getElementById(this.clientId+'_uiOptionsPanel');},get_uiSendEflyersOptions:function(){return document.getElementById(this.clientId+'_uiSendEflyersOptions');},get_uiSavedPanel:function(){return document.getElementById(this.clientId+'_uiSavedPanel');},get_uiSavedSettingLabel:function(){return document.getElementById(this.clientId+'_uiSavedSettingLabel');},get_genericContainerPage:function(){return document.getElementById(this.clientId+'_GenericContainerPage');}}
+SpottedScript.Blank.UnsubscribeEflyers.View.registerClass('SpottedScript.Blank.UnsubscribeEflyers.View',SpottedScript.BlankUserControl.View);

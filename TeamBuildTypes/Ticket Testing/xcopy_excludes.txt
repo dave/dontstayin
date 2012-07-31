@@ -1,0 +1,15 @@
+.obj
+.proj
+.cs
+.ascx
+thumbs.db
+.user 
+robots.txt 
+.pdb 
+.vsdisco 
+.vspscc 
+.scc
+.resx
+.csproj
+.csproj.webinfo
+.build

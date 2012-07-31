@@ -1,0 +1,58 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{C58230EC-17D2-472E-8017-A46C8BF1AA07}"
+	ProjectSection(SolutionItems) = preProject
+		InstallationInstructions.txt = InstallationInstructions.txt
+		license.txt = license.txt
+		localtestrun.testrunconfig = localtestrun.testrunconfig
+		VSTSPlugins.vsmdi = VSTSPlugins.vsmdi
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ccnet", "ccnet", "{83DF8FD4-BCBA-4587-9723-00D264A0FEEA}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "nant", "nant", "{86692F23-E4FF-4FFF-8356-B917851C503A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ccnet.vsts.plugin", "ccnet\ccnet.vsts.plugin\ccnet.vsts.plugin.csproj", "{9AF56CF0-D383-4D02-82C5-9145627588DC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ccnet.vsts.plugin.unittests", "ccnet\ccnet.vsts.plugin.unittests\ccnet.vsts.plugin.unittests.csproj", "{F379F609-0602-400C-B50C-BDECA7954468}"
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 3
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = http://chandrila:8080/
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = ccnet\\ccnet.vsts.plugin.unittests\\ccnet.vsts.plugin.unittests.csproj
+		SccProjectTopLevelParentUniqueName1 = VSTSPlugins.sln
+		SccProjectName1 = ccnet/ccnet.vsts.plugin.unittests
+		SccLocalPath1 = ccnet\\ccnet.vsts.plugin.unittests
+		SccProjectUniqueName2 = ccnet\\ccnet.vsts.plugin\\ccnet.vsts.plugin.csproj
+		SccProjectTopLevelParentUniqueName2 = VSTSPlugins.sln
+		SccProjectName2 = ccnet/ccnet.vsts.plugin
+		SccLocalPath2 = ccnet\\ccnet.vsts.plugin
+	EndGlobalSection
+	GlobalSection(TestCaseManagementSettings) = postSolution
+		CategoryFile = VSTSPlugins.vsmdi
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9AF56CF0-D383-4D02-82C5-9145627588DC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9AF56CF0-D383-4D02-82C5-9145627588DC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9AF56CF0-D383-4D02-82C5-9145627588DC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9AF56CF0-D383-4D02-82C5-9145627588DC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F379F609-0602-400C-B50C-BDECA7954468}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F379F609-0602-400C-B50C-BDECA7954468}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F379F609-0602-400C-B50C-BDECA7954468}.Release|Any CPU.ActiveCfg = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{9AF56CF0-D383-4D02-82C5-9145627588DC} = {83DF8FD4-BCBA-4587-9723-00D264A0FEEA}
+		{F379F609-0602-400C-B50C-BDECA7954468} = {83DF8FD4-BCBA-4587-9723-00D264A0FEEA}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,4 @@
+Type.registerNamespace('SpottedScript.Pages.MyGalleries');
+SpottedScript.Pages.MyGalleries.View=function(clientId){SpottedScript.Pages.MyGalleries.View.initializeBase(this,[clientId]);this.clientId=clientId;}
+SpottedScript.Pages.MyGalleries.View.prototype={clientId:null,get_galleriesPanel:function(){return document.getElementById(this.clientId+'_GalleriesPanel');},get_h11:function(){return document.getElementById(this.clientId+'_H11');},get_galleriesDataGrid:function(){return document.getElementById(this.clientId+'_GalleriesDataGrid');},get_noGalleriesPanel:function(){return document.getElementById(this.clientId+'_NoGalleriesPanel');},get_h12:function(){return document.getElementById(this.clientId+'_H12');},get_genericContainerPage:function(){return document.getElementById(this.clientId+'_GenericContainerPage');}}
+SpottedScript.Pages.MyGalleries.View.registerClass('SpottedScript.Pages.MyGalleries.View',SpottedScript.DsiUserControl.View);

@@ -1,0 +1,703 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="urn:schemas-royalmail-com/webservice/epro" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" targetNamespace="urn:schemas-royalmail-com/webservice/epro" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="urn:schemas-royalmail-com/webservice/epro">
+      <s:element name="MailingItem">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="EproCode" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfString">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="MailingItemResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="MailingItemResult" type="tns:TransactionInfo" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="TransactionInfo">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Dockets" type="tns:ArrayOfDocket" />
+          <s:element minOccurs="0" maxOccurs="1" name="Errors" type="tns:ArrayOfError" />
+        </s:sequence>
+        <s:attribute name="MachineName" type="s:string" />
+        <s:attribute name="StartTime" type="s:string" />
+        <s:attribute name="EndTime" type="s:string" />
+        <s:attribute name="Version" type="s:string" />
+        <s:attribute name="TransactionID" type="s:string" />
+        <s:attribute name="DocketsCreated" type="s:string" />
+        <s:attribute name="ErrorEncountered" type="s:string" />
+        <s:attribute name="DateTime" type="s:string" />
+        <s:attribute name="RecordCount" type="s:string" />
+        <s:attribute name="RecordsImported" type="s:string" />
+        <s:attribute name="RecordsRejected" type="s:string" />
+        <s:attribute name="TransactionDeleted" type="s:string" />
+        <s:attribute name="User" type="s:string" />
+      </s:complexType>
+      <s:complexType name="ArrayOfDocket">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Docket" nillable="true" type="tns:Docket" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Docket">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="DocketNumber" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfError">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Error" nillable="true" type="tns:Error" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Error">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Message" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ExtraInformation" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="Authentication" type="tns:Authentication" />
+      <s:complexType name="Authentication">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Username" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="AccessCode" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Version" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="SecurityToken" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="BulkImportMailingItem">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="EproCode" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="BulkImportMailingItemResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="BulkImportMailingItemResult" type="tns:TransactionInfo" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreateDockets">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="TransactionId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreateDocketsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CreateDocketsResult" type="tns:TransactionInfo" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DSACreateDockets">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="TransactionId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DSACreateDocketsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DSACreateDocketsResult" type="tns:TransactionInfo" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DSABulkImportMailingItem">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="EproCode" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DSABulkImportMailingItemResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DSABulkImportMailingItemResult" type="tns:TransactionInfo" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DSABulkAppendMailingItem">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="TransactionId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="EproCode" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DSABulkAppendMailingItemResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DSABulkAppendMailingItemResult" type="tns:TransactionInfo" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteTransaction">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="TransactionId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteTransactionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DeleteTransactionResult" type="tns:TransactionInfo" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteDSATransaction">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="TransactionId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteDSATransactionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DeleteDSATransactionResult" type="tns:TransactionInfo" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAccounts">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetAccountsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAccountsResult" type="tns:AccountResults" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="AccountResults">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Accounts" type="tns:ArrayOfAccount" />
+          <s:element minOccurs="0" maxOccurs="1" name="Error" type="tns:Error" />
+        </s:sequence>
+        <s:attribute name="Version" type="s:string" />
+      </s:complexType>
+      <s:complexType name="ArrayOfAccount">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Account" nillable="true" type="tns:Account" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Account">
+        <s:attribute name="AccountName" type="s:string" />
+        <s:attribute name="AccountNumber" type="s:string" />
+      </s:complexType>
+      <s:element name="GetServices">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Account" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetServicesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetServicesResult" type="tns:ServiceResults" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ServiceResults">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Services" type="tns:ArrayOfService" />
+          <s:element minOccurs="0" maxOccurs="1" name="Error" type="tns:Error" />
+        </s:sequence>
+        <s:attribute name="Version" type="s:string" />
+      </s:complexType>
+      <s:complexType name="ArrayOfService">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Service" nillable="true" type="tns:Service" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Service">
+        <s:attribute name="ServiceName" type="s:string" />
+        <s:attribute name="ServiceReg" type="s:string" />
+        <s:attribute name="ServiceLevel" type="s:string" />
+      </s:complexType>
+      <s:element name="GetDepartments">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Account" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDepartmentsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetDepartmentsResult" type="tns:DepartmentResults" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="DepartmentResults">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Departments" type="tns:ArrayOfDepartment" />
+          <s:element minOccurs="0" maxOccurs="1" name="Error" type="tns:Error" />
+        </s:sequence>
+        <s:attribute name="Version" type="s:string" />
+      </s:complexType>
+      <s:complexType name="ArrayOfDepartment">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Department" nillable="true" type="tns:Department" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Department">
+        <s:attribute name="DepartmentName" type="s:string" />
+        <s:attribute name="DepartmentNo" type="s:string" />
+      </s:complexType>
+      <s:element name="GetFees">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Account" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ServiceRegister" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetFeesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetFeesResult" type="tns:FeeResults" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="FeeResults">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Fees" type="tns:ArrayOfFee" />
+          <s:element minOccurs="0" maxOccurs="1" name="Error" type="tns:Error" />
+        </s:sequence>
+        <s:attribute name="Version" type="s:string" />
+      </s:complexType>
+      <s:complexType name="ArrayOfFee">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Fee" nillable="true" type="tns:Fee" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Fee">
+        <s:attribute name="FeeName" type="s:string" />
+        <s:attribute name="FeeShortCode" type="s:string" />
+      </s:complexType>
+      <s:element name="GetMagazines">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Account" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ServiceRegister" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ServiceLevel" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetMagazinesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetMagazinesResult" type="tns:MagazineResults" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="MagazineResults">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Magazines" type="tns:ArrayOfMagazine" />
+          <s:element minOccurs="0" maxOccurs="1" name="Error" type="tns:Error" />
+        </s:sequence>
+        <s:attribute name="Version" type="s:string" />
+      </s:complexType>
+      <s:complexType name="ArrayOfMagazine">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Magazine" nillable="true" type="tns:Magazine" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Magazine">
+        <s:attribute name="MagazineName" type="s:string" />
+      </s:complexType>
+      <s:element name="GetCountries">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Account" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ServiceRegister" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ServiceLevel" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCountriesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetCountriesResult" type="tns:CountryResults" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="CountryResults">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Countries" type="tns:ArrayOfCountry" />
+          <s:element minOccurs="0" maxOccurs="1" name="Error" type="tns:Error" />
+        </s:sequence>
+        <s:attribute name="Version" type="s:string" />
+      </s:complexType>
+      <s:complexType name="ArrayOfCountry">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Country" nillable="true" type="tns:Country" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Country">
+        <s:attribute name="CountryName" type="s:string" />
+        <s:attribute name="CountryCode" type="s:string" />
+      </s:complexType>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="MailingItemSoapIn">
+    <wsdl:part name="parameters" element="tns:MailingItem" />
+  </wsdl:message>
+  <wsdl:message name="MailingItemSoapOut">
+    <wsdl:part name="parameters" element="tns:MailingItemResponse" />
+  </wsdl:message>
+  <wsdl:message name="MailingItemAuthentication">
+    <wsdl:part name="Authentication" element="tns:Authentication" />
+  </wsdl:message>
+  <wsdl:message name="BulkImportMailingItemSoapIn">
+    <wsdl:part name="parameters" element="tns:BulkImportMailingItem" />
+  </wsdl:message>
+  <wsdl:message name="BulkImportMailingItemSoapOut">
+    <wsdl:part name="parameters" element="tns:BulkImportMailingItemResponse" />
+  </wsdl:message>
+  <wsdl:message name="BulkImportMailingItemAuthentication">
+    <wsdl:part name="Authentication" element="tns:Authentication" />
+  </wsdl:message>
+  <wsdl:message name="CreateDocketsSoapIn">
+    <wsdl:part name="parameters" element="tns:CreateDockets" />
+  </wsdl:message>
+  <wsdl:message name="CreateDocketsSoapOut">
+    <wsdl:part name="parameters" element="tns:CreateDocketsResponse" />
+  </wsdl:message>
+  <wsdl:message name="CreateDocketsAuthentication">
+    <wsdl:part name="Authentication" element="tns:Authentication" />
+  </wsdl:message>
+  <wsdl:message name="DSACreateDocketsSoapIn">
+    <wsdl:part name="parameters" element="tns:DSACreateDockets" />
+  </wsdl:message>
+  <wsdl:message name="DSACreateDocketsSoapOut">
+    <wsdl:part name="parameters" element="tns:DSACreateDocketsResponse" />
+  </wsdl:message>
+  <wsdl:message name="DSACreateDocketsAuthentication">
+    <wsdl:part name="Authentication" element="tns:Authentication" />
+  </wsdl:message>
+  <wsdl:message name="DSABulkImportMailingItemSoapIn">
+    <wsdl:part name="parameters" element="tns:DSABulkImportMailingItem" />
+  </wsdl:message>
+  <wsdl:message name="DSABulkImportMailingItemSoapOut">
+    <wsdl:part name="parameters" element="tns:DSABulkImportMailingItemResponse" />
+  </wsdl:message>
+  <wsdl:message name="DSABulkImportMailingItemAuthentication">
+    <wsdl:part name="Authentication" element="tns:Authentication" />
+  </wsdl:message>
+  <wsdl:message name="DSABulkAppendMailingItemSoapIn">
+    <wsdl:part name="parameters" element="tns:DSABulkAppendMailingItem" />
+  </wsdl:message>
+  <wsdl:message name="DSABulkAppendMailingItemSoapOut">
+    <wsdl:part name="parameters" element="tns:DSABulkAppendMailingItemResponse" />
+  </wsdl:message>
+  <wsdl:message name="DSABulkAppendMailingItemAuthentication">
+    <wsdl:part name="Authentication" element="tns:Authentication" />
+  </wsdl:message>
+  <wsdl:message name="DeleteTransactionSoapIn">
+    <wsdl:part name="parameters" element="tns:DeleteTransaction" />
+  </wsdl:message>
+  <wsdl:message name="DeleteTransactionSoapOut">
+    <wsdl:part name="parameters" element="tns:DeleteTransactionResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteTransactionAuthentication">
+    <wsdl:part name="Authentication" element="tns:Authentication" />
+  </wsdl:message>
+  <wsdl:message name="DeleteDSATransactionSoapIn">
+    <wsdl:part name="parameters" element="tns:DeleteDSATransaction" />
+  </wsdl:message>
+  <wsdl:message name="DeleteDSATransactionSoapOut">
+    <wsdl:part name="parameters" element="tns:DeleteDSATransactionResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteDSATransactionAuthentication">
+    <wsdl:part name="Authentication" element="tns:Authentication" />
+  </wsdl:message>
+  <wsdl:message name="GetAccountsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAccounts" />
+  </wsdl:message>
+  <wsdl:message name="GetAccountsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAccountsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAccountsAuthentication">
+    <wsdl:part name="Authentication" element="tns:Authentication" />
+  </wsdl:message>
+  <wsdl:message name="GetServicesSoapIn">
+    <wsdl:part name="parameters" element="tns:GetServices" />
+  </wsdl:message>
+  <wsdl:message name="GetServicesSoapOut">
+    <wsdl:part name="parameters" element="tns:GetServicesResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetServicesAuthentication">
+    <wsdl:part name="Authentication" element="tns:Authentication" />
+  </wsdl:message>
+  <wsdl:message name="GetDepartmentsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetDepartments" />
+  </wsdl:message>
+  <wsdl:message name="GetDepartmentsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetDepartmentsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetDepartmentsAuthentication">
+    <wsdl:part name="Authentication" element="tns:Authentication" />
+  </wsdl:message>
+  <wsdl:message name="GetFeesSoapIn">
+    <wsdl:part name="parameters" element="tns:GetFees" />
+  </wsdl:message>
+  <wsdl:message name="GetFeesSoapOut">
+    <wsdl:part name="parameters" element="tns:GetFeesResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetFeesAuthentication">
+    <wsdl:part name="Authentication" element="tns:Authentication" />
+  </wsdl:message>
+  <wsdl:message name="GetMagazinesSoapIn">
+    <wsdl:part name="parameters" element="tns:GetMagazines" />
+  </wsdl:message>
+  <wsdl:message name="GetMagazinesSoapOut">
+    <wsdl:part name="parameters" element="tns:GetMagazinesResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetMagazinesAuthentication">
+    <wsdl:part name="Authentication" element="tns:Authentication" />
+  </wsdl:message>
+  <wsdl:message name="GetCountriesSoapIn">
+    <wsdl:part name="parameters" element="tns:GetCountries" />
+  </wsdl:message>
+  <wsdl:message name="GetCountriesSoapOut">
+    <wsdl:part name="parameters" element="tns:GetCountriesResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetCountriesAuthentication">
+    <wsdl:part name="Authentication" element="tns:Authentication" />
+  </wsdl:message>
+  <wsdl:portType name="EProImportServiceSoap">
+    <wsdl:operation name="MailingItem">
+      <documentation xmlns="http://schemas.xmlsoap.org/wsdl/">Returns the result of the EPro Import Mailing Item creation</documentation>
+      <wsdl:input message="tns:MailingItemSoapIn" />
+      <wsdl:output message="tns:MailingItemSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="BulkImportMailingItem">
+      <documentation xmlns="http://schemas.xmlsoap.org/wsdl/">Returns the result of the EPro Bulk Import Mailing Item creation</documentation>
+      <wsdl:input message="tns:BulkImportMailingItemSoapIn" />
+      <wsdl:output message="tns:BulkImportMailingItemSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateDockets">
+      <documentation xmlns="http://schemas.xmlsoap.org/wsdl/">Returns the result of the EPro Import Docket creation</documentation>
+      <wsdl:input message="tns:CreateDocketsSoapIn" />
+      <wsdl:output message="tns:CreateDocketsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DSACreateDockets">
+      <documentation xmlns="http://schemas.xmlsoap.org/wsdl/">Returns the result of the EPro DSA Bulk Import Docket creation</documentation>
+      <wsdl:input message="tns:DSACreateDocketsSoapIn" />
+      <wsdl:output message="tns:DSACreateDocketsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DSABulkImportMailingItem">
+      <documentation xmlns="http://schemas.xmlsoap.org/wsdl/">Returns the result of the EPro DSA Bulk Import Mailing Item creation</documentation>
+      <wsdl:input message="tns:DSABulkImportMailingItemSoapIn" />
+      <wsdl:output message="tns:DSABulkImportMailingItemSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DSABulkAppendMailingItem">
+      <documentation xmlns="http://schemas.xmlsoap.org/wsdl/">Returns the result of the EPro DSA Bulk Import Mailing Item creation</documentation>
+      <wsdl:input message="tns:DSABulkAppendMailingItemSoapIn" />
+      <wsdl:output message="tns:DSABulkAppendMailingItemSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteTransaction">
+      <documentation xmlns="http://schemas.xmlsoap.org/wsdl/">Returns the result of the EPro Import Transaction deletion</documentation>
+      <wsdl:input message="tns:DeleteTransactionSoapIn" />
+      <wsdl:output message="tns:DeleteTransactionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteDSATransaction">
+      <documentation xmlns="http://schemas.xmlsoap.org/wsdl/">Returns the result of the EPro DASA Import Transaction deletion</documentation>
+      <wsdl:input message="tns:DeleteDSATransactionSoapIn" />
+      <wsdl:output message="tns:DeleteDSATransactionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAccounts">
+      <documentation xmlns="http://schemas.xmlsoap.org/wsdl/">Returns an array of Accounts for a Posting site</documentation>
+      <wsdl:input message="tns:GetAccountsSoapIn" />
+      <wsdl:output message="tns:GetAccountsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetServices">
+      <documentation xmlns="http://schemas.xmlsoap.org/wsdl/">Returns an array of Services for an Account</documentation>
+      <wsdl:input message="tns:GetServicesSoapIn" />
+      <wsdl:output message="tns:GetServicesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDepartments">
+      <documentation xmlns="http://schemas.xmlsoap.org/wsdl/">Returns an array of Departments for an Account</documentation>
+      <wsdl:input message="tns:GetDepartmentsSoapIn" />
+      <wsdl:output message="tns:GetDepartmentsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFees">
+      <documentation xmlns="http://schemas.xmlsoap.org/wsdl/">Returns an array of Fees for a ServiceRegister used by an Account</documentation>
+      <wsdl:input message="tns:GetFeesSoapIn" />
+      <wsdl:output message="tns:GetFeesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMagazines">
+      <documentation xmlns="http://schemas.xmlsoap.org/wsdl/">Returns an array of Magazines for a ServiceRegister used by an Account</documentation>
+      <wsdl:input message="tns:GetMagazinesSoapIn" />
+      <wsdl:output message="tns:GetMagazinesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCountries">
+      <documentation xmlns="http://schemas.xmlsoap.org/wsdl/">Returns an array of Countries for a ServiceRegister used by an Account</documentation>
+      <wsdl:input message="tns:GetCountriesSoapIn" />
+      <wsdl:output message="tns:GetCountriesSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="EProImportServiceSoap" type="tns:EProImportServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="MailingItem">
+      <soap:operation soapAction="urn:schemas-royalmail-com/webservice/epro/MailingItem" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:MailingItemAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BulkImportMailingItem">
+      <soap:operation soapAction="urn:schemas-royalmail-com/webservice/epro/BulkImportMailingItem" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:BulkImportMailingItemAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateDockets">
+      <soap:operation soapAction="urn:schemas-royalmail-com/webservice/epro/CreateDockets" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:CreateDocketsAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DSACreateDockets">
+      <soap:operation soapAction="urn:schemas-royalmail-com/webservice/epro/DSACreateDockets" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:DSACreateDocketsAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DSABulkImportMailingItem">
+      <soap:operation soapAction="urn:schemas-royalmail-com/webservice/epro/DSABulkImportMailingItem" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:DSABulkImportMailingItemAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DSABulkAppendMailingItem">
+      <soap:operation soapAction="urn:schemas-royalmail-com/webservice/epro/DSABulkAppendMailingItem" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:DSABulkAppendMailingItemAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteTransaction">
+      <soap:operation soapAction="urn:schemas-royalmail-com/webservice/epro/DeleteTransaction" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:DeleteTransactionAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteDSATransaction">
+      <soap:operation soapAction="urn:schemas-royalmail-com/webservice/epro/DeleteDSATransaction" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:DeleteDSATransactionAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAccounts">
+      <soap:operation soapAction="urn:schemas-royalmail-com/webservice/epro/GetAccounts" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetAccountsAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetServices">
+      <soap:operation soapAction="urn:schemas-royalmail-com/webservice/epro/GetServices" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetServicesAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDepartments">
+      <soap:operation soapAction="urn:schemas-royalmail-com/webservice/epro/GetDepartments" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetDepartmentsAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFees">
+      <soap:operation soapAction="urn:schemas-royalmail-com/webservice/epro/GetFees" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetFeesAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMagazines">
+      <soap:operation soapAction="urn:schemas-royalmail-com/webservice/epro/GetMagazines" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetMagazinesAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCountries">
+      <soap:operation soapAction="urn:schemas-royalmail-com/webservice/epro/GetCountries" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetCountriesAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="EProImportService">
+    <documentation xmlns="http://schemas.xmlsoap.org/wsdl/">Provides access to EPro Import facility.</documentation>
+    <wsdl:port name="EProImportServiceSoap" binding="tns:EProImportServiceSoap">
+      <soap:address location="http://www.epro.royalmail.com/webservices/import/eproimport.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

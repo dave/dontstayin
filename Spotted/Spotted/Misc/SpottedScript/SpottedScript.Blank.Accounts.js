@@ -1,0 +1,4 @@
+Type.registerNamespace('SpottedScript.Blank.Accounts');
+SpottedScript.Blank.Accounts.View=function(clientId){SpottedScript.Blank.Accounts.View.initializeBase(this,[clientId]);this.clientId=clientId;}
+SpottedScript.Blank.Accounts.View.prototype={clientId:null,get_spotterLetterRepeater:function(){return document.getElementById(this.clientId+'_SpotterLetterRepeater');},get_markAllSent:function(){return document.getElementById(this.clientId+'_MarkAllSent');},get_successLabel:function(){return document.getElementById(this.clientId+'_SuccessLabel');},get_failLabel:function(){return document.getElementById(this.clientId+'_FailLabel');},get_genericContainerPage:function(){return document.getElementById(this.clientId+'_GenericContainerPage');}}
+SpottedScript.Blank.Accounts.View.registerClass('SpottedScript.Blank.Accounts.View',SpottedScript.DsiUserControl.View);

@@ -1,0 +1,101 @@
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="wait.aspx.cs" Inherits="MixmagGreatest.wait" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head runat="server">
+	<title>Who is the greatest DJ of all time? </title>
+</head>
+<style>
+	body
+	{
+		font-family: Calibri, Arial, Helvetica, sans-serif;
+	}
+	
+	a.NoStyle:link, 
+	a.NoStyle:visited   { background-color:transparent!important; }
+	a.NoStyle:hover     { background-color:transparent!important; }
+	
+	a:link, 
+	a:visited   { text-decoration:none!important; color:#000000; background-color:#fecd07; }
+	a:hover     { text-decoration:none!important; color:#fecd07; background-color:#000000; }
+		
+	.GreatestBox
+	{
+		margin:15px;
+		padding-left:15px;
+		padding-right:15px;
+		border:2px solid #cccccc;
+		background-color: #f8f8f8;
+	}
+	h1
+	{
+		font-size:30px;
+	}
+	h2
+	{
+		font-size:20px;
+	}
+	
+	
+	div.Spacer
+		{
+			width:520px;
+			height:12px;
+			background-color:#000000;
+			
+			margin-top:15px;
+			margin-bottom:15px;
+		}
+		div.SpacerDotted
+		{
+			width:520px;
+			height:1px;
+			
+			border-top-width:1px;
+			border-top-style:dashed;
+			border-bottom-color:#000000;
+			
+			margin-top:15px;
+			margin-bottom:15px;
+		}
+		p.Header
+		{
+			font-family:Arial Black;
+			font-size:25px;
+			font-weight:bold;
+			margin-top:-10px;
+			margin-bottom:-10px;
+			padding-top:0px;
+			padding-bottom:0px;
+		}
+		p.Text
+		{
+			font-family:Arial, Sans-Serif;
+			font-size:13px;
+			font-weight:bold;
+			
+		}
+</style>
+<body style="background-image:url(/gfx/background.gif); background-repeat:repeat;">
+	<div style="width:520px; padding:15px; background-color:#ffffff; margin-left:auto; margin-right:auto; margin-top:15px; margin-bottom:15px;">
+		
+		<div style="margin-bottom:15px;">
+			<a href="/" class="NoStyle"><img src="http://greatest.dj/gfx/mm_greatest_dj_withmm_logo.jpg" width="520" height="299" border="0" /></a>
+		</div>
+
+		<div class="Spacer" style="clear:both;"></div>
+
+			
+		<p class="Header">
+			VOTING STARTS THURSDAY 16th SEPTEMBER...
+		</p>
+
+		<div class="SpacerDotted"></div>
+	</div>
+</body>
+</html>
+
+
+

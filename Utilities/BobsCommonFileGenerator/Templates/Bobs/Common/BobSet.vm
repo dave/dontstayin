@@ -1,0 +1,57 @@
+﻿	#region ${table.Name}Set
+	public partial class ${table.Name}Set : BobSet, IEnumerable<${table.Name}>
+	{
+		public ${table.Name}Set(Query query) : base(query) { }
+
+		public ${table.Name} this[int i]
+		{
+			get
+			{
+				if (BobCache[i] == null)
+				{
+					BobCache[i] = new ${table.Name}(this);
+					((${table.Name})BobCache[i]).Initialise(DataSet.Tables[0].DefaultView[i].Row);
+				}
+				return (${table.Name})BobCache[i];
+			}
+		}
+
+		public override void InitTable()
+		{
+			this.Table = new ${table.Name}TableDef();
+		}
+
+		public override object Current
+		{
+			get
+			{
+				return this[CurrentResultIndex];
+			}
+		}
+
+		public override object GetFromIndex(int index)
+		{
+			return ((object)this[index]);
+		}
+
+		public List<${table.Name}> ToList()
+		{
+			List<${table.Name}> list = new List<${table.Name}>();
+			foreach (${table.Name} item in (System.Collections.IEnumerable) this)
+			{
+				list.Add(item);
+			}
+			return list;
+		}
+
+		#region IEnumerable<${table.Name}> Members
+
+		public new IEnumerator<${table.Name}> GetEnumerator()
+		{
+			return this.ToList().GetEnumerator();
+		}
+
+		#endregion
+
+	}
+	#endregion

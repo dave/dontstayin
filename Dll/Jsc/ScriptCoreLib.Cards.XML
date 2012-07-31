@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ScriptCoreLib.Cards</name>
+    </assembly>
+    <members>
+        <member name="F:ScriptCoreLib.JavaScript.Cards.CardDeck.RankConverter">
+            <summary>
+            override this if the current game does not use default card ranking
+            </summary>
+        </member>
+        <member name="M:ScriptCoreLib.JavaScript.Cards.CardDeck.CreateStackList">
+            <summary>
+             creates a new list of cardstacks, and makes sure that each card
+             will be added to the decks stack list as backreference
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="E:ScriptCoreLib.JavaScript.Cards.CardDeck.ApplyCardRules">
+            <summary>
+            this event will be invoked at the moment a new card is created
+            </summary>
+        </member>
+        <member name="M:ScriptCoreLib.JavaScript.Cards.CardStack.MoveSlow(ScriptCoreLib.JavaScript.Cards.Card,ScriptCoreLib.Shared.EventHandler)">
+            <summary>
+            animates movement
+            </summary>
+            <param name="c"></param>
+        </member>
+        <member name="P:ScriptCoreLib.Shared.Cards.AssemblyInfo.BuildDateTimeString">
+            <summary>
+            date when library was compiled
+            </summary>
+        </member>
+    </members>
+</doc>

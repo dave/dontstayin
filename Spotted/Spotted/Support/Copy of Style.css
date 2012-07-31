@@ -1,0 +1,2157 @@
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Style.css.cs" Inherits="Spotted.Support.Style" %>
+
+
+<%
+	//Blue
+	//System.Drawing.Color hilightColor = Cambro.Misc.ColorHelp.HexStringToColor("588ee5");
+	//System.Drawing.Color lightShadeColor = Cambro.Misc.ColorHelp.HexStringToColor("ccdbf4");
+	//System.Drawing.Color darkShadeColor = Cambro.Misc.ColorHelp.HexStringToColor("2253a1");
+
+	//Green
+	//System.Drawing.Color hilightColor = Cambro.Misc.ColorHelp.HexStringToColor("71c666");
+	//System.Drawing.Color lightShadeColor = Cambro.Misc.ColorHelp.HexStringToColor("d3f0cf");
+	//System.Drawing.Color darkShadeColor = Cambro.Misc.ColorHelp.HexStringToColor("165c0c");
+
+	//Yellow
+	//System.Drawing.Color hilightColor = Cambro.Misc.ColorHelp.HexStringToColor("feca26");
+	//System.Drawing.Color lightShadeColor = Cambro.Misc.ColorHelp.HexStringToColor("f2e6c0");
+	//System.Drawing.Color darkShadeColor = Cambro.Misc.ColorHelp.HexStringToColor("5d4908");
+	
+	//Blue
+	//string colorMedium = "588ee5";
+	//string colorLight = "ccdbf4";
+	//string colorDark = "2253a1";
+	
+	//Green
+	//string colorMedium = "71c666";
+	//string colorLight = "d3f0cf";
+	//string colorDark = "165c0c";
+
+	//Yellow
+	//string colorMedium = "feca26";
+	//string colorLight = "cccccc";
+	//string colorDark = "333333";
+	
+	//string colorMedium = "fee491";
+	//string colorLight = "fff2c9";
+	//string colorDark = "a18735";
+	
+	
+	
+
+	
+	
+	string colorMedium = "feca26";
+	string colorLight = "fff0bf";			   /* should be white (from below) + colorMedium @ 25% */
+	string colorDark = "a28322";               /* should be black (from below) + colorMedium @ 50% */
+	string colorVeryLight = "fff9e5";		   /* should be white (from below) + colorMedium @ 10% */
+	
+	string black = "444444";                 /* all black items should be this colour */
+	string shade = "999999";                 /* this is used to de-emphasize text - e.g. 'small' tags */
+	string keyline = "cccccc";               /* this is used for the keyline borders */
+	string medLight = "eaeaea";              /* this is used for block shading */
+	string veryLight = "f3f3f3";             /* this is used for light block shading or alternating item shading */
+	string white = "ffffff";                 /* all white or background areas should be this colour */
+	//string bodyBackground = "eaeaea";
+	string bodyBackground = "ffffff";
+
+	string colorMediumOnBackground = "f5d675"; /* should be bodyBackground + colorMedium @ 50% */
+	/*string whiteOnBackground = "f5f5f5";*/       /* should be bodyBackground + white (from below) @ 50% */
+	string whiteOnBackground = "ffffff";       /* should be bodyBackground + white (from below) @ 50% */
+
+	string colorVeryLightOnVeryLight = "f4eeda"; /* this should be veryLight + colorMedium @ 10% */
+	string colorLightOnVeryLight = "f6e7b6";     /* this should be veryLight + colorMedium @ 25% */
+	
+	
+	string colorVeryLightOnBlack = "57513d";     /* this should be black + colorMedium @ 10% */
+	string colorLightOnBlack = "736433";         /* this should be black + colorMedium @ 25% */
+
+	string colorVeryLightOnColorLight = "ffebac"; /* this should be colorLight + colorMedium @ 10% */
+	string colorLightOnColorLight = "ffe48f";     /* this should be colorLight + colorMedium @ 25% */
+
+	string colorVeryLightOnColorVeryLight = "fff3ce"; /* this should be colorVeryLight + colorMedium @ 10% */
+	string colorLightOnColorVeryLight = "ffebac";     /* this should be colorVeryLight + colorMedium @ 25% */
+
+	string colorVeryLightOnMedLight = "ece6d2"; /* this should be veryLight + colorMedium @ 10% */
+	string colorLightOnMedLight = "efe0af";     /* this should be veryLight + colorMedium @ 25% */
+
+	string attentionColorRed = "bb0000";     /* used instead of ff0000 when we want to draw attention - e.g. validation */
+	string attentionColorBlue = "0000cc";    /* used instead of 0000ff when we want to draw attention - e.g. validation */
+	string newTopicColor = attentionColorBlue;
+	string newReplyColor = attentionColorRed;
+	
+	string bodyFont = "font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 11px;";
+	string menuFont = "font-family: Trebuchet MS, Arial, Helvetica, sans-serif; font-size: 14px; font-weight:normal;";
+	string h1Font = "font-family: Trebuchet MS, Arial, Helvetica, sans-serif; font-size: 18px; font-weight:normal;";
+	string h2Font = "font-family: Trebuchet MS, Arial, Helvetica, sans-serif; font-size: 16px; font-weight:normal;";
+	string h3Font = "font-family: Trebuchet MS, Arial, Helvetica, sans-serif; font-size: 14px; font-weight:normal;";
+	string tipFont = "font-family: Trebuchet MS, Arial, Helvetica, sans-serif; font-size: 12px; font-weight:normal;";
+	
+	
+//	//Purple
+//	string colorMedium = "ff33ff";
+//	string colorLight = "ffccff";			   /* should be white (from below) + colorMedium @ 25% */
+//	string colorDark = "a23ba2";               /* should be black (from below) + colorMedium @ 50% */
+//	string colorVeryLight = "ffeaff";		   /* should be white (from below) + colorMedium @ 10% */
+//	
+//	string colorMediumOnBackground = "e67fe6"; /* should be bodyBackground + colorMedium @ 50% */
+//	string whiteOnBackground = "e6e6e6";       /* should be bodyBackground + white (from below) @ 50% */
+//	string bodyBackground = "c8c8c8";
+//	
+//	string black = "444444";                 /* all black items should be this colour */
+//	string shade = "999999";                 /* this is used to de-emphasize text - e.g. 'small' tags */
+//	string keyline = "cccccc";               /* this is used for the keyline borders */
+//	string medLight = "eaeaea";              /* this is used for block shading */
+//	string veryLight = "f3f3f3";             /* this is used for light block shading or alternating item shading */
+//	string white = "ffffff";                 /* all white or background areas should be this colour */
+//
+//	string attentionColorRed = "bb0000";     /* used instead of ff0000 when we want to draw attention - e.g. validation */
+//	string attentionColorBlue = "0000cc";    /* used instead of 0000ff when we want to draw attention - e.g. validation */
+//	string newTopicColor = attentionColorBlue;
+//	string newReplyColor = attentionColorRed;
+
+
+
+
+%>
+
+
+
+
+/*
+************ Browser reset **************
+*/
+html, body, div, span, applet, object, iframe, table, caption, tbody, tfoot, thead, tr, th, td, 
+del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, 
+h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, 
+dl, dt, dd, ol, ul, li, fieldset, form, label, legend {
+    padding: 0px;
+    margin: 0px;
+    border: 0px;
+    outline: 0px;        
+    line-height: 1.5;
+    /*vertical-align: baseline;
+    vertical-align: top;*/
+    font-family: inherit;
+    font-size: 100%;
+    color: inherit;
+    
+    
+}
+:focus {
+    outline: 0;
+    }
+body {
+    background: white;
+    line-height: 1;
+    color:#<% = black %>;
+    }
+ol, ul {
+    list-style: disc;
+    margin: 20px;
+    }
+table {
+    border-collapse: separate;
+    border-spacing: 0;
+    }
+caption, th, td {
+    font-weight: normal;
+    /* text-align: inherit; */
+    padding: 0px;
+    }
+blockquote:before, blockquote:after, q:before, q:after {
+    content: "";    
+    }
+blockquote, q {
+    quotes: "" "";
+    margin: 15px;
+    }
+input,select,textarea
+{
+    font-size: inherit;
+    font-weight: inherit;
+    font-style: inherit;
+}
+input[type=text],select,textarea
+{
+	border:1px solid #<% = keyline %>;
+}
+img
+{
+	border:0px;
+}
+
+
+
+/*
+************ Global stuff **************
+*/
+
+body
+{
+	/*background-color: #<% = white %>;*/
+	background-color: #<% = bodyBackground %>;
+	/*background-image:url(/gfx/background-pattern1.gif);*/
+	background-repeat:repeat;
+}
+.BodyBackgroundColour
+{
+	background-color: #<% = bodyBackground %>;
+}
+
+body,table,td,th,input,textarea,select,input,button,p,li,blockquote
+{
+    /*font-family: Trebuchet MS;
+	font-family:Calibri;
+	font-size: 12px;*/
+    <%= bodyFont %>;
+
+}
+small
+{ 
+	color:#<% = shade %>;
+}
+blockquote
+{
+	color:#<% = shade %>;
+	font-style:italic;
+}
+a:link, a:visited 
+{
+	/*color:#<% = colorDark %>;
+	color:#<% = black %>;
+	font-weight:bold;*/
+	text-decoration:none;
+	background-color:#<% = colorVeryLight %>;
+}
+a[href]:hover 
+{
+	/*color:#<% = colorMedium %>;*/
+	/*font-style:italic;*/
+	text-decoration:none;
+	background-color:#<% = colorLight %>;
+	color:#<% = black %>;
+}
+
+/*.BackgroundColorDark a img { background-color:#<% = colorDark %>; }*/
+
+/*
+************ Generic colour / border styles **************
+*/
+
+.Rollover
+{
+	background-color:transparent;
+}
+.Rollover:hover
+{
+	background-color:#<% = colorLight %>;
+	cursor:pointer;
+}
+
+
+
+.BackgroundColorLight
+{
+	background-color:#<% = colorLight %>;
+}
+
+.BackgroundWhite
+{
+	background-color:#<% = white %>;
+}
+
+.BackgroundVeryLight
+{
+	background-color:#<% = veryLight %>;
+}
+<% = adjustLinks(".BackgroundVeryLight", colorVeryLightOnVeryLight, colorLightOnVeryLight) %>
+
+
+.BackgroundBlack
+{
+	background-color:#<% = black %>;
+}
+.BackgroundBlack,
+.BackgroundBlack *,
+.BackgroundBlack a:link,
+.BackgroundBlack a:visited   { color:#<% = white %>; }
+.BackgroundBlack a:hover     { color:#<% = black %>; }
+<% = adjustLinks(".BackgroundBlack", "transparent", white) %>
+/*<% = adjustLinks(".BackgroundBlack", colorVeryLightOnBlack, colorLightOnBlack) %>*/
+
+.BackgroundBlackJustColour
+{
+	background-color:#<% = black %>;
+}
+
+
+.ForegroundColorMedium
+{
+	color:#<% = colorMedium %>;
+}
+.ForegroundShade
+{
+	color:#<% = shade %>;
+}
+.ForegroundBlack
+{
+	color:#<% = black %>;
+}
+.ForegroundAttentionRed
+{
+	color:#<% = attentionColorRed %>;
+}
+.ForegroundAttentionBlue
+{
+	color:#<% = attentionColorBlue %>;
+}
+
+.BorderColorMedium
+{
+	border-style:solid;
+	border-color:#<% = colorMedium %>;
+}
+
+.BorderColorMedium
+{
+	border-style:solid;
+	border-color:#<% = colorMedium %>;
+	border-width:0px;
+}
+.BorderColorMedium.Left { border-left-width:1px; }
+.BorderColorMedium.Top { border-top-width:1px; }
+.BorderColorMedium.Bottom { border-bottom-width:1px; }
+.BorderColorMedium.Right { border-right-width:1px; }
+.BorderColorMedium.All { border-width:1px; }
+
+.BorderColorDark
+{
+	border-style:solid;
+	border-color:#<% = colorDark %>;
+	border-width:0px;
+}
+.BorderColorDark.Left { border-left-width:1px; }
+.BorderColorDark.Top { border-top-width:1px; }
+.BorderColorDark.Bottom { border-bottom-width:1px; }
+.BorderColorDark.Right { border-right-width:1px; }
+.BorderColorDark.All { border-width:1px; }
+
+
+.BorderBlack
+{
+	border-style:solid;
+	border-color:#<% = black %>;
+	border-width:0px;
+}
+.BorderBlack.Left { border-left-width:1px; }
+.BorderBlack.Top { border-top-width:1px; }
+.BorderBlack.Bottom { border-bottom-width:1px; }
+.BorderBlack.Right { border-right-width:1px; }
+.BorderBlack.All { border-width:1px; }
+
+.BorderKeyline
+{
+	border-style:solid;
+	border-color:#<% = keyline %>;
+	border-width:0px;
+}
+.BorderKeyline.Left { border-left-width:1px; }
+.BorderKeyline.Top { border-top-width:1px; }
+.BorderKeyline.Bottom { border-bottom-width:1px; }
+.BorderKeyline.Right { border-right-width:1px; }
+.BorderKeyline.All { border-width:1px; }
+
+
+/*
+************ Headings **************
+*/
+h1
+{
+	color:#<% = white %>;
+	
+	<%= h1Font %>;
+	
+	/*margin:35px 0px -2px 0px;*/
+	
+	margin:35px 0px 0px 0px;
+	border-bottom:2px solid #<% = black %>;
+	/*font-family: Trebuchet MS;
+	font-size:18px;*/
+	
+}
+
+h1 span.Inner
+{
+	border-left:5px solid #<% = colorMedium %>;
+	background-color:#<% = black %>;
+	padding:2px 6px 2px 6px;
+	
+	margin-right:5px;
+}
+div.ContentBorder.HeaderSpace
+{
+	margin-top:35px;
+}
+h1.TabHolder
+{
+	padding:0px 0px 0px 0px;
+	/*margin:35px 0px -2px 0px;*/
+	border-width:0px;
+	
+	margin:35px 0px 0px 0px;
+	border-bottom:2px solid #<% = black %>;
+}
+h1 .TabbedHeading
+{
+	color:#<% = black %>!important;
+	padding:2px 8px 0px 6px;
+	margin-right:0px;
+	/*margin-bottom:2px;*/
+	margin-bottom:0px;
+	border-left:5px solid #<% = colorMediumOnBackground %>;
+	
+	<%= h1Font %>;
+	
+	
+}
+h1 a.TabbedHeading
+{
+	cursor:pointer;
+}
+<% = adjustLinks("h1", "transparent", colorLightOnMedLight) %>
+
+h1 .TabbedHeading.Selected
+{
+	padding:2px 8px 2px 6px;
+	margin-bottom:0px;
+	border-left:5px solid #<% = colorMedium %>;
+	background-color:#<% = black %>;
+	color:#<% = white %>!important;
+}
+
+h1 a.TabbedHeading:hover
+{
+	background-color:#<% = colorMediumOnBackground %>;
+	color:#<% = black %>;
+}
+h1 a.TabbedHeading.Selected:hover
+{
+	background-color:#<% = black %>;
+	color:#<% = white %>;
+}
+h1 img.TabbedHeadingIcon
+{
+	position:relative; 
+	top:5px; 
+	/*left:-4px; 
+	margin-right:-2px;*/
+}
+
+
+
+h2
+{
+	color:#<% = black %>;
+	padding:2px 4px 2px 0px;
+	margin:10px 0px 10px 0px;
+	<%= h2Font %>;
+}
+
+h2.TabHolder
+{
+	padding:0px 0px 0px 0px;
+	border-width:0px;
+}
+h2 .TabbedHeading
+{
+	color:#<% = black %>;
+	font-weight: normal;
+	padding:2px 4px 2px 0px;
+	margin-left:0px;
+	cursor:pointer;
+}
+h2 .TabbedHeading.Selected
+{
+	border-left:5px solid #<% = colorMedium %>;
+	background-color:#<% = black %>;
+	color:#<% = white %>;
+}
+h2 a.TabbedHeading:hover     
+{
+	background-color:#<% = colorLight %>;
+}
+<% = adjustLinks("h2", "transparent", colorLight) %>
+
+.BackgroundBlack h2
+{
+	color:#<% = colorMedium %>;
+}
+
+h3
+{
+	color:#<% = black %>;
+	margin:5px 0px 5px 0px;
+	<%= h3Font %>;
+	font-weight: normal;
+	font-style: normal;
+	
+	
+}
+
+
+
+/*
+************ Navigation **************
+*/
+.TopNavigationBar,
+.TopNavigationBar *
+{
+	<%= menuFont %>;
+}
+.TopNavigationBar
+{
+	position:absolute; 
+	top:0px; 
+	height:33px; 
+	border:0px solid #ff0000;
+	background-color:transparent;
+	
+}
+.TopNavigationBarInner1
+{
+	border:0px solid #0000ff;
+	position:relative;
+	height:33px;
+}
+.TopNavigationBarInner2
+{
+	border:0px solid #00ff00;
+	position:absolute;
+	bottom:5px;
+}
+.TopNavigationBar a
+{
+	margin-left:8px;
+}
+.TopNavigationBarOuter
+{
+	border-left:5px solid #<% = colorMedium %>;
+}
+
+/*
+.HomeLink img
+{
+	background-image:url(/gfx/logo-white-80.png);
+}
+a.HomeLink:hover img
+{
+	background-image:url(/gfx/logo-white-100.png) !important;
+}
+*/
+
+
+.TipLayerDiv
+{
+	border:1px solid #<% = black %>;
+}
+.TipLayerDiv div
+{
+	background-color:#<% = veryLight %>;
+}
+.TipLayerDiv *
+{
+	<%= tipFont %>;
+}
+/*
+************ Content styles **************
+*/
+p, blockquote, div.p
+{
+	margin-bottom:7px;
+	margin-top:7px;
+	/*margin-bottom:12px;*/
+}
+div.ContentBorder
+{
+	border:2px solid #<% = whiteOnBackground %>;
+	padding: 8px 15px 8px 15px;
+	background-color: #<% = white %>;
+}
+div.ContentBorder.Padding
+{
+	padding: 15px;
+}
+div.AdminBorder
+{
+	/*padding: 0px;
+	margin-left: 13px;*/
+	border:4px solid #<% = colorMedium %>;
+	padding: 13px;
+	background-color: #<% = white %>;
+}
+.ArticleBorder p
+{
+	text-align:justify;
+}
+th
+{
+	color:#<% = shade %>;
+	font-weight:normal;
+	text-align:left;
+}
+ul, ol
+{
+	margin-bottom:7px;
+	margin-top:10px;
+}
+li
+{
+	margin-top:3px;
+}
+pre
+{
+	font-family:Monospace;
+}
+
+hr
+{
+	margin-bottom:5px;
+	color:#<% = keyline %>;
+	background-color:#<% = keyline %>;
+	height:1;	
+}
+
+em
+{
+	font-weight:bold;
+	font-style:normal;
+}
+
+
+div.ValidationSummaryDiv
+{
+	border:2px solid #<% = attentionColorRed %>;
+	padding:5px;
+	margin-bottom:7px;
+	margin-top:5px;
+}
+
+.PaymentDiv
+{
+	padding:2px;
+	margin:3px;
+	width:285px;
+	background-color:#<%= veryLight %>;
+	border:1px solid #<%= keyline %>;
+}
+<% = adjustLinks(".PaymentDiv", colorVeryLightOnVeryLight, colorLightOnVeryLight) %>
+
+.PaymentDiv td
+{
+	padding:3px;
+	padding-right:5px;
+	border-width:0px;
+}
+.paymentInput
+{
+    border:1px solid #<%= keyline %>;
+}
+div.PaymentValidationSummary
+{
+	border:2px solid #<% = attentionColorRed %>;
+	padding:5px;
+	margin:3px;
+}
+
+
+
+.PhotoBrowserImage
+{
+	border-width:0px;
+}
+.PhotoBrowserImageHighlight
+{
+	border:1px solid #<% = white %>;
+}
+
+
+
+.LinkCloudLink1 { font-size: 12px; vertical-align:middle; }
+.LinkCloudLink2 { font-size: 14px; vertical-align:middle; }
+.LinkCloudLink3 { font-size: 18px; vertical-align:middle; }
+.LinkCloudLink4 { font-size: 20px; vertical-align:middle; }
+.LinkCloudLink5 { font-size: 24px; vertical-align:middle; }
+
+
+.QuoteName
+{
+	color:#<% = shade %>;
+	font-style:italic;
+	margin-top:0px;
+	margin-bottom:0px;
+	margin-left:15px;
+	margin-right:15px;
+}
+.QuoteBody
+{
+	color:#<% = shade %>;
+	border:1px solid #<% = keyline %>;
+	margin-top:0px;
+	margin-bottom:0px;
+	margin-left:15px;
+	margin-right:15px;
+	padding:5px;
+}
+
+.PhotoOverlay
+{
+	<%= h1Font %>;
+	padding:2px 5px 2px 5px;
+	position:absolute;
+}
+.PhotoOverlay.Top    { top:20px; }
+.PhotoOverlay.Bottom { bottom:20px; }
+.PhotoOverlay.Left   { left:20px; }
+.PhotoOverlay.Right  { right:20px; text-align:right; }
+
+.PhotoOverlay.Black  { background-color:#<% = black %>; }
+.PhotoOverlay.Black,
+.PhotoOverlay.Black *,
+.PhotoOverlay.Black a:link,
+.PhotoOverlay.Black a:visited,
+.PhotoOverlay.Black a:hover       { color:#<% = white %>; }
+<% = adjustLinks(".PhotoOverlay.Black", colorLightOnBlack, colorDark) %>
+
+.PhotoOverlay.White { background-color:#<% = white %>; }
+<% = adjustLinks(".PhotoOverlay.White", colorVeryLight, colorLight) %>
+
+div.HelperPanel
+{
+	padding:5px;
+	margin-top:2px;
+	margin-bottom:2px;
+	text-align:left;
+	border: 1px solid #<% = keyline %>;
+	background-color:#<% = veryLight %>;
+}
+<% = adjustLinks("div.HelperPanel", colorVeryLightOnVeryLight, colorLightOnVeryLight) %>
+
+a.HelperAnchor:link, 
+a.HelperAnchor:visited
+{
+	padding:2px 4px 2px 2px !important;
+	border-left: 5px solid #<% = colorLight %>;
+	text-decoration: none;
+	color:#<% = black %> !important;
+}
+a.HelperAnchor:hover
+{
+	padding:2px 4px 2px 2px !important;
+	background-color:#<% = colorLight %>;
+	padding:2px;
+	border-left: 5px solid #<% = colorLight %>;
+	text-decoration: none;
+	color:#<% = black %> !important;
+}
+<% = adjustLinks("div.HelperAnchorContainer", "transparent", colorLight) %>
+
+
+a.HelperAnchor.Selected:link, 
+a.HelperAnchor.Selected:visited
+{
+	padding:2px 4px 2px 2px !important;
+	border-left: 5px solid #<% = colorMedium %>;
+	text-decoration: none;
+	background-color:#<% = colorLight %>;
+	color:#<% = black %> !important;
+}
+a.HelperAnchor.Selected:hover
+{
+	padding:2px 4px 2px 2px !important;
+	border-left: 5px solid #<% = colorMedium %>;
+	text-decoration: none;
+	background-color:#<% = colorLight %>;
+	color:#<% = black %> !important;
+}
+
+
+
+div.NewGalleryBox
+{
+	border:1px solid #<% = keyline %>;
+	background-color:#<% = colorLight %>;
+	padding:5px;
+	margin:3px;
+}
+<% = adjustLinks("div.NewGalleryBox", colorVeryLightOnVeryLight, colorLightOnVeryLight) %>
+
+div.NewGalleryBoxPadder
+{
+	padding:5px;
+	margin:4px;
+}
+
+div.LatestPanel
+{
+	height:300px;
+	overflow:auto;
+}
+div.LatestPanel.Big
+{
+	height:325px;
+}
+div.LatestPanelArchiveLink
+{
+	margin-top:8px;
+	margin-bottom:-4px;
+}
+
+
+
+p.BigCenter
+{
+	font-size:18px;
+	font-weight:bold;
+	margin-top:10px;
+	margin-bottom:10px;
+	text-align:center;
+}
+
+p.MedCenter
+{
+	font-size:14px;
+	font-weight:bold;
+	margin-top:8px;
+	margin-bottom:8px;
+	text-align:center;
+}
+p.MedLeft
+{
+	font-size:14px;
+	font-weight:bold;
+	margin-top:8px;
+	margin-bottom:8px;
+}
+
+
+
+
+.LatestPic
+{
+	border:solid 1px #<% = black %>;
+	margin-right:2px;
+}
+div.LatestDiv
+{
+	margin-left:1px;
+	margin-top:6px;
+	margin-bottom:6px;
+}
+img.ArticlePicLeft
+{
+	border:1px solid #<% = black %>;
+	margin-right:15px;
+	margin-top:3;
+	margin-bottom:10px;
+}
+
+img.ArticlePicRight
+{
+	border:1px solid #<% = black %>;
+	margin-left:15px;
+	margin-top:3;
+	margin-bottom:10px;
+}
+img.ArticlePicCenter
+{
+	border:1px solid #<% = black %>;
+}
+
+
+
+.CommentTable {margin-top:10px;margin-bottom:10px;}
+.CommentLeft {width:110px;border-right:none;}
+.CommentLeftPic {margin-right:8px; padding-top:2px; text-align:right;}
+.CommentLeftName {margin-right:8px; width:102px; padding-top:2px; text-align:right; overflow:hidden;}
+.CommentRight {width:471px;}
+.CommentRightDiv {padding-left:7px; width:471px; overflow:hidden;}
+.CommentRightNav {text-align:right;padding-top:5px; line-height:14px;}
+
+
+.FrontPageBox img 
+{
+	display:block;
+}
+img.Block
+{
+	display:block;
+}
+
+div.ContentFooter
+{
+	margin-top:20px;
+}
+.TextBoxFix
+{
+	border:1px solid #<% = bodyBackground  %>;
+	background-color:#<% = bodyBackground  %>;
+}
+
+
+th.CalDayHeader
+{
+	color:#<% = black %>;
+	font-weight:bold;
+	text-align:center;
+}
+
+
+/*
+************ Autocomplete boxes **************
+*/
+
+ /*AutoComplete flyout */
+
+.autocomplete_completionListElement 
+{ 
+	visibility : hidden;
+	margin : 0px!important;
+	background-color : #<% = white %>;
+	color : #<% = black %>;
+	border : 1px solid #<% = keyline %>;
+	cursor : 'default';
+	overflow : auto;
+	text-align : left;
+	list-style-type : none;
+}
+
+/* AutoComplete highlighted item */
+
+.autocomplete_highlightedListItem
+{
+	background-color: #<% = medLight %>;
+	color: #<% = black %>;
+	padding: 1px;
+}
+
+/* AutoComplete item */
+
+.autocomplete_listItem 
+{
+	background-color : #<% = white %>;
+	color : #<% = black %>;
+	padding : 1px;
+}
+
+.watermarked {
+	color:#<% = shade %>;
+}	
+.RemoveTagButton
+{
+	position:relative;
+	top:2px;
+	left:-2px;
+	cursor:pointer;
+}
+
+.MultiSelectorDelButton
+{
+	background-image:url(/gfx/x.png);
+	background-position:center;
+	background-repeat:no-repeat;
+	cursor:pointer;
+	position:relative;
+	left:2px;
+	top:1px;
+	margin-right:4px;
+	
+}
+.MultiSelectorExpandButton
+{
+	cursor:pointer;
+}
+ 
+.MultiSelector textarea{
+	border:0px none;
+	margin:0pt;
+	padding:3px 0pt 2px;
+
+	width:400px;
+	background-color:transparent;
+	overflow:visible;
+}
+
+
+
+/* TextboxList sample CSS */
+* html .MultiSelector ul,*:first-child+html .MultiSelector { 
+	padding-bottom: 2px; 
+	
+}
+.MultiSelector{ 
+	margin  : 0; 
+	padding : 4px 5px 4px 5px; 
+	border  : 1px solid #<% = keyline %>; 
+	height  : auto !important; 
+	height  : 1%; 
+	overflow: auto;
+	list-style-type:none;
+	background-color:White;
+	
+}
+.MultiSelector li { 
+	float   : left; 
+	margin  : 0 5px 4px 0; 
+	list-style-type: none; 
+}
+.MultiSelector li.MultiSelectorListBoxItem {
+	border     : 1px solid #<% = keyline %>; 
+	padding    : 2px 8px 4px 4px; 
+	background : #<% = medLight %>; 
+	white-space:nowrap;
+}
+
+
+.HtmlAutoComplete input
+{
+	border:solid 1px #<% = keyline %>;
+	height:20px;
+	padding:3px;
+}
+input.TextBox
+{
+	border:solid 1px #<% = keyline %>;
+	height:20px;
+	padding:3px;
+}
+.HtmlAutoSuggest input
+{
+	border:solid 1px #<% = keyline %>;
+	height:20px;
+	padding:3px;
+}
+.PopupMenuHighlightedItem
+{
+	background-color:#<% = veryLight %>;
+}
+<% = adjustLinks(".PopupMenuHighlightedItem", colorVeryLightOnVeryLight, colorLightOnVeryLight) %>
+
+.PopupMenu div
+{
+	border-bottom: solid 1px #<% = keyline %>;
+	cursor:pointer;
+	margin-left:0px;
+}
+
+.PopupMenu div div
+{
+	border-bottom: none;
+}
+.PopupMenu
+{
+	border-top: solid 1px #<% = keyline %>;
+	border-left: solid 1px #<% = keyline %>;
+	border-right: solid 1px #<% = keyline %>;
+	list-style-type:none;
+	padding:0;
+	margin:0;	
+	position:absolute;
+	z-index:1000;
+	background-color:#<% = white %>;
+}
+
+.DefaultPopupMenuItem
+{
+	padding:2px;
+}
+
+.Watermark
+{
+	color:#<% = shade %>;
+}
+.HtmlAutoComplete
+{
+	border-width:0px;
+	
+}
+
+
+
+
+.RichUsrMultiSelectorPopupMenu div
+{
+	cursor:pointer;
+	margin:0px;
+}
+.RichUsrMultiSelectorPopupMenu
+{
+	border: solid 1px #<% = black %>;
+	list-style-type:none;
+	padding:0px; 
+	margin:0px;	
+	position:absolute;
+	z-index:950;
+	background-color:#<% = white %>;
+}
+.RichUsrMultiSelectorHighlighted
+{
+	background-color:#<% = veryLight %>;
+}
+<% = adjustLinks(".RichUsrMultiSelectorHighlighted", colorVeryLightOnVeryLight, colorLightOnVeryLight) %>
+
+.Watermark
+{
+	color:#<% = shade %>;
+}
+
+
+/*
+************ Datagrid generic table styles **************
+*/
+.dataGrid td
+{
+	padding:2px;
+	border-left:solid 1px #<% = keyline %>;
+}
+tr.dataGridFooter td
+{
+	border-top:solid 1px #<% = black %>;
+}
+
+tr.dataGridHeader td, 
+tr.dataGridHeader th
+{
+	color:#<% = shade %>;
+	border-bottom:solid 1px #<% = keyline %>;
+	border-left-width:0px;
+	vertical-align:bottom;
+}
+
+tr.dataGridSelectedItem td 
+{
+	background-color:#<% = medLight %>;
+}
+<% = adjustLinks("tr.dataGridSelectedItem td", colorVeryLightOnMedLight, colorLightOnMedLight) %>
+
+tr.dataGridItem td 
+{
+	background-color:transparent;
+}
+
+tr.dataGridAltItem td 
+{
+	background-color:#<% = veryLight %>;
+}
+<% = adjustLinks("tr.dataGridAltItem td", colorVeryLightOnVeryLight, colorLightOnVeryLight) %>
+
+.dataGridRightAlign td
+{
+	text-align:right;
+	border-right:solid 1px #<% = keyline %>;
+}
+td.dataGridPlainCell
+{
+	border-width:0px;
+}
+td.dataGridTight
+{
+	padding-left:0px;
+	padding-right:0px;
+	padding-top:2px;
+	padding-bottom:2px;
+}
+
+td.dataGridThread
+{
+	border-left-width:0px;
+	border-top:solid 1px #<% = keyline %>;
+	padding:0px 3px 0px 3px;
+}
+td.dataGridHeaderThreadTitlesTight
+{
+	border-left:solid 0px #<% = keyline %>;
+	padding-left:0px;
+	padding-right:0px;
+	padding-top:2px;
+	padding-bottom:2px;
+}
+
+td.dataGridThreadTitlesTight
+{
+	border-left:solid 0px #<% = keyline %>;
+	border-top:solid 1px #<% = keyline %>;
+	padding-left:0px;
+	padding-right:0px;
+	padding-top:2px;
+	padding-bottom:2px;
+}
+
+td.dataGridTightImg
+{
+	border-left-width:0px;
+	border-top:solid 1px #<% = keyline %>;
+	padding-left:0px;
+	padding-right:0px;
+	padding-top:0px;
+	padding-bottom:0px;
+}
+
+
+td.dataGridThreadTitles
+{
+	border-left-width:0px;
+	border-top:solid 1px #<% = keyline %>;
+	padding:0px 3px 0px 3px;
+}
+
+tr.dataGridFooterGrey td
+{
+	border-top:solid 1px #<% = keyline %>;
+	border-left-width:0px;
+	border-right-width:0px;
+	border-bottom-width:0px;
+}
+
+.dataGrid td.dataGridColumnDivider
+{
+	border-left:solid 1px #<% = black %>;
+}
+.dataGrid1stHeader th
+{
+	border-left:solid 1px #<% = keyline %>;
+	text-align:center;
+}
+.dataGrid1stHeader td
+{
+	border-left-width:0px;
+	border-bottom:solid 1px #<% = keyline %>;
+	text-align:right;
+	vertical-align:bottom;
+	color:#<% = shade %>;
+}
+.dataGrid1stHeader th.dataGridColumnDivider
+{
+	border-left:solid 1px #<% = black %>;
+}
+.dataGrid2ndHeader th
+{
+	border-right:solid 1px #<% = keyline %>;
+	border-top:solid 1px #<% = keyline %>;
+	writing-mode: tb-rl;
+	filter: flipv fliph;
+	vertical-align:middle;
+}
+.dataGrid2ndHeader th.dataGridColumnDivider
+{
+	border-right:solid 1px #<% = black %>;
+}
+.LatestChatImage
+{
+	margin:0px;
+	border-right:solid 1px #<% = keyline %>;
+	border-left:solid 1px #<% = keyline %>;
+}
+
+.disabledTextBox
+{
+	border: none;
+	background-color: transparent;
+	color: Black;
+}
+
+
+.readOnlyNotesTextBox
+{
+	background-color: transparent;
+	color: Black;
+	border-style: solid;
+	border-width: 1;
+	border-color: #<% = keyline %>;
+	width: 520;
+	height: 60;
+}
+
+.addNotesTextBox
+{
+	color: Black;
+	text-align: left;
+	width: 490;
+}
+
+/*
+************ Calendar pages **************
+*/
+
+.CalendarTable
+{
+	border-bottom:1px solid #<% = black %>;
+}
+
+
+.CalendarDayHead
+{
+	background-color:#<% = medLight %>;
+	font-size:115%;
+	font-weight:bold;
+	padding:3px;
+	border-top:1px solid #<% = black %>;
+	border-bottom:1px solid #<% = black %>;
+}
+<% = adjustLinks(".CalendarDayHead", colorVeryLightOnMedLight, colorLightOnMedLight) %>
+
+.CalendarDayHead.Today
+{
+	background-color:#<% = colorMedium %>;
+}
+<% = adjustLinks(".CalendarDayHead.Today", colorMedium, colorMedium) %>
+
+.CalendarDay 
+{
+	
+}
+.CalendarDay.Today
+{
+	background-color:#<% = colorLight %>;
+	border-left:1px solid #<% = colorDark %>;
+	border-right:1px solid #<% = colorDark %>;
+}
+<% = adjustLinks(".CalendarDay.Today", colorVeryLightOnColorLight, colorLightOnColorLight) %>
+
+.CalendarDay.OtherMonth
+{
+	background-color:#<% = veryLight %>;
+}
+<% = adjustLinks(".CalendarDay.OtherMonth", colorVeryLightOnVeryLight, colorLightOnVeryLight) %>
+
+.CalendarDay.Weekend
+{
+	background-color:#<% = veryLight %>;
+}
+<% = adjustLinks(".CalendarDay.Weekend", colorVeryLightOnVeryLight, colorLightOnVeryLight) %>
+
+.CalendarDay.Weekday
+{
+	
+}
+
+.CalendarDayBody
+{
+	padding:3px;
+}
+
+.CalPic
+{
+	border:1px solid #<% = black %>;
+	margin-top:2px;
+	margin-bottom:2px;
+}
+
+
+.CalendarEvent
+{
+	overflow:hidden;
+	margin-bottom:13px;
+}
+.CalendarEvent.Hilight
+{
+	padding:1px 3px 3px 3px;
+	border:1px solid #<% = colorDark %>;
+	background-color:#<% = colorVeryLight %>;
+}
+<% = adjustLinks(".CalendarEvent.Hilight", colorVeryLightOnColorVeryLight, colorLightOnColorVeryLight) %>
+
+.EventHomeToday
+{
+	margin-bottom:13px;
+}
+.EventHomeToday.Hilight
+{
+	padding: 2px 3px 3px 3px;
+	border:1px solid #<% = colorDark %>;
+	background-color:#<% = colorVeryLight %>;
+}
+<% = adjustLinks(".EventHomeToday.Hilight", colorVeryLightOnColorVeryLight, colorLightOnColorVeryLight) %>
+
+/*
+************ Chat page links **************
+*/
+
+
+.CurrentPage
+{
+	border:1px solid #<% = keyline %>;
+	color:#<% = colorDark %>;
+	font-weight:bold;
+}
+.CurrentPageUnread
+{
+	border:1px solid #<% = keyline %>;
+	color:#<% = newReplyColor %>;
+	font-weight:bold;
+}
+.UnreadNew
+{
+	color:#<% = newTopicColor %>;
+	font-weight:bold;
+}
+a.UnreadNew:link,
+a.UnreadNew:visited
+{
+	color:#<% = newTopicColor %>;
+	font-weight:bold;
+}
+a.UnreadNew:hover{
+	color:#<% = newTopicColor %>;
+	font-weight:bold;
+}
+.Unread
+{
+	color:#<% = newReplyColor %>;
+	font-weight:bold;
+}
+a.Unread:link,
+a.Unread:visited
+{
+	color:#<% = newReplyColor %>;
+	font-weight:bold;
+}
+a.DisabledAnchor, a.DisabledAnchor:link, a.DisabledAnchor:visited, a.DisabledAnchor:hover 
+{
+	color:#<% = shade %>;
+}
+.Disabled
+{
+	color:#<% = shade %>;
+}
+.Disabled small
+{
+	color:#<% = shade %>;
+}
+/*
+************ Cal popup calendar control **************
+*/
+
+.clsDataArea{
+	width:80px;
+}
+.clsOuterFrame {
+	background-color : #<% = medLight %>;
+	border:1px solid #<% = keyline %>;
+}
+.clsOuterFrame img
+{
+	display:block;
+}
+.clsInnerFrame {
+}
+.clsTopPartNavpanel {
+	height: 3px;
+}
+.clsBottomPartNavpanel{
+	height: 3px;
+}
+.clsNavpanel
+{
+	padding-left:3px;
+	padding-right:3px;
+}
+.clsNavpanel table
+{
+	width: 100%;
+}
+.clsDateGrid{
+	background-color : #<% = medLight %>;
+	border:1px solid #<% = keyline %>;
+}
+.clsDateGrid td 
+{
+	padding:3px;
+}
+
+.clsWeekDay{
+	background-color: #<% = colorLight %>;
+	text-align: center;
+}
+
+.clsSelectedDayCell{
+	background-color: #<% = colorLight %>;
+	text-align: center;
+}
+
+.clsWorkDayCell{
+	background-color: #<% = white %>;
+	text-align: center;
+}
+
+.clsHoliDayCell{
+	background-color: #<% = veryLight %>;
+	text-align: center;
+}
+
+.clsOtherMonthDayCell{
+	background-color: #<% = veryLight %>;
+	text-align: center;
+}
+
+.clsOtherMonthDay{
+}
+
+.clsCurrentMonthDay{
+	color: #<% = black %>;
+}
+
+.clsSelectedDay{
+}
+
+.clsInfoTitle{
+	color: #<% = black %>;
+	text-align: center;
+	font-weight: bold;
+}
+/*
+************ Chat client **************
+*/
+
+/*
+Chat client
+*/
+.ChatClientMain
+{
+	width:300px;
+	z-index:150;
+	/*margin:0px 0px 13px 0px;
+	border:none;*/
+}
+/*.ChatClientMain p
+{
+	margin:5px 6px 6px 6px;
+}*/
+
+.ChatClientMessageListHiddenHolder
+{
+	padding:3px;
+}
+
+/*
+Chat rooms
+*/
+
+.ChatClientRoomList
+{
+	margin: 0px;
+	padding: 4px 0px 2px 0px;
+}
+.ChatClientRoomListDivider
+{
+	border-bottom:1px solid #<% = keyline %>;
+	margin:1px 5px 1px 5px;
+}
+.ChatClientRoomPrivateList
+{
+	margin: 0px;
+	padding: 2px 0px 2px 0px;
+}
+.ChatClientRoomGuestList
+{
+	margin: 0px;
+	padding: 2px 0px 2px 0px;
+}
+.ChatClientRoomHolder
+{
+	display:block;
+	border:1px solid transparent;
+	position:relative;
+	width: 300px;
+	margin: 0px 0px 0px 0px;
+	padding: 0px 0px 0px 0px;
+	height:19px;
+	/* height set in RoomHtml.cs - 15px for IE, 14px for all others */
+}
+
+.ChatClientRoomLink
+{
+	cursor:pointer;
+}
+.ChatClientRoomSelected
+{
+	background-color:#<% = veryLight %>;
+	font-weight:bold;
+	border:1px solid #<% = keyline %>;
+	margin: 0px 0px 2px 0px;
+	width:298px;
+	height:17px;
+}
+.ChatClientRoomUnpinned
+{
+	display:none;
+}
+.ChatClientRoomLinkNoUnread
+{
+	color:#<% = shade %>;
+}
+
+.ChatClientRoomLinkFader
+{
+	position:absolute;
+	left:193px;
+}
+.ChatClientRoomLinkHolder
+{
+	position:absolute;
+	left:2px;
+	padding: 0px 3px 0px 0px;
+	margin:0px;
+	width:234px;
+	height:15px;
+	overflow:hidden;
+	white-space: nowrap;
+}
+
+
+.ChatClientRoomStatsHolder
+{
+	position:absolute;
+	left:214px;
+	text-align:right;
+	width:60px;
+}
+.ChatClientRoomUnreadHolder { font-weight:bold; }
+.ChatClientRoomSeperatorHolder { color:#<% = shade %>; }
+.ChatClientRoomTotalHolder { color:#<% = shade %>; }
+/*.ChatClientRoomSelected * { color:#ffffff!important; }
+.ChatClientRoomSelected .ChatClientRoomSeperatorHolder, .ChatClientRoomSelected .ChatClientRoomTotalHolder 
+{ 
+	color:#997f2c!important; 
+}*/
+
+.ChatClientRoomPresence
+{
+	margin-left: 3px;
+}
+.ChatClientRoomPin
+{
+	position:absolute;
+	left:278px;
+	margin-top: 3px;
+	cursor: pointer;
+}
+.ChatClientRoomNoPin
+{
+	position:absolute;
+	left:278px;
+	margin-top: 3px;
+}
+.ChatClientRoomCross
+{
+	position:absolute;
+	left:284px;
+	margin-top: 2px;
+	cursor: pointer;
+}
+.ChatClientRoomNoCross
+{
+	position:absolute;
+	left:284px;
+	margin-top: 2px;
+}
+.ChatClientRoomStar
+{
+	position:absolute;
+	left:288px;
+	margin-top: 1px;
+	cursor: pointer;
+}
+.ChatClientRoomUnstarrable
+{
+	position:absolute;
+	left:288px;
+	margin-top: 1px;
+}
+.ChatClientRoomNoStar
+{
+	position:absolute;
+	left:288px;
+	margin-top: 1px;
+}
+/*
+Chat messages
+*/
+/*
+.ChatClientMessagesHeader
+{
+	font-size:12px;
+	font-weight:bold;
+	padding-left:6px;
+	padding-right:6px;
+	padding-top:3px;
+	padding-bottom:3px;
+	margin-top:3px;
+	border-top:1px solid #<% = keyline %>;
+	border-bottom:1px solid #<% = keyline %>;
+	margin-bottom:0px;
+}*/
+.ChatClientMessageList
+{
+	padding-top:0px;
+	padding-bottom:0px;
+	
+	width: 300px;
+	height: 400px;
+	overflow: auto;
+	overflow-y: auto;
+	overflow-x: hidden; 
+}
+
+.ChatClientMessageHolderNew { background-color:#<% = veryLight %>; }
+<% = adjustLinks(".ChatClientMessageHolderNew", colorVeryLightOnVeryLight, colorLightOnVeryLight) %>
+
+.ChatClientMessageHolderOld { background-color:transparent; }
+.ChatClientMessageHolder
+{
+	padding-top:4px;
+	padding-bottom:4px;
+	padding-left:6px;
+	padding-right:6px;
+	
+}
+.ChatClientMessageHolderTop { padding-top:8px !important; } 
+.ChatClientMessageHolderBot { padding-bottom:8px !important; }
+
+.ChatClientMessagePic
+{
+	margin-top:0px;
+	margin-bottom:0px;
+	margin-left:0px;
+	margin-right:3px;
+	border:1px solid #<% = black %>;
+}
+.ChatClientMessageHeader
+{
+	font-style:italic;
+	color:#<% = shade %>;
+	margin-bottom:1px;
+}
+.ChatClientMessageChatButtonHolder
+{
+	float:right;
+}
+.ChatClientMessageChatButton
+{
+	width:40px;
+}
+.ChatClientMessageSubHead
+{
+	color:#<% = shade %>;
+	margin-bottom:1px;
+}
+.ChatClientMessageBody
+{
+}
+.ChatClientArchiveHeading
+{
+	padding-top:8px;
+	padding-bottom:4px;
+	padding-left:7px;
+	padding-right:6px;
+}
+
+/*
+Photo
+*/
+.ChatMessagePhotoHolder
+{
+	/*width:300px; 
+	overflow:hidden;
+	border-bottom:1px solid #<% = black %>;
+	background-color:#<% = black %>;*/
+	
+	/*width:300px; 
+	background-color:#<% = black %>;*/
+	padding-top:10px;
+	text-align:center;
+	
+}
+.ChatClientPhotoImage
+{
+	border:1px solid #<% = black %>;
+	display:block;
+	margin:auto;
+	/*position:relative;*/
+}
+/*
+.ChatClientRoomIconHolder
+{
+	padding:0px;
+	border:1px solid #ff0000;
+	cursor:pointer;
+	width:40px;
+	height:12px;
+	margin-right:2px;
+	text-align:top;
+	vertical-align:top;
+	position:relative;
+	overflow:hidden;
+}*/
+.ChatClientRoomIconHolderOuter
+{
+	padding:0px;
+	position:relative;
+	display:inline-block;
+	overflow:hidden;
+	margin-right:2px;
+	vertical-align:bottom;
+	height:13px;
+}
+.ChatClientRoomIconHolderInner
+{
+	height:13px;
+	width:40px;
+	overflow:hidden;
+	display:inline-block;
+	clip: rect(17px 5px 30px 45px);
+
+}
+.ChatClientRoomIcon
+{	
+	top:-17px;
+	left:-5px;
+	position:relative;
+	cursor:pointer;
+}
+
+/*
+Misc
+*/
+.ChatClientTextBoxHolder input
+{
+	padding:3px;
+	background-color:#<%=veryLight%>;
+}
+.ChatClientTextBox
+{
+	color:#<% = black %>;
+}
+.ChatClientTextBoxWatermark
+{
+	/*font-style:italic;*/
+	color:#<% = shade %>;
+}
+.ChatClientNoNewMessagesOldMessagesTopSpacer
+{
+	width:1px;
+	height:2px;
+}
+.ChatClientRoomHandle
+{
+	margin-left:1px;
+	margin-right:2px;
+	cursor:move;
+}
+.ChatClientRoomArrow
+{
+	margin-left:1px;
+	margin-right:2px;
+	margin-top:2px;
+	vertical-align:top;
+	cursor:move;
+}
+.ChatClientPrivateChatDrop
+{
+	height:19px;
+	width:300px;
+	color:#<% = shade %>;
+	/*background-color:#<%=veryLight%>;*/
+	margin-bottom:2px;
+}
+.ChatClientPrivateChatDropMain
+{
+	
+}
+.ChatClientBottomBar
+{
+	border-top:1px solid #<% = keyline %>;
+	text-align:center;
+	cursor:move;
+}
+.ChatClientPopupArea
+{
+	/*
+	width: 250px;
+	*/
+	z-index: 960;
+	overflow: visible;
+}
+.ChatClientPopup
+{
+	/*
+	width: 250px;
+	height: 170px;
+	*/
+	z-index: 960;
+	position:absolute;
+	display:none;
+	padding:0px;
+}
+
+.ChatClientPopupHeader
+{
+	width:233px;
+	height:16px;
+	color:#<% = white %>;
+	background-color:#<% = black %>;
+	border-left:5px solid #<% = colorMedium %>;
+	font-weight: normal;
+	font-size:12px;
+	margin:0px 0px 0px 0px;
+	font-family: Trebuchet MS; /*Trebuchet MS, 18px is nice*/
+	padding:2px 6px 2px 6px;
+	overflow:hidden;
+}
+<% = adjustLinks(".ChatClientPopupHeader", "transparent", white) %>
+
+
+.ChatClientPopupCloseLinkHolder
+{
+	left:200px;
+	position:absolute; 
+	width:45px; 
+	text-align:right;
+}
+.ChatClientPopupTitle
+{
+	width:200px;
+}
+
+.ChatClientPopupItemsListMouseOver
+{
+	background-color:#<% = colorLight %> !important;
+}
+.ChatClientPopupItemsList
+{
+	cursor:pointer;
+	height:149px;
+	width:248px;
+	overflow:auto;
+	background-color:#<% = white %>;
+	border-right:1px solid #<% = black %>;
+	border-left:1px solid #<% = black %>;
+	border-bottom:1px solid #<% = black %>;
+}
+.ui-effects-transfer
+{
+	position:absolute;
+	z-index:125;
+	background-color:#ffffff;
+	width:20px;
+	height:20px;
+	border:1px solid #<% = black %>;
+	top:20px;
+	left:20px;
+	/*border-top:19px solid #333333;
+	border-left:1px solid #<% = black %>;
+	border-right:1px solid #<% = black %>;
+	border-bottom:1px solid #<% = black %>;*/
+}
+.ChatClientPopupButtonsDiv
+{
+	background-color:#333333;
+	position:absolute;
+	top:0px;
+	
+}
+.ChatClientPopupCloseButton
+{
+	width:40px;
+	padding:2px;
+	height:19px;
+	font-family: Verdana, sans-serif;
+	font-size:10px;
+	padding-top:0px;
+}
+.BottomRight
+{
+	display: none;
+	position: absolute;
+	bottom: 1px;
+	right: 1px;
+}
+.ChatClientDeleteArchiveHolder
+{
+	border-top:1px solid #<% = keyline %>; 
+	padding:5px;
+}
+.ChatClientChatPicImage
+{
+	display:block;
+	width:300px;
+	height:100px;
+	border:0px;
+	border-bottom: 1px solid #<% = keyline %>;
+}
+/*
+************ Event box **************
+*/
+.EventBoxIconsAndNavigationHolder
+{
+	padding-top:10px; 
+	position:relative; 
+	height:53px;
+	z-index:102;
+}
+.EventBoxIconsNavigationHolder
+{
+	position: absolute;
+	width:12px; 
+	height:33px; 
+	padding:5px; 
+	padding-top:15px;
+	z-index:102;
+}
+.EventBoxIconsNavigationHolder.Back
+{
+	left:5px;
+}
+.EventBoxIconsNavigationHolder.Forward
+{
+	left:570px;
+}
+.EventBoxIconsHolderClip
+{
+	z-index:102;
+	left:30px;
+	position:absolute;
+	width:530px;
+	height:60px;
+	
+	
+	margin-top:-20px;
+	padding-top:20px;
+	overflow:hidden;
+}
+.EventBoxIconsHolderOuter
+{
+	z-index:102;
+	padding-left:1px;
+}
+.EventBoxPageHolder
+{
+	z-index:102;
+	position: absolute;
+	display: none;
+	width:530px;
+	height: 50px;
+	margin:-20px;
+	padding:20px;
+}
+.EventBoxPageHolder.Selected
+{
+	display: block;
+}
+.EventBoxIconHolder
+{
+	z-index:102;
+	position: relative;
+	margin-left: 7px;
+	margin-right: 7px;
+	width: 52px;
+	height: 52px;
+	float: left;
+}
+.EventBoxIconKeyline
+{
+	position:absolute;
+	width:66px;
+	height:66px;
+	top:-8px;
+	left:-8px;
+
+	/*margin-left:-8px;
+	margin-top:-8px;
+	
+	padding-top:8px;
+	padding-left:8px;
+
+	padding-bottom:8px;
+	padding-right:8px;*/
+
+	border-width:0px;
+	z-index:102;
+	
+}
+.EventBoxIconKeyline.Selected
+{
+	background-color: #<% = veryLight %>;
+	position:absolute;
+	border:1px solid #<% = keyline %>;
+	border-bottom: 1px solid #<% = veryLight %>;
+}
+<% = adjustLinks(".EventBoxIconKeyline.Selected", colorVeryLightOnVeryLight, colorLightOnVeryLight) %>
+
+.EventBoxIconImage
+{
+	position: absolute;
+	display: block;
+	z-index:103;
+}
+.EventBoxInfoHolderOuter
+{	
+	
+	background-color: #<% = veryLight %>;
+	padding:10px;
+	margin-top:-1px;
+	height:100px;
+	position:relative;
+	overflow:hidden;
+	z-index:101;
+}
+<% = adjustLinks(".EventBoxInfoHolderOuter", colorVeryLightOnVeryLight, colorLightOnVeryLight) %>
+
+.EventBoxInfoHolderInner
+{
+	position: absolute;
+}
+.EventBoxInfoImage
+{
+	margin-left:10px;
+	margin-bottom:5px;
+}
+.EventBoxInfoTextHolder
+{
+	width:578px;
+	background-color: #<% = veryLight %>;
+}
+<% = adjustLinks(".EventBoxInfoTextHolder", colorVeryLightOnVeryLight, colorLightOnVeryLight) %>
+
+.EventBoxCountryHolder
+{
+	padding: 5px;
+	float: left;
+	width: 50px;
+	text-align: center;
+}
+
+a.NoStyle
+{
+}
+
+a.NoStyle:link,
+a.NoStyle:visited       { background-color:transparent; }
+a.NoStyle:hover         { background-color:transparent; }
+
+/*
+************ Stuff that must go right at the bottom **************
+*/
+
+.ClearAfter:after 
+{
+	content: "<%= Vars.Opera ? "" : "." %>";
+	display: block;
+	height: 0;
+	clear: both;
+	visibility: hidden;
+}
+/* Hides from IE-mac \*/
+* html .ClearAfter { height: 1%; }
+/* End hide from IE-mac */
+.ClearAfter { min-height:0; clear:both; }

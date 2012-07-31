@@ -1,0 +1,340 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{B3DB25F4-4F27-4F21-83C1-6B6DD2412AED}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MixmagGreatest</RootNamespace>
+    <AssemblyName>MixmagGreatest</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>4.0</OldToolsVersion>
+    <UpgradeBackupLocation />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\..\Dll\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Web.Extensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.Mobile" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Callback.aspx" />
+    <Content Include="Stats1.aspx" />
+    <Content Include="Default3.aspx" />
+    <Content Include="Default1.aspx" />
+    <Content Include="Default.aspx" />
+    <Content Include="default2.aspx" />
+    <Content Include="gfx\2manyDJs_100.jpg" />
+    <Content Include="gfx\2manyDJs_200.jpg" />
+    <Content Include="gfx\2ManyDJs_50.jpg" />
+    <Content Include="gfx\Alfredo_100.jpg" />
+    <Content Include="gfx\Alfredo_200.jpg" />
+    <Content Include="gfx\Alfredo_50.jpg" />
+    <Content Include="gfx\AndrewWeatherall_100.jpg" />
+    <Content Include="gfx\AndrewWeatherall_200.jpg" />
+    <Content Include="gfx\AndrewWeatherall_50.jpg" />
+    <Content Include="gfx\AndyC_100.jpg" />
+    <Content Include="gfx\AndyC_200.jpg" />
+    <Content Include="gfx\AndyC_50.jpg" />
+    <Content Include="gfx\arrow-next.gif" />
+    <Content Include="gfx\arrow-prev.gif" />
+    <Content Include="gfx\background.gif" />
+    <Content Include="gfx\CarlCox_100.jpg" />
+    <Content Include="gfx\CarlCox_200.jpg" />
+    <Content Include="gfx\CarlCox_50.jpg" />
+    <Content Include="gfx\DavidMancuso_100.jpg" />
+    <Content Include="gfx\DavidMancuso_200.jpg" />
+    <Content Include="gfx\DavidMancuso_50.jpg" />
+    <Content Include="gfx\DerrickCarter_100.jpg" />
+    <Content Include="gfx\DerrickCarter_200.jpg" />
+    <Content Include="gfx\DerrickCarter_50.jpg" />
+    <Content Include="gfx\DJMarky_100.jpg" />
+    <Content Include="gfx\DJMarky_200.jpg" />
+    <Content Include="gfx\DJMarky_50.jpg" />
+    <Content Include="gfx\EddieHalliwell_100.jpg" />
+    <Content Include="gfx\EddieHalliwell_200.jpg" />
+    <Content Include="gfx\EddieHalliwell_50.jpg" />
+    <Content Include="gfx\ErickMorillo_100.jpg" />
+    <Content Include="gfx\ErickMorillo_200.jpg" />
+    <Content Include="gfx\ErickMorillo_50.jpg" />
+    <Content Include="gfx\ErolAlkan_100.jpg" />
+    <Content Include="gfx\ErolAlkan_200.jpg" />
+    <Content Include="gfx\ErolAlkan_50.jpg" />
+    <Content Include="gfx\FabioGrooverider_100.jpg" />
+    <Content Include="gfx\FabioGrooverider_200.jpg" />
+    <Content Include="gfx\FabioGrooverider_50.jpg" />
+    <Content Include="gfx\FatboySlim_100.jpg" />
+    <Content Include="gfx\FatboySlim_200.jpg" />
+    <Content Include="gfx\FatboySlim_50.jpg" />
+    <Content Include="gfx\FelixDaHousecat_100.jpg" />
+    <Content Include="gfx\FelixDaHousecat_200.jpg" />
+    <Content Include="gfx\FelixDaHousecat_50.jpg" />
+    <Content Include="gfx\FrancisGrasso_100.jpg" />
+    <Content Include="gfx\FrancisGrasso_200.jpg" />
+    <Content Include="gfx\FrancisGrasso_50.jpg" />
+    <Content Include="gfx\FrancoisKevorkian_100.jpg" />
+    <Content Include="gfx\FrancoisKevorkian_200.jpg" />
+    <Content Include="gfx\FrancoisKevorkian_50.jpg" />
+    <Content Include="gfx\FrankieKnuckles_100.jpg" />
+    <Content Include="gfx\FrankieKnuckles_200.jpg" />
+    <Content Include="gfx\FrankieKnuckles_50.jpg" />
+    <Content Include="gfx\GrandmasterFlash_100.jpg" />
+    <Content Include="gfx\GrandmasterFlash_200.jpg" />
+    <Content Include="gfx\GrandmasterFlash_50.jpg" />
+    <Content Include="gfx\Hatcha_100.jpg" />
+    <Content Include="gfx\Hatcha_200.jpg" />
+    <Content Include="gfx\Hatcha_50.jpg" />
+    <Content Include="gfx\JazzyJeff_100.jpg" />
+    <Content Include="gfx\JazzyJeff_200.jpg" />
+    <Content Include="gfx\JazzyJeff_50.jpg" />
+    <Content Include="gfx\JeffMills_100.jpg" />
+    <Content Include="gfx\JeffMills_200.jpg" />
+    <Content Include="gfx\JeffMills_50.jpg" />
+    <Content Include="gfx\JimmySavile_100.jpg" />
+    <Content Include="gfx\JimmySavile_200.jpg" />
+    <Content Include="gfx\JimmySavile_50.jpg" />
+    <Content Include="gfx\KoolHerc_100.jpg" />
+    <Content Include="gfx\KoolHerc_200.jpg" />
+    <Content Include="gfx\KoolHerc_50.jpg" />
+    <Content Include="gfx\LarryLevan_100.jpg" />
+    <Content Include="gfx\LarryLevan_200.jpg" />
+    <Content Include="gfx\LarryLevan_50.jpg" />
+    <Content Include="gfx\LaurentGarnier_100.jpg" />
+    <Content Include="gfx\LaurentGarnier_200.jpg" />
+    <Content Include="gfx\LaurentGarnier_50.jpg" />
+    <Content Include="gfx\like-prompt.gif" />
+    <Content Include="gfx\list-head.gif" />
+    <Content Include="gfx\mm_greatest_dj_withmm_logo.jpg" />
+    <Content Include="gfx\Optimo_100.jpg" />
+    <Content Include="gfx\Optimo_200.jpg" />
+    <Content Include="gfx\Optimo_50.jpg" />
+    <Content Include="gfx\PaulOakenfold_100.jpg" />
+    <Content Include="gfx\PaulOakenfold_200.jpg" />
+    <Content Include="gfx\PaulOakenfold_50.jpg" />
+    <Content Include="gfx\PaulVanDyk_100.jpg" />
+    <Content Include="gfx\PaulVanDyk_200.jpg" />
+    <Content Include="gfx\PaulVanDyk_50.jpg" />
+    <Content Include="gfx\Qbert_100.jpg" />
+    <Content Include="gfx\Qbert_200.jpg" />
+    <Content Include="gfx\Qbert_50.jpg" />
+    <Content Include="gfx\RicardoVillalobos_100.jpg" />
+    <Content Include="gfx\RicardoVillalobos_200.jpg" />
+    <Content Include="gfx\RicardoVillalobos_50.jpg" />
+    <Content Include="gfx\RichieHawtin_100.jpg" />
+    <Content Include="gfx\RichieHawtin_200.jpg" />
+    <Content Include="gfx\RichieHawtin_50.jpg" />
+    <Content Include="gfx\Sasha_100.jpg" />
+    <Content Include="gfx\Sasha_200.jpg" />
+    <Content Include="gfx\Sasha_50.jpg" />
+    <Content Include="gfx\SvenVath_100.jpg" />
+    <Content Include="gfx\SvenVath_200.jpg" />
+    <Content Include="gfx\SvenVath_50.jpg" />
+    <Content Include="gfx\Tiesto_100.jpg" />
+    <Content Include="gfx\Tiesto_200.jpg" />
+    <Content Include="gfx\Tiesto_50.jpg" />
+    <Content Include="gfx\TonyDeVit_100.jpg" />
+    <Content Include="gfx\TonyDeVit_200.jpg" />
+    <Content Include="gfx\TonyDeVit_50.jpg" />
+    <Content Include="misc\jquery-1.2.6.min.js" />
+    <Content Include="gfx\mixmag-logo-300.png" />
+    <Content Include="Stats.aspx" />
+    <Content Include="test.aspx" />
+    <Content Include="Vote.aspx" />
+    <Content Include="wait.html" />
+    <Content Include="Web.config" />
+    <Content Include="xd_receiver.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Callback.aspx.cs">
+      <DependentUpon>Callback.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Callback.aspx.designer.cs">
+      <DependentUpon>Callback.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Stats1.aspx.cs">
+      <DependentUpon>Stats1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Stats1.aspx.designer.cs">
+      <DependentUpon>Stats1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Default3.aspx.cs">
+      <DependentUpon>Default3.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Default3.aspx.designer.cs">
+      <DependentUpon>Default3.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Default1.aspx.cs">
+      <DependentUpon>Default1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Default1.aspx.designer.cs">
+      <DependentUpon>Default1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="default2.aspx.cs">
+      <DependentUpon>default2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="default2.aspx.designer.cs">
+      <DependentUpon>default2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Local.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Stats.aspx.cs">
+      <DependentUpon>Stats.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Stats.aspx.designer.cs">
+      <DependentUpon>Stats.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="test.aspx.cs">
+      <DependentUpon>test.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="test.aspx.designer.cs">
+      <DependentUpon>test.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vote.aspx.cs">
+      <DependentUpon>Vote.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vote.aspx.designer.cs">
+      <DependentUpon>Vote.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="wait.html.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="wait.html.designer.cs">
+      <DependentUpon>wait.html.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Bobs\Bobs.csproj">
+      <Project>{4DE1194A-CFBE-4604-ADDA-CE6EC0183345}</Project>
+      <Name>Bobs</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Domain\Model\Model.csproj">
+      <Project>{B076235C-D743-42C1-A6FA-4E1CB9BD4542}</Project>
+      <Name>Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Cache\Caching\Caching.csproj">
+      <Project>{616B4BE1-C145-4E5B-97EC-3E26F457D49A}</Project>
+      <Name>Caching</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Common\Common.csproj">
+      <Project>{E69EBDF9-A0D6-43BF-9A86-811572EEB01F}</Project>
+      <Name>Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Facebook.Common\FacebookCommon.csproj">
+      <Project>{70F6A11D-ADC3-45A3-A39C-31D3F1443C54}</Project>
+      <Name>FacebookCommon</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Facebook\Facebook.csproj">
+      <Project>{9A24B145-8055-401F-96D5-529D97041641}</Project>
+      <Name>Facebook</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <!--<ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>59602</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://dev0.dontstayin.com/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>http://dev0.dontstayin.com/</CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>-->
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>False</AutoAssignPort>
+          <DevelopmentServerPort>8080</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://dev0.dontstayin.com/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

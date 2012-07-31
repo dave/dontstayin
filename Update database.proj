@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="UpdateDatabase" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <UsingTask TaskName="MSBuildTasks.SqlScriptRunner" AssemblyFile="C:\release\MSBuildTasks\MSBuildTasks.dll" />
+  <UsingTask TaskName="MSBuildTasks.DatabaseAssemblyLoader" AssemblyFile="C:\release\MSBuildTasks\MSBuildTasks.dll" />
+  <ItemGroup>
+    <EmbeddedAssembly Include=".\Utilities\Cache\CacheTriggers\bin\CacheTriggers.dll" />
+		<!--EmbeddedAssembly Include=".\Utilities\Spatial\bin\Spatial.dll" /-->
+  </ItemGroup>
+	<ItemGroup>
+		<SqlScriptProjectPath Include=".\Bobs" />
+		<SqlScriptProjectPath Include=".\Utilities\Cache\CacheTriggers" />
+	</ItemGroup>
+  <!--SqlSettings-->
+  <PropertyGroup>
+    <SqlServer>84.45.14.71</SqlServer>
+    <SqlDatabase>db_spotted</SqlDatabase>
+    <SqlUsername>DSIUSR</SqlUsername>
+    <SqlPassword>toobusy319hello</SqlPassword>
+    <SqlConnectionString>Data Source=$(SqlServer);Initial Catalog=$(SqlDatabase); user id=$(SqlUsername); password=$(SqlPassword);</SqlConnectionString>
+    <SqlServerTempFolderForPlacingAssemblies>\\84.45.14.71\TempFolderForDatabaseClrAssemblies</SqlServerTempFolderForPlacingAssemblies>
+  </PropertyGroup>
+  <Target Name="UpdateDatabase" DependsOnTargets="">
+    <DatabaseAssemblyLoader ConnectionString="$(SqlConnectionString)" AssemblyPath="%(EmbeddedAssembly.Identity)" PathToFolderOnRemoteServer="$(SqlServerTempFolderForPlacingAssemblies)" />
+		<SqlScriptRunner ProjectPath="%(SqlScriptProjectPath.Identity)" ConnectionString="$(SqlConnectionString)" ApplyDataScripts="False" />
+  </Target>
+</Project>

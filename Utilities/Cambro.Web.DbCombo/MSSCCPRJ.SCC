@@ -1,0 +1,5 @@
+SCC = This is a source code control file
+
+[Cambro.Web.DbCombo.csproj]
+SCC_Aux_Path = http://jabba/VaultService|d.brophy:1
+SCC_Project_Name = $/DbCombo/Cambro.Web.DbCombo

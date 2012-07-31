@@ -1,0 +1,962 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{4DE1194A-CFBE-4604-ADDA-CE6EC0183345}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <NoStandardLibraries>false</NoStandardLibraries>
+    <AssemblyName>Bobs</AssemblyName>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <RootNamespace>Bobs</RootNamespace>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <TargetFrameworkProfile />
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;NOTSCRIPT</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Cambro.Web.DbCombo, Version=4.1.9.26068, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Dll\Cambro.Web.DbCombo.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\Dll\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="nunit.framework, Version=2.4.1.0, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Dll\nunit.framework.dll</HintPath>
+    </Reference>
+    <Reference Include="NVelocityTemplateEngine, Version=1.0.0.0, Culture=neutral">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Dll\NVelocityTemplateEngine.dll</HintPath>
+    </Reference>
+    <Reference Include="Quartz, Version=0.6.0.27796, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Dll\Quartz.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Web.Extensions.Design, Version=1.0.61025.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Sql\Create Scripts\prc\BannerServer.Banner.RecalculateTrafficLevelRelativeToMinuteOfDay.sql" />
+    <None Include="Sql\Data Scripts\Banner.sql" />
+    <None Include="Sql\Data Scripts\Country.sql" />
+    <None Include="Sql\Data Scripts\Global.sql" />
+    <None Include="Sql\Data Scripts\Log.sql" />
+    <None Include="Sql\Data Scripts\Misc.sql" />
+    <None Include="Sql\Data Scripts\Promoter.sql" />
+    <None Include="Sql\Data Scripts\Usr.sql" />
+    <None Include="Sql\Data Scripts\Visit.sql" />
+    <None Include="Sql\Queries\Create sp_generate_inserts.sql" />
+    <None Include="Sql\Queries\Example check exists scripts.sql" />
+    <None Include="Sql\Update Scripts\0001 - create tables.sql" />
+    <None Include="Sql\Update Scripts\0002 - add carddigits to Transfer table and alter cardnumberend description.sql" />
+    <None Include="Sql\Update Scripts\0003 - modify transfer cardnumberend data and card digits.sql" />
+    <None Include="Sql\Update Scripts\0004 - Add Broken columns to Misc table.sql" />
+    <None Include="Sql\Update Scripts\0005 - create BannerServer scripts.sql" />
+    <None Include="Sql\Update Scripts\0006 - add CancelledTickets to TicketPromoterEvent table.sql" />
+    <None Include="Sql\Update Scripts\0007 - add FundsLockTotalFundsDontMatch to TicketPromoterEvent table.sql" />
+    <None Include="Sql\Update Scripts\0008 - add EmailSent to TicketRun table.sql" />
+    <None Include="Sql\Update Scripts\0009 - update CardDigits and CardNumberEnd on Transfer table.sql" />
+    <None Include="Sql\Update Scripts\0010 - add description to TicketRun.Enabled.sql" />
+    <None Include="Sql\Update Scripts\0011 - add VatStatus to Promoter table.sql" />
+    <None Include="Sql\Update Scripts\0012 - add VatNumber to Promoter table.sql" />
+    <None Include="Sql\Update Scripts\0013 - add VatCountryK to Promoter table.sql" />
+    <None Include="Sql\Update Scripts\0014 - add TotalVat to TicketPromoterEvent table.sql" />
+    <None Include="Sql\Update Scripts\0015 - add AddedByUsrK to Promoter table.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\Spotted\Js\Desktop\AutoCompleteLibrary\CountryInfo.Shared.cs">
+      <Link>Js\AutoCompleteLibrary\CountryInfo.Shared.cs</Link>
+    </Compile>
+    <Compile Include="..\Spotted\Js\Desktop\AutoCompleteLibrary\EventInfo.Shared.cs">
+      <Link>Js\AutoCompleteLibrary\EventInfo.Shared.cs</Link>
+    </Compile>
+    <Compile Include="..\Spotted\Js\Desktop\AutoCompleteLibrary\PlaceInfo.Shared.cs">
+      <Link>Js\AutoCompleteLibrary\PlaceInfo.Shared.cs</Link>
+    </Compile>
+    <Compile Include="..\Spotted\Js\Desktop\AutoCompleteLibrary\Suggestion.Shared.cs">
+      <Link>Js\AutoCompleteLibrary\Suggestion.Shared.cs</Link>
+    </Compile>
+    <Compile Include="..\Spotted\Js\Desktop\AutoCompleteLibrary\VenueInfo.Shared.cs">
+      <Link>Js\AutoCompleteLibrary\VenueInfo.Shared.cs</Link>
+    </Compile>
+    <Compile Include="..\Spotted\Js\Desktop\ClientControls\HtmlAutoCompleteAttributes.Shared.cs">
+      <Link>Js\ClientControls\HtmlAutoCompleteAttributes.Shared.cs</Link>
+    </Compile>
+    <Compile Include="..\Spotted\Js\Desktop\ClientControls\MultiSelectorAttributes.Shared.cs">
+      <Link>Js\ClientControls\MultiSelectorAttributes.Shared.cs</Link>
+    </Compile>
+    <Compile Include="..\Spotted\Js\Desktop\Controls\Banners\Generator\BannerRenderInfo.Shared.cs">
+      <Link>Js\Controls\Banners\Generator\BannerRenderInfo.Shared.cs</Link>
+    </Compile>
+    <Compile Include="..\Spotted\Js\Desktop\Controls\EventBox\EventBox.Event.Shared.cs">
+      <Link>Js\Controls\EventBox\EventBox.Event.Shared.cs</Link>
+    </Compile>
+    <Compile Include="..\Spotted\Js\Desktop\Controls\EventBox\EventBox.EventPage.Shared.cs">
+      <Link>Js\Controls\EventBox\EventBox.EventPage.Shared.cs</Link>
+    </Compile>
+    <Compile Include="..\Spotted\Js\Desktop\Controls\EventBox\EventBox.Misc.Shared.cs">
+      <Link>Js\Controls\EventBox\EventBox.Misc.Shared.cs</Link>
+    </Compile>
+    <Compile Include="..\Spotted\Js\Desktop\Controls\LatestChat\ThreadStub.Shared.cs">
+      <Link>Js\Controls\LatestChat\ThreadStub.Shared.cs</Link>
+    </Compile>
+    <Compile Include="..\Spotted\Js\Desktop\Controls\MapControl\MapItem.Shared.cs">
+      <Link>Js\Controls\MapControl\MapItem.Shared.cs</Link>
+    </Compile>
+    <Compile Include="..\Spotted\Js\Desktop\Controls\MultiBuddyChooser\EmailsSuggestionValue.Shared.cs">
+      <Link>Js\Controls\MultiBuddyChooser\EmailsSuggestionValue.Shared.cs</Link>
+    </Compile>
+    <Compile Include="..\Spotted\Js\Desktop\Controls\MultiBuddyChooser\EmailSuggestionValue.Shared.cs">
+      <Link>Js\Controls\MultiBuddyChooser\EmailSuggestionValue.Shared.cs</Link>
+    </Compile>
+    <Compile Include="..\Spotted\Js\Desktop\Controls\MultiBuddyChooser\GetMusicTypesAndPlacesResult.Shared.cs">
+      <Link>Js\Controls\MultiBuddyChooser\GetMusicTypesAndPlacesResult.Shared.cs</Link>
+    </Compile>
+    <Compile Include="..\Spotted\Js\Desktop\Controls\MultiBuddyChooser\MusicTypeKAndPlaceK.Shared.cs">
+      <Link>Js\Controls\MultiBuddyChooser\MusicTypeKAndPlaceK.Shared.cs</Link>
+    </Compile>
+    <Compile Include="..\Spotted\Js\Desktop\Controls\PhotoControl\BannerStub.Shared.cs">
+      <Link>Js\Controls\PhotoControl\BannerStub.Shared.cs</Link>
+    </Compile>
+    <Compile Include="..\Spotted\Js\Desktop\Controls\PhotoControl\PhotoStub.Shared.cs">
+      <Link>Js\Controls\PhotoControl\PhotoStub.Shared.cs</Link>
+    </Compile>
+    <Compile Include="..\Spotted\Js\Desktop\Controls\Picker\Picker.Shared.cs">
+      <Link>Js\Controls\Picker\Picker.Shared.cs</Link>
+    </Compile>
+    <Compile Include="BannerServer\Identity.cs" />
+    <Compile Include="BannerServer\Rules\IdentityRules.cs" />
+    <Compile Include="BannerServer\Rules\RequestRules.cs" />
+    <Compile Include="BannerServer\Rules\TypesOfRule\BannerIsLiveRule.cs" />
+    <Compile Include="BannerServer\Rules\TypesOfRule\BannerIsNotHtmlRule.cs" />
+    <Compile Include="BannerServer\Rules\TypesOfRule\BannerKRule.cs" />
+    <Compile Include="BannerServer\Rules\TypesOfRule\BannerPositionRule.cs" />
+    <Compile Include="BannerServer\Rules\TypesOfRule\IdentityPropertyRules.cs" />
+    <Compile Include="BannerServer\Rules\TypesOfRule\MusicTypesFavouredByIdentityRule.cs" />
+    <Compile Include="BannerServer\Rules\TypesOfRule\PlacesVisitedByIdentityRule.cs" />
+    <Compile Include="BannerServer\Rules\TypesOfRule\Rule.cs" />
+    <Compile Include="BannerServer\Server.cs" />
+    <Compile Include="BannerServer\Static.cs" />
+    <Compile Include="BannerServer\Traffic\ConstantTrafficShape.cs" />
+    <Compile Include="BannerServer\Traffic\DataDrivenTrafficShape.cs" />
+    <Compile Include="BannerServer\Traffic\TrafficShape.cs" />
+    <Compile Include="Bobs\Abuse.cs" />
+    <Compile Include="Bobs\Admin.cs" />
+    <Compile Include="Bobs\Article.cs" />
+    <Compile Include="Bobs\BacardiEmail.cs" />
+    <Compile Include="Bobs\BankExport.cs" />
+    <Compile Include="Bobs\Banner.cs" />
+    <Compile Include="Bobs\Banner_Tests.cs" />
+    <Compile Include="Bobs\BinRange.cs" />
+    <Compile Include="Bobs\Brand.cs" />
+    <Compile Include="Bobs\Buddy.cs" />
+    <Compile Include="Bobs\BannerFolder.cs" />
+    <Compile Include="Bobs\CampaignCredit.cs" />
+    <Compile Include="Bobs\Chat.cs" />
+    <Compile Include="Bobs\ChatMessage.cs" />
+    <Compile Include="Bobs\ClubDetails.cs" />
+    <Compile Include="Bobs\Comment.cs" />
+    <Compile Include="Bobs\Comp.cs" />
+    <Compile Include="Bobs\MixmagEntry.cs" />
+    <Compile Include="Bobs\FacebookPost.cs" />
+    <Compile Include="Bobs\MixmagComp.cs" />
+    <Compile Include="Bobs\MixmagGreatestDj.cs" />
+    <Compile Include="Bobs\MixmagGreatestVote.cs" />
+    <Compile Include="Bobs\Country.cs" />
+    <Compile Include="Bobs\Demographics.cs" />
+    <Compile Include="Bobs\Domain.cs" />
+    <Compile Include="Bobs\Event.cs" />
+    <Compile Include="Bobs\Gallery.cs" />
+    <Compile Include="Bobs\Global.cs" />
+    <Compile Include="Bobs\Group.cs" />
+    <Compile Include="Bobs\GuestlistCredit.cs" />
+    <Compile Include="Bobs\Hit.cs" />
+    <Compile Include="Bobs\InsertionOrder.cs" />
+    <Compile Include="Bobs\InsertionOrderItem.cs" />
+    <Compile Include="Bobs\Invoice.cs" />
+    <Compile Include="Bobs\InvoiceCredit.cs" />
+    <Compile Include="Bobs\InvoiceItem.cs" />
+    <Compile Include="Bobs\InvoiceItemTests.cs" />
+    <Compile Include="Bobs\InvoiceTransfer.cs" />
+    <Compile Include="Bobs\IpCountry.cs" />
+    <Compile Include="Bobs\Log.cs" />
+    <Compile Include="Bobs\LogPageTime.cs" />
+    <Compile Include="Bobs\Lol.cs" />
+    <Compile Include="Bobs\Misc.cs" />
+    <Compile Include="Bobs\MixmagVote.cs" />
+    <Compile Include="Bobs\MusicType.cs" />
+    <Compile Include="Bobs\PageTime.cs" />
+    <Compile Include="Bobs\Para.cs" />
+    <Compile Include="Bobs\Phone.cs" />
+    <Compile Include="Bobs\Photo.cs" />
+    <Compile Include="Bobs\PhotoReview.cs" />
+    <Compile Include="Bobs\Place.cs" />
+    <Compile Include="Bobs\Prefs.cs" />
+    <Compile Include="Bobs\Promoter.cs" />
+    <Compile Include="Bobs\Region.cs" />
+    <Compile Include="Bobs\SalesCall.cs" />
+    <Compile Include="Bobs\SalesStatusChange.cs" />
+    <Compile Include="Bobs\Setting.cs" />
+    <Compile Include="Bobs\SpottedException.cs" />
+    <Compile Include="Bobs\TeamTarget.cs" />
+    <Compile Include="Bobs\Theme.cs" />
+    <Compile Include="Bobs\Thread.cs" />
+    <Compile Include="Bobs\Ticket.cs" />
+    <Compile Include="Bobs\TicketPromoterEvent.cs" />
+    <Compile Include="Bobs\TicketRun.cs" />
+    <Compile Include="Bobs\TrafficExceptionDay.cs" />
+    <Compile Include="Bobs\TrafficLevelRelativeToMinuteOfDay.cs" />
+    <Compile Include="Bobs\Transfer.cs" />
+    <Compile Include="Bobs\Usr.cs" />
+    <Compile Include="Bobs\Venue.cs" />
+    <Compile Include="Bobs\Visit.cs" />
+    <Compile Include="DataHolders\BannerDataHolder.cs" />
+    <Compile Include="DataHolders\DataHolder.cs" />
+    <Compile Include="DataHolders\InvoiceDataHolder.cs" />
+    <Compile Include="DataHolders\InvoiceItemDataHolder.cs" />
+    <Compile Include="ExampleTests.cs" />
+    <Compile Include="Js\Extensions.cs" />
+    <Compile Include="Main\Cambro.cs">
+    </Compile>
+    <Compile Include="Main\Common.cs" />
+    <Compile Include="Main\Mailer.cs" />
+    <Compile Include="Main\Main.cs" />
+    <Compile Include="Main\Q.cs" />
+    <Compile Include="Main\Query.cs" />
+    <Compile Include="Main\SecPay.cs" />
+    <Compile Include="Main\SECVPNService.cs" />
+    <Compile Include="Main\Utilities.cs" />
+    <Compile Include="Objects\Bob.cs" />
+    <Compile Include="Objects\BobSet.cs" />
+    <Compile Include="Objects\ColumnDef.cs" />
+    <Compile Include="Objects\DsiUserFriendlyException.cs" />
+    <Compile Include="Objects\Helpers.cs" />
+    <Compile Include="Objects\TableDef.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <None Include="Sql\Update Scripts\0055 - dummy script to cause Common.cs update.sql" />
+    <None Include="Sql\Update Scripts\0091 - drop Campaigns table and create and populate BannerFolder table.sql" />
+    <None Include="Sql\Update Scripts\0095 - add IsAgency column to database and set for existing agencies.sql" />
+    <None Include="Sql\Update Scripts\0103 - Create InsertionOrder, InsertionOrderItem tables, added discount cols to invoice tables.sql" />
+    <None Include="Sql\Create Scripts\prc\Bobs.BannerStat.Log.sql" />
+    <Content Include="Sql\Queries\Liability from credits.sql" />
+    <Compile Include="SpottedScript\Extensions.cs" />
+    <Compile Include="Web References\com.secpay.www\Reference.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Emails\DsiEmailTemplateAdminNote.htm" />
+    <EmbeddedResource Include="Emails\DsiEmailTemplateSiteUser.htm" />
+    <EmbeddedResource Include="Emails\DsiEmailTemplateSpecial.htm" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferences Include="Web References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="..\Spotted\SpottedScript\Controls\ChatClient\Shared\ItemStub.cs">
+      <Link>SpottedScript\Controls\ChatClient\ItemStub.cs</Link>
+    </Compile>
+    <Compile Include="..\Spotted\SpottedScript\Controls\ChatClient\Shared\ItemType.cs">
+      <Link>SpottedScript\Controls\ChatClient\ItemType.cs</Link>
+    </Compile>
+    <Compile Include="..\Spotted\SpottedScript\Controls\ChatClient\Shared\MessageStub.cs">
+      <Link>SpottedScript\Controls\ChatClient\MessageStub.cs</Link>
+    </Compile>
+    <Compile Include="..\Spotted\SpottedScript\Controls\ChatClient\Shared\PinStub.cs">
+      <Link>SpottedScript\Controls\ChatClient\PinStub.cs</Link>
+    </Compile>
+    <Compile Include="..\Spotted\SpottedScript\Controls\ChatClient\Shared\RefreshStub.cs">
+      <Link>SpottedScript\Controls\ChatClient\RefreshStub.cs</Link>
+    </Compile>
+    <Compile Include="..\Spotted\SpottedScript\Controls\ChatClient\Shared\RoomStub.cs">
+      <Link>SpottedScript\Controls\ChatClient\RoomStub.cs</Link>
+    </Compile>
+    <Compile Include="..\Spotted\SpottedScript\Controls\ChatClient\Shared\RoomType.cs">
+      <Link>SpottedScript\Controls\ChatClient\RoomType.cs</Link>
+    </Compile>
+    <Compile Include="..\Spotted\SpottedScript\Controls\ChatClient\Shared\SendStub.cs">
+      <Link>SpottedScript\Controls\ChatClient\SendStub.cs</Link>
+    </Compile>
+    <Compile Include="BannerServer\BannerQuerySetInfo.cs" />
+    <Compile Include="BannerServer\BrowserGuidIdentity.cs" />
+    <Compile Include="BannerServer\AlwaysShowBannerQuerySetInfo.cs" />
+    <Compile Include="BannerServer\TargetHitsBannerQuerySetInfo.cs" />
+    <Compile Include="BannerServer\IBannerDesiredHitsRequiredInformation.cs" />
+    <Compile Include="BannerServer\BannerTimeslotInfo.cs" />
+    <Compile Include="BannerServer\LoadTests.cs" />
+    <Compile Include="BannerServer\Rules\TypesOfRule\BannerIsNotHtmlRule_Tests.cs" />
+    <Compile Include="BannerServer\Rules\TypesOfRule\IdentityPropertyRules_Tests.cs" />
+    <Compile Include="BannerServer\Rules\TypesOfRule\MusicTypesFavouredByIdentityRule_Tests.cs" />
+    <Compile Include="BannerServer\ServerTests.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BannerServer\Timeslot.cs" />
+    <Compile Include="BannerServer\Timeslots.cs" />
+    <Compile Include="BannerServer\TimeslotTests.cs" />
+    <Compile Include="BannerServer\Traffic\DataDrivenTrafficShapeTests.cs" />
+    <Compile Include="BannerServer\Traffic\RelativeTrafficLevelsPerMinuteOfTheDayLookupTable.cs" />
+    <Compile Include="BannerServer\UsrIdentity.cs" />
+    <Compile Include="Bobs\BannerStat.cs" />
+    <Compile Include="Bobs\CommentAlert.cs" />
+    <Compile Include="Bobs\Donate.cs" />
+    <Compile Include="Bobs\Flyer.cs" />
+    <Compile Include="Bobs\Flyer_Tests.cs" />
+    <Compile Include="Bobs\RoomPin.cs" />
+    <Compile Include="Bobs\SalesCampaign.cs" />
+    <Compile Include="Bobs\Tag.cs" />
+    <Compile Include="Bobs\TagPhoto.cs" />
+    <Compile Include="Bobs\TagPhotoHistory.cs" />
+    <Compile Include="Bobs\UsrTests.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CachedDataAccess\SqlCachedQueryDefinition.cs" />
+    <Compile Include="CachedDataAccess\TagSearchCachedSqlSelectDefinition.cs" />
+    <Compile Include="JobProcessor\AsyncJobRunner.cs" />
+    <Compile Include="JobProcessor\AsyncJobRunnerUsingASecondThread.cs" />
+    <Compile Include="JobProcessor\AsyncJobRunnerUsingQuartz.cs" />
+    <Compile Include="JobProcessor\DependentJobStore.cs" />
+    <Compile Include="JobProcessor\DependentJobStoreUsingInstance.cs" />
+    <Compile Include="JobProcessor\DependentJobStoreUsingQuartz.cs" />
+    <Compile Include="JobProcessor\Job.cs" />
+    <Compile Include="JobProcessor\JobDataMapItemProperty.cs" />
+    <Compile Include="Jobs\SendNewsAlertsJob.cs" />
+    <Compile Include="Jobs\SendThreadAlertsJob.cs" />
+    <Compile Include="Jobs\UpdateTotalParticipantsJob.cs" />
+    <Compile Include="CachedDataAccess\LinkedChildren.cs" />
+    <Compile Include="CachedDataAccess\ICachedQueryDefinition.cs" />
+    <Compile Include="CachedDataAccess\CachedQuerySet.cs" />
+    <Compile Include="CachedDataAccess\Children.cs" />
+    <Compile Include="CachedDataAccess\ChildrenTests.cs" />
+    <Compile Include="Main\HtmlCleaner.cs" />
+    <Compile Include="Main\HtmlRenderer.cs" />
+    <Compile Include="Main\TagBuilder.cs" />
+    <Compile Include="Main\UrlInfo.cs" />
+    <Compile Include="Objects\SpottedExceptions.cs" />
+    <Compile Include="Sql\Create Scripts\prc\Bobs.BannerStat.Log.Tests.cs" />
+    <None Include="Sql\Update Scripts\0063 - dummy file to trigger sql update.sql" />
+    <None Include="Sql\Update Scripts\0120 - add SqlServerDateTime to LogPageTime.sql" />
+    <None Include="Sql\Update Scripts\0115 - add Url, PostData to LogPageTime.sql" />
+    <None Include="Sql\Data Scripts\BinRange.sql" />
+    <None Include="Sql\Data Scripts\Buddy.sql" />
+    <None Include="Sql\Data Scripts\CampaignCredit.sql" />
+    <None Include="Sql\Data Scripts\Event.sql" />
+    <None Include="Sql\Data Scripts\EventMusicType.sql" />
+    <None Include="Sql\Data Scripts\MusicType.sql" />
+    <None Include="Sql\Data Scripts\Phone.sql" />
+    <None Include="Sql\Data Scripts\Photo.sql" />
+    <None Include="Sql\Data Scripts\Theme.sql" />
+    <None Include="Sql\Create Scripts\prc\Bobs.Flyer.LogView.sql" />
+    <None Include="Sql\Update Scripts\0145 - FromDisplayName on flyer.sql" />
+    <None Include="Sql\Update Scripts\0159 - uniqueness constraint on Domain name.sql" />
+    <None Include="Sql\Data Scripts\Place.sql" />
+    <None Include="Sql\Data Scripts\PromoterUsr.sql" />
+    <None Include="Sql\Data Scripts\BannerFolder.sql" />
+    <None Include="Sql\Data Scripts\TicketPromoterEvent.sql" />
+    <None Include="Sql\Data Scripts\TicketRun.sql" />
+    <None Include="Sql\Data Scripts\UsrMusicTypeFavourite.sql" />
+    <None Include="Sql\Data Scripts\UsrPlaceVisit.sql" />
+    <None Include="Sql\Data Scripts\Venue.sql" />
+    <None Include="Sql\Update Scripts\0016 - add AddedMethod to Promoter table.sql" />
+    <None Include="Sql\Update Scripts\0017 - add IsCallToNewLead to SalesCall table.sql" />
+    <None Include="Sql\Update Scripts\0018 - add LegalTermsUser2 to Usr table.sql" />
+    <None Include="Sql\Update Scripts\0019 - add LegalTermsPromoter2 to Usr table.sql" />
+    <None Include="Sql\Update Scripts\0020 - add index on Usr.SalesTeam.sql" />
+    <None Include="Sql\Update Scripts\0023 - remove description from TicketRun.Enabled.sql" />
+    <None Include="Sql\Update Scripts\0021 - add index on Usr.SpottingsMonth.sql" />
+    <None Include="Sql\Update Scripts\0024 - add ReserveDateTime to Ticket table.sql" />
+    <None Include="Sql\Update Scripts\0022 - add index on Photo.PhotoOfWeek.sql" />
+    <None Include="Sql\Update Scripts\0025 - add TeamTarget table.sql" />
+    <None Include="Sql\Update Scripts\0026 - add BankName to Promoter table.sql" />
+    <None Include="Sql\Update Scripts\0027 - add BankAccountName to Promoter table.sql" />
+    <None Include="Sql\Update Scripts\0028 - add BankAccountSortCode to Promoter table.sql" />
+    <None Include="Sql\Update Scripts\0029 - add BankAccountNumber to Promoter table.sql" />
+    <None Include="Sql\Update Scripts\0030 - add Banner-LastTimestamp for Cache testing.sql" />
+    <None Include="Sql\Update Scripts\0032 - add LogPageTime table.sql" />
+    <None Include="Sql\Update Scripts\0033 - Setting.sql" />
+    <None Include="Sql\Update Scripts\0034 - add IsTicketsAvailable to Event table.sql" />
+    <None Include="Sql\Update Scripts\0035 - Bacardi settings.sql" />
+    <None Include="Sql\Update Scripts\0036 - add TicketHeat to Event table.sql" />
+    <None Include="Sql\Update Scripts\0041 - Extra Bacardi settings.sql" />
+    <None Include="Sql\Update Scripts\0042 - add LegalDrinkingAgeDateTime to Usr table.sql" />
+    <None Include="Sql\Update Scripts\0043 - add Prefs table.sql" />
+    <None Include="Sql\Update Scripts\0045 - add TotalBookingFees to TicketPromoterEvent table.sql" />
+    <None Include="Sql\Update Scripts\0038 - add OverrideApplyTicketFundsToInvoices to Promoter table.sql" />
+    <None Include="Sql\Update Scripts\0046 - add IsGet to LogPageTime table.sql" />
+    <None Include="Sql\Update Scripts\0047 - Exception logging.sql" />
+    <None Include="Sql\Update Scripts\0048 - add HasHilight to Event table.sql" />
+    <None Include="Sql\Update Scripts\0049 - add UsrAttendCount to Event table.sql" />
+    <None Include="Sql\Update Scripts\0050 - change Event indexes to include HasHilight and UsrAttendCount.sql" />
+    <None Include="Sql\Update Scripts\0051 - add SalesCallCount to Promoter table.sql" />
+    <None Include="Sql\Update Scripts\0052 - add RecentlyTransferred to Promoter table.sql" />
+    <None Include="Sql\Update Scripts\0053 - create ResetBobsCachingStatus.sql" />
+    <None Include="Sql\Update Scripts\0054 - add BankExport table.sql" />
+    <None Include="Sql\Update Scripts\0056 - BannerServer modifications.sql" />
+    <None Include="Sql\Update Scripts\0057 - add IsInCaptionCompetition to Thread table.sql" />
+    <None Include="Sql\Update Scripts\0058 - add IsInCaptionCompetition to Photo table.sql" />
+    <None Include="Sql\Update Scripts\0059 - add index on Photo.ParentDateTime.sql" />
+    <None Include="Sql\Update Scripts\0061 - add LastPhotoUpload to Usr table.sql" />
+    <None Include="Sql\Update Scripts\0062 - add index on Usr.LastPhotoUpload.sql" />
+    <None Include="Sql\Update Scripts\0064 - add ReferenceDateTime to BankExport table.sql" />
+    <None Include="Sql\Update Scripts\0065 - Activate BobsCaching.sql" />
+    <None Include="Sql\Update Scripts\0066 - add DSIBankAccount to Transfer table.sql" />
+    <None Include="Sql\Update Scripts\0067 - add BacardiEmails table.sql" />
+    <None Include="Sql\Update Scripts\0068 - add Promoter IsAgency column, Invoice BuyerType col and set values.sql" />
+    <None Include="Sql\Update Scripts\0069 - add index on Photo.EnabledByUsrK.sql" />
+    <None Include="Sql\Update Scripts\0090 - Create Campaign table.sql" />
+    <None Include="Sql\Update Scripts\0104 - create CampaignCredit.sql" />
+    <None Include="Sql\Update Scripts\0092 - Remove guestlist credits for those promoters that never used them.sql" />
+    <None Include="Sql\Update Scripts\0093 - add VenueK, BannerFolderK to Banner table.sql" />
+    <None Include="Sql\Update Scripts\0094 - add Discount column to InvoiceItem.sql" />
+    <None Include="Sql\Update Scripts\0098 - adding Invoice BuyerType column.sql" />
+    <None Include="Sql\Update Scripts\0099 - Populate existing Buyer Types data.sql" />
+    <None Include="Sql\Update Scripts\0097 - add DuplicateGuid column to Folder.sql" />
+    <None Include="Sql\Update Scripts\0096 - add DuplicateGuid column to Banner.sql" />
+    <None Include="Sql\Update Scripts\0100 - Add Discount to Promoter table.sql" />
+    <None Include="Sql\Update Scripts\0101 - Rename BannerHighLevelData table to BannerDailyStats.sql" />
+    <None Include="Sql\Update Scripts\0102 - add PriceCreditsStored to Banner table.sql" />
+    <None Include="Sql\Update Scripts\0105 - bannerserver to use cache changes.sql" />
+    <None Include="Sql\Update Scripts\0106 - migrate banner settings to new system.sql" />
+    <None Include="Sql\Update Scripts\0107 - add UsrK, ActionUsrK, Notes to CampaignCredit table.sql" />
+    <None Include="Sql\Update Scripts\0108 - add FixedDiscount to Banner and CampaignCredit table.sql" />
+    <None Include="Sql\Update Scripts\0109 - add FixedDiscount to Event table.sql" />
+    <None Include="Sql\Update Scripts\0110 - add IsPriceFixed to CampaignCredit table.sql" />
+    <None Include="Sql\Update Scripts\0111 - add IsFromExternal, ExternalTag to visit table.sql" />
+    <None Include="Sql\Update Scripts\0112 - add IsPriceFixed to Event table.sql" />
+    <None Include="Sql\Update Scripts\0113 - add DateTimeLastUpdateEmail to Usr table.sql" />
+    <None Include="Sql\Update Scripts\0114 - add quartz.net scripts.sql" />
+    <None Include="Sql\Update Scripts\0118 - add IsCancelled to Banner table.sql" />
+    <None Include="Sql\Update Scripts\0117 - Add DisplayPriority column to Banner table.sql" />
+    <None Include="Sql\Update Scripts\0116 - increase size of columns in SpottedException.sql" />
+    <None Include="Sql\Update Scripts\0119 - add SqlServerDateTime column to SpottedException.sql" />
+    <None Include="Sql\Update Scripts\0122 - Add IP Address column to SpottedException and LogPageTime.sql" />
+    <None Include="Sql\Update Scripts\0123 - Add CommonTimeNow to SpottedException.sql" />
+    <None Include="Sql\Update Scripts\0127 - Add Rotate and UploadTemporary to Photo.sql" />
+    <None Include="Sql\Update Scripts\0128 - Add UploadTemporaryExtention to Photo.sql" />
+    <None Include="Sql\Update Scripts\0131 - Flyer tables.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Sql\Create Scripts\prc\Bobs.Flyer.LogClick.sql" />
+    <None Include="Sql\Create Scripts\prc\Bobs.Flyer.LogSend.sql" />
+    <None Include="Sql\Create Scripts\prc\Bobs.Flyer.LogUnsubscribe.sql" />
+    <None Include="Web References\com.secpay.www\Reference.map" />
+    <None Include="Web References\com.secpay.www\SECCardService.wsdl" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{B4F97281-0DBD-4835-9ED8-7DFB966E87FF}" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Chat\ChatLibrary\ChatLibrary.csproj">
+      <Project>{9ED58F50-0339-45E5-976A-40924C6C91AE}</Project>
+      <Name>ChatLibrary</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Domain\Model\Model.csproj">
+      <Project>{B076235C-D743-42C1-A6FA-4E1CB9BD4542}</Project>
+      <Name>Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Utilities\AmazonS3\AmazonS3.csproj">
+      <Project>{E4ECB213-E7E6-47EE-B819-74762EC8920F}</Project>
+      <Name>AmazonS3</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Utilities\BobsPrecompileApp\BobsPrecompileApp.csproj">
+      <Project>{B5C43437-5ED4-492E-952A-519293473447}</Project>
+      <Name>BobsPrecompileApp</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Utilities\Cache\Caching\Caching.csproj">
+      <Project>{616B4BE1-C145-4E5B-97EC-3E26F457D49A}</Project>
+      <Name>Caching</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Utilities\Common\Common.csproj">
+      <Project>{E69EBDF9-A0D6-43BF-9A86-811572EEB01F}</Project>
+      <Name>Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Utilities\DomainNameRegistrar\DomainNameRegistrar.csproj">
+      <Project>{5B2B8ED5-36B1-4BE9-815E-7CA2BB701AA8}</Project>
+      <Name>DomainNameRegistrar</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Utilities\Facebook.Common\FacebookCommon.csproj">
+      <Project>{70F6A11D-ADC3-45A3-A39C-31D3F1443C54}</Project>
+      <Name>FacebookCommon</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Utilities\FacebookGraphAPI\FacebookGraphAPI.csproj">
+      <Project>{DB314D49-B61D-41C3-975E-2592874BEE65}</Project>
+      <Name>FacebookGraphAPI</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Utilities\Facebook\Facebook.csproj">
+      <Project>{9A24B145-8055-401F-96D5-529D97041641}</Project>
+      <Name>Facebook</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Utilities\HtmlCleaner\HtmlCleaner.csproj">
+      <Project>{81E4E7DA-6EDA-4EF9-808E-7CE7594BCD0B}</Project>
+      <Name>HtmlCleaner</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Utilities\Spatial\Spatial.csproj">
+      <Project>{69C86704-3CBD-4907-89F6-A330A23B52D4}</Project>
+      <Name>Spatial</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Utilities\UnitTestUtilities\UnitTestUtilities.csproj">
+      <Project>{06B0C07E-8F12-4E6B-8893-BBF4FE82D802}</Project>
+      <Name>UnitTestUtilities</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{B4F97281-0DBD-4835-9ED8-7DFB966E87FF}" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Reports\InsertionOrderReport.vm" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Sql\Data Scripts\Brand.sql" />
+    <None Include="Sql\Data Scripts\EventBrand.sql" />
+    <None Include="Sql\Data Scripts\Group.sql" />
+    <None Include="Sql\Queries\Count of people spotted.sql" />
+    <None Include="Sql\Update Scripts\0166 - Add tag tables.sql" />
+    <None Include="Sql\Update Scripts\0133 - add StyledCss to Brand and Venue tables.sql" />
+    <None Include="Sql\Update Scripts\0137 - Deny Buddy.sql" />
+    <None Include="Sql\Update Scripts\0134 - drop ResetBobsCachingStatus proc .sql" />
+    <None Include="Sql\Update Scripts\0135 - add Code to Ticket table.sql" />
+    <None Include="Sql\Update Scripts\0136 - add AddRandomCodeToTickets to Promoter table.sql" />
+    <None Include="Sql\Update Scripts\0138 - flag for new usrs from Friend Inviter.sql" />
+    <None Include="Sql\Update Scripts\0139 - add Overlay to Photo table.sql" />
+    <None Include="Sql\Update Scripts\0140 - add TicketsDomainRating TicketsDomainName to Venue Brand tables.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Sql\Update Scripts\0142 - add TicketsDomainInclude TicketsDomainExclude to Venue Brand tables.sql" />
+    <None Include="Sql\Update Scripts\0144 - Domain changes.sql" />
+    <None Include="Sql\Update Scripts\0146 - Global record for DNS batch file loaction.sql" />
+    <None Include="Sql\Update Scripts\0147 - WWD ResourceID on Domain.sql" />
+    <None Include="Sql\Update Scripts\0148 - add StyledXml to Brand and Venue tables.sql" />
+    <None Include="Sql\Update Scripts\0149 - target promoters on eFlyers.sql" />
+    <None Include="Sql\Update Scripts\0154 - add IsTicketsRegistered to Usr table.sql" />
+    <None Include="Sql\Update Scripts\0156 - Registered flags on Domains.sql" />
+    <None Include="Sql\Update Scripts\0157 - add CancelledBeforeFundsRelease to Ticket table.sql" />
+    <None Include="Sql\Update Scripts\0158 - add CancelledDateTime to Ticket table.sql" />
+    <None Include="Sql\Update Scripts\0160 - add ContactEmail to TicketPromoterEvent table.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Sql\Update Scripts\0167 - create tag history table.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\Spotted\SpottedScript\Controls\ChatClient\Shared\AlertStub.cs">
+      <Link>SpottedScript\Controls\ChatClient\AlertStub.cs</Link>
+    </Compile>
+    <Compile Include="..\Spotted\SpottedScript\Controls\ChatClient\Shared\ArchiveStub.cs">
+      <Link>SpottedScript\Controls\ChatClient\ArchiveStub.cs</Link>
+    </Compile>
+    <Compile Include="..\Spotted\SpottedScript\Controls\ChatClient\Shared\CommentMessageStub.cs">
+      <Link>SpottedScript\Controls\ChatClient\CommentMessageStub.cs</Link>
+    </Compile>
+    <Compile Include="..\Spotted\SpottedScript\Controls\ChatClient\Shared\GetStateStub.cs">
+      <Link>SpottedScript\Controls\ChatClient\GetStateStub.cs</Link>
+    </Compile>
+    <Compile Include="..\Spotted\SpottedScript\Controls\ChatClient\Shared\GuestRefreshStub.cs">
+      <Link>SpottedScript\Controls\ChatClient\GuestRefreshStub.cs</Link>
+    </Compile>
+    <Compile Include="..\Spotted\SpottedScript\Controls\ChatClient\Shared\LaughStub.cs">
+      <Link>SpottedScript\Controls\ChatClient\LaughStub.cs</Link>
+    </Compile>
+    <Compile Include="..\Spotted\SpottedScript\Controls\ChatClient\Shared\MoreInfoStub.cs">
+      <Link>SpottedScript\Controls\ChatClient\MoreInfoStub.cs</Link>
+    </Compile>
+    <Compile Include="..\Spotted\SpottedScript\Controls\ChatClient\Shared\PhotoStub.cs">
+      <Link>SpottedScript\Controls\ChatClient\PhotoStub.cs</Link>
+    </Compile>
+    <Compile Include="..\Spotted\SpottedScript\Controls\ChatClient\Shared\PrivateStub.cs">
+      <Link>SpottedScript\Controls\ChatClient\PrivateStub.cs</Link>
+    </Compile>
+    <Compile Include="..\Spotted\SpottedScript\Controls\ChatClient\Shared\RoomHtml.cs">
+      <Link>SpottedScript\Controls\ChatClient\RoomHtml.cs</Link>
+    </Compile>
+    <Compile Include="..\Spotted\SpottedScript\Controls\ChatClient\Shared\StateStub.cs">
+      <Link>SpottedScript\Controls\ChatClient\StateStub.cs</Link>
+    </Compile>
+    <Compile Include="..\Spotted\SpottedScript\Controls\ChatClient\Shared\TopPhotoStub.cs">
+      <Link>SpottedScript\Controls\ChatClient\TopPhotoStub.cs</Link>
+    </Compile>
+    <Compile Include="..\Spotted\SpottedScript\Controls\ChatClient\Shared\UnPinStub.cs">
+      <Link>SpottedScript\Controls\ChatClient\UnPinStub.cs</Link>
+    </Compile>
+    <Compile Include="..\Spotted\SpottedScript\Controls\Picker\Shared.cs">
+      <Link>SpottedScript\Controls\Picker\Shared.cs</Link>
+    </Compile>
+    <Compile Include="Bobs\BannerMusicType.cs" />
+    <Compile Include="Bobs\BannerPlace.cs" />
+    <Compile Include="Bobs\DomainStats.cs" />
+    <Compile Include="Bobs\DonationIcon.cs" />
+    <Compile Include="Bobs\EventBrand.cs" />
+    <Compile Include="Bobs\EventMusicType.cs" />
+    <Compile Include="Bobs\Fiat500Entry.cs" />
+    <Compile Include="Bobs\GroupPhoto.cs" />
+    <Compile Include="Bobs\IncomingSms.cs" />
+    <Compile Include="Bobs\MixmagSubscription.cs" />
+    <Compile Include="Bobs\Mobile.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Bobs\OutgoingSms.cs" />
+    <Compile Include="Bobs\PromoterUsr.cs" />
+    <Compile Include="Bobs\ThreadUsr.cs" />
+    <Compile Include="Bobs\UsrDate.cs" />
+    <Compile Include="Bobs\UsrDonationIcon.cs" />
+    <Compile Include="Bobs\UsrPlaceVisit.cs" />
+    <Compile Include="CachedDataAccess\PhotoSetPagedDataService.cs" />
+    <Compile Include="Main\IHasSpatialData.cs" />
+    <Compile Include="Main\JsLinkCreator.cs" />
+    <Compile Include="Main\Q_Tests.cs" />
+    <Compile Include="Main\Storage.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Main\StoredProcs.cs" />
+    <Compile Include="Tagging\ITaggable.cs" />
+    <Compile Include="Tagging\Taggable.cs" />
+    <Compile Include="Web References\com.dontstayin.hoth\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <None Include="Sql\Update Scripts\0266 - DonationIcon img guid.sql" />
+    <None Include="Sql\Create Scripts\prc\Spatial.Search.sql" />
+    <None Include="Sql\Data Scripts\DonationIcon.sql" />
+    <None Include="Sql\Queries\Reserve ticket money by promoter with date.sql" />
+    <None Include="Sql\Update Scripts\0260 - insertion order script.sql" />
+    <None Include="Sql\Update Scripts\0168 - add ShowOnFrontPage column to tag.sql" />
+    <None Include="Sql\Update Scripts\0169 - Usr Privacy options.sql" />
+    <None Include="Sql\Update Scripts\0170 - Card CV2 confirmation.sql" />
+    <None Include="Sql\Update Scripts\0173 - DeliveryMethod.sql" />
+    <None Include="Sql\Update Scripts\0172 - Add address columns to transfer table.sql" />
+    <None Include="Sql\Update Scripts\0174 - add UploadTemporaryTags to Photo table.sql" />
+    <None Include="Sql\Update Scripts\0175 - SalesCampaign table.sql" />
+    <None Include="Sql\Update Scripts\0176 - add SalesCampaignK to Promoter table.sql" />
+    <None Include="Sql\Update Scripts\0177 - RoomPin table.sql" />
+    <None Include="Sql\Update Scripts\0179 - Add K column to buddy table.sql" />
+    <None Include="Sql\Update Scripts\0180 - Add SkeletonNickname column to buddy table.sql" />
+    <None Include="Sql\Update Scripts\0181 - add DoneAmazonPix to Photo table.sql" />
+    <None Include="Sql\Update Scripts\0182 - add DoneAmazonPixMaster to Photo table.sql" />
+    <None Include="Sql\Update Scripts\0183 - add DoneAmazonPix to IPic tables.sql" />
+    <None Include="Sql\Update Scripts\0184 - add CostPerCampaignCredit to Promoter table.sql" />
+    <None Include="Sql\Update Scripts\0185 - add FailedAmazonPix to relevant tables.sql" />
+    <None Include="Sql\Update Scripts\0186 - add EmailBroken column to Usr table.sql" />
+    <None Include="Sql\Update Scripts\0187 - IX_ChatMessage_PrivateMessageK.sql" />
+    <None Include="Sql\Update Scripts\0190 - Fiat500Table added.sql" />
+    <None Include="Sql\Update Scripts\0189 - add UsrK, RoomGuid to ChatMessage tables.sql" />
+    <None Include="Sql\Update Scripts\0191 - Drop stuff from ChatMessage.sql" />
+    <None Include="Sql\Update Scripts\0193 - Add K column to GroupPhoto table.sql" />
+    <None Include="Sql\Update Scripts\0196 - eFlyer mods.sql" />
+    <None Include="Sql\Update Scripts\0195 - IsInCaptionCompetition causes invalidation on PhotoSet.sql" />
+    <None Include="Sql\Update Scripts\0194 - Add K column to UsrPhotoMe table.sql" />
+    <None Include="Sql\Update Scripts\0192 - add FailedAmazonCheck to relevant tables.sql" />
+    <None Include="Sql\Update Scripts\0198 - Add K column to UsrPhotoFavourite table.sql" />
+    <None Include="Sql\Update Scripts\0197 - Add IsSonyC902 column to Photo table.sql" />
+    <None Include="Sql\Update Scripts\0211 - Add Meridian world data featureIds to Place tables.sql" />
+    <None Include="Sql\Update Scripts\0201 - Load Spatial assembly.sql" />
+    <None Include="Sql\Update Scripts\0203 - create procs for creating SpatialIndex columns.sql" />
+    <None Include="Sql\Update Scripts\0212 - add spatial columns and info to tables.sql" />
+    <None Include="Sql\Update Scripts\0205 - delete unused tables.sql" />
+    <None Include="Sql\Update Scripts\0206 - Add IsNotNull property to all columns.sql" />
+    <None Include="Sql\Update Scripts\0208 - actually nullable columns.sql" />
+    <None Include="Sql\Update Scripts\0221 - Add DateTimeLastChatMessage column to Usr table.sql" />
+    <None Include="Sql\Update Scripts\0237 - dummy.sql" />
+    <None Include="Sql\Update Scripts\0219 - recreate indexes again.sql" />
+    <None Include="Sql\Update Scripts\0218 - update venues on postcode.sql" />
+    <None Include="Sql\Update Scripts\0222 - UsrK causes invalidation on Photo.sql" />
+    <None Include="Sql\Update Scripts\0223 - change spatial index on gallery table.sql" />
+    <None Include="Sql\Update Scripts\0224 - Add Starred column to RoomPin table.sql" />
+    <None Include="Sql\Update Scripts\0225 - DateTime causes invalidation on Event.sql" />
+    <None Include="Sql\Update Scripts\0226 - Enabled causes invalidation on Thread.sql" />
+    <None Include="Sql\Update Scripts\0227 - correct spatial columns.sql" />
+    <None Include="Sql\Update Scripts\0231 - EventK column on Flyer.sql" />
+    <None Include="Sql\Update Scripts\0228 -add spatial index on venue and event table.sql" />
+    <None Include="Sql\Update Scripts\0229 - update venues on postcode again.sql" />
+    <None Include="Sql\Update Scripts\0230 - add spatial index on venue and event and place table.sql" />
+    <None Include="Sql\Update Scripts\0232 - IsFraud column on Ticket.sql" />
+    <None Include="Sql\Update Scripts\0233 - IsCrawler on Visit.sql" />
+    <None Include="Sql\Update Scripts\0234 - UserAgent on Visit.sql" />
+    <None Include="Sql\Update Scripts\0235 - StateStub on RoomPin.sql" />
+    <None Include="Sql\Update Scripts\0236 - EnumProperties.sql" />
+    <None Include="Sql\Update Scripts\0258 - More EnumProps.sql" />
+    <None Include="Sql\Update Scripts\0259 - alter invoice tables.sql" />
+    <None Include="Sql\Update Scripts\0261 - drop Ms_Description on unwanted cols.sql" />
+    <None Include="Sql\Update Scripts\0249 - DonationIcons.sql" />
+    <None Include="Sql\Update Scripts\0238 - add IncomingSms table.sql" />
+    <None Include="Sql\Update Scripts\0239 - add OutgoingSms table.sql" />
+    <None Include="Sql\Update Scripts\0240 - drop columns on Mobile table.sql" />
+    <None Include="Sql\Update Scripts\0241 - PostData on IncomingSms.sql" />
+    <None Include="Sql\Update Scripts\0242 - drop more columns on Mobile table.sql" />
+    <None Include="Sql\Update Scripts\0243 - MessageID on IncomingSms.sql" />
+    <None Include="Sql\Update Scripts\0244 - Delivered on OutgoingSms.sql" />
+    <None Include="Sql\Update Scripts\0246 - PhotoOfWeekUser on Photo.sql" />
+    <None Include="Sql\Update Scripts\0247 - PhotoOfWeekUser index on Photo.sql" />
+    <None Include="Sql\Update Scripts\0248 - Photo BlockedFromPhotoOfWeekUser.sql" />
+    <None Include="Sql\Update Scripts\0250 - Add EventKs to Flyer.sql" />
+    <None Include="Sql\Update Scripts\0251 - extra donation icon things.sql" />
+    <None Include="Sql\Update Scripts\0252 - Enabled on donationicon.sql" />
+    <None Include="Sql\Update Scripts\0254 - Correct old LatLon columns.sql" />
+    <None Include="Sql\Update Scripts\0253 - increase length of donation icon img url.sql" />
+    <None Include="Sql\Update Scripts\0267 - Add DisplayDuration to Banner table.sql" />
+    <None Include="Sql\Update Scripts\0255 - Extra stuff on LogPageTime.sql" />
+    <None Include="Sql\Update Scripts\0262 - more ExtendedProperties.sql" />
+    <None Include="Sql\Update Scripts\0263 - more float to decimal column changes.sql" />
+    <None Include="Sql\Update Scripts\0256 - ChatItemGuid on Comment and ChatMessage.sql" />
+    <None Include="Sql\Update Scripts\0257 - IX_ChatMessage_RoomGuid.sql" />
+    <None Include="Sql\Update Scripts\0268 - Deleted on ChatMessage.sql" />
+    <None Include="Sql\Update Scripts\0269 - ChatPic on Usr.sql" />
+    <None Include="Sql\Update Scripts\0264 - enum Props which should have worked but double check.sql" />
+    <None Include="Sql\Update Scripts\0265 - yet another.sql" />
+    <None Include="Sql\Update Scripts\0270 - DateTimeLastBuddyAlertsRoomRefresh on Usr.sql" />
+    <None Include="Sql\Update Scripts\0271 - IX_RoomPin_RoomGuid_Pinned.sql" />
+    <None Include="Sql\Update Scripts\0272 - Add SuspendReminderEmails to Promoter table.sql" />
+    <None Include="Sql\Update Scripts\0291 - Add DateTimeAdded to UsrPhotoFavourite table.sql" />
+    <None Include="Sql\Update Scripts\0293 - remove amazon columns.sql" />
+    <None Include="Sql\Update Scripts\0275 - Correct collation of place.name column.sql" />
+    <None Include="Sql\Update Scripts\0276 - Dummy.sql" />
+    <None Include="Sql\Update Scripts\0278 - imgurl nullable on donationicon.sql" />
+    <None Include="Sql\Update Scripts\0277 - Add searchcolumn on usr table- CANCELLED.sql" />
+    <None Include="Sql\Update Scripts\0279 - remove amazon columns.sql" />
+    <None Include="Sql\Update Scripts\0280 - make Group.DuplicateGuid and Group.Pic  not null.sql" />
+    <None Include="Sql\Update Scripts\0281 - DontShowHotelLink on Event.sql" />
+    <None Include="Sql\Update Scripts\0282 - IpAddress on Phone.sql" />
+    <None Include="Sql\Update Scripts\0283 - LocalIpAddress on Phone.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Emails\NewPromoterEmail.vm" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="Sql\Update Scripts\0284 - LocalDns and LocalGateway on Phone.sql" />
+    <None Include="Sql\Update Scripts\0285 - Vatable on DonationIcon.sql" />
+    <None Include="Sql\Update Scripts\0286 - Description on DonationIcon.sql" />
+    <None Include="Sql\Update Scripts\0287 - Charity on DonationIcon.sql" />
+    <None Include="Sql\Update Scripts\0288 - NatPort on Phone.sql" />
+    <None Include="Web References\com.dontstayin.hoth\phone.wsdl" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferenceUrl Include="http://hoth.dontstayin.com/phones/phone.asmx%3fop=MakeCall">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\com.dontstayin.hoth\</RelPath>
+      <UpdateFromURL>http://hoth.dontstayin.com/phones/phone.asmx%3fop=MakeCall</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>Bobs_com_dontstayin_hoth_Phone</CachedSettingsPropName>
+    </WebReferenceUrl>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Sql\Queries\Change date on invoice to push payments into previous month.sql" />
+    <None Include="Sql\Queries\Debtors at a point in time.sql" />
+    <None Include="Sql\Queries\Current debtors from invoices prior to a point in time.sql" />
+    <None Include="Sql\Queries\Reserve ticket money by promoter by month no cardnet.sql" />
+    <None Include="Sql\Queries\Reserve ticket money by promoter with date no cardnet.sql" />
+    <None Include="Sql\Queries\_Progressive update.sql" />
+    <None Include="Sql\Update Scripts\0289 - PhotoUsage on Usr.sql" />
+    <None Include="Sql\Update Scripts\0273 - Dummy.sql" />
+    <None Include="Sql\Update Scripts\0274 - Dummy.sql" />
+    <None Include="Sql\Update Scripts\0292 - DateTimeAdded Part 2.sql" />
+    <None Include="Sql\Update Scripts\0294 - Add TwitterHeadline to Article.sql" />
+    <None Include="Sql\Update Scripts\0295 - Add IsMixmagNews to Article.sql" />
+    <None Include="Sql\Update Scripts\0290 - Company on Transfer.sql" />
+    <None Include="Sql\Update Scripts\0296 - Add FrontPagePic to Photo.sql" />
+    <None Include="Sql\Update Scripts\0297 - Add DateTimeLastMessageSent to Flyer table.sql" />
+    <None Include="Sql\Update Scripts\0298 - Add WatchUploads to Gallery table.sql" />
+    <None Include="Sql\Update Scripts\0299 - Add SpotterRequest, SpotterRequestName and SpotterRequestNumber to Event table.sql" />
+    <None Include="Sql\Update Scripts\0300 - Add IsExtendedDisplay to Article.sql" />
+    <None Include="Sql\Update Scripts\0301 - MixmagSubscription table.sql" />
+    <None Include="Sql\Update Scripts\0302 - Add Summary to MixmagIssue.sql" />
+    <None Include="Sql\Update Scripts\0303 - Add CoverImageUrl to MixmagIssue.sql" />
+    <None Include="Sql\Update Scripts\0304 - Add Html columns to Flyer.sql" />
+    <None Include="Sql\Update Scripts\0306 - Add DateTimeLastRead, TotalReads, DateTimeLastStoryPublished to MixmagRead.sql" />
+    <None Include="Sql\Update Scripts\0307 - Add Address to MixmagSubscriber.sql" />
+    <None Include="Sql\Update Scripts\0308 - Add Email to MixmagSubscriber.sql" />
+    <None Include="Sql\Update Scripts\0309 - Add EmailVerificationSecret to MixmagSubscriber.sql" />
+    <None Include="Sql\Update Scripts\0310 - Add IsEmailBroken and EmailBrokenDateTime to MixmagSubscriber.sql" />
+    <None Include="Sql\Update Scripts\0311 - Add IsEmailFromFacebook to MixmagSubscriber.sql" />
+    <None Include="Sql\Update Scripts\0312 - Add Facebook columns to Usr.sql" />
+    <None Include="Sql\Update Scripts\0305 - Add ContentsData to MixmagIssue.sql" />
+    <None Include="Sql\Update Scripts\0313 - Add MixmagSections to Article.sql" />
+    <None Include="Sql\Update Scripts\0314 - Add Broken, Exceptions to Flyer.sql" />
+    <None Include="Sql\Update Scripts\0315 - Add MailServerExceptions, LastMailServerException to Flyer.sql" />
+    <None Include="Sql\Update Scripts\0318 - Add IssueCoverId to MixmagSubscriber.sql" />
+    <None Include="Sql\Update Scripts\0317 - Add IssueNote to MixmagSubscriber.sql" />
+    <None Include="Sql\Update Scripts\0316 - Empty.sql" />
+    <None Include="Web References\com.dontstayin.hoth\phone.disco" />
+    <None Include="Web References\com.dontstayin.hoth\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Overlay\overlay-web-dsi.gif" />
+    <EmbeddedResource Include="Overlay\playbutton-big.png" />
+    <EmbeddedResource Include="Overlay\playbutton-small.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Overlay\new-logo-overlay.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Overlay\video-button-small.png" />
+    <EmbeddedResource Include="Overlay\video-button.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="SpottedScript\Controls\EventBox\" />
+    <Folder Include="SpottedScript\Controls\MultiBuddyChooser\" />
+    <Folder Include="Sql\Create Scripts\trg\" />
+    <Folder Include="Sql\Create Scripts\udf\" />
+    <Folder Include="Sql\Create Scripts\viw\" />
+    <Folder Include="Sql\OnSync scripts\" />
+    <Folder Include="Sql\zTmp\" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Sql\Update Scripts\0320 - REMOVED Update FacebookUid for unique constraint.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Sql\Update Scripts\0319 - Empty.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Sql\Update Scripts\0321 - REMOVED Unique constraint on FacebookUid.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Sql\Update Scripts\0322 - Unique constraint on FacebookUid.sql" />
+    <None Include="Sql\Update Scripts\0323 - Add FacebookEmail column to Usr.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Sql\Update Scripts\0324 - MixmagGreatestDj table.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Sql\Update Scripts\0325 - MixmagGreatestDjVote table.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Sql\Update Scripts\0326 - MixmagGreatestVote table.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Sql\Update Scripts\0327 - DROP MixmagGreatestDjVote table.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Sql\Update Scripts\0328 - Add LongDescription and LargeImgUrl to MixmagGreatestDj.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Sql\Update Scripts\0329 - Add InterviewImageUrl MixmagGreatestDj.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Sql\Queries\Mixmag Online ABC reports.sql" />
+    <None Include="Sql\Update Scripts\0363 - Add StealthMode to MixmagGreatestDj.sql" />
+    <None Include="Sql\Update Scripts\0362 - Add PluralWord ShortName to MixmagGreatestDj.sql" />
+    <None Include="Sql\Update Scripts\0361 - Add FacebookSource to MixmagGreatestVote.sql" />
+    <None Include="Sql\Update Scripts\0360 - Add more to MixmagGreatestDj.sql" />
+    <None Include="Sql\Update Scripts\0359 - Add TwitterName to MixmagGreatestDj.sql" />
+    <None Include="Sql\Update Scripts\0358 - Add TextField to MixmagVote.sql" />
+    <None Include="Sql\Update Scripts\0357 - Add Bounce counting to Usr.sql" />
+    <None Include="Sql\Update Scripts\0356 - Add SendDailyEmails to MixmagEntry.sql" />
+    <None Include="Sql\Update Scripts\0355 - Add FirstName LastName to MixmagEntry.sql" />
+    <None Include="Sql\Update Scripts\0354 - Drop Name on MixmagEntry.sql" />
+    <None Include="Sql\Update Scripts\0353 - Add ImageUrl Email to MixmagEntry.sql" />
+    <None Include="Sql\Update Scripts\0352 - Drop ImageUrl on MixmagEntry.sql" />
+    <None Include="Sql\Update Scripts\0351 - Add MixmagVote tables.sql" />
+    <None Include="Sql\Update Scripts\0350 - PassedCaptcha on Usr.sql" />
+    <None Include="Sql\Update Scripts\0349 - NeedsCaptcha on Usr.sql" />
+    <None Include="Sql\Update Scripts\0348 - Add FacebookEventId column to Event.sql" />
+    <None Include="Sql\Update Scripts\0347 - Add FacebookStoryFavouriteTopic column to Usr.sql" />
+    <None Include="Sql\Update Scripts\0346 - ShowAboveFoldOnFrontPage on Article table.sql" />
+    <None Include="Sql\Update Scripts\0345 - Hits on FacebookPost table.sql" />
+    <None Include="Sql\Update Scripts\0344 - FacebookAccessToken on Usr.sql" />
+    <None Include="Sql\Update Scripts\0343 - RunFinishedUploadingTask on Gallery.sql" />
+    <None Include="Sql\Update Scripts\0342 - Dummy.sql" />
+    <None Include="Sql\Update Scripts\0341 - Data on FacebookPost.sql" />
+    <None Include="Sql\Update Scripts\0340 - Testing2.sql" />
+    <None Include="Sql\Update Scripts\0339 - Testing1.sql" />
+    <None Include="Sql\Update Scripts\0338 - Dummy.sql" />
+    <None Include="Sql\Update Scripts\0337 - Facebook1 on Usr.sql" />
+    <None Include="Sql\Update Scripts\0336 - Facebook on Usr.sql" />
+    <None Include="Sql\Update Scripts\0335 - Testing.sql" />
+    <None Include="Sql\Update Scripts\0334 - FacebookUid on FacebookPost table.sql" />
+    <None Include="Sql\Update Scripts\0333 - FacebookPost table.sql" />
+    <None Include="Sql\Update Scripts\0332 - Dummy.sql" />
+    <None Include="Sql\Update Scripts\0331 - IsDj on Usr duplicated.sql" />
+    <None Include="Sql\Update Scripts\0330 - IsDj on Usr.sql" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSHARP.Targets" />
+  <ProjectExtensions>
+    <VisualStudio AllowExistingFolder="true" />
+  </ProjectExtensions>
+  <PropertyGroup>
+    <PostBuildEvent>
+    </PostBuildEvent>
+    <PreBuildEvent>..\..\Utilities\BobsCommonFileGenerator\bin\BobsCommonFileGenerator.exe /common:..\Main\Common.cs /f
+</PreBuildEvent>
+  </PropertyGroup>
+</Project>

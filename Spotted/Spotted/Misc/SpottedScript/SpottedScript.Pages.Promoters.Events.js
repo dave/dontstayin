@@ -1,0 +1,4 @@
+Type.registerNamespace('SpottedScript.Pages.Promoters.Events');
+SpottedScript.Pages.Promoters.Events.View=function(clientId){SpottedScript.Pages.Promoters.Events.View.initializeBase(this,[clientId]);this.clientId=clientId;}
+SpottedScript.Pages.Promoters.Events.View.prototype={clientId:null,get_promoterintro2:function(){return document.getElementById(this.clientId+'_Promoterintro2');},get_h12:function(){return document.getElementById(this.clientId+'_H12');},get_eventsGridView:function(){return document.getElementById(this.clientId+'_EventsGridView');},get_panelEventsList:function(){return document.getElementById(this.clientId+'_PanelEventsList');},get_genericContainerPage:function(){return document.getElementById(this.clientId+'_GenericContainerPage');}}
+SpottedScript.Pages.Promoters.Events.View.registerClass('SpottedScript.Pages.Promoters.Events.View',SpottedScript.Pages.Promoters.PromoterUserControl.View);

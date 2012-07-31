@@ -1,0 +1,194 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{EE55BF75-D674-4C53-ABF5-588E55D248C9}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SpottedLibrary</RootNamespace>
+    <AssemblyName>SpottedLibrary</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AddressBookImporter, Version=1.9.0.0, Culture=neutral, PublicKeyToken=217b0951fa694dc0, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Dll\AddressBookImporter.dll</HintPath>
+    </Reference>
+    <Reference Include="ICSharpCode.SharpZipLib, Version=0.84.0.0, Culture=neutral, PublicKeyToken=1b03e6acf1164f73">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Dll\ICSharpCode.SharpZipLib.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.JScript" />
+    <Reference Include="nunit.framework, Version=2.4.1.0, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Dll\nunit.framework.dll</HintPath>
+    </Reference>
+    <Reference Include="OzCommons, Version=1.0.0.0, Culture=neutral, PublicKeyToken=217b0951fa694dc0, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Dll\OzCommons.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Admin\AdminStats\PhotoUploaderSuccessFailureDataItem.cs" />
+    <Compile Include="Admin\AdminStats\PhotoUploaderTriesDataItem.cs" />
+    <Compile Include="Admin\BannerImpressionStats\BannerImpressionStatsController.cs" />
+    <Compile Include="Admin\BannerImpressionStats\BannerImpressionStatsService.cs" />
+    <Compile Include="Admin\BannerImpressionStats\IBannerImpressionStatsView.cs" />
+    <Compile Include="Admin\AdminStats\IAdminStatsView.cs" />
+    <Compile Include="Admin\AdminStats\AdminStatsController.cs" />
+    <Compile Include="Admin\AdminStats\JobProcessorLogDataItem.cs" />
+    <Compile Include="Admin\AdminStats\AdminStatsService.cs" />
+    <Compile Include="Admin\RecentlyEndedBanners\IRecentlyEndedBannersView.cs" />
+    <Compile Include="Admin\RecentlyEndedBanners\RecentlyEndedBannersController.cs" />
+    <Compile Include="Admin\RecentlyEndedBanners\RecentlyEndedBannersService.cs" />
+    <Compile Include="Admin\ReportABug\IReportABugView.cs" />
+    <Compile Include="Admin\ReportABug\ReportABugController.cs" />
+    <Compile Include="Admin\ReportABug\ReportABugService.cs" />
+    <Compile Include="Controls\BuddyChooser\IBuddyChooser.cs" />
+    <Compile Include="Controls\BuddyImporter\BuddyImporterController.cs" />
+    <Compile Include="Controls\BuddyImporter\BuddyImporterService.cs" />
+    <Compile Include="Controls\BuddyImporter\IBuddyImporterView.cs" />
+    <Compile Include="Controls\BuddyImporter\Tests.cs" />
+    <Compile Include="Controls\LatestChat\ILatestChat.cs" />
+    <Compile Include="Controls\PagedRepeater\IPagedDataControl.cs" />
+    <Compile Include="Controls\PagedRepeater\IPagedDataServiceProvider.cs" />
+    <Compile Include="Controls\PagedRepeater\IPagedDataControlView.cs" />
+    <Compile Include="Controls\LinkCloud\ILinkCloud.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Controls\PagedRepeater\PagedDataControlController.cs" />
+    <Compile Include="Controls\PaginationControl2\IPaginationControl2.cs" />
+    <Compile Include="Controls\PhotoBrowserControl\IPhotoBrowser.cs" />
+    <Compile Include="Controls\PhotoBrowserControl\PhotoBrowserItem.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Controls\PhotoBrowserWithPhoto\IPhotoBrowserWithPhotoView.cs" />
+    <Compile Include="Controls\PhotoBrowserWithPhoto\PhotoBrowserWithPhotoController.cs" />
+    <Compile Include="Controls\PhotoControl\IPhotoControl.cs" />
+    <Compile Include="Controls\PhotoControl\IPhotoControlView.cs" />
+    <Compile Include="Controls\PhotoControl\PhotoControlController.cs" />
+    <Compile Include="Controls\PhotoControl\PhotoControlService.cs" />
+    <Compile Include="Controls\PhotoPage\IPhotoPageView.cs" />
+    <Compile Include="Controls\PhotoPage\PhotoPageController.cs" />
+    <Compile Include="Controls\PhotoWithComments\IPhotoWithCommentsView.cs" />
+    <Compile Include="Controls\PhotoWithComments\PhotoWithCommentsController.cs" />
+    <Compile Include="Controls\SearchBoxControl\ISearchBoxControl.cs" />
+    <Compile Include="Controls\SearchBoxControl\ISearchBoxControlView.cs" />
+    <Compile Include="Controls\SearchBoxControl\ISearchQuery.cs" />
+    <Compile Include="Controls\SearchBoxControl\PhotoPagedDataProviderTests.cs" />
+    <Compile Include="Controls\SearchBoxControl\SearchBoxControlController.cs" />
+    <Compile Include="Controls\SearchBoxControl\SearchQuery - Parse.cs" />
+    <Compile Include="Controls\TagCloud\ITagCloud.cs" />
+    <Compile Include="Controls\TagCloud\TagCloudService.cs" />
+    <Compile Include="Controls\TagCloud\ITagCloudView.cs" />
+    <Compile Include="Controls\TagCloud\TagCloudController.cs" />
+    <Compile Include="Controls\TaggingControl\ITaggingControl.cs" />
+    <Compile Include="Controls\TaggingControl\ITaggingControlView.cs" />
+    <Compile Include="Controls\TaggingControl\TaggingControlController.cs" />
+    <Compile Include="Controls\ThreadControl\IThreadControl.cs" />
+    <Compile Include="Controls\ThreadControl\IThreadControlView.cs" />
+    <Compile Include="Controls\ThreadControl\ThreadControlService.cs" />
+    <Compile Include="Controls\ThreadControl\ThreadCreatedArgs.cs" />
+    <Compile Include="ICurrentUsrProvider.cs" />
+    <Compile Include="IRequiresValidation.cs" />
+    <Compile Include="IView.cs" />
+    <Compile Include="Controls\SearchBoxControl\SearchQuery - implementing ISearchQuery.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Controls\SearchBoxControl\SearchQueryTests.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Pages\Articles\Photos\ArticlePhotoController.cs" />
+    <Compile Include="Pages\Articles\Photos\IArticlePhotosView.cs" />
+    <Compile Include="Pages\Events\Photos\EventPhotosController.cs" />
+    <Compile Include="Pages\Events\Photos\IEventPhotosView.cs" />
+    <Compile Include="Pages\Groups\Photos\GroupPhotosController.cs" />
+    <Compile Include="Pages\Groups\Photos\IGroupPhotosView.cs" />
+    <Compile Include="Pages\MapBrowser\MapInfoResult.cs" />
+    <Compile Include="Pages\TagSearch\ITagSearchView.cs" />
+    <Compile Include="Pages\TagSearch\TagSearchController.cs" />
+    <Compile Include="Pages\TagSearch\TagUrl.cs" />
+    <Compile Include="Pages\Usrs\FavouritePhotos\IUsrFavouritePhotosView.cs" />
+    <Compile Include="Pages\Usrs\FavouritePhotos\UsrFavouritePhotosController.cs" />
+    <Compile Include="Pages\Usrs\Photos\UsrPhotosController.cs" />
+    <Compile Include="Pages\Usrs\Photos\IUsrPhotosView.cs" />
+    <Compile Include="Pages\Videos\VideosController.cs" />
+    <Compile Include="Pages\Videos\IVideosView.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{B4F97281-0DBD-4835-9ED8-7DFB966E87FF}" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Bobs\Bobs.csproj">
+      <Project>{4DE1194A-CFBE-4604-ADDA-CE6EC0183345}</Project>
+      <Name>Bobs</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Domain\Model\Model.csproj">
+      <Project>{B076235C-D743-42C1-A6FA-4E1CB9BD4542}</Project>
+      <Name>Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Utilities\Cache\Caching\Caching.csproj">
+      <Project>{616B4BE1-C145-4E5B-97EC-3E26F457D49A}</Project>
+      <Name>Caching</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Utilities\Common\Common.csproj">
+      <Project>{E69EBDF9-A0D6-43BF-9A86-811572EEB01F}</Project>
+      <Name>Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Utilities\UnitTestUtilities\UnitTestUtilities.csproj">
+      <Project>{06B0C07E-8F12-4E6B-8893-BBF4FE82D802}</Project>
+      <Name>UnitTestUtilities</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Controllers\" />
+    <Folder Include="Controls\MapBrowserTabs\" />
+    <Folder Include="Controls\NewFolder1\" />
+    <Folder Include="Pages\Photos\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,413 @@
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Style.css.cs" Inherits="Spotted.Support.Style" %>
+
+<%
+	//Blue
+	//System.Drawing.Color hilightColor = Cambro.Misc.ColorHelp.HexStringToColor("588ee5");
+	//System.Drawing.Color lightShadeColor = Cambro.Misc.ColorHelp.HexStringToColor("ccdbf4");
+	//System.Drawing.Color darkShadeColor = Cambro.Misc.ColorHelp.HexStringToColor("2253a1");
+
+	//Green
+	//System.Drawing.Color hilightColor = Cambro.Misc.ColorHelp.HexStringToColor("71c666");
+	//System.Drawing.Color lightShadeColor = Cambro.Misc.ColorHelp.HexStringToColor("d3f0cf");
+	//System.Drawing.Color darkShadeColor = Cambro.Misc.ColorHelp.HexStringToColor("165c0c");
+
+	//Yellow
+	//System.Drawing.Color hilightColor = Cambro.Misc.ColorHelp.HexStringToColor("feca26");
+	//System.Drawing.Color lightShadeColor = Cambro.Misc.ColorHelp.HexStringToColor("f2e6c0");
+	//System.Drawing.Color darkShadeColor = Cambro.Misc.ColorHelp.HexStringToColor("5d4908");
+	
+	//Blue
+	string colorMedium = "588ee5";
+	string colorLight = "ccdbf4";
+	string colorDark = "2253a1";
+	
+	//Green
+	//string colorMedium = "71c666";
+	//string colorLight = "d3f0cf";
+	//string colorDark = "165c0c";
+	
+	//Yellow
+	//string colorMedium = "feca26";
+	//string colorLight = "cccccc";
+	//string colorDark = "333333";
+	
+	string black = "444444";                 /* all black items should be this colour */
+	string shade = "999999";                 /* this is used to de-emphasize text - e.g. 'small' tags */
+	string keyline = "cccccc";               /* this is used for the keyline borders */
+	string medLight = "eaeaea";             /* this is used for block shading */
+	string veryLight = "f3f3f3";             /* this is used for light block shading or alternating item shading */
+	string white = "ffffff";                 /* all white or background areas should be this colour */
+	
+%>
+
+
+
+
+.ArticleEditBorder p, .ArticleEditBorder td, .ArticleEditBorder th, .ArticleEditBorder li, .ArticleEditBorder small, .ArticleEditBorder blockquote
+{
+	font-family: Verdana, sans-serif;
+	font-size:12px;
+}
+
+p.ArticleTitle
+{
+	font-size:x-large;
+	font-weight:bold;
+	margin-bottom:15px;
+}
+
+
+.HtmlBoxHelperTable{margin-top:2px;width:580px;}
+.HtmlBoxHelperDiv{padding-top:3px;padding-bottom:3px;}
+.HtmlBox{width:580px;}
+
+
+.CommentTable {margin-top:10px;margin-bottom:10px;}
+.CommentLeft {width:110px;border-right:1px solid #<% = keyline %>;}
+.CommentLeftPic {margin-right:8px; padding-top:2px; text-align:right;}
+.CommentLeftName {margin-right:8px; width:102px; padding-top:2px; text-align:right; overflow:hidden;}
+.CommentLeftNameSpan {writing-mode: tb-rl; filter: flipv fliph;}
+.CommentRight {width:471px;}
+.CommentRightDiv {padding-left:7px; width:471px; overflow:hidden;}
+.CommentRightNav {text-align:right;padding-top:5px; line-height:14px;}
+
+.CommentHolder p, .CommentHolder td, .CommentHolder th, .CommentHolder li, .CommentHolder small, .CommentHolder blockquote, .CommentHolder
+{
+	font-family: Verdana, sans-serif;
+	font-size:12px;
+	line-height:130%
+}
+
+
+.NavChevron
+{
+}
+
+
+
+
+.BodyClass
+{
+	/*background-image:url(/gfx/dsi-bg2.png);
+	background-repeat:repeat-y;
+	background-position:top center;
+	background-image:url(/gfx/dsi-bg.png);
+	background-repeat:repeat-y;
+	background-position:top left;*/
+}
+
+
+
+.bev-t
+{
+	background-color:#333333;
+}
+td.bev-b
+{
+	
+	color:#ffffff;
+	font-weight:bold;
+	padding-top:2px;
+	padding-bottom:2px;
+	padding-left:4px;
+	padding-right:4px;
+	font-size:12px;
+	/*font-family: Arial, sans-serif;
+	background-image: url(/gfx/bev-b.gif);
+	background-repeat:repeat-x;
+	background-position:left top;*/
+}
+
+
+div.ContentBorderFlat
+{
+	padding:0px 13px 2px 13px; 
+	margin-top:0px;
+	margin-right:0px;
+	/*border-top:1px solid #<% = black %>;*/
+}
+
+table.TopNavTable
+{
+	margin-top:1px;
+	border-collapse:separate;
+}
+
+
+td.NavRightCell
+{
+	padding-top:0px;
+}
+div.NavRightBorder
+{
+	border:solid 1px #<% = black %>;
+	padding:1px 6px 1px 6px;
+	margin:0px 0px 13px 0px;
+	background-color:#999999;
+}
+div.NavRightBorderChat
+{
+	border:solid 1px #<% = black %>;
+	padding:1px 0px 1px 0px;
+	margin:0px 0px 13px 0px;
+	background-color:#999999;
+}
+p.ChatP
+{
+	margin-left:6px;
+	margin-right:6px;
+}
+.ChatPausedBox
+{
+	width:165px;
+	overflow:auto;
+	background-color:#ffffff;
+	padding:0px;
+	border-top:1px solid #<% = black %>;
+	border-bottom:1px solid #<% = black %>;
+	border-left:0px solid #<% = black %>;
+	border-right:0px solid #<% = black %>;
+}
+.ChatPausedBoxBluebook
+{
+	width:165px;
+	overflow:auto;
+	background-color:#08265A;
+	color:#ffffff;
+	padding:0px;
+	border-top:1px solid #<% = black %>;
+	border-bottom:1px solid #<% = black %>;
+	border-left:0px solid #<% = black %>;
+	border-right:0px solid #<% = black %>;
+}
+.ChatBox{
+	width:165px;
+	height:260px;
+	overflow:auto;
+	background-color:#ffffff;
+	/*padding:3px;*/
+	padding:0px;
+	border-top:1px solid #<% = black %>;
+	border-bottom:1px solid #<% = black %>;
+	border-left:0px solid #<% = black %>;
+	border-right:0px solid #<% = black %>;
+}
+.ChatBoxBluebook{
+	width:165px;
+	height:260px;
+	overflow:auto;
+	background-color:#08265A;
+	color:#ffffff;
+	padding:0px;
+	border-top:1px solid #<% = black %>;
+	border-bottom:1px solid #<% = black %>;
+	border-left:0px solid #<% = black %>;
+	border-right:0px solid #<% = black %>;
+}
+.ChatMessageBox{
+	width:165px;
+	height:110px;
+	overflow:auto;
+	background-color:#ffffff;
+	/*padding:3px;*/
+	padding:0px;
+	border-top:0px solid #<% = black %>;
+	border-bottom:1px solid #<% = black %>;
+	border-left:0px solid #<% = black %>;
+	border-right:0px solid #<% = black %>;
+}
+.ChatMessageBoxBluebook{
+	width:165px;
+	height:110px;
+	overflow:auto;
+	background-color:#08265A;
+	color:#ffffff;
+	/*padding:3px;*/
+	padding:0px;
+	border-top:0px solid #<% = black %>;
+	border-bottom:1px solid #<% = black %>;
+	border-left:0px solid #<% = black %>;
+	border-right:0px solid #<% = black %>;
+}
+.ChatBoxPrivate{
+	width:160px;
+	height:200px;
+	overflow:auto;
+	background-color:#ffffff;
+	padding-left:4px;
+	padding-right:4px;
+	border-top:1px solid #<% = black %>;
+	border-bottom:1px solid #<% = black %>;
+	border-left:1px solid #<% = black %>;
+	border-right:1px solid #<% = black %>;
+	margin-bottom:5px;
+}
+.PicBox{
+	text-align:center;
+	width:165px;
+	height:100px;
+	overflow:hidden;
+	background-color:#ffffff;
+	padding:0px;
+	border-top:1px solid #<% = black %>;
+	border-bottom:0px solid #<% = black %>;
+	border-left:0px solid #<% = black %>;
+	border-right:0px solid #<% = black %>;
+}
+.PicBoxPrivate{
+	text-align:center;
+	width:160px;
+	height:100px;
+	overflow:hidden;
+	background-color:#ffffff;
+	padding:0px;
+	border-top:1px solid #<% = black %>;
+	border-bottom:0px solid #<% = black %>;
+	border-left:1px solid #<% = black %>;
+	border-right:1px solid #<% = black %>;
+}
+
+.LolBox{
+	width:165px;
+	background-color:#ffffff;
+	padding:3px;
+	padding-bottom:4px;
+	border-top:0px solid #<% = black %>;
+	border-bottom:1px solid #<% = black %>;
+	border-left:0px solid #<% = black %>;
+	border-right:0px solid #<% = black %>;
+}
+.ChatName
+{
+	padding-top:3px;
+	font-style:italic;
+	color:#<% = shade %>;
+}
+
+.ChatPausedBoxBluebook .ChatAlert,
+.ChatBoxBluebook .ChatAlert,
+.ChatMessageBoxBluebook .ChatAlert
+{
+	padding-top:3px;
+	padding-bottom:2px;
+	font-style:italic;
+	color:#6b7d9c;
+}
+.ChatMessage
+{
+	padding-bottom:2px;
+}
+div.DbChatOldDiv
+{
+	background-color:transparent;
+	padding:0px 4px 0px 4px;
+	margin:0px;
+}
+div.DbChatNewDiv
+{
+	padding:0px 4px 3px 4px;
+	background-color:#<% = medLight %>;
+	margin-bottom:1px;
+}
+.ChatBoxBluebook div.DbChatNewDiv,
+.ChatMessageBoxBluebook div.DbChatNewDiv
+{
+	padding:0px 4px 3px 4px;
+	background-color:#2681B8;
+	margin-bottom:1px;
+}
+
+
+
+div.HeaderBorder
+{
+	border:solid 1px #<% = black %>;
+	padding:0px; 
+	margin-top:0px;
+	margin-left:0px;
+	margin-bottom:-1px;
+	margin-right:0px;
+	background-color:#4E565C;
+}
+
+div.AmazonLink
+{
+	border:solid 1px #<% = black %>;
+	padding:2px 8px 2px 8px; 
+	margin-top:5px;
+	width:100%;
+	margin-right:3px;
+	background-color:#ffffff;
+}
+
+div.TopicTitle
+{
+	background-color:#eeeeee;
+}
+
+
+
+/*         CONTENT STYLES                
+           ==============                     */
+
+
+
+
+
+
+
+
+
+/*
+Colours and links
+*/
+
+.ChatClientMain a:link, 
+.ChatClientMain a:visited           { color:#<% = black %>; }
+.ChatClientMain a:hover             { color:#FF0000; }
+.ChatClientMain small               { color:#<% = shade %>; }
+.ChatClientMain small a:link, 
+.ChatClientMain small a:visited     { color:#<% = shade %>; }
+.ChatClientMain small a:hover       { color:#FF0000; }
+
+.ChatClientRoomLink:link, 
+.ChatClientRoomLink:visited,
+.ChatClientRoomLink:hover           { text-decoration:none; }
+
+.ChatClientRoomLinkSelected:link, 
+.ChatClientRoomLinkSelected:visited,
+.ChatClientRoomLinkSelected:hover   { font-weight:bold; }
+
+.ChatClientRoomLinkNoUnread:link,
+.ChatClientRoomLinkNoUnread:visited { color:#<% = shade %> !important; }
+.ChatClientRoomLinkNoUnread:hover   { color:#<% = colorMedium %> !important; }
+
+.ChatClientMessageHeader a:link, 
+.ChatClientMessageHeader a:visited  { color:#<% = shade %>; text-decoration:none; }
+.ChatClientMessageHeader a:hover    { color:#FF0000; text-decoration:none; }
+
+.ChatClientMessageSubHead a:link, 
+.ChatClientMessageSubHead a:visited  { color:#<% = shade %>; }
+.ChatClientMessageSubHead a:hover    { color:#FF0000; }
+
+a.ChatClientCommentMessageSubhead:link, 
+a.ChatClientCommentMessageSubhead:visited  { text-decoration:none; }
+a.ChatClientCommentMessageSubhead:hover    { text-decoration:none; }
+
+a.ChatClientCommentMessageMoreLink          { color:#<% = shade %>; }
+a.ChatClientCommentMessageMoreLink:link, 
+a.ChatClientCommentMessageMoreLink:visited  { color:#<% = shade %>; text-decoration:none; }
+a.ChatClientCommentMessageMoreLink:hover    { color:#FF0000; text-decoration:none; }
+
+
+	
+	
+	
+
+/*a:link, 
+a:visited  { text-decoration:none; }
+a:hover    { text-decoration:none; color:#<% = colorMedium %> !important; }*/
+
+ 
+/*a img { background-color:#<% = white %>; }
+.BackgroundColorDark a img { background-color:#<% = colorDark %>; }*/

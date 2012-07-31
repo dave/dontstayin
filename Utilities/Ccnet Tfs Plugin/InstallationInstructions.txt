@@ -1,0 +1,41 @@
+
+1) Copy the ccnet.vsts.plugin.dll assembly into the server directory for CCNET.  
+2) Configure ccnet.config to referece VSTS for source control.  You will need something like this:-
+
+		<sourcecontrol type="vsts">
+		  <server>my_team_foundation_server</server>
+		  <project>$/Foobar</project>
+		  <workingDirectory>c:\projects\Foobar</workingDirectory>
+		</sourcecontrol>
+
+However, for full details on configuring the plug-in see http://confluence.public.thoughtworks.org/display/CCNET/Visual+Studio+Team+Foundation+Server+Plugin
+
+3) Restart ccnet and enjoy.
+
+
+NOTE:
+
+To get the source to compile / run you need the following assemblies installed on the machine (If you have Team Explorer
+installed on that machine then they will already be present).
+
+Microsoft.TeamFoundation.Client.dll
+Microsoft.TeamFoundation.Common.dll
+Microsoft.TeamFoundation.Common.Library.dll
+Microsoft.TeamFoundation.dll
+Microsoft.TeamFoundation.VersionControl.Client.dll
+Microsoft.TeamFoundation.VersionControl.Common.dll
+Microsoft.TeamFoundation.VersionControl.Common.Integration.dll
+Microsoft.TeamFoundation.WorkItemTracking.Client.Cache.dll
+Microsoft.TeamFoundation.WorkItemTracking.Client.DataStore.dll
+Microsoft.TeamFoundation.WorkItemTracking.Client.dll
+Microsoft.TeamFoundation.WorkItemTracking.Client.Provision.dll
+Microsoft.TeamFoundation.WorkItemTracking.Client.QueryLanguage.dll
+Microsoft.TeamFoundation.WorkItemTracking.Client.RuleEngine.dll
+Microsoft.TeamFoundation.WorkItemTracking.Proxy.dll
+
+These will be in your GAC if you have the Visual Studio 2005 Team Explorer client installed on your machine
+ - otherwise you'll need to copy them from one that does.  If you don't want to install the
+Team Foundation Client on your build machine then you must copy the assemblies above into
+the CCNET server directory along with the ccnet.vsts.plugin.dll
+
+Good luck.

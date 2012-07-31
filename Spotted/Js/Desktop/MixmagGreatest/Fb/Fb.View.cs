@@ -1,0 +1,25 @@
+//mappings.Add("System.Web.UI.HtmlControls.HtmlGenericControl", ElementGetter("Element"));
+//mappings.Add("Spotted.GenericPage", ElementGetter("Element"));
+using System;
+using System.Collections.Generic;
+using System.Html;
+using jQueryApi;
+using Js.Library;
+
+namespace Js.MixmagGreatest.Fb
+{
+	public partial class View
+		 : Js.MixmagGreatestUserControl.View
+	{
+		public string clientId;
+		public View(string clientId)
+			 : base(clientId)
+		{
+			this.clientId = clientId;
+		}
+		public Element FacebookComments {get {if (_FacebookComments == null) {_FacebookComments = (Element)Document.GetElementById(clientId + "_FacebookComments");}; return _FacebookComments;}} private Element _FacebookComments;
+		public jQueryObject FacebookCommentsJ {get {if (_FacebookCommentsJ == null) {_FacebookCommentsJ = jQuery.Select("#" + clientId + "_FacebookComments");}; return _FacebookCommentsJ;}} private jQueryObject _FacebookCommentsJ;//mappings.Add("System.Web.UI.HtmlControls.HtmlGenericControl", ElementGetter("Element"));
+		public Element GenericContainerPage {get {if (_GenericContainerPage == null) {_GenericContainerPage = (Element)Document.GetElementById(clientId + "_GenericContainerPage");}; return _GenericContainerPage;}} private Element _GenericContainerPage;
+		public jQueryObject GenericContainerPageJ {get {if (_GenericContainerPageJ == null) {_GenericContainerPageJ = jQuery.Select("#" + clientId + "_GenericContainerPage");}; return _GenericContainerPageJ;}} private jQueryObject _GenericContainerPageJ;//mappings.Add("Spotted.GenericPage", ElementGetter("Element"));
+	}
+}

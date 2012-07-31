@@ -1,0 +1,2 @@
+<%@ Page EnableEventValidation="false" Language="C#" AutoEventWireup="true" CodeBehind="BlankPage.aspx.cs" Inherits="Spotted.Master.BlankPage" %>
+<html><head id="Head1" runat="server"><%= Bobs.Storage.PathJavascriptFunction() %></head><body topmargin="0" bottommargin="0" leftmargin="0" rightmargin="0" runat="server" id="BodyTag"><form id="TemplateForm" method="post" runat="server"><asp:ScriptManager ID="ScriptManager1" runat="server" EnableHistory="true" EnablePageMethods="true" /><asp:PlaceHolder Runat="server" ID="MainContentPlaceHolder"/></form></body></html>

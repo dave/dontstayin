@@ -1,0 +1,210 @@
+body 
+{
+	text-align:center;
+	margin: 0px;
+	padding: 0px;
+	background: url('/gfx/default-styled-bg.gif') repeat;
+	background-color:#FFFFFF;
+	color: #000000;
+	font-family: Verdana, Arial, sans-serif;
+	font-size: 1.0em;	
+}
+
+a {
+	color: #000000;
+	text-decoration: none;
+}
+
+a:hover 
+{
+	color:#3E79B0;
+	text-decoration:none;
+}
+
+h2  
+{
+	margin-top:8px;
+	margin-bottom:8px;
+	padding-left:8px;
+	font-size:1.2em;
+	text-align:left;
+	background-color:#3B78AF;
+	color:#FFFFFF;	
+}
+
+h3
+{
+	font-weight:bold;
+	margin-top:8px;
+	margin-bottom:8px;
+}
+
+.OuterDiv
+{	
+	background-color: #FFFFFF;	
+	width:800px;
+	text-align:left;
+	position:absolute;
+	left:50%;
+	margin-left:-400px;
+}
+
+.OuterDiv hr
+{
+	display:none;
+}
+.FooterDiv hr
+{
+	display:block;
+}
+
+.InnerDiv
+{
+	margin-left:8px;
+	margin-right:8px;
+}
+
+div.WelcomeDiv
+{
+	text-align:right;
+	font-size: 0.8em;
+	margin-bottom:16px;
+}
+
+.CalendarFilterP
+{
+	text-align:center;
+}
+.CalendarMonthSpacer
+{
+	margin-left:6px;
+	margin-right:6px;
+}
+.CalendarCurrentMonth
+{
+	font-weight:bold;
+}
+
+.PaymentDiv
+{
+	border:solid 1px black;
+}
+
+.BringCardDiv
+{
+	font-size: 0.8em;
+	font-style:italic;	
+}
+
+.BuyButton
+{
+	padding-left:8px;
+	padding-right:8px;
+	margin-bottom:2px;
+	margin-top:12px;
+}
+
+.EventShortDescription
+{
+	margin-top:30px;
+	margin-bottom:10px;
+}
+
+.TicketsDropDownList
+{
+	margin-left:1px;	
+}
+
+.TicketText
+{
+	padding-top:8px;	
+}
+
+.EventLink
+{
+	margin-bottom:4px;
+}
+.EventLink a:hover
+{
+	text-decoration:none;
+}
+.EventLinkSpacer
+{
+	margin-left:3px;
+	margin-right:3px;
+}
+.FooterDiv
+{
+	padding-top:20px;
+	padding-bottom:4px;
+}
+
+.FooterLinks
+{
+	margin-left:8px;
+}
+
+.MainImage
+{
+	background-image: url('/gfx/default-styled-main.gif');
+	width:800px;
+	height:100px;
+	margin-bottom:4px;
+	cursor:pointer;
+}
+
+.EventPic
+{
+	width:100px;
+	height:100px;
+	margin-right:10px;
+}
+
+.CalendarMonthLinks
+{
+	text-align:center;
+	font-weight:bold;
+	margin-right:8px;
+	margin-left:8px;
+}
+.TicketDetails
+{
+	padding-bottom:8px;
+}
+
+.PoweredByDSI
+{
+	text-align:right;
+	margin-right:8px;
+}
+
+.PoweredByDSI a, .PoweredByDSI a:hover
+{
+	font-size: 0.9em;
+	text-decoration: none;
+	text-transform:none;
+	color: #000000;
+}
+p.Divider
+{
+	border-top: dotted 1px black;
+}
+label.loginLabel 
+{
+	float: left;
+	font-size:80%;
+	text-align: right;
+	padding: 2px 4px 2px 0;
+	margin-right: 2px;
+	width: 130px;
+}
+input.loginTextbox, textarea.loginTextbox 
+{
+	padding: 2px 4px;
+	width: 200px;
+}
+input.ContinueToPayButton
+{
+	text-transform:none;
+	font-weight:normal;
+}

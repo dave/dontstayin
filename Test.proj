@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Compile;Test;WriteTimeOfBuildToFile" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+
+	<ItemGroup>
+		<TestAssembly Include=".\Bobs\Bin\Bobs.dll" />
+		<TestAssembly Include=".\Utilities\Common\bin\Common.dll" />
+		<TestAssembly Include=".\Utilities\BobsCommonFileGenerator\bin\BobsCommonFileGenerator.exe" />
+		<TestAssembly Include=".\Spotted\SpottedTests\bin\SpottedTests.dll" />
+		<TestAssembly Include=".\Utilities\Cache\CacheTests\bin\CacheTests.dll" />
+	</ItemGroup>
+	<ItemGroup>
+		<XmlReport Include="TestResult.xml" />
+		<XmlReport Include="Coverage.xml" />
+		<XmlReport Include="Coverage.log" />
+		<XmlReport Include="CoverageReport.xml" />
+		<XmlReport Include="CoverageReport.xsl" />
+		<XmlReport Include="Simian.xml" />
+	</ItemGroup>
+	<Target Name="Clean">
+		<Attrib Files="@(XmlReport)" ReadOnly="false" />
+		<Delete Files="@(XmlReport)" />
+	</Target>
+	<Target Name="Compile" DependsOnTargets="Clean">
+
+
+		<!--<MSBuild Projects="Utilities\Common\Common.csproj" />
+		<MSBuild Projects="Utilities\UnitTestUtilities\UnitTestUtilities.csproj" />
+		<MSBuild Projects="Utilities\SqlScriptRunner\SqlScriptRunner.csproj" />
+		<MSBuild Projects="Utilities\BobsCommonFileGenerator\BobsCommonFileGenerator.csproj" />
+		<MSBuild Projects="Utilities\BobsCommonFileGenerator\BobsCommonFileGenerator.csproj" />
+		<MSBuild Projects="Data\DataInterface\DataInterface.csproj" />
+		<MSBuild Projects="Utilities\ToolRunner\ToolRunner.csproj" />
+		<MSBuild Projects="Utilities\Facebook\Facebook.csproj" />
+		<MSBuild Projects="Utilities\ServiceLocator\ServiceLocator.csproj" />
+		<MSBuild Projects="Utilities\Spatial\Spatial.csproj" />
+		<MSBuild Projects="Utilities\DomainNameRegistrar\DomainNameRegistrar.csproj" />
+		<MSBuild Projects="Utilities\Facebook.Web\Facebook.Web.csproj" />
+		<MSBuild Projects="Domain\Model\Model.csproj" />
+		<MSBuild Projects="Utilities\BobsPreCompileApp\BobsPrecompileApp.csproj" />-->
+
+		<MSBuild Projects="Branch.sln" />
+		<Attrib Files="Spotted\SpottedTests\app.config" ReadOnly="false" /><XmlUpdate XmlFileName="Spotted\SpottedTests\app.config" XPath="/configuration/appSettings/add[@key = 'SpottedUri']/@value" Value="$(SiteUri)" /><Attrib Files="Spotted\SpottedTests\app.config" ReadOnly="true" />
+		<Attrib Files="Spotted\Spotted\web.config" ReadOnly="false" /><XmlUpdate XmlFileName="Spotted\Spotted\web.config" XPath="/configuration/appSettings/add[@key = 'ConnectionString']/@value" Value="$(SqlConnectionString)" /><Attrib Files="Spotted\Spotted\web.config" ReadOnly="true" />
+		<Attrib Files="Utilities\JobProcessorService\app.config" ReadOnly="false" /><XmlUpdate XmlFileName="Utilities\JobProcessorService\app.config" XPath="/configuration/appSettings/add[@key = 'ConnectionString']/@value" Value="$(SqlConnectionString)" /><Attrib Files="Utilities\JobProcessorService\app.config" ReadOnly="true" />
+		<!--<MakeWebRequest ContinueOnError="true" Url="$(SiteUri)" TimeoutInSeconds="120" TextThatMustBeInResponse="Welcome to DontStayIn" MaxNumberOfAttempts="10"/>-->
+		<MakeWebRequest Url="$(SiteUri)" TimeoutInSeconds="120" TextThatMustBeInResponse="Welcome to DontStayIn" MaxNumberOfAttempts="10" />
+	</Target>
+	<PropertyGroup>
+		<NUnitExe>"c:\Program Files\NUnit 2.4.1\bin\nunit-console.exe"</NUnitExe>
+		<NUnitArgs>/nologo</NUnitArgs>
+		<NCoverEXE>"c:\Program Files\NCover\NCover.Console.exe"</NCoverEXE>
+		<NCoverExplorerEXE>"c:\Program Files\NCover\NCoverExplorer\NCoverExplorer.Console.exe"</NCoverExplorerEXE>
+		<SimianEXE>"c:\Program Files\Simian\bin\simian-2.2.17.exe"</SimianEXE>
+		<AspNetCompilerCommand>c:\Windows\Microsoft.NET\Framework\v2.0.50727\aspnet_compiler.exe -m /LM/W3SVC/700724/Root/</AspNetCompilerCommand> <!-- 700724: dev.dontstayin.com metabase path, "C:\>iisweb.vbs /query" -->
+		<SqlConnectionString>Trusted_Connection=True;Server=$(SqlServer);Database=$(SqlDatabase)</SqlConnectionString>
+	</PropertyGroup>
+	<Target Name="Test" DependsOnTargets="Compile">
+		<Exec Command="$(AspNetCompilerCommand)" />
+		<!--<Exec Command=" $(NCoverEXE) $(NUnitEXE) $(NUnitArgs) @(TestAssembly, ' ')" />-->
+		<!--<Exec Command=" $(NCoverExplorerEXE) Coverage.xml /x /r:3" />-->
+		<!--<Exec ContinueOnError="true" Command=" $(SimianEXE) -includes=**/*.cs -formatter=xml:Simian.xml" />-->
+		<!--<XmlRead XmlFileName="TestResult.xml" XPath="string(count(//test-results[@failures!='0']))"><Output TaskParameter="Value" PropertyName="CriticalErrors" /></XmlRead>-->
+		<!--<Error Text="Test error occurred" Condition="$(CriticalErrors)!='0'" />-->
+	</Target>
+	<Target Name="WriteTimeOfBuildToFile">
+		<WriteLinesToFile File="BuildTimestamp.log" Lines="$(CCNetBuildDate) $(CCNetBuildTime)" Overwrite="true" />
+	</Target>
+	<UsingTask TaskName="MSBuild.Community.Tasks.Attrib" AssemblyFile="C:\Program Files\MSBuild\MSBuildCommunityTasks\MSBuild.Community.Tasks.dll" />
+	<UsingTask TaskName="MSBuild.Community.Tasks.Prompt" AssemblyFile="C:\Program Files\MSBuild\MSBuildCommunityTasks\MSBuild.Community.Tasks.dll" />
+	<UsingTask TaskName="MSBuild.Community.Tasks.XmlRead" AssemblyFile="C:\Program Files\MSBuild\MSBuildCommunityTasks\MSBuild.Community.Tasks.dll" />
+	<UsingTask TaskName="MSBuild.Community.Tasks.XmlUpdate" AssemblyFile="C:\Program Files\MSBuild\MSBuildCommunityTasks\MSBuild.Community.Tasks.dll" />
+	<UsingTask TaskName="MSBuildTasks.MakeWebRequest" AssemblyFile="C:\release\MSBuildTasks\MSBuildTasks.dll" />
+	<UsingTask TaskName="MSBuildTasks.ReplaceText" AssemblyFile="C:\release\MSBuildTasks\MSBuildTasks.dll" />
+</Project>

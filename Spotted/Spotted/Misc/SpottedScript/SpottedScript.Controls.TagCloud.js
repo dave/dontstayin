@@ -1,0 +1,4 @@
+Type.registerNamespace('SpottedScript.Controls.TagCloud');
+SpottedScript.Controls.TagCloud.View=function(clientId){SpottedScript.Controls.TagCloud.View.initializeBase(this,[clientId]);this.clientId=clientId;}
+SpottedScript.Controls.TagCloud.View.prototype={clientId:null,get_uiTitle:function(){return document.getElementById(this.clientId+'_uiTitle');},get_uiPanel:function(){return document.getElementById(this.clientId+'_uiPanel');},get_uiSearchControl:function(){return document.getElementById(this.clientId+'_uiSearchControl');},get_uiLinkCloud:function(){return document.getElementById(this.clientId+'_uiLinkCloud');},get_genericContainerPage:function(){return document.getElementById(this.clientId+'_GenericContainerPage');}}
+SpottedScript.Controls.TagCloud.View.registerClass('SpottedScript.Controls.TagCloud.View',SpottedScript.DsiUserControl.View);

@@ -1,0 +1,4 @@
+Type.registerNamespace('SpottedScript.Admin.SalesActive');
+SpottedScript.Admin.SalesActive.View=function(clientId){SpottedScript.Admin.SalesActive.View.initializeBase(this,[clientId]);this.clientId=clientId;}
+SpottedScript.Admin.SalesActive.View.prototype={clientId:null,get_salesEstimateFilterDropDownList:function(){return document.getElementById(this.clientId+'_SalesEstimateFilterDropDownList');},get_sectorFilterDropDownList:function(){return document.getElementById(this.clientId+'_SectorFilterDropDownList');},get_promoterDataGrid:function(){return document.getElementById(this.clientId+'_PromoterDataGrid');},get_expiredDataGrid:function(){return document.getElementById(this.clientId+'_ExpiredDataGrid');},get_genericContainerPage:function(){return document.getElementById(this.clientId+'_GenericContainerPage');}}
+SpottedScript.Admin.SalesActive.View.registerClass('SpottedScript.Admin.SalesActive.View',SpottedScript.AdminUserControl.View);

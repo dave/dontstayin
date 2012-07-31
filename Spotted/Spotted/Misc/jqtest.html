@@ -1,0 +1,19 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head>
+	<script src="/misc/jQuery/jquery-ui-1-6-b/jquery-1.2.6.js" type="text/javascript"></script>
+	<script src="/Misc/jQuery/selectboxes/jquery.selectboxes.js" type="text/javascript"></script>
+    <title></title>
+</head>
+<body>
+	<button onclick="doGet();return false;">test</button>
+	<select id="drop" multiple></select>
+	<script>
+		function doGet()
+		{
+			jQuery("#drop").ajaxAddOption("/support/towns.aspx?countryk=224", {}, false, null, null);
+			//alert("test");
+		}
+	</script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="StartClustering" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <!--NlbProperties-->
+  <PropertyGroup>
+    <NlbClusterAddress>www.dontstayin.com</NlbClusterAddress>
+    <NlbPassword>spring8335lording</NlbPassword>
+  </PropertyGroup>
+  <Target Name="StopClustering">
+    <StopServer NlbClusterAddress="$(NlbClusterAddress)" ServerNumber="$(ServerNumber)" NlbPassword="$(NlbPassword)" />
+  </Target>
+  <Target Name="CopyNewBuildAcross" DependsOnTargets="StopClustering">
+    <SyncFolderUsingRobocopy SourceFolder="$(SourceDirectory)" DestinationFolder="\\server$(ServerNumber).dontstayin.com\$(VirtualDirectoryShareName)\" ExtraArgs="/XF $(ExcludedFiles) /XD $(ExcludedDirectories)" />
+  </Target>
+	<Target Name="ConfigureSettings" DependsOnTargets="CopyNewBuildAcross" >
+		<Exec Command ="IISRESET server$(ServerNumber).dontstayin.com" IgnoreExitCode="true"></Exec>
+	</Target>
+  <Target Name="LoadStartPage" DependsOnTargets="ConfigureSettings">
+    <MakeWebRequest Url="http://server$(ServerNumber).dontstayin.com/pages/home" TimeoutInSeconds="150" TextThatMustBeInResponse="Welcome to DontStayIn" MaxNumberOfAttempts="10" />
+  </Target>
+  <Target Name="StartClustering" DependsOnTargets="LoadStartPage">
+    <StartServer NlbClusterAddress="$(NlbClusterAddress)" ServerNumber="$(ServerNumber)" NlbPassword="$(NlbPassword)" />
+  </Target>
+  <UsingTask TaskName="MSBuildTasks.SyncFolderUsingRobocopy" AssemblyFile="C:\release\MSBuildTasks\MSBuildTasks.dll" />
+  <!--VirtualDirectory-->
+  <PropertyGroup>
+    <VirtualDirectoryShareName>spotted</VirtualDirectoryShareName>
+  </PropertyGroup>
+  <UsingTask TaskName="MSBuildTasks.Sleep" AssemblyFile="C:\release\MSBuildTasks\MSBuildTasks.dll" />
+  <UsingTask TaskName="MSBuildTasks.NetworkLoadBalancing.StartServer" AssemblyFile="C:\release\MSBuildTasks\MSBuildTasks.dll" />
+  <UsingTask TaskName="MSBuildTasks.NetworkLoadBalancing.StopServer" AssemblyFile="C:\release\MSBuildTasks\MSBuildTasks.dll" />
+  <UsingTask TaskName="MSBuildTasks.MakeWebRequest" AssemblyFile="C:\release\MSBuildTasks\MSBuildTasks.dll" />
+  <!--ExcludedFiles-->
+  <PropertyGroup>
+		<ExcludedFiles>thumbs.db *.user *.pdb robots.txt *.vsdisco *.vspscc *.scc *.cs *.resx _vti* *.csproj *.csproj.webinfo *.build *.cd live.web.config</ExcludedFiles>
+  </PropertyGroup>
+  <!--ExcludedDirectorys-->
+  <PropertyGroup>
+		<ExcludedDirectories>_sgbak _vti* dll obj aspnet_client properties</ExcludedDirectories>
+  </PropertyGroup>
+</Project>

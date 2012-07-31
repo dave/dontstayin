@@ -1,0 +1,137 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" DefaultTargets="Build">
+  <PropertyGroup>
+    <ProjectType>Local</ProjectType>
+    <ProductVersion>8.0.30319</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{3E1B780A-CB23-495B-9CCE-08B3A05256D7}</ProjectGuid>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ApplicationIcon />
+    <AssemblyKeyContainerName />
+    <AssemblyName>LinqToDbmlRunner</AssemblyName>
+    <AssemblyOriginatorKeyFile />
+    <DefaultClientScript>JScript</DefaultClientScript>
+    <DefaultHTMLPageLayout>Grid</DefaultHTMLPageLayout>
+    <DefaultTargetSchema>IE50</DefaultTargetSchema>
+    <DelaySign>false</DelaySign>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>LinqToDbmlRunner</RootNamespace>
+    <RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
+    <StartupObject />
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>0.0</OldToolsVersion>
+    <TargetFrameworkProfile />
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\</OutputPath>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <BaseAddress>285212672</BaseAddress>
+    <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
+    <ConfigurationOverrideFile />
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DocumentationFile />
+    <DebugSymbols>true</DebugSymbols>
+    <FileAlignment>4096</FileAlignment>
+    <NoStdLib>false</NoStdLib>
+    <NoWarn />
+    <Optimize>false</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>4</WarningLevel>
+    <DebugType>full</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\</OutputPath>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <BaseAddress>285212672</BaseAddress>
+    <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
+    <ConfigurationOverrideFile />
+    <DefineConstants>TRACE</DefineConstants>
+    <DocumentationFile />
+    <DebugSymbols>false</DebugSymbols>
+    <FileAlignment>4096</FileAlignment>
+    <NoStdLib>false</NoStdLib>
+    <NoWarn />
+    <Optimize>true</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>4</WarningLevel>
+    <DebugType>none</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Xml.Schema.Linq">
+      <HintPath>..\..\Dll\Microsoft.Xml.Schema.Linq.dll</HintPath>
+    </Reference>
+    <Reference Include="mscorlib">
+      <Name>mscorlib</Name>
+      <HintPath>mscorlib.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Core">
+      <Name>System.Core</Name>
+      <HintPath>System.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml">
+      <Name>System.Xml</Name>
+      <HintPath>System.Xml.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq">
+      <Name>System.Xml.Linq</Name>
+      <HintPath>System.Xml.Linq.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Extensions.cs" />
+    <Compile Include="LinqToDbmlScript.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="schemas.microsoft.com.linqtosql.dbml.Item2007\AccessModifier.cs" />
+    <Compile Include="schemas.microsoft.com.linqtosql.dbml.Item2007\Association.cs" />
+    <Compile Include="schemas.microsoft.com.linqtosql.dbml.Item2007\AutoSync.cs" />
+    <Compile Include="schemas.microsoft.com.linqtosql.dbml.Item2007\Cardinality.cs" />
+    <Compile Include="schemas.microsoft.com.linqtosql.dbml.Item2007\ClassModifier.cs" />
+    <Compile Include="schemas.microsoft.com.linqtosql.dbml.Item2007\Column.cs" />
+    <Compile Include="schemas.microsoft.com.linqtosql.dbml.Item2007\Connection.cs" />
+    <Compile Include="schemas.microsoft.com.linqtosql.dbml.Item2007\ConnectionMode.cs" />
+    <Compile Include="schemas.microsoft.com.linqtosql.dbml.Item2007\Database.cs" />
+    <Compile Include="schemas.microsoft.com.linqtosql.dbml.Item2007\DatabaseType.cs" />
+    <Compile Include="schemas.microsoft.com.linqtosql.dbml.Item2007\Function.cs" />
+    <Compile Include="schemas.microsoft.com.linqtosql.dbml.Item2007\LinqToXsdTypeManager.cs" />
+    <Compile Include="schemas.microsoft.com.linqtosql.dbml.Item2007\MemberModifier.cs" />
+    <Compile Include="schemas.microsoft.com.linqtosql.dbml.Item2007\Parameter.cs" />
+    <Compile Include="schemas.microsoft.com.linqtosql.dbml.Item2007\ParameterDirection.cs" />
+    <Compile Include="schemas.microsoft.com.linqtosql.dbml.Item2007\Return.cs" />
+    <Compile Include="schemas.microsoft.com.linqtosql.dbml.Item2007\SerializationMode.cs" />
+    <Compile Include="schemas.microsoft.com.linqtosql.dbml.Item2007\Table.cs" />
+    <Compile Include="schemas.microsoft.com.linqtosql.dbml.Item2007\TableFunction.cs" />
+    <Compile Include="schemas.microsoft.com.linqtosql.dbml.Item2007\TableFunctionParameter.cs" />
+    <Compile Include="schemas.microsoft.com.linqtosql.dbml.Item2007\TableFunctionReturn.cs" />
+    <Compile Include="schemas.microsoft.com.linqtosql.dbml.Item2007\Type.cs" />
+    <Compile Include="schemas.microsoft.com.linqtosql.dbml.Item2007\UpdateCheck.cs" />
+    <Compile Include="schemas.microsoft.com.linqtosql.dbml.Item2007\Version.cs" />
+    <Compile Include="schemas.microsoft.com.linqtosql.dbml.Item2007\XRoot.cs" />
+    <Compile Include="schemas.microsoft.com.linqtosql.dbml.Item2007\XRootNamespace.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PreBuildEvent />
+    <PostBuildEvent />
+  </PropertyGroup>
+</Project>

@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Facebook Graph Toolkit", "Facebook Graph Toolkit.csproj", "{37D9835A-D94A-4A60-B3E7-8E0F95B3E3AD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Facebook Graph Toolkit_3.5", "Facebook Graph Toolkit_3.5.csproj", "{D0AC56C9-9AAB-4496-9F7A-7AD849B5AC2C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{37D9835A-D94A-4A60-B3E7-8E0F95B3E3AD}.Debug|Any CPU.ActiveCfg = Release|Any CPU
+		{37D9835A-D94A-4A60-B3E7-8E0F95B3E3AD}.Debug|Any CPU.Build.0 = Release|Any CPU
+		{37D9835A-D94A-4A60-B3E7-8E0F95B3E3AD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{37D9835A-D94A-4A60-B3E7-8E0F95B3E3AD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D0AC56C9-9AAB-4496-9F7A-7AD849B5AC2C}.Debug|Any CPU.ActiveCfg = Release|Any CPU
+		{D0AC56C9-9AAB-4496-9F7A-7AD849B5AC2C}.Debug|Any CPU.Build.0 = Release|Any CPU
+		{D0AC56C9-9AAB-4496-9F7A-7AD849B5AC2C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D0AC56C9-9AAB-4496-9F7A-7AD849B5AC2C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

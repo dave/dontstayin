@@ -1,0 +1,230 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{1FC2B35C-9449-4ABE-8D73-4CC20DA1CD7E}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CacheTriggers</RootNamespace>
+    <AssemblyName>CacheTriggersUnmerged</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <RunPostBuildEvent>OnOutputUpdated</RunPostBuildEvent>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation />
+    <TargetFrameworkProfile />
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\Caching\Cache.cs">
+      <Link>CachingProject\Cache.cs</Link>
+    </Compile>
+    <Compile Include="..\Caching\CacheKey.cs">
+      <Link>CachingProject\CacheKey.cs</Link>
+    </Compile>
+    <Compile Include="..\Caching\CacheKeys\BobCacheKey.cs">
+      <Link>CachingProject\CacheKeys\BobCacheKey.cs</Link>
+    </Compile>
+    <Compile Include="..\Caching\CacheKeys\BobChildFieldVersion.cs">
+      <Link>CachingProject\CacheKeys\BobChildFieldVersion.cs</Link>
+    </Compile>
+    <Compile Include="..\Caching\CacheKeys\BobChildren.cs">
+      <Link>CachingProject\CacheKeys\BobChildren.cs</Link>
+    </Compile>
+    <Compile Include="..\Caching\CacheKeys\Generated.cs">
+      <Link>CachingProject\CacheKeys\Generated.cs</Link>
+    </Compile>
+    <Compile Include="..\Caching\CacheKeys\NamespaceCacheKey.cs">
+      <Link>CachingProject\CacheKeys\NamespaceCacheKey.cs</Link>
+    </Compile>
+    <Compile Include="..\Caching\DummyCache.cs">
+      <Link>CachingProject\DummyCache.cs</Link>
+    </Compile>
+    <Compile Include="..\Caching\ICacheClient.cs">
+      <Link>CachingProject\ICacheClient.cs</Link>
+    </Compile>
+    <Compile Include="..\Caching\ICacheKeyProvider.cs">
+      <Link>CachingProject\ICacheKeyProvider.cs</Link>
+    </Compile>
+    <Compile Include="..\Caching\ICounterStore.cs">
+      <Link>CachingProject\ICounterStore.cs</Link>
+    </Compile>
+    <Compile Include="..\Caching\Instances.cs">
+      <Link>CachingProject\Instances.cs</Link>
+    </Compile>
+    <Compile Include="..\Caching\InstancesTests.cs">
+      <Link>CachingProject\InstancesTests.cs</Link>
+    </Compile>
+    <Compile Include="..\Caching\Memcached\CommandExecuter.cs">
+      <Link>CachingProject\Memcached\CommandExecuter.cs</Link>
+    </Compile>
+    <Compile Include="..\Caching\Memcached\Commands\BlockingDelete.cs">
+      <Link>CachingProject\Memcached\Commands\BlockingDelete.cs</Link>
+    </Compile>
+    <Compile Include="..\Caching\Memcached\Commands\Command.cs">
+      <Link>CachingProject\Memcached\Commands\Command.cs</Link>
+    </Compile>
+    <Compile Include="..\Caching\Memcached\Commands\Flush.cs">
+      <Link>CachingProject\Memcached\Commands\Flush.cs</Link>
+    </Compile>
+    <Compile Include="..\Caching\Memcached\Commands\Get.cs">
+      <Link>CachingProject\Memcached\Commands\Get.cs</Link>
+    </Compile>
+    <Compile Include="..\Caching\Memcached\Commands\GetStats.cs">
+      <Link>CachingProject\Memcached\Commands\GetStats.cs</Link>
+    </Compile>
+    <Compile Include="..\Caching\Memcached\Commands\ICanBeUsedInMultiCommand.cs">
+      <Link>CachingProject\Memcached\Commands\ICanBeUsedInMultiCommand.cs</Link>
+    </Compile>
+    <Compile Include="..\Caching\Memcached\Commands\Increment.cs">
+      <Link>CachingProject\Memcached\Commands\Increment.cs</Link>
+    </Compile>
+    <Compile Include="..\Caching\Memcached\Commands\KeyedCommand.cs">
+      <Link>CachingProject\Memcached\Commands\KeyedCommand.cs</Link>
+    </Compile>
+    <Compile Include="..\Caching\Memcached\Commands\Set.cs">
+      <Link>CachingProject\Memcached\Commands\Set.cs</Link>
+    </Compile>
+    <Compile Include="..\Caching\Memcached\Commands\Store.cs">
+      <Link>CachingProject\Memcached\Commands\Store.cs</Link>
+    </Compile>
+    <Compile Include="..\Caching\Memcached\Commands\StoreDataCommand.cs">
+      <Link>CachingProject\Memcached\Commands\StoreDataCommand.cs</Link>
+    </Compile>
+    <Compile Include="..\Caching\Memcached\IHasher.cs">
+      <Link>CachingProject\Memcached\IHasher.cs</Link>
+    </Compile>
+    <Compile Include="..\Caching\Memcached\Key.cs">
+      <Link>CachingProject\Memcached\Key.cs</Link>
+    </Compile>
+    <Compile Include="..\Caching\Memcached\MemcachedClient.cs">
+      <Link>CachingProject\Memcached\MemcachedClient.cs</Link>
+    </Compile>
+    <Compile Include="..\Caching\Memcached\MemcachedInstance.cs">
+      <Link>CachingProject\Memcached\MemcachedInstance.cs</Link>
+    </Compile>
+    <Compile Include="..\Caching\Memcached\MemcachedInstances.cs">
+      <Link>CachingProject\Memcached\MemcachedInstances.cs</Link>
+    </Compile>
+    <Compile Include="..\Caching\Memcached\MemcachedSocket.cs">
+      <Link>CachingProject\Memcached\MemcachedSocket.cs</Link>
+    </Compile>
+    <Compile Include="..\Caching\Memcached\SHA1Hasher.cs">
+      <Link>CachingProject\Memcached\SHA1Hasher.cs</Link>
+    </Compile>
+    <Compile Include="..\Caching\NamespacedCacheKey.cs">
+      <Link>CachingProject\NamespacedCacheKey.cs</Link>
+    </Compile>
+    <Compile Include="Generated.cs" />
+    <Compile Include="MemcachedCommandGenerators\DeleteMemcachedCommandGenerator.cs" />
+    <Compile Include="MemcachedCommandGenerators\InsertDeleteMemcachedCommandGenerator.cs" />
+    <Compile Include="MemcachedCommandGenerators\MemcachedCommandGenerator.cs" />
+    <Compile Include="MemcachedCommandGenerators\InsertMemcachedCommandGenerator.cs" />
+    <Compile Include="MemcachedCommandGenerators\UpdateMemcachedCommandGenerator.cs" />
+    <Compile Include="Trigger.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{B4F97281-0DBD-4835-9ED8-7DFB966E87FF}" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Initialise.sql" />
+    <None Include="Sql\OnSync Scripts\Create cache triggers.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Common\Common.csproj">
+      <Project>{E69EBDF9-A0D6-43BF-9A86-811572EEB01F}</Project>
+      <Name>Common</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Sql\Create Scripts\prc\" />
+    <Folder Include="Sql\Create Scripts\trg\" />
+    <Folder Include="Sql\Update Scripts\" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  
+  -->
+  <Target Name="AfterBuild">
+    <Exec Command="..\..\..\DatabaseAssemblyLoader\Bin\DatabaseAssemblyLoader.exe /a:CacheTriggers.dll" WorkingDirectory=".\bin" />
+    <Exec Command="..\..\..\SqlScriptRunner\Bin\SqlScriptRunner.exe /p:.." WorkingDirectory=".\bin" />
+  </Target>
+  <PropertyGroup>
+    <PostBuildEvent>REM Sql server does not realise when references are updated when 
+REM trying to update a CLR assembly, so we ilmerge it into a single dll
+del CacheTriggers.dll
+..\..\..\..\Dll\ILMerge.exe /wildcards /out:CacheTriggers.dll *.dll
+
+</PostBuildEvent>
+    <PreBuildEvent>..\..\..\BobsCommonFileGenerator\bin\BobsCommonFileGenerator.exe /triggers:..\Generated.cs /f</PreBuildEvent>
+  </PropertyGroup>
+</Project>

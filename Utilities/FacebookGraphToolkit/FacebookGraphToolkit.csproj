@@ -1,0 +1,110 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{D0AC56C9-9AAB-4496-9F7A-7AD849B5AC2C}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Facebook_Graph_Toolkit</RootNamespace>
+    <AssemblyName>Facebook Graph Toolkit_3.5</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Nonshipping>true</Nonshipping>
+    <TargetFrameworkProfile />
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>false</DebugSymbols>
+    <DebugType>none</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>
+    </DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>none</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release_3.5\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <DocumentationFile>bin\Release_3.5\Facebook Graph Toolkit_3.5.xml</DocumentationFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="JSON_3.5">
+      <HintPath>..\JSON\bin\Release_3.5\JSON_3.5.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Dialog.cs" />
+    <Compile Include="FacebookException.cs" />
+    <Compile Include="FacebookGraphToolkitConfiguration.cs" />
+    <Compile Include="FacebookObjects\BasicPageData.cs" />
+    <Compile Include="FacebookObjects\BasicUserData.cs" />
+    <Compile Include="FacebookObjects\EventMember.cs" />
+    <Compile Include="FacebookObjects\Privacy.cs" />
+    <Compile Include="FacebookObjects\LikedPage.cs" />
+    <Compile Include="FacebookObjects\PostAction.cs" />
+    <Compile Include="FacebookObjects\LinkAttachment.cs" />
+    <Compile Include="FacebookObjects\NameIDPair.cs" />
+    <Compile Include="FacebookObjects\PhotoTag.cs" />
+    <Compile Include="FacebookObjects\PostType.cs" />
+    <Compile Include="FacebookObjects\Rsvp.cs" />
+    <Compile Include="FacebookObjects\UserEvent.cs" />
+    <Compile Include="GraphApiPage.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GraphApi\Album.cs" />
+    <Compile Include="GraphApi\Api.cs" />
+    <Compile Include="GraphApi\Application.cs" />
+    <Compile Include="GraphApi\Comment.cs" />
+    <Compile Include="GraphApi\Event.cs" />
+    <Compile Include="GraphApi\Group.cs" />
+    <Compile Include="GraphApi\Link.cs" />
+    <Compile Include="GraphApi\Note.cs" />
+    <Compile Include="GraphApi\Page.cs" />
+    <Compile Include="GraphApi\Photo.cs" />
+    <Compile Include="GraphApi\Post.cs" />
+    <Compile Include="GraphApi\StatusMessage.cs" />
+    <Compile Include="GraphApi\User.cs" />
+    <Compile Include="Helpers\ApiCaller.cs" />
+    <Compile Include="Helpers\Generic.cs" />
+    <Compile Include="Helpers\IframeHelper.cs" />
+    <Compile Include="Helpers\WebResponseHelper.cs" />
+    <Compile Include="LikeBox.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RSS.cs" />
+    <Compile Include="TabPage.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

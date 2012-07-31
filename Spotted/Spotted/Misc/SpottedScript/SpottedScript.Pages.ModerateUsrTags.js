@@ -1,0 +1,4 @@
+Type.registerNamespace('SpottedScript.Pages.ModerateUsrTags');
+SpottedScript.Pages.ModerateUsrTags.View=function(clientId){SpottedScript.Pages.ModerateUsrTags.View.initializeBase(this,[clientId]);this.clientId=clientId;}
+SpottedScript.Pages.ModerateUsrTags.View.prototype={clientId:null,get_h16:function(){return document.getElementById(this.clientId+'_H16');},get_uiTypeOfAction:function(){return document.getElementById(this.clientId+'_uiTypeOfAction');},get_uiNoTags:function(){return document.getElementById(this.clientId+'_uiNoTags');},get_uiInfo:function(){return document.getElementById(this.clientId+'_uiInfo');},get_genericContainerPage:function(){return document.getElementById(this.clientId+'_GenericContainerPage');}}
+SpottedScript.Pages.ModerateUsrTags.View.registerClass('SpottedScript.Pages.ModerateUsrTags.View',SpottedScript.DsiUserControl.View);

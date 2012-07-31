@@ -1,0 +1,4 @@
+Type.registerNamespace('SpottedScript.Pages.HtmlTest');
+SpottedScript.Pages.HtmlTest.View=function(clientId){SpottedScript.Pages.HtmlTest.View.initializeBase(this,[clientId]);this.clientId=clientId;}
+SpottedScript.Pages.HtmlTest.View.prototype={clientId:null,get_uiEventGetter:function(){return eval(this.clientId+'_uiEventGetterController');},get_uiVenueGetter:function(){return eval(this.clientId+'_uiVenueGetterController');},get_multiBuddyChooser1:function(){return eval(this.clientId+'_MultiBuddyChooser1Controller');},get_button1:function(){return document.getElementById(this.clientId+'_Button1');},get_gridView1:function(){return document.getElementById(this.clientId+'_GridView1');},get_genericContainerPage:function(){return document.getElementById(this.clientId+'_GenericContainerPage');}}
+SpottedScript.Pages.HtmlTest.View.registerClass('SpottedScript.Pages.HtmlTest.View',SpottedScript.DsiUserControl.View);

@@ -1,0 +1,4 @@
+Type.registerNamespace('SpottedScript.Admin.MultiDelete');
+SpottedScript.Admin.MultiDelete.View=function(clientId){SpottedScript.Admin.MultiDelete.View.initializeBase(this,[clientId]);this.clientId=clientId;}
+SpottedScript.Admin.MultiDelete.View.prototype={clientId:null,get_deleteButton:function(){return document.getElementById(this.clientId+'_DeleteButton');},get_objectTypeDropDown:function(){return document.getElementById(this.clientId+'_ObjectTypeDropDown');},get_objectKTextBox:function(){return document.getElementById(this.clientId+'_ObjectKTextBox');},get_doneLabel:function(){return document.getElementById(this.clientId+'_DoneLabel');},get_genericContainerPage:function(){return document.getElementById(this.clientId+'_GenericContainerPage');}}
+SpottedScript.Admin.MultiDelete.View.registerClass('SpottedScript.Admin.MultiDelete.View',SpottedScript.AdminUserControl.View);

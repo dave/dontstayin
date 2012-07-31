@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" ?>
+<project name="CreateColumnDetailPartialClasses" default="build solution using msbuild" xmlns="http://nant.sf.net/schemas/nant.xsd">
+	<property name="solution.file"   value="..\CreateColumnDetailPartialClasses.sln"/>
+	<property name="configuration"   value="release"/>
+	<property name="framework.directory" value="C:\WINDOWS\microsoft.net\Framework\v2.0.50727" />
+
+	<target name="build solution using msbuild">
+		<exec program="${framework.directory}\msbuild.exe"
+			commandline='"${solution.file}" /v:q /nologo /p:Configuration=${configuration}' />
+	</target>
+</project>

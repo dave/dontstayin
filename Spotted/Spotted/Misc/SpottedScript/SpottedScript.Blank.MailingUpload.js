@@ -1,0 +1,4 @@
+Type.registerNamespace('SpottedScript.Blank.MailingUpload');
+SpottedScript.Blank.MailingUpload.View=function(clientId){SpottedScript.Blank.MailingUpload.View.initializeBase(this,[clientId]);this.clientId=clientId;}
+SpottedScript.Blank.MailingUpload.View.prototype={clientId:null,get_button1:function(){return document.getElementById(this.clientId+'_Button1');},get_oldPass:function(){return document.getElementById(this.clientId+'_OldPass');},get_pass:function(){return document.getElementById(this.clientId+'_Pass');},get_button2:function(){return document.getElementById(this.clientId+'_Button2');},get_genericContainerPage:function(){return document.getElementById(this.clientId+'_GenericContainerPage');}}
+SpottedScript.Blank.MailingUpload.View.registerClass('SpottedScript.Blank.MailingUpload.View',SpottedScript.BlankUserControl.View);

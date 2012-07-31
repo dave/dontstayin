@@ -1,0 +1,2 @@
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="SiteSearchBox.ascx.cs" Inherits="Spotted.Controls.SiteSearchBox" EnableViewState="false" %>
+<js:HtmlAutoComplete ID="uiAuto" runat="server" Watermark="Search..." WebServiceUrl="/WebServices/AutoComplete.asmx" WebServiceMethod="GetSiteSearchResults" MaximumPopupWidth="250" MinimumPopupWidth="250" RightAlign="true"/><div runat="server" id="GoogleSearchCode" style="display:none"></div>

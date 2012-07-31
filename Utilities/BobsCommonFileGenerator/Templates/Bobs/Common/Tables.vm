@@ -1,0 +1,53 @@
+﻿	public class Tables
+	{
+		public static string GetTableName(TablesEnum tableEnum)
+		{
+			switch (tableEnum)
+			{
+#foreach ($table in $tables)
+				case TablesEnum.${table.Name}: return "${table.Name}";
+#end
+				default: throw new Exception("Table not found in Tables.GetTableName()");
+			}
+		}
+		public static string GetColumnName(object columnEnum)
+		{
+			switch (GetTableEnum(columnEnum))
+			{
+#foreach ($table in $tables)
+				case TablesEnum.${table.Name}: return ${table.Name}.GetColumnName((${table.Name}.Columns)columnEnum);
+#end
+				default: return "";
+			}
+		}
+		public static bool DoesColumnCauseInvalidation(object columnEnum)
+		{
+			switch(GetTableEnum(columnEnum))
+			{
+#foreach ($table in $tables)
+				case TablesEnum.${table.Name}: return ${table.Name}.DoesColumnCauseInvalidation((${table.Name}.Columns)columnEnum);
+#end
+				default: return false;
+			}
+		}
+		public static TablesEnum GetTableEnum(object columnEnum)
+		{
+			return (TablesEnum)((int)columnEnum >> 16);
+		}
+		public static TableDef GetTableDef(TablesEnum tableEnum)
+		{
+			switch (tableEnum)
+			{
+			#foreach ($table in $tables)
+				case TablesEnum.${table.Name}: return Defs.${table.Name};
+			#end
+				default: throw new Exception("Table not found in Tables.GetTableDef()");
+			}
+		}
+		public static class Defs
+		{
+#foreach ($table in $tables)
+			public static ${table.Name}TableDef ${table.Name} = new ${table.Name}TableDef();
+#end
+		}
+	}

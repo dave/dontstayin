@@ -1,0 +1,12 @@
+﻿		public static bool DoesColumnCauseInvalidation(${table.Name}.Columns columnEnum)
+		{
+			switch (columnEnum)
+			{
+#foreach ($column in $table.Columns)
+	#if ($column.CausesInvalidation.ToString().ToLower() == "true")
+				case ${table.Name}.Columns.${column.Name}: return true;
+	#end
+#end
+				default: return false;
+			}
+		}

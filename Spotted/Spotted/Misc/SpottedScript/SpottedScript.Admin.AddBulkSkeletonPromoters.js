@@ -1,0 +1,4 @@
+Type.registerNamespace('SpottedScript.Admin.AddBulkSkeletonPromoters');
+SpottedScript.Admin.AddBulkSkeletonPromoters.View=function(clientId){SpottedScript.Admin.AddBulkSkeletonPromoters.View.initializeBase(this,[clientId]);this.clientId=clientId;}
+SpottedScript.Admin.AddBulkSkeletonPromoters.View.prototype={clientId:null,get_sector:function(){return document.getElementById(this.clientId+'_Sector');},get_salesCampaignDropDown:function(){return document.getElementById(this.clientId+'_SalesCampaignDropDown');},get_csv:function(){return document.getElementById(this.clientId+'_Csv');},get_error:function(){return document.getElementById(this.clientId+'_Error');},get_genericContainerPage:function(){return document.getElementById(this.clientId+'_GenericContainerPage');}}
+SpottedScript.Admin.AddBulkSkeletonPromoters.View.registerClass('SpottedScript.Admin.AddBulkSkeletonPromoters.View',SpottedScript.AdminUserControl.View);

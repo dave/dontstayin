@@ -1,0 +1,4 @@
+Type.registerNamespace('SpottedScript.Pages.FriendInviter');
+SpottedScript.Pages.FriendInviter.View=function(clientId){SpottedScript.Pages.FriendInviter.View.initializeBase(this,[clientId]);this.clientId=clientId;}
+SpottedScript.Pages.FriendInviter.View.prototype={clientId:null,get_uiH1:function(){return document.getElementById(this.clientId+'_uiH1');},get_uiIntroPanel:function(){return document.getElementById(this.clientId+'_uiIntroPanel');},get_uiBuddyImporter:function(){return document.getElementById(this.clientId+'_uiBuddyImporter');},get_uiSuccessPanel:function(){return document.getElementById(this.clientId+'_uiSuccessPanel');},get_genericContainerPage:function(){return document.getElementById(this.clientId+'_GenericContainerPage');}}
+SpottedScript.Pages.FriendInviter.View.registerClass('SpottedScript.Pages.FriendInviter.View',SpottedScript.DsiUserControl.View);

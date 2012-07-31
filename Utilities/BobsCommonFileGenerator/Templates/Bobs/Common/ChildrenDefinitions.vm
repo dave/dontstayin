@@ -1,0 +1,63 @@
+﻿}
+
+namespace Bobs.ChildInterfaces
+{
+	public interface IHasChild${table.Name}s
+	{
+		CachedSqlSelect<${table.Name}> Child${table.Name}s();
+		CachedSqlSelect<${table.Name}> Child${table.Name}s(Q where);
+		CachedSqlSelect<${table.Name}> Child${table.Name}s(params KeyValuePair<object, OrderBy.OrderDirection>[] orderBy);
+		CachedSqlSelect<${table.Name}> Child${table.Name}s(Q where, params KeyValuePair<object, OrderBy.OrderDirection>[] orderBy);
+		
+		
+	}
+}
+namespace Bobs
+{
+#if ($table.ChildTables.Count != 0)
+	public partial class ${table.Name} 
+	#foreach ($childTable in $table.ChildTables)
+Bobs.ChildInterfaces.IHasChild${childTable.Name}s
+	#between
+,
+	#beforeall
+ : 
+	#end
+	{
+	#foreach ($childTable in $table.ChildTables)
+		public CachedSqlSelect<${childTable.Name}> Child${childTable.Name}s()
+		{
+			return this.Child${childTable.Name}s(null, null);
+		}
+		public CachedSqlSelect<${childTable.Name}> Child${childTable.Name}s(Q where)
+		{
+			return this.Child${childTable.Name}s(where, null);
+		}
+		public CachedSqlSelect<${childTable.Name}> Child${childTable.Name}s(params KeyValuePair<object, OrderBy.OrderDirection>[] orderBy)
+		{
+			return this.Child${childTable.Name}s(null, orderBy);
+		}
+		public CachedSqlSelect<${childTable.Name}> Child${childTable.Name}s(Q where, params KeyValuePair<object, OrderBy.OrderDirection>[] orderBy)
+		{
+			return new CachedSqlSelect<${childTable.Name}>
+			(
+				new Children<${childTable.Name}>
+				(
+					TablesEnum.${table.Name}, 
+					this.K, 
+					TablesEnum.${childTable.Name}, 
+					dr => 
+					{ 
+						${childTable.Name} new${childTable.Name} = new ${childTable.Name}(); 
+						new${childTable.Name}.Initialise(dr); 
+						return new${childTable.Name};
+					},
+					"${childTable.Hash}",
+					where,
+					orderBy
+				)
+			);
+		}
+	#end	
+	}
+#end

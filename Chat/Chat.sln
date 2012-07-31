@@ -1,0 +1,56 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio Codename Orcas
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChatCommandLine", "ChatCommandLine\ChatCommandLine.csproj", "{78A90ACC-6727-4545-8E75-12F7E4D8F737}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChatLibrary", "ChatLibrary\ChatLibrary.csproj", "{9ED58F50-0339-45E5-976A-40924C6C91AE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChatService", "ChatService\ChatService.csproj", "{C5974DA0-AC8D-4C37-BCC6-D6F1512BB62D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChatServiceInstaller", "ChatServiceInstaller\ChatServiceInstaller.csproj", "{1E0BE26D-FA6A-4AA7-9A1A-9A21CB779156}"
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 5
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = http://corellia:8080/
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = ChatCommandLine\\ChatCommandLine.csproj
+		SccProjectName1 = ChatCommandLine
+		SccLocalPath1 = ChatCommandLine
+		SccProjectUniqueName2 = ChatLibrary\\ChatLibrary.csproj
+		SccProjectName2 = ChatLibrary
+		SccLocalPath2 = ChatLibrary
+		SccProjectUniqueName3 = ChatService\\ChatService.csproj
+		SccProjectName3 = ChatService
+		SccLocalPath3 = ChatService
+		SccProjectUniqueName4 = ChatServiceInstaller\\ChatServiceInstaller.csproj
+		SccProjectName4 = ChatServiceInstaller
+		SccLocalPath4 = ChatServiceInstaller
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{78A90ACC-6727-4545-8E75-12F7E4D8F737}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{78A90ACC-6727-4545-8E75-12F7E4D8F737}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{78A90ACC-6727-4545-8E75-12F7E4D8F737}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{78A90ACC-6727-4545-8E75-12F7E4D8F737}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9ED58F50-0339-45E5-976A-40924C6C91AE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9ED58F50-0339-45E5-976A-40924C6C91AE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9ED58F50-0339-45E5-976A-40924C6C91AE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9ED58F50-0339-45E5-976A-40924C6C91AE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C5974DA0-AC8D-4C37-BCC6-D6F1512BB62D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C5974DA0-AC8D-4C37-BCC6-D6F1512BB62D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C5974DA0-AC8D-4C37-BCC6-D6F1512BB62D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C5974DA0-AC8D-4C37-BCC6-D6F1512BB62D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1E0BE26D-FA6A-4AA7-9A1A-9A21CB779156}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1E0BE26D-FA6A-4AA7-9A1A-9A21CB779156}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1E0BE26D-FA6A-4AA7-9A1A-9A21CB779156}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1E0BE26D-FA6A-4AA7-9A1A-9A21CB779156}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,1537 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://wildwestdomains.com/webservices/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" targetNamespace="http://wildwestdomains.com/webservices/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://wildwestdomains.com/webservices/">
+      <s:element name="ProcessRequest">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sRequestXML" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ProcessRequestResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ProcessRequestResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Describe">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sCLTRID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="credential" type="tns:Credential" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="Credential">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Account" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="DescribeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DescribeResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CheckAvailability">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sCLTRID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="credential" type="tns:Credential" />
+            <s:element minOccurs="0" maxOccurs="1" name="sDomainArray" type="tns:ArrayOfString" />
+            <s:element minOccurs="0" maxOccurs="1" name="sHostArray" type="tns:ArrayOfString" />
+            <s:element minOccurs="0" maxOccurs="1" name="sNSArray" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfString">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="CheckAvailabilityResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CheckAvailabilityResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Info">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sCLTRID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="credential" type="tns:Credential" />
+            <s:element minOccurs="0" maxOccurs="1" name="sResourceID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sType" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sDomain" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sOrderID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="InfoResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="NameGen">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sCLTRID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="credential" type="tns:Credential" />
+            <s:element minOccurs="0" maxOccurs="1" name="sSLD" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sTLD" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sTLDs" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="nRows" type="s:unsignedShort" />
+            <s:element minOccurs="1" maxOccurs="1" name="bHypens" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="bNumbers" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="nMaxLen" type="s:unsignedShort" />
+            <s:element minOccurs="1" maxOccurs="1" name="bIntelliSearch" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="nPage" type="s:unsignedShort" />
+            <s:element minOccurs="0" maxOccurs="1" name="sTime" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="NameGenResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="NameGenResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="NameGenDB">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sCLTRID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="credential" type="tns:Credential" />
+            <s:element minOccurs="0" maxOccurs="1" name="sKey" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="nMaxResults" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="bExcludeTaken" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="sTLDs" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="bAddPrefix" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="bAddSuffix" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="bAddDashes" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="bAddRelated" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="bAdvancedSplit" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="bBaseOnTop" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="NameGenDBResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="NameGenDBResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Poll">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sCLTRID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="credential" type="tns:Credential" />
+            <s:element minOccurs="0" maxOccurs="1" name="sOp" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PollResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="PollResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="OrderCredits">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sCLTRID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="credential" type="tns:Credential" />
+            <s:element minOccurs="0" maxOccurs="1" name="shopper" type="tns:Shopper" />
+            <s:element minOccurs="0" maxOccurs="1" name="items" type="tns:ArrayOfOrderItem" />
+            <s:element minOccurs="0" maxOccurs="1" name="sROID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="Shopper">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="user" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="pwd" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="pwdhint" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="email" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="firstname" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="lastname" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="phone" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="dbpuser" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="dbppwd" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="dbppwdhint" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="dbpemail" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfOrderItem">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="OrderItem" nillable="true" type="tns:OrderItem" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="OrderItem">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:Order">
+            <s:sequence>
+              <s:element minOccurs="1" maxOccurs="1" name="productid" type="s:int" />
+              <s:element minOccurs="1" maxOccurs="1" name="quantity" type="s:unsignedInt" />
+              <s:element minOccurs="0" maxOccurs="1" name="riid" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="duration" type="s:double" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="Order" abstract="true" />
+      <s:element name="OrderCreditsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="OrderCreditsResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="OrderDomains">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sCLTRID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="credential" type="tns:Credential" />
+            <s:element minOccurs="0" maxOccurs="1" name="shopper" type="tns:Shopper" />
+            <s:element minOccurs="0" maxOccurs="1" name="items" type="tns:ArrayOfDomainRegistration" />
+            <s:element minOccurs="0" maxOccurs="1" name="dbpItems" type="tns:ArrayOfDomainByProxy" />
+            <s:element minOccurs="0" maxOccurs="1" name="sROID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfDomainRegistration">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="DomainRegistration" nillable="true" type="tns:DomainRegistration" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="DomainRegistration">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:Order">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="order" type="tns:OrderItem" />
+              <s:element minOccurs="0" maxOccurs="1" name="sld" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="tld" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="period" type="s:int" />
+              <s:element minOccurs="0" maxOccurs="1" name="registrant" type="tns:ContactInfo" />
+              <s:element minOccurs="0" maxOccurs="1" name="nexus" type="tns:Nexus" />
+              <s:element minOccurs="0" maxOccurs="1" name="nsArray" type="tns:ArrayOfNS" />
+              <s:element minOccurs="0" maxOccurs="1" name="admin" type="tns:ContactInfo" />
+              <s:element minOccurs="0" maxOccurs="1" name="billing" type="tns:ContactInfo" />
+              <s:element minOccurs="0" maxOccurs="1" name="tech" type="tns:ContactInfo" />
+              <s:element minOccurs="1" maxOccurs="1" name="autorenewflag" type="s:int" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="ContactInfo">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="fname" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="lname" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="org" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="email" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="sa1" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="sa2" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="city" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="sp" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="pc" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cc" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="phone" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="fax" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Nexus">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="category" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="use" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="country" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfNS">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="NS" nillable="true" type="tns:NS" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="NS">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="name" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfDomainByProxy">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="DomainByProxy" nillable="true" type="tns:DomainByProxy" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="DomainByProxy">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:Order">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="order" type="tns:OrderItem" />
+              <s:element minOccurs="0" maxOccurs="1" name="sld" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="tld" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="resourceid" type="s:string" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:element name="OrderDomainsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="OrderDomainsResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="OrderDomainRenewals">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sCLTRID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="credential" type="tns:Credential" />
+            <s:element minOccurs="0" maxOccurs="1" name="shopper" type="tns:Shopper" />
+            <s:element minOccurs="0" maxOccurs="1" name="items" type="tns:ArrayOfDomainRenewal" />
+            <s:element minOccurs="0" maxOccurs="1" name="sROID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfDomainRenewal">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="DomainRenewal" nillable="true" type="tns:DomainRenewal" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="DomainRenewal">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:Order">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="order" type="tns:OrderItem" />
+              <s:element minOccurs="0" maxOccurs="1" name="resourceid" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="sld" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="tld" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="period" type="s:int" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:element name="OrderDomainRenewalsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="OrderDomainRenewalsResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="OrderPrivateDomainRenewals">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sCLTRID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="credential" type="tns:Credential" />
+            <s:element minOccurs="0" maxOccurs="1" name="shopper" type="tns:Shopper" />
+            <s:element minOccurs="0" maxOccurs="1" name="items" type="tns:ArrayOfDomainRenewal" />
+            <s:element minOccurs="0" maxOccurs="1" name="dbpItems" type="tns:ArrayOfResourceRenewal" />
+            <s:element minOccurs="0" maxOccurs="1" name="sROID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfResourceRenewal">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ResourceRenewal" nillable="true" type="tns:ResourceRenewal" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ResourceRenewal">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:Order">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="order" type="tns:OrderItem" />
+              <s:element minOccurs="0" maxOccurs="1" name="resourceid" type="s:string" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:element name="OrderPrivateDomainRenewalsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="OrderPrivateDomainRenewalsResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="OrderDomainTransfers">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sCLTRID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="credential" type="tns:Credential" />
+            <s:element minOccurs="0" maxOccurs="1" name="shopper" type="tns:Shopper" />
+            <s:element minOccurs="0" maxOccurs="1" name="items" type="tns:ArrayOfDomainTransfer" />
+            <s:element minOccurs="0" maxOccurs="1" name="sROID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfDomainTransfer">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="DomainTransfer" nillable="true" type="tns:DomainTransfer" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="DomainTransfer">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:Order">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="order" type="tns:OrderItem" />
+              <s:element minOccurs="0" maxOccurs="1" name="sld" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="tld" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="authInfo" type="s:string" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:element name="OrderDomainTransfersResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="OrderDomainTransfersResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="OrderDomainPrivacy">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sCLTRID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="credential" type="tns:Credential" />
+            <s:element minOccurs="0" maxOccurs="1" name="shopper" type="tns:Shopper" />
+            <s:element minOccurs="0" maxOccurs="1" name="items" type="tns:ArrayOfDomainByProxy" />
+            <s:element minOccurs="0" maxOccurs="1" name="sROID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="OrderDomainPrivacyResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="OrderDomainPrivacyResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="OrderResourceRenewals">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sCLTRID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="credential" type="tns:Credential" />
+            <s:element minOccurs="0" maxOccurs="1" name="shopper" type="tns:Shopper" />
+            <s:element minOccurs="0" maxOccurs="1" name="items" type="tns:ArrayOfResourceRenewal" />
+            <s:element minOccurs="0" maxOccurs="1" name="sROID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="OrderResourceRenewalsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="OrderResourceRenewalsResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="OrderDomainBackOrders">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sCLTRID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="credential" type="tns:Credential" />
+            <s:element minOccurs="0" maxOccurs="1" name="shopper" type="tns:Shopper" />
+            <s:element minOccurs="0" maxOccurs="1" name="items" type="tns:ArrayOfDomainBackOrder" />
+            <s:element minOccurs="0" maxOccurs="1" name="sROID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfDomainBackOrder">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="DomainBackOrder" nillable="true" type="tns:DomainBackOrder" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="DomainBackOrder">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:Order">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="order" type="tns:OrderItem" />
+              <s:element minOccurs="1" maxOccurs="1" name="privateBackOrder" type="s:boolean" />
+              <s:element minOccurs="0" maxOccurs="1" name="sld" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="tld" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="registrant" type="tns:ContactInfo" />
+              <s:element minOccurs="0" maxOccurs="1" name="nexus" type="tns:Nexus" />
+              <s:element minOccurs="0" maxOccurs="1" name="admin" type="tns:ContactInfo" />
+              <s:element minOccurs="0" maxOccurs="1" name="billing" type="tns:ContactInfo" />
+              <s:element minOccurs="0" maxOccurs="1" name="tech" type="tns:ContactInfo" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:element name="OrderDomainBackOrdersResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="OrderDomainBackOrdersResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Cancel">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sCLTRID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="credential" type="tns:Credential" />
+            <s:element minOccurs="0" maxOccurs="1" name="sType" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sIDArray" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CancelResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CancelResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateDomainOwnership">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sCLTRID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="credential" type="tns:Credential" />
+            <s:element minOccurs="0" maxOccurs="1" name="sResourceID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sLosingOwner" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="gaining" type="tns:GainingOwner" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="GainingOwner">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="shopperNoDBP" type="tns:ShopperNoDBP" />
+          <s:element minOccurs="0" maxOccurs="1" name="registrant" type="tns:ContactInfo" />
+          <s:element minOccurs="0" maxOccurs="1" name="admin" type="tns:ContactInfo" />
+          <s:element minOccurs="0" maxOccurs="1" name="billing" type="tns:ContactInfo" />
+          <s:element minOccurs="0" maxOccurs="1" name="tech" type="tns:ContactInfo" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ShopperNoDBP">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="user" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="pwd" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="pwdhint" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="email" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="firstname" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="lastname" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="phone" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="UpdateDomainOwnershipResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UpdateDomainOwnershipResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ResetPassword">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sCLTRID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="credential" type="tns:Credential" />
+            <s:element minOccurs="0" maxOccurs="1" name="sUser" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sPwd" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sEmail" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sPwdHint" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ResetPasswordResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ResetPasswordResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetShopperInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sCLTRID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="credential" type="tns:Credential" />
+            <s:element minOccurs="0" maxOccurs="1" name="sUser" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sEmail" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sFirstName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sLastName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sPhone" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sFax" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sCompany" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sAddress" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sCity" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sState" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sZip" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sCountry" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sShopperPin" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetShopperInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SetShopperInfoResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CheckUser">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sCLTRID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="credential" type="tns:Credential" />
+            <s:element minOccurs="0" maxOccurs="1" name="sType" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sUser" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sPwd" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CheckUserResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CheckUserResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetupDomainAlert">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sCLTRID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="credential" type="tns:Credential" />
+            <s:element minOccurs="0" maxOccurs="1" name="domainAlert" type="tns:DomainAlert" />
+            <s:element minOccurs="0" maxOccurs="1" name="registrant" type="tns:ContactInfo" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="DomainAlert">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="user" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="domain" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="email" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="tld" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="privateReg" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="backorder" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="SetupDomainAlertResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SetupDomainAlertResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateDomainAlert">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sCLTRID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="credential" type="tns:Credential" />
+            <s:element minOccurs="0" maxOccurs="1" name="domainAlert" type="tns:DomainAlert" />
+            <s:element minOccurs="0" maxOccurs="1" name="sDomainMonitorID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="registrant" type="tns:ContactInfo" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateDomainAlertResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UpdateDomainAlertResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RemoveDomainAlert">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sCLTRID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="credential" type="tns:Credential" />
+            <s:element minOccurs="0" maxOccurs="1" name="sDomainMonitorID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sUser" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RemoveDomainAlertResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RemoveDomainAlertResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDomainAlertCredits">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sCLTRID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="credential" type="tns:Credential" />
+            <s:element minOccurs="0" maxOccurs="1" name="sUser" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDomainAlertCreditsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetDomainAlertCreditsResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetMonitoredDomainList">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sCLTRID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="credential" type="tns:Credential" />
+            <s:element minOccurs="0" maxOccurs="1" name="sUser" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="nPage" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="nRowsPerPage" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetMonitoredDomainListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetMonitoredDomainListResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetExpiringNameList">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sCLTRID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="credential" type="tns:Credential" />
+            <s:element minOccurs="0" maxOccurs="1" name="sUser" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="nLength" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="sDashes" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sNumbers" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sWildCardSearch" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sSearchCriteria" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sTLDs" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="nPage" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="nRowsPerPage" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetExpiringNameListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetExpiringNameListResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DomainForwarding">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sCLTRID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="credential" type="tns:Credential" />
+            <s:element minOccurs="0" maxOccurs="1" name="sUser" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="nDomainID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="sForwardingURL" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sMngTRID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DomainForwardingResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DomainForwardingResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateNameServer">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sCLTRID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="credential" type="tns:Credential" />
+            <s:element minOccurs="0" maxOccurs="1" name="domainArray" type="tns:ArrayOfDomain" />
+            <s:element minOccurs="0" maxOccurs="1" name="nsArray" type="tns:ArrayOfNS" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfDomain">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Domain" nillable="true" type="tns:Domain" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Domain">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="resourceid" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="mngTRID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="transferKey" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="newAuthInfo" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="UpdateNameServerResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UpdateNameServerResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateDomainContact">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sCLTRID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="credential" type="tns:Credential" />
+            <s:element minOccurs="0" maxOccurs="1" name="domainArray" type="tns:ArrayOfDomain" />
+            <s:element minOccurs="0" maxOccurs="1" name="registrant" type="tns:ContactInfo" />
+            <s:element minOccurs="0" maxOccurs="1" name="admin" type="tns:ContactInfo" />
+            <s:element minOccurs="0" maxOccurs="1" name="billing" type="tns:ContactInfo" />
+            <s:element minOccurs="0" maxOccurs="1" name="tech" type="tns:ContactInfo" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateDomainContactResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UpdateDomainContactResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetDomainLocking">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sCLTRID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="credential" type="tns:Credential" />
+            <s:element minOccurs="0" maxOccurs="1" name="domainArray" type="tns:ArrayOfDomain" />
+            <s:element minOccurs="0" maxOccurs="1" name="sLock" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetDomainLockingResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SetDomainLockingResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ManageTransfer">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sCLTRID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="credential" type="tns:Credential" />
+            <s:element minOccurs="0" maxOccurs="1" name="domainArray" type="tns:ArrayOfDomain" />
+            <s:element minOccurs="0" maxOccurs="1" name="sAction" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ManageTransferResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ManageTransferResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateDomainForwarding">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sCLTRID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="credential" type="tns:Credential" />
+            <s:element minOccurs="0" maxOccurs="1" name="domainArray" type="tns:ArrayOfDomain" />
+            <s:element minOccurs="0" maxOccurs="1" name="sAction" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sForwardingURL" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateDomainForwardingResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UpdateDomainForwardingResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ModifyDNS">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sCLTRID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="credential" type="tns:Credential" />
+            <s:element minOccurs="0" maxOccurs="1" name="dnsRequestArray" type="tns:ArrayOfDNSRequest" />
+            <s:element minOccurs="0" maxOccurs="1" name="sDomain" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfDNSRequest">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="DNSRequest" nillable="true" type="tns:DNSRequest" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="DNSRequest">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="recType" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="action" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="key" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="ttl" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="recValue" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ModifyDNSResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ModifyDNSResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="ProcessRequestSoapIn">
+    <wsdl:part name="parameters" element="tns:ProcessRequest" />
+  </wsdl:message>
+  <wsdl:message name="ProcessRequestSoapOut">
+    <wsdl:part name="parameters" element="tns:ProcessRequestResponse" />
+  </wsdl:message>
+  <wsdl:message name="DescribeSoapIn">
+    <wsdl:part name="parameters" element="tns:Describe" />
+  </wsdl:message>
+  <wsdl:message name="DescribeSoapOut">
+    <wsdl:part name="parameters" element="tns:DescribeResponse" />
+  </wsdl:message>
+  <wsdl:message name="CheckAvailabilitySoapIn">
+    <wsdl:part name="parameters" element="tns:CheckAvailability" />
+  </wsdl:message>
+  <wsdl:message name="CheckAvailabilitySoapOut">
+    <wsdl:part name="parameters" element="tns:CheckAvailabilityResponse" />
+  </wsdl:message>
+  <wsdl:message name="InfoSoapIn">
+    <wsdl:part name="parameters" element="tns:Info" />
+  </wsdl:message>
+  <wsdl:message name="InfoSoapOut">
+    <wsdl:part name="parameters" element="tns:InfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="NameGenSoapIn">
+    <wsdl:part name="parameters" element="tns:NameGen" />
+  </wsdl:message>
+  <wsdl:message name="NameGenSoapOut">
+    <wsdl:part name="parameters" element="tns:NameGenResponse" />
+  </wsdl:message>
+  <wsdl:message name="NameGenDBSoapIn">
+    <wsdl:part name="parameters" element="tns:NameGenDB" />
+  </wsdl:message>
+  <wsdl:message name="NameGenDBSoapOut">
+    <wsdl:part name="parameters" element="tns:NameGenDBResponse" />
+  </wsdl:message>
+  <wsdl:message name="PollSoapIn">
+    <wsdl:part name="parameters" element="tns:Poll" />
+  </wsdl:message>
+  <wsdl:message name="PollSoapOut">
+    <wsdl:part name="parameters" element="tns:PollResponse" />
+  </wsdl:message>
+  <wsdl:message name="OrderCreditsSoapIn">
+    <wsdl:part name="parameters" element="tns:OrderCredits" />
+  </wsdl:message>
+  <wsdl:message name="OrderCreditsSoapOut">
+    <wsdl:part name="parameters" element="tns:OrderCreditsResponse" />
+  </wsdl:message>
+  <wsdl:message name="OrderDomainsSoapIn">
+    <wsdl:part name="parameters" element="tns:OrderDomains" />
+  </wsdl:message>
+  <wsdl:message name="OrderDomainsSoapOut">
+    <wsdl:part name="parameters" element="tns:OrderDomainsResponse" />
+  </wsdl:message>
+  <wsdl:message name="OrderDomainRenewalsSoapIn">
+    <wsdl:part name="parameters" element="tns:OrderDomainRenewals" />
+  </wsdl:message>
+  <wsdl:message name="OrderDomainRenewalsSoapOut">
+    <wsdl:part name="parameters" element="tns:OrderDomainRenewalsResponse" />
+  </wsdl:message>
+  <wsdl:message name="OrderPrivateDomainRenewalsSoapIn">
+    <wsdl:part name="parameters" element="tns:OrderPrivateDomainRenewals" />
+  </wsdl:message>
+  <wsdl:message name="OrderPrivateDomainRenewalsSoapOut">
+    <wsdl:part name="parameters" element="tns:OrderPrivateDomainRenewalsResponse" />
+  </wsdl:message>
+  <wsdl:message name="OrderDomainTransfersSoapIn">
+    <wsdl:part name="parameters" element="tns:OrderDomainTransfers" />
+  </wsdl:message>
+  <wsdl:message name="OrderDomainTransfersSoapOut">
+    <wsdl:part name="parameters" element="tns:OrderDomainTransfersResponse" />
+  </wsdl:message>
+  <wsdl:message name="OrderDomainPrivacySoapIn">
+    <wsdl:part name="parameters" element="tns:OrderDomainPrivacy" />
+  </wsdl:message>
+  <wsdl:message name="OrderDomainPrivacySoapOut">
+    <wsdl:part name="parameters" element="tns:OrderDomainPrivacyResponse" />
+  </wsdl:message>
+  <wsdl:message name="OrderResourceRenewalsSoapIn">
+    <wsdl:part name="parameters" element="tns:OrderResourceRenewals" />
+  </wsdl:message>
+  <wsdl:message name="OrderResourceRenewalsSoapOut">
+    <wsdl:part name="parameters" element="tns:OrderResourceRenewalsResponse" />
+  </wsdl:message>
+  <wsdl:message name="OrderDomainBackOrdersSoapIn">
+    <wsdl:part name="parameters" element="tns:OrderDomainBackOrders" />
+  </wsdl:message>
+  <wsdl:message name="OrderDomainBackOrdersSoapOut">
+    <wsdl:part name="parameters" element="tns:OrderDomainBackOrdersResponse" />
+  </wsdl:message>
+  <wsdl:message name="CancelSoapIn">
+    <wsdl:part name="parameters" element="tns:Cancel" />
+  </wsdl:message>
+  <wsdl:message name="CancelSoapOut">
+    <wsdl:part name="parameters" element="tns:CancelResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateDomainOwnershipSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateDomainOwnership" />
+  </wsdl:message>
+  <wsdl:message name="UpdateDomainOwnershipSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateDomainOwnershipResponse" />
+  </wsdl:message>
+  <wsdl:message name="ResetPasswordSoapIn">
+    <wsdl:part name="parameters" element="tns:ResetPassword" />
+  </wsdl:message>
+  <wsdl:message name="ResetPasswordSoapOut">
+    <wsdl:part name="parameters" element="tns:ResetPasswordResponse" />
+  </wsdl:message>
+  <wsdl:message name="SetShopperInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:SetShopperInfo" />
+  </wsdl:message>
+  <wsdl:message name="SetShopperInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:SetShopperInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="CheckUserSoapIn">
+    <wsdl:part name="parameters" element="tns:CheckUser" />
+  </wsdl:message>
+  <wsdl:message name="CheckUserSoapOut">
+    <wsdl:part name="parameters" element="tns:CheckUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="SetupDomainAlertSoapIn">
+    <wsdl:part name="parameters" element="tns:SetupDomainAlert" />
+  </wsdl:message>
+  <wsdl:message name="SetupDomainAlertSoapOut">
+    <wsdl:part name="parameters" element="tns:SetupDomainAlertResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateDomainAlertSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateDomainAlert" />
+  </wsdl:message>
+  <wsdl:message name="UpdateDomainAlertSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateDomainAlertResponse" />
+  </wsdl:message>
+  <wsdl:message name="RemoveDomainAlertSoapIn">
+    <wsdl:part name="parameters" element="tns:RemoveDomainAlert" />
+  </wsdl:message>
+  <wsdl:message name="RemoveDomainAlertSoapOut">
+    <wsdl:part name="parameters" element="tns:RemoveDomainAlertResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetDomainAlertCreditsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetDomainAlertCredits" />
+  </wsdl:message>
+  <wsdl:message name="GetDomainAlertCreditsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetDomainAlertCreditsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetMonitoredDomainListSoapIn">
+    <wsdl:part name="parameters" element="tns:GetMonitoredDomainList" />
+  </wsdl:message>
+  <wsdl:message name="GetMonitoredDomainListSoapOut">
+    <wsdl:part name="parameters" element="tns:GetMonitoredDomainListResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetExpiringNameListSoapIn">
+    <wsdl:part name="parameters" element="tns:GetExpiringNameList" />
+  </wsdl:message>
+  <wsdl:message name="GetExpiringNameListSoapOut">
+    <wsdl:part name="parameters" element="tns:GetExpiringNameListResponse" />
+  </wsdl:message>
+  <wsdl:message name="DomainForwardingSoapIn">
+    <wsdl:part name="parameters" element="tns:DomainForwarding" />
+  </wsdl:message>
+  <wsdl:message name="DomainForwardingSoapOut">
+    <wsdl:part name="parameters" element="tns:DomainForwardingResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateNameServerSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateNameServer" />
+  </wsdl:message>
+  <wsdl:message name="UpdateNameServerSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateNameServerResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateDomainContactSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateDomainContact" />
+  </wsdl:message>
+  <wsdl:message name="UpdateDomainContactSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateDomainContactResponse" />
+  </wsdl:message>
+  <wsdl:message name="SetDomainLockingSoapIn">
+    <wsdl:part name="parameters" element="tns:SetDomainLocking" />
+  </wsdl:message>
+  <wsdl:message name="SetDomainLockingSoapOut">
+    <wsdl:part name="parameters" element="tns:SetDomainLockingResponse" />
+  </wsdl:message>
+  <wsdl:message name="ManageTransferSoapIn">
+    <wsdl:part name="parameters" element="tns:ManageTransfer" />
+  </wsdl:message>
+  <wsdl:message name="ManageTransferSoapOut">
+    <wsdl:part name="parameters" element="tns:ManageTransferResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateDomainForwardingSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateDomainForwarding" />
+  </wsdl:message>
+  <wsdl:message name="UpdateDomainForwardingSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateDomainForwardingResponse" />
+  </wsdl:message>
+  <wsdl:message name="ModifyDNSSoapIn">
+    <wsdl:part name="parameters" element="tns:ModifyDNS" />
+  </wsdl:message>
+  <wsdl:message name="ModifyDNSSoapOut">
+    <wsdl:part name="parameters" element="tns:ModifyDNSResponse" />
+  </wsdl:message>
+  <wsdl:portType name="WAPISoap">
+    <wsdl:operation name="ProcessRequest">
+      <documentation xmlns="http://schemas.xmlsoap.org/wsdl/">Provide support for calling WWD services using request XMLs. (Refer to https://www.resellerextranet.com/docs/API_Instructions.pdf.)</documentation>
+      <wsdl:input message="tns:ProcessRequestSoapIn" />
+      <wsdl:output message="tns:ProcessRequestSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Describe">
+      <documentation xmlns="http://schemas.xmlsoap.org/wsdl/">Returns activity timeout and version information from the server.</documentation>
+      <wsdl:input message="tns:DescribeSoapIn" />
+      <wsdl:output message="tns:DescribeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckAvailability">
+      <documentation xmlns="http://schemas.xmlsoap.org/wsdl/">Checks the availability of domains, hosts and name servers.</documentation>
+      <wsdl:input message="tns:CheckAvailabilitySoapIn" />
+      <wsdl:output message="tns:CheckAvailabilitySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Info">
+      <documentation xmlns="http://schemas.xmlsoap.org/wsdl/">Gets information about items that have been previously ordered.</documentation>
+      <wsdl:input message="tns:InfoSoapIn" />
+      <wsdl:output message="tns:InfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="NameGen">
+      <documentation xmlns="http://schemas.xmlsoap.org/wsdl/">Used to get the list of alternative domain names based on a given name.</documentation>
+      <wsdl:input message="tns:NameGenSoapIn" />
+      <wsdl:output message="tns:NameGenSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="NameGenDB">
+      <documentation xmlns="http://schemas.xmlsoap.org/wsdl/">Used to get the list of alternative domain names based on a given name (Domains Bot Service).</documentation>
+      <wsdl:input message="tns:NameGenDBSoapIn" />
+      <wsdl:output message="tns:NameGenDBSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Poll">
+      <documentation xmlns="http://schemas.xmlsoap.org/wsdl/">Used to retrieve status notifications about pending orders.</documentation>
+      <wsdl:input message="tns:PollSoapIn" />
+      <wsdl:output message="tns:PollSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="OrderCredits">
+      <documentation xmlns="http://schemas.xmlsoap.org/wsdl/">Used to place an order on items that do not require customization (non-domain).</documentation>
+      <wsdl:input message="tns:OrderCreditsSoapIn" />
+      <wsdl:output message="tns:OrderCreditsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="OrderDomains">
+      <documentation xmlns="http://schemas.xmlsoap.org/wsdl/">Used for registering new domain names.</documentation>
+      <wsdl:input message="tns:OrderDomainsSoapIn" />
+      <wsdl:output message="tns:OrderDomainsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="OrderDomainRenewals">
+      <documentation xmlns="http://schemas.xmlsoap.org/wsdl/">Used for renewing registration for existing public domain names.</documentation>
+      <wsdl:input message="tns:OrderDomainRenewalsSoapIn" />
+      <wsdl:output message="tns:OrderDomainRenewalsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="OrderPrivateDomainRenewals">
+      <documentation xmlns="http://schemas.xmlsoap.org/wsdl/">Used for renewing registration for existing private domain names.</documentation>
+      <wsdl:input message="tns:OrderPrivateDomainRenewalsSoapIn" />
+      <wsdl:output message="tns:OrderPrivateDomainRenewalsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="OrderDomainTransfers">
+      <documentation xmlns="http://schemas.xmlsoap.org/wsdl/">Used for transfering ownership of a domain from one user to another.</documentation>
+      <wsdl:input message="tns:OrderDomainTransfersSoapIn" />
+      <wsdl:output message="tns:OrderDomainTransfersSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="OrderDomainPrivacy">
+      <documentation xmlns="http://schemas.xmlsoap.org/wsdl/">Used for adding privacy to a domain registration.</documentation>
+      <wsdl:input message="tns:OrderDomainPrivacySoapIn" />
+      <wsdl:output message="tns:OrderDomainPrivacySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="OrderResourceRenewals">
+      <documentation xmlns="http://schemas.xmlsoap.org/wsdl/">Used for renewing non-domain items.</documentation>
+      <wsdl:input message="tns:OrderResourceRenewalsSoapIn" />
+      <wsdl:output message="tns:OrderResourceRenewalsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="OrderDomainBackOrders">
+      <documentation xmlns="http://schemas.xmlsoap.org/wsdl/">Used for back ordering an existing (public or private) domain name.</documentation>
+      <wsdl:input message="tns:OrderDomainBackOrdersSoapIn" />
+      <wsdl:output message="tns:OrderDomainBackOrdersSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Cancel">
+      <documentation xmlns="http://schemas.xmlsoap.org/wsdl/">Used for cancelling existing resources.</documentation>
+      <wsdl:input message="tns:CancelSoapIn" />
+      <wsdl:output message="tns:CancelSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateDomainOwnership">
+      <documentation xmlns="http://schemas.xmlsoap.org/wsdl/">Used for changing the ownership of a resource from one end user to another (both must be end-users of the currently logged in reseller).</documentation>
+      <wsdl:input message="tns:UpdateDomainOwnershipSoapIn" />
+      <wsdl:output message="tns:UpdateDomainOwnershipSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ResetPassword">
+      <documentation xmlns="http://schemas.xmlsoap.org/wsdl/">Used for resetting the user's password in the WWD system.</documentation>
+      <wsdl:input message="tns:ResetPasswordSoapIn" />
+      <wsdl:output message="tns:ResetPasswordSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetShopperInfo">
+      <documentation xmlns="http://schemas.xmlsoap.org/wsdl/">Used for allowing the reseller to modify the user information for either their top-level account or any of its sub-accounts.</documentation>
+      <wsdl:input message="tns:SetShopperInfoSoapIn" />
+      <wsdl:output message="tns:SetShopperInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckUser">
+      <documentation xmlns="http://schemas.xmlsoap.org/wsdl/">Used for checking whether the account information for the specified user is valid or not.</documentation>
+      <wsdl:input message="tns:CheckUserSoapIn" />
+      <wsdl:output message="tns:CheckUserSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetupDomainAlert">
+      <documentation xmlns="http://schemas.xmlsoap.org/wsdl/">Used for setting domain alert credit or backorder a domain.</documentation>
+      <wsdl:input message="tns:SetupDomainAlertSoapIn" />
+      <wsdl:output message="tns:SetupDomainAlertSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateDomainAlert">
+      <documentation xmlns="http://schemas.xmlsoap.org/wsdl/">Used for updating an existing domain alert record.</documentation>
+      <wsdl:input message="tns:UpdateDomainAlertSoapIn" />
+      <wsdl:output message="tns:UpdateDomainAlertSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RemoveDomainAlert">
+      <documentation xmlns="http://schemas.xmlsoap.org/wsdl/">Used for removing an existing domain alert record.</documentation>
+      <wsdl:input message="tns:RemoveDomainAlertSoapIn" />
+      <wsdl:output message="tns:RemoveDomainAlertSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDomainAlertCredits">
+      <documentation xmlns="http://schemas.xmlsoap.org/wsdl/">Used for querying the number of domain alert, private backorder, and backorder credits.</documentation>
+      <wsdl:input message="tns:GetDomainAlertCreditsSoapIn" />
+      <wsdl:output message="tns:GetDomainAlertCreditsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMonitoredDomainList">
+      <documentation xmlns="http://schemas.xmlsoap.org/wsdl/">Used for querying a list of monitored domains.</documentation>
+      <wsdl:input message="tns:GetMonitoredDomainListSoapIn" />
+      <wsdl:output message="tns:GetMonitoredDomainListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetExpiringNameList">
+      <documentation xmlns="http://schemas.xmlsoap.org/wsdl/">This method is used to get the list of expiring domain names for users that have an Investors Edge subscription.</documentation>
+      <wsdl:input message="tns:GetExpiringNameListSoapIn" />
+      <wsdl:output message="tns:GetExpiringNameListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DomainForwarding">
+      <documentation xmlns="http://schemas.xmlsoap.org/wsdl/">This method is used for forwarding a domain to a specified URL.</documentation>
+      <wsdl:input message="tns:DomainForwardingSoapIn" />
+      <wsdl:output message="tns:DomainForwardingSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateNameServer">
+      <documentation xmlns="http://schemas.xmlsoap.org/wsdl/">This method is used for modifying associated name servers for the given domains.</documentation>
+      <wsdl:input message="tns:UpdateNameServerSoapIn" />
+      <wsdl:output message="tns:UpdateNameServerSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateDomainContact">
+      <documentation xmlns="http://schemas.xmlsoap.org/wsdl/">This method is used for modifying associated contact information for the given domains.</documentation>
+      <wsdl:input message="tns:UpdateDomainContactSoapIn" />
+      <wsdl:output message="tns:UpdateDomainContactSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetDomainLocking">
+      <documentation xmlns="http://schemas.xmlsoap.org/wsdl/">This method is used for setting or clearing the lock on a list of domains.</documentation>
+      <wsdl:input message="tns:SetDomainLockingSoapIn" />
+      <wsdl:output message="tns:SetDomainLockingSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ManageTransfer">
+      <documentation xmlns="http://schemas.xmlsoap.org/wsdl/">This method is used for managing the transfer of domains.</documentation>
+      <wsdl:input message="tns:ManageTransferSoapIn" />
+      <wsdl:output message="tns:ManageTransferSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateDomainForwarding">
+      <documentation xmlns="http://schemas.xmlsoap.org/wsdl/">This method is used for performing multiple domain forwarding.</documentation>
+      <wsdl:input message="tns:UpdateDomainForwardingSoapIn" />
+      <wsdl:output message="tns:UpdateDomainForwardingSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ModifyDNS">
+      <documentation xmlns="http://schemas.xmlsoap.org/wsdl/">This method is used for modifying DNS settings for a given domain.</documentation>
+      <wsdl:input message="tns:ModifyDNSSoapIn" />
+      <wsdl:output message="tns:ModifyDNSSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WAPISoap" type="tns:WAPISoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ProcessRequest">
+      <soap:operation soapAction="http://wildwestdomains.com/webservices/ProcessRequest" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Describe">
+      <soap:operation soapAction="http://wildwestdomains.com/webservices/Describe" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckAvailability">
+      <soap:operation soapAction="http://wildwestdomains.com/webservices/CheckAvailability" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Info">
+      <soap:operation soapAction="http://wildwestdomains.com/webservices/Info" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NameGen">
+      <soap:operation soapAction="http://wildwestdomains.com/webservices/NameGen" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NameGenDB">
+      <soap:operation soapAction="http://wildwestdomains.com/webservices/NameGenDB" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Poll">
+      <soap:operation soapAction="http://wildwestdomains.com/webservices/Poll" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OrderCredits">
+      <soap:operation soapAction="http://wildwestdomains.com/webservices/OrderCredits" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OrderDomains">
+      <soap:operation soapAction="http://wildwestdomains.com/webservices/OrderDomains" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OrderDomainRenewals">
+      <soap:operation soapAction="http://wildwestdomains.com/webservices/OrderDomainRenewals" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OrderPrivateDomainRenewals">
+      <soap:operation soapAction="http://wildwestdomains.com/webservices/OrderPrivateDomainRenewals" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OrderDomainTransfers">
+      <soap:operation soapAction="http://wildwestdomains.com/webservices/OrderDomainTransfers" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OrderDomainPrivacy">
+      <soap:operation soapAction="http://wildwestdomains.com/webservices/OrderDomainPrivacy" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OrderResourceRenewals">
+      <soap:operation soapAction="http://wildwestdomains.com/webservices/OrderResourceRenewals" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OrderDomainBackOrders">
+      <soap:operation soapAction="http://wildwestdomains.com/webservices/OrderDomainBackOrders" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Cancel">
+      <soap:operation soapAction="http://wildwestdomains.com/webservices/Cancel" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateDomainOwnership">
+      <soap:operation soapAction="http://wildwestdomains.com/webservices/UpdateDomainOwnership" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ResetPassword">
+      <soap:operation soapAction="http://wildwestdomains.com/webservices/ResetPassword" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetShopperInfo">
+      <soap:operation soapAction="http://wildwestdomains.com/webservices/SetShopperInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckUser">
+      <soap:operation soapAction="http://wildwestdomains.com/webservices/CheckUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetupDomainAlert">
+      <soap:operation soapAction="http://wildwestdomains.com/webservices/SetupDomainAlert" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateDomainAlert">
+      <soap:operation soapAction="http://wildwestdomains.com/webservices/UpdateDomainAlert" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveDomainAlert">
+      <soap:operation soapAction="http://wildwestdomains.com/webservices/RemoveDomainAlert" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDomainAlertCredits">
+      <soap:operation soapAction="http://wildwestdomains.com/webservices/GetDomainAlertCredits" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMonitoredDomainList">
+      <soap:operation soapAction="http://wildwestdomains.com/webservices/GetMonitoredDomainList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetExpiringNameList">
+      <soap:operation soapAction="http://wildwestdomains.com/webservices/GetExpiringNameList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DomainForwarding">
+      <soap:operation soapAction="http://wildwestdomains.com/webservices/DomainForwarding" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateNameServer">
+      <soap:operation soapAction="http://wildwestdomains.com/webservices/UpdateNameServer" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateDomainContact">
+      <soap:operation soapAction="http://wildwestdomains.com/webservices/UpdateDomainContact" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetDomainLocking">
+      <soap:operation soapAction="http://wildwestdomains.com/webservices/SetDomainLocking" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ManageTransfer">
+      <soap:operation soapAction="http://wildwestdomains.com/webservices/ManageTransfer" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateDomainForwarding">
+      <soap:operation soapAction="http://wildwestdomains.com/webservices/UpdateDomainForwarding" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ModifyDNS">
+      <soap:operation soapAction="http://wildwestdomains.com/webservices/ModifyDNS" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WAPI">
+    <wsdl:port name="WAPISoap" binding="tns:WAPISoap">
+      <soap:address location="https://api.wildwestdomains.com/wswwdapi/wapi.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

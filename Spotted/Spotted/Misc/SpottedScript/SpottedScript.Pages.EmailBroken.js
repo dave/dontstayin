@@ -1,0 +1,4 @@
+Type.registerNamespace('SpottedScript.Pages.EmailBroken');
+SpottedScript.Pages.EmailBroken.View=function(clientId){SpottedScript.Pages.EmailBroken.View.initializeBase(this,[clientId]);this.clientId=clientId;}
+SpottedScript.Pages.EmailBroken.View.prototype={clientId:null,get_emailBrokenPanel:function(){return document.getElementById(this.clientId+'_EmailBrokenPanel');},get_linkButton1:function(){return document.getElementById(this.clientId+'_LinkButton1');},get_doneP:function(){return document.getElementById(this.clientId+'_DoneP');},get_emailNotBrokenPanel:function(){return document.getElementById(this.clientId+'_EmailNotBrokenPanel');},get_h1:function(){return document.getElementById(this.clientId+'_H1');},get_genericContainerPage:function(){return document.getElementById(this.clientId+'_GenericContainerPage');}}
+SpottedScript.Pages.EmailBroken.View.registerClass('SpottedScript.Pages.EmailBroken.View',SpottedScript.DsiUserControl.View);

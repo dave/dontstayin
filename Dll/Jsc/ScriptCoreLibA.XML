@@ -1,0 +1,220 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ScriptCoreLibA</name>
+    </assembly>
+    <members>
+        <member name="T:ScriptCoreLib.HexAttribute">
+            <summary>
+            Indicates that the integer value assigned to a parameter should be represented
+            as an hex 
+            </summary>
+        </member>
+        <member name="T:ScriptCoreLib.ScriptType">
+            <summary>
+            A class can be marked to be translated into a target langage
+            </summary>
+        </member>
+        <member name="T:ScriptCoreLib.ScriptNamespaceRenameAttribute">
+            <summary>
+            renames a native namespace
+            </summary>
+        </member>
+        <member name="T:ScriptCoreLib.ScriptResourcesAttribute">
+            <summary>
+            allows a project to have embedded resources, which are to be extracted on the compile time when jsc compiler is finished.
+            Current implementation has a special folder called 'web' into which all output generated to. This means that the embedded resources should be within a folder called \web\ in your solution.
+            </summary>
+        </member>
+        <member name="T:ScriptCoreLib.ScriptVersionAttribute">
+            <summary>
+            allows the compiler to detect wether it is out of date. If this value is higher than the one from the compiler the compile proccess fill halt with an error.
+            </summary>
+        </member>
+        <member name="F:ScriptCoreLib.ScriptAttribute.NotImplementedHere">
+            <summary>
+            When set to true, another class must define the implementation. This is useful when there is a shared class for several languages but its implementation varies within supported languages.
+            </summary>
+        </member>
+        <member name="F:ScriptCoreLib.ScriptAttribute.StringConcatOperator">
+            <summary>
+            provides inline concat operation / to be replaced with inline functions?
+            </summary>
+        </member>
+        <member name="F:ScriptCoreLib.ScriptAttribute.UseCompilerConstants">
+            <summary>
+            a constant is enclosed between { and }, also arguments are supported
+            like {arg*}
+            </summary>
+        </member>
+        <member name="F:ScriptCoreLib.ScriptAttribute.PointerName">
+            <summary>
+            overides default pointer name definiton in c
+            </summary>
+        </member>
+        <member name="F:ScriptCoreLib.ScriptAttribute.IsSystemHeader">
+            <summary>
+            system headers will be inside &lt; and &gt;, as of user provided headers will be in qoutes
+            </summary>
+        </member>
+        <member name="F:ScriptCoreLib.ScriptAttribute.LibraryImport">
+            <summary>
+            defines a lib which will be called upon static constructor
+            </summary>
+        </member>
+        <member name="F:ScriptCoreLib.ScriptAttribute.IsNative">
+            <summary>
+            native class implementation is provided by runtime.
+            body of a native method will never be emitted
+            </summary>
+        </member>
+        <member name="F:ScriptCoreLib.ScriptAttribute.ExternalTarget">
+            <summary>
+            if attached on a class, overrides new operator 
+            (InternalConstructor can be set to true, but should 
+            not be defined for external constructor specific signatures), 
+            if attached to a static field then it overrides it
+            renames static class
+            </summary>
+        </member>
+        <member name="F:ScriptCoreLib.ScriptAttribute.Implements">
+            <summary>
+            provides a way to redirect emthods
+            </summary>
+        </member>
+        <member name="F:ScriptCoreLib.ScriptAttribute.ImplementationType">
+            <summary>
+            global::System.IDisposable - csharp.IDisposableImplementation - null
+            global::System.String - csharp.String - java.lang.String
+            </summary>
+        </member>
+        <member name="F:ScriptCoreLib.ScriptAttribute.IsPInvoke">
+            <summary>
+            used in java compiler as JNI needs methods be marked to be native
+            function body should be compiled as JNI C++ Native library
+            </summary>
+        </member>
+        <member name="F:ScriptCoreLib.ScriptAttribute.NoExeptions">
+            <summary>
+            if set to true, the method will never be able to throw exceptions
+            and all inner execptions will be caught and forgotten
+            </summary>
+        </member>
+        <member name="F:ScriptCoreLib.ScriptAttribute.InternalConstructor">
+            <summary>
+            setting this attruibute to true, tells the compiler, 
+            it has no prototype and constructor code is relocated
+            </summary>
+        </member>
+        <member name="F:ScriptCoreLib.ScriptAttribute.IsArray">
+            <summary>
+            supports the ldlen opcode
+            </summary>
+        </member>
+        <member name="F:ScriptCoreLib.ScriptAttribute.IsArrayEnumerator">
+            <summary>
+            referenced type is the enumerator for the native array
+            </summary>
+        </member>
+        <member name="F:ScriptCoreLib.ScriptAttribute.IsDebugCode">
+            <summary>
+            param 0 is target
+            param 1 is method
+            params 2 - n are arguments to be passed
+            </summary>
+            public bool     IsInvokeMemberWrapper;
+        </member>
+        <member name="F:ScriptCoreLib.ScriptAttribute.DefineAsStatic">
+            <summary>
+            defines a functionas out of bound member, which actually is a static member
+            </summary>
+        </member>
+        <member name="F:ScriptCoreLib.ScriptAttribute.DefineAsInstance">
+            <summary>
+            a static method is compiled as an instance method
+            </summary>
+        </member>
+        <member name="F:ScriptCoreLib.ScriptAttribute.NoDecoration">
+            <summary>
+            set this field to true, to prevent decoration
+            </summary>
+        </member>
+        <member name="F:ScriptCoreLib.ScriptAttribute.OptimizedCode">
+            <summary>
+            inline source code in native language.
+            
+            a constant is enclosed between { and }, also arguments are supported
+            like {arg*}
+            </summary>
+        </member>
+        <member name="F:ScriptCoreLib.ScriptAttribute.InlineHTML">
+            <summary>
+            allows per assambly level html
+            </summary>
+        </member>
+        <member name="F:ScriptCoreLib.ScriptAttribute.IsStringEnum">
+            <summary>
+            enum members get written as literals
+            </summary>
+        </member>
+        <member name="M:ScriptCoreLib.ScriptAttribute.Of(System.Type,System.Boolean)">
+            <summary>
+            
+            </summary>
+            <param name="type"></param>
+            <param name="p">looks declaring types if not found at this type</param>
+            <returns></returns>
+        </member>
+        <member name="P:ScriptCoreLib.ScriptAttribute.HasNoPrototype">
+            <summary>
+            instance members will not be declared when set to true, neither
+            will prototype be declared.<br />
+            System prototype might still exist
+            </summary>
+        </member>
+        <member name="T:ScriptCoreLib.ScriptApplicationEntryPointAttribute">
+            <summary>
+            Will generate an entrypoint to this class with the default value of field 'DefaultData'
+            </summary>
+        </member>
+        <member name="F:ScriptCoreLib.ScriptApplicationEntryPointAttribute.IsClickOnce">
+            <summary>
+            Application will be loaded from a href
+            </summary>
+        </member>
+        <member name="F:ScriptCoreLib.ScriptApplicationEntryPointAttribute.Format">
+            <summary>
+            formats in which the data will be serialized and inserted inline into html document
+            </summary>
+        </member>
+        <member name="F:ScriptCoreLib.ScriptApplicationEntryPointAttribute.DefaultFormat">
+            <summary>
+            Suffix on the filename will be omitted.
+            </summary>
+        </member>
+        <member name="F:ScriptCoreLib.ScriptApplicationEntryPointAttribute.ScriptedLoading">
+            <summary>
+            script files are loaded dynamically
+            </summary>
+        </member>
+        <member name="T:ScriptCoreLib.ScriptLanguageProviderAttribute">
+            <summary>
+            this attribut tells the compiler in what namespaces the classes marked with ScriptAttribute are eligible for cross compilation
+            </summary>
+        </member>
+        <member name="T:ScriptCoreLib.SharedHelper">
+            <summary>
+            this class is shared among scriptcorelib assemblies 
+            and provides pre runtime information, to build static
+            files
+            </summary>
+        </member>
+        <member name="M:ScriptCoreLib.SharedHelper.ModulesOf(System.Reflection.Assembly)">
+            <summary>
+            returns the names of the modules needed to run a assembly including a
+            </summary>
+            <param name="a"></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

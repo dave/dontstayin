@@ -1,0 +1,23 @@
+JSC compiler was developed by Arvo Sulakatko alone starting 2005 October. 
+
+In June 2007 it was released with source-code.
+
+JSC compiler is provided as FREEWARE, but only for private, non-commercial use, educational use.
+
+For commercial use a partnership relation is recommended. So if you like to use this project then concact me.
+
+
+email:
+zproxy@hot.ee
+
+web:
+jsc.sourceforge.net
+
+blog:
+zproxy.wordpress.com
+
+"Neutronic" is a fictional company name.
+
+The project does not contain any third party code or components.
+
+

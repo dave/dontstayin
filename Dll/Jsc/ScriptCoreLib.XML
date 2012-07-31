@@ -1,0 +1,2925 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ScriptCoreLib</name>
+    </assembly>
+    <members>
+        <member name="T:ScriptCoreLib.JavaScript.Runtime.WorkPool">
+            <summary>
+            helps to prevent recurring events to be discarded
+            </summary>
+        </member>
+        <member name="M:ScriptCoreLib.JavaScript.Runtime.WorkPool.#ctor(System.Int32)">
+            <summary>
+            creates a new work pool, each next job performed at interval
+            </summary>
+            <param name="Interval"></param>
+        </member>
+        <member name="M:ScriptCoreLib.JavaScript.Runtime.WorkPool.Add(ScriptCoreLib.Shared.EventHandler,System.String)">
+            <summary>
+            will add a new work item
+            </summary>
+            <param name="h"></param>
+            <param name="key"></param>
+        </member>
+        <member name="M:ScriptCoreLib.JavaScript.Runtime.WorkPool.Remove(System.String)">
+            <summary>
+            deletes all earlier work items by key
+            </summary>
+            <param name="key"></param>
+        </member>
+        <member name="M:ScriptCoreLib.JavaScript.Runtime.WorkPool.Touch">
+            <summary>
+            resets timeout if some work is left to do
+            </summary>
+        </member>
+        <member name="E:ScriptCoreLib.JavaScript.Runtime.WorkPool.Abort">
+            <summary>
+            abort event will be called if the last job entry took longer than the time specified in the timeout field
+            </summary>
+        </member>
+        <member name="P:ScriptCoreLib.JavaScript.Runtime.WorkPool.Item(System.String)">
+            <summary>
+            replaces work item
+            </summary>
+            <param name="key"></param>
+            <returns></returns>
+        </member>
+        <member name="T:ScriptCoreLib.JavaScript.DOM.IElement">
+            <summary>
+            http://developer.kde.org/documentation/library/3.3-api/khtml/html/classDOM_1_1Element.html
+            http://developer.mozilla.org/en/docs/DOM:element.setAttribute
+            http://www.devguru.com/Technologies/xmldom/quickref/obj_node.html
+            </summary>
+        </member>
+        <member name="M:ScriptCoreLib.JavaScript.DOM.INode.insertNextSibling(ScriptCoreLib.JavaScript.DOM.INode)">
+            <summary>
+            extension method
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="T:ScriptCoreLib.JavaScript.DOM.INode.NodeTypeEnum">
+            <summary>
+            http://msdn.microsoft.com/workshop/author/dhtml/reference/properties/nodetype.asp
+            </summary>
+        </member>
+        <member name="M:ScriptCoreLib.JavaScript.DOM.HTML.IHTMLElement.#ctor">
+            <summary>
+            creates new DIV tag
+            </summary>
+        </member>
+        <member name="M:ScriptCoreLib.JavaScript.DOM.HTML.IHTMLElement.DisableSelection">
+            <summary>
+            user cannot select text, does not work with img in IE
+            </summary>
+        </member>
+        <member name="M:ScriptCoreLib.ActionScript.flash.events.EventDispatcher.addEventListener(System.String,ScriptCoreLib.ActionScript.Function,System.Boolean,System.Int32,System.Boolean)">
+            <summary>
+            Registers an event listener object with an EventDispatcher object so that the listener receives notification of an event.
+            </summary>
+        </member>
+        <member name="M:ScriptCoreLib.ActionScript.flash.events.EventDispatcher.removeEventListener(System.String,ScriptCoreLib.ActionScript.Function,System.Boolean)">
+            <summary>
+            Removes a listener from the EventDispatcher object.
+            </summary>
+        </member>
+        <member name="P:ScriptCoreLib.ActionScript.Error.message">
+            <summary>
+            Contains the message associated with the Error object.
+            </summary>
+        </member>
+        <member name="P:ScriptCoreLib.ActionScript.Error.name">
+            <summary>
+            Contains the name of the Error object. By default, the value of this property is "Error".
+            </summary>
+        </member>
+        <member name="F:ScriptCoreLib.JavaScript.DOM.IStyle.cursor">
+            <summary>
+            <see>http://www.w3schools.com/css/pr_class_cursor.asp</see>
+            </summary>
+        </member>
+        <member name="P:ScriptCoreLib.JavaScript.DOM.IStyle.Opacity">
+            <summary>
+            decimal value from 0 to 1
+            </summary>
+        </member>
+        <member name="P:ScriptCoreLib.JavaScript.DOM.IStyle.Float">
+            <summary>
+            <see>http://www.w3.org/TR/REC-CSS1#float</see>
+            </summary>
+        </member>
+        <member name="F:ScriptCoreLib.JavaScript.DOM.IStyle.WhiteSpaceEnum.normal">
+            <summary>
+            White-space is ignored by the browser
+            </summary>
+        </member>
+        <!-- Badly formed XML comment ignored for member "F:ScriptCoreLib.JavaScript.DOM.IStyle.WhiteSpaceEnum.pre" -->
+        <!-- Badly formed XML comment ignored for member "F:ScriptCoreLib.JavaScript.DOM.IStyle.WhiteSpaceEnum.nowrap" -->
+        <member name="T:ScriptCoreLib.JavaScript.DOM.IStyle.DisplayEnum">
+            <summary>
+            http://www.w3schools.com/css/pr_class_display.asp
+            </summary>
+        </member>
+        <member name="F:ScriptCoreLib.JavaScript.DOM.IStyle.TextTransformEnum.none">
+            <summary>
+            Default. Defines normal text, with lower case letters and capital letters
+            </summary>
+        </member>
+        <member name="F:ScriptCoreLib.JavaScript.DOM.IStyle.TextTransformEnum.capitalize">
+            <summary>
+            Each word in a text starts with a capital letter
+            </summary>
+        </member>
+        <member name="F:ScriptCoreLib.JavaScript.DOM.IStyle.TextTransformEnum.uppercase">
+            <summary>
+            Defines only capital letters
+            </summary>
+        </member>
+        <member name="F:ScriptCoreLib.JavaScript.DOM.IStyle.TextTransformEnum.lowercase">
+            <summary>
+            Defines no capital letters, only lower case letters
+            </summary>
+        </member>
+        <member name="T:ScriptCoreLib.JavaScript.DOM.HTML.IHTMLImage">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:ScriptCoreLib.JavaScript.DOM.HTML.IHTMLImage.Reload">
+            <summary>
+            reloads gif animation
+            </summary>
+        </member>
+        <member name="P:ScriptCoreLib.JavaScript.Runtime.ExpandoMember.Self">
+            <summary>
+            returns the member object as an expando
+            </summary>
+        </member>
+        <member name="M:ScriptCoreLib.JavaScript.Runtime.Expando.FromJSONProtocolString(System.String)">
+            <summary>
+            will return null if json protocol prefix is not found
+            </summary>
+            <param name="e"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ScriptCoreLib.JavaScript.Runtime.Expando.FromJSON(System.String)">
+            <summary>
+            will assume that the value is a raw json string
+            </summary>
+            <param name="e"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ScriptCoreLib.JavaScript.Runtime.Expando.#ctor">
+            <summary>
+            creates new object
+            </summary>
+        </member>
+        <member name="M:ScriptCoreLib.JavaScript.Runtime.Expando.#ctor(ScriptCoreLib.JavaScript.Runtime.ExpandoMember[])">
+            <summary>
+            creates new object and copies values
+            </summary>
+            <param name="m">members to be copied</param>
+        </member>
+        <member name="M:ScriptCoreLib.JavaScript.Runtime.Expando.#ctor(ScriptCoreLib.JavaScript.DOM.IFunction)">
+            <summary>
+            creates new object from function
+            </summary>
+            <param name="ctor"></param>
+        </member>
+        <member name="F:ScriptCoreLib.JavaScript.Runtime.Expando.constructor">
+            <summary>
+            returns the function used for construction of the type
+            not that it is not the c# constructor as it is defined as a method
+            </summary>
+        </member>
+        <member name="M:ScriptCoreLib.JavaScript.Runtime.Expando.GetFields">
+            <summary>
+            wont return functions
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ScriptCoreLib.JavaScript.Runtime.Expando.GetFunctions">
+            <summary>
+            returns only functions
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ScriptCoreLib.JavaScript.Runtime.Expando.GetMemberOf``1(System.Object,System.String,System.String,``0)">
+            <summary>
+            returns either the first or the second member, if they exists, or the default value for the given object
+            </summary>
+            <typeparam name="T">type of member</typeparam>
+            <param name="o">object</param>
+            <param name="m0">first membername</param>
+            <param name="m1">second membername</param>
+            <param name="def">default value</param>
+            <returns></returns>
+        </member>
+        <member name="M:ScriptCoreLib.JavaScript.Runtime.Expando.CreateType">
+            <summary>
+            creates type based on another type and calls the default constructor
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:ScriptCoreLib.JavaScript.Runtime.Expando.TypeString">
+            <summary>
+            returns the typeof string
+            </summary>
+        </member>
+        <member name="T:ScriptCoreLib.JavaScript.DOM.HTML.IHTMLLabel">
+            <summary>
+            http://www.w3schools.com/tags/tag_label.asp
+            </summary>
+        </member>
+        <member name="M:ScriptCoreLib.PHP.Native.Script(System.String,System.Boolean)">
+            <summary>
+            defines script import for *.dll.js or *.dll.js.packed.js
+            </summary>
+            <param name="p"></param>
+            <param name="b"></param>
+        </member>
+        <member name="M:ScriptCoreLib.PHP.Native.header(System.String)">
+            <summary>
+            undefined
+            </summary>
+            <param name="_string">string string</param>
+        </member>
+        <member name="M:ScriptCoreLib.PHP.Native.exit(System.String)">
+            <summary>
+            The exit() function terminates execution of the script. It prints status just before exiting. 
+            </summary>
+            <param name="_status">string status</param>
+        </member>
+        <member name="M:ScriptCoreLib.PHP.Native.exit">
+            <summary>
+            The exit() function terminates execution of the script. It prints status just before exiting. 
+            </summary>
+        </member>
+        <member name="M:ScriptCoreLib.PHP.Native.API.rand">
+            <summary>
+            If called without the optional min, max arguments rand() returns a pseudo-random integer between 0 and RAND_MAX. If you want a random number between 5 and 15 (inclusive), for example, use rand (5, 15).
+            </summary>
+            <param name="_undefined"></param>
+        </member>
+        <member name="M:ScriptCoreLib.PHP.Native.API.ctype_digit(System.String)">
+            <summary>
+            Checks if all of the characters in the provided string, text, are numerical. 
+            </summary>
+            <param name="_text">string text</param>
+        </member>
+        <member name="M:ScriptCoreLib.PHP.Native.API.is_int(System.Object)">
+            <summary>
+            Finds whether the given variable is an integer.
+            </summary>
+            <param name="_var">mixed var</param>
+        </member>
+        <member name="M:ScriptCoreLib.PHP.Native.API.fpassthru(System.Object)">
+            <summary>
+            Reads to EOF on the given file pointer from the current position and writes the results to the output buffer.
+            </summary>
+            <param name="_handle">resource handle</param>
+        </member>
+        <member name="M:ScriptCoreLib.PHP.Native.API.move_uploaded_file(System.String,System.String)">
+            <summary>
+            This function checks to ensure that the file designated by filename is a valid upload file (meaning that it was uploaded via PHP's HTTP POST upload mechanism). If the file is valid, it will be moved to the filename given by destination. 
+            </summary>
+            <param name="_filename">string filename</param>
+            <param name="_destination">string destination</param>
+        </member>
+        <member name="M:ScriptCoreLib.PHP.Native.API.pow(System.Int32,System.Int32)">
+            <summary>
+            Returns base raised to the power of exp. If possible, this function will return an integer. 
+            </summary>
+            <param name="_base">number base</param>
+            <param name="_exp">number exp</param>
+        </member>
+        <member name="M:ScriptCoreLib.PHP.Native.API.touch(System.String)">
+            <summary>
+            Attempts to set the access and modification times of the file named in the filename parameter to the value given in time. If time is not supplied, the current system time is used. If the third parameter, is present, the access time of the given filename is set to the value of atime. Note that the access time is always modified, regardless of the number of parameters. 
+            </summary>
+            <param name="_filename">string filename</param>
+        </member>
+        <member name="M:ScriptCoreLib.PHP.Native.API.scandir(System.String)">
+            <summary>
+            Returns an array of files and directories from the directory. 
+            </summary>
+            <param name="_directory">string directory</param>
+        </member>
+        <member name="M:ScriptCoreLib.PHP.Native.API.filesize(System.String)">
+            <summary>
+            Returns the size of the file in bytes, or FALSE (and generates an error of level E_WARNING) in case of an error. 
+            </summary>
+            <param name="_filename">string filename</param>
+        </member>
+        <member name="M:ScriptCoreLib.PHP.Native.API.addslashes(System.String)">
+            <summary>
+            Returns a string with backslashes before characters that need to be quoted in database queries etc. These characters are single quote ('), double quote ("), backslash (\) and NUL (the NULL byte). 
+            </summary>
+            <param name="_str">string str</param>
+        </member>
+        <member name="M:ScriptCoreLib.PHP.Native.API.floatval(System.Object)">
+            <summary>
+            Gets the float value of var. 
+            </summary>
+            <param name="_var">mixed var</param>
+        </member>
+        <member name="M:ScriptCoreLib.PHP.Native.API.session_id">
+            <summary>
+            session_id() is used to get or set the session id for the current session. 
+            </summary>
+            <param name="_undefined"></param>
+        </member>
+        <member name="M:ScriptCoreLib.PHP.Native.API.gmdate(System.String,System.Int32)">
+            <summary>
+            Identical to the date() function except that the time returned is Greenwich Mean Time (GMT). For example, when run in Finland (GMT +0200), the first line below prints "Jan 01 1998 00:00:00", while the second prints "Dec 31 1997 22:00:00".
+            </summary>
+            <param name="_format">string format</param>
+            <param name="_timestamp">int timestamp</param>
+        </member>
+        <member name="M:ScriptCoreLib.PHP.Native.API.gmdate(System.String)">
+            <summary>
+            Identical to the date() function except that the time returned is Greenwich Mean Time (GMT). For example, when run in Finland (GMT +0200), the first line below prints "Jan 01 1998 00:00:00", while the second prints "Dec 31 1997 22:00:00".
+            </summary>
+            <param name="_format">string format</param>
+        </member>
+        <member name="M:ScriptCoreLib.PHP.Native.API.nl2br(System.String)">
+            <summary>
+            Returns string with '&lt;br /&gt;' inserted before all newlines. 
+            </summary>
+            <param name="_string">string string</param>
+        </member>
+        <member name="M:ScriptCoreLib.PHP.Native.API.ob_end_flush">
+            <summary>
+            This function will send the contents of the topmost output buffer (if any) and turn this output buffer off. If you want to further process the buffer's contents you have to call ob_get_contents() before ob_end_flush() as the buffer contents are discarded after ob_end_flush() is called. The function returns TRUE when it successfully discarded one buffer and FALSE otherwise. Reasons for failure are first that you called the function without an active buffer or that for some reason a buffer could not be deleted (possible for special buffer). 
+            </summary>
+            <param name="_undefined">void</param>
+        </member>
+        <member name="M:ScriptCoreLib.PHP.Native.API.ob_end_clean">
+            <summary>
+            This function discards the contents of the topmost output buffer and turns off this output buffering. If you want to further process the buffer's contents you have to call ob_get_contents() before ob_end_clean() as the buffer contents are discarded when ob_end_clean() is called. The function returns TRUE when it successfully discarded one buffer and FALSE otherwise. Reasons for failure are first that you called the function without an active buffer or that for some reason a buffer could not be deleted (possible for special buffer). 
+            </summary>
+            <param name="_undefined">void</param>
+        </member>
+        <member name="M:ScriptCoreLib.PHP.Native.API.ob_clean">
+            <summary>
+            This function discards the contents of the output buffer. 
+            </summary>
+            <param name="_undefined">void</param>
+        </member>
+        <member name="M:ScriptCoreLib.PHP.Native.API.clearstatcache">
+            <summary>
+            When you use stat(), lstat(), or any of the other functions listed in the affected functions list (below), PHP caches the information those functions return in order to provide faster performance. However, in certain cases, you may want to clear the cached information. For instance, if the same file is being checked multiple times within a single script, and that file is in danger of being removed or changed during that script's operation, you may elect to clear the status cache. In these cases, you can use the clearstatcache() function to clear the information that PHP caches about a file. 
+            </summary>
+            <param name="_undefined">void</param>
+        </member>
+        <member name="M:ScriptCoreLib.PHP.Native.API.filemtime(System.String)">
+            <summary>
+            Returns the time the file was last modified, or FALSE in case of an error. The time is returned as a Unix timestamp, which is suitable for the date() function. 
+            </summary>
+            <param name="_filename">string filename</param>
+        </member>
+        <member name="M:ScriptCoreLib.PHP.Native.API.dirname(System.String)">
+            <summary>
+            Given a string containing a path to a file, this function will return the name of the directory. 
+            </summary>
+            <param name="_path">string path</param>
+        </member>
+        <member name="M:ScriptCoreLib.PHP.Native.API.ob_get_contents">
+            <summary>
+            This will return the contents of the output buffer without clearing it or FALSE, if output buffering isn't active. 
+            </summary>
+            <param name="_undefined">void</param>
+        </member>
+        <member name="M:ScriptCoreLib.PHP.Native.API.time">
+            <summary>
+            Returns the current time measured in the number of seconds since the Unix Epoch (January 1 1970 00:00:00 GMT). 
+            </summary>
+            <param name="_undefined">void</param>
+        </member>
+        <member name="M:ScriptCoreLib.PHP.Native.API.preg_replace(System.Object,System.Object,System.Object)">
+            <summary>
+            Searches subject for matches to pattern and replaces them with replacement. 
+            </summary>
+            <param name="_pattern">mixed pattern</param>
+            <param name="_replacement">mixed replacement</param>
+            <param name="_subject">mixed subject</param>
+        </member>
+        <member name="M:ScriptCoreLib.PHP.Native.API.htmlspecialchars_decode(System.String)">
+            <summary>
+            This function is the opposite of htmlspecialchars(). It converts special HTML entities back to characters. 
+            </summary>
+            <param name="_string">string string</param>
+        </member>
+        <member name="M:ScriptCoreLib.PHP.Native.API.ob_get_length">
+            <summary>
+            This will return the length of the contents in the output buffer or FALSE, if output buffering isn't active. 
+            </summary>
+            <param name="_undefined">void</param>
+        </member>
+        <member name="M:ScriptCoreLib.PHP.Native.API.in_array(System.Object,System.Object)">
+            <summary>
+            Searches haystack for needle and returns TRUE if it is found in the array, FALSE otherwise. 
+            </summary>
+            <param name="_needle">mixed needle</param>
+            <param name="_haystack">array haystack</param>
+        </member>
+        <member name="M:ScriptCoreLib.PHP.Native.API.stripslashes(System.String)">
+            <summary>
+            Returns a string with backslashes stripped off. (\' becomes ' and so on.) Double backslashes (\\) are made into a single backslash (\). 
+            </summary>
+            <param name="_str">string str</param>
+        </member>
+        <member name="M:ScriptCoreLib.PHP.Native.API.implode(System.String,System.Object)">
+            <summary>
+            Returns a string containing a string representation of all the array elements in the same order, with the glue string between each element.
+            </summary>
+            <param name="_glue">string glue</param>
+            <param name="_pieces">array pieces</param>
+        </member>
+        <member name="M:ScriptCoreLib.PHP.Native.API.is_readable(System.String)">
+            <summary>
+            Returns TRUE if the file or directory specified by filename exists and is readable. 
+            </summary>
+            <param name="_filename">string filename</param>
+        </member>
+        <member name="M:ScriptCoreLib.PHP.Native.API.is_file(System.String)">
+            <summary>
+            Returns TRUE if the filename exists and is a regular file. 
+            </summary>
+            <param name="_filename">string filename</param>
+        </member>
+        <member name="M:ScriptCoreLib.PHP.Native.API.mkdir(System.String)">
+            <summary>
+            Attempts to create the directory specified by pathname. 
+            </summary>
+            <param name="_pathname">string pathname</param>
+        </member>
+        <member name="M:ScriptCoreLib.PHP.Native.API.imagedestroy(System.Object)">
+            <summary>
+            imagedestroy() frees any memory associated with image image. image is the image identifier returned by one of the image create functions, such as imagecreatetruecolor(). 
+            </summary>
+            <param name="_image">resource image</param>
+        </member>
+        <member name="M:ScriptCoreLib.PHP.Native.API.imagejpeg(System.Object,System.String,System.Int32)">
+            <summary>
+            imagejpeg() creates the JPEG file in filename from the image image. The image argument is the return from the imagecreatetruecolor() function. 
+            </summary>
+            <param name="_image">resource image</param>
+            <param name="_filename">string filename</param>
+            <param name="_quality">int quality</param>
+        </member>
+        <member name="M:ScriptCoreLib.PHP.Native.API.imagejpeg(System.Object)">
+            <summary>
+            imagejpeg() creates the JPEG file in filename from the image image. The image argument is the return from the imagecreatetruecolor() function. 
+            </summary>
+            <param name="_image">resource image</param>
+        </member>
+        <member name="M:ScriptCoreLib.PHP.Native.API.imagecopyresampled(System.Object,System.Object,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            imagecopyresampled() copies a rectangular portion of one image to another image, smoothly interpolating pixel values so that, in particular, reducing the size of an image still retains a great deal of clarity. Returns TRUE on success or FALSE on failure. 
+            </summary>
+            <param name="_dst_image">resource dst_image</param>
+            <param name="_src_image">resource src_image</param>
+            <param name="_dst_x">int dst_x</param>
+            <param name="_dst_y">int dst_y</param>
+            <param name="_src_x">int src_x</param>
+            <param name="_src_y">int src_y</param>
+            <param name="_dst_w">int dst_w</param>
+            <param name="_dst_h">int dst_h</param>
+            <param name="_src_w">int src_w</param>
+            <param name="_src_h">int src_h</param>
+        </member>
+        <member name="M:ScriptCoreLib.PHP.Native.API.imagecreatetruecolor(System.Int32,System.Int32)">
+            <summary>
+            imagecreatetruecolor() returns an image identifier representing a black image of size x_size by y_size. 
+            </summary>
+            <param name="_x_size">int x_size</param>
+            <param name="_y_size">int y_size</param>
+        </member>
+        <member name="M:ScriptCoreLib.PHP.Native.API.imagecreatefromjpeg(System.String)">
+            <summary>
+            imagecreatefromjpeg() returns an image identifier representing the image obtained from the given filename. 
+            </summary>
+            <param name="_filename">string filename</param>
+        </member>
+        <member name="M:ScriptCoreLib.PHP.Native.API.getimagesize(System.String)">
+            <summary>
+            The getimagesize() function will determine the size of any GIF, JPG, PNG, SWF, SWC, PSD, TIFF, BMP, IFF, JP2, JPX, JB2, JPC, XBM, or WBMP image file and return the dimensions along with the file type and a height/width text string to be used inside a normal HTML &lt;IMG&gt; tag. 
+            </summary>
+            <param name="_filename">string filename</param>
+        </member>
+        <member name="M:ScriptCoreLib.PHP.Native.API.md5_file(System.String)">
+            <summary>
+            Calculates the MD5 hash of the file specified by the filename parameter using the RSA Data Security, Inc. MD5 Message-Digest Algorithm, and returns that hash. The hash is a 32-character hexadecimal number. 
+            </summary>
+            <param name="_filename">string filename</param>
+        </member>
+        <member name="M:ScriptCoreLib.PHP.Native.API.md5(System.String)">
+            <summary>
+            Calculates the MD5 hash of str using the RSA Data Security, Inc. MD5 Message-Digest Algorithm, and returns that hash. The hash is a 32-character hexadecimal number. If the optional raw_output is set to TRUE, then the md5 digest is instead returned in raw binary format with a length of 16. 
+            </summary>
+            <param name="_str">string str</param>
+        </member>
+        <member name="M:ScriptCoreLib.PHP.Native.API.basename(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="_path">string path</param>
+        </member>
+        <member name="M:ScriptCoreLib.PHP.Native.API.closedir(System.Object)">
+            <summary>
+            Closes the directory stream indicated by dir_handle. The stream must have previously been opened by opendir(). 
+            </summary>
+            <param name="_dir_handle">resource dir_handle</param>
+        </member>
+        <member name="M:ScriptCoreLib.PHP.Native.API.is_dir(System.String)">
+            <summary>
+            Returns TRUE if the filename exists and is a directory. If filename is a relative filename, it will be checked relative to the current working directory. 
+            </summary>
+            <param name="_filename">string filename</param>
+        </member>
+        <member name="M:ScriptCoreLib.PHP.Native.API.readdir(System.Object)">
+            <summary>
+            Returns the filename of the next file from the directory. The filenames are returned in the order in which they are stored by the filesystem. 
+            </summary>
+            <param name="_dir_handle">resource dir_handle</param>
+        </member>
+        <member name="M:ScriptCoreLib.PHP.Native.API.opendir(System.String)">
+            <summary>
+            Opens up a directory handle to be used in subsequent closedir(), readdir(), and rewinddir() calls. 
+            </summary>
+            <param name="_path">string path</param>
+        </member>
+        <member name="M:ScriptCoreLib.PHP.Native.API.get_object_vars(System.Object)">
+            <summary>
+            
+            </summary>
+            <param name="_obj">object obj</param>
+        </member>
+        <member name="M:ScriptCoreLib.PHP.Native.API.chr(System.Int32)">
+            <summary>
+            Returns a one-character string containing the character specified by ascii.
+            </summary>
+            <param name="_ascii">int ascii</param>
+        </member>
+        <member name="M:ScriptCoreLib.PHP.Native.API.date(System.String,System.Int32)">
+            <summary>
+            Returns a string formatted according to the given format string using the given integer timestamp or the current local time if no timestamp is given. In other words, timestamp is optional and defaults to the value of time(). 
+            </summary>
+            <param name="_format">string format</param>
+        </member>
+        <member name="M:ScriptCoreLib.PHP.Native.API.date(System.String)">
+            <summary>
+            Returns a string formatted according to the given format string using the given integer timestamp or the current local time if no timestamp is given. In other words, timestamp is optional and defaults to the value of time(). 
+            </summary>
+            <param name="_format">string format</param>
+        </member>
+        <member name="M:ScriptCoreLib.PHP.Native.API.fclose(System.Object)">
+            <summary>
+            The file pointed to by handle is closed. 
+            </summary>
+            <param name="_handle">resource handle</param>
+        </member>
+        <member name="M:ScriptCoreLib.PHP.Native.API.fopen(System.String,System.String)">
+            <summary>
+            fopen() binds a named resource, specified by filename, to a stream. If filename is of the form "scheme://...", it is assumed to be a URL and PHP will search for a protocol handler (also known as a wrapper) for that scheme. If no wrappers for that protocol are registered, PHP will emit a notice to help you track potential problems in your script and then continue as though filename specifies a regular file. 
+            </summary>
+            <param name="_filename">string filename</param>
+            <param name="_mode">string mode</param>
+        </member>
+        <member name="M:ScriptCoreLib.PHP.Native.API.fwrite(System.Object,System.String)">
+            <summary>
+            fwrite() writes the contents of string to the file stream pointed to by handle. If the length argument is given, writing will stop after length bytes have been written or the end of string is reached, whichever comes first. 
+            </summary>
+            <param name="_handle">resource handle</param>
+            <param name="_string">string string</param>
+        </member>
+        <member name="M:ScriptCoreLib.PHP.Native.API.explode(System.Object,System.Object)">
+            <summary>
+            Returns an array of strings, each of which is a substring of string formed by splitting it on boundaries formed by the string separator. If limit is set, the returned array will contain a maximum of limit elements with the last element containing the rest of string. 
+            </summary>
+            <param name="_separator">string separator</param>
+            <param name="_string">string string</param>
+        </member>
+        <member name="M:ScriptCoreLib.PHP.Native.API.intval(System.Object)">
+            <summary>
+            Returns the integer value of var, using the specified base for the conversion (the default is base 10). 
+            </summary>
+            <param name="_var">mixed var</param>
+        </member>
+        <member name="M:ScriptCoreLib.PHP.Native.API.phpinfo">
+            <summary>
+            Outputs a large amount of information about the current state of PHP. This includes information about PHP compilation options and extensions, the PHP version, server information and environment (if compiled as a module), the PHP environment, OS version information, paths, master and local values of configuration options, HTTP headers, and the PHP License. 
+            </summary>
+        </member>
+        <member name="M:ScriptCoreLib.PHP.Native.API.highlight_file(System.String)">
+            <summary>  
+            The highlight_file() function prints out a syntax highlighted version of the code contained in filename using the colors defined in the built-in syntax highlighter for PHP.   
+            </summary>  
+            <param name="_filename">string filename</param>  
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:ScriptCoreLib.PHP.Native.API.preg_match_all(System.String,System.String,System.Object[])" -->
+        <!-- Badly formed XML comment ignored for member "M:ScriptCoreLib.PHP.Native.API.preg_match(System.String,System.String,System.Object[])" -->
+        <member name="M:ScriptCoreLib.PHP.Native.API.ignore_user_abort(System.Boolean)">
+            <summary>  
+            This function sets whether a client disconnect should cause a script to be aborted. It will return the previous setting and can be called without an argument to not change the current setting and only return the current setting. See the Connection Handling section in the Features chapter for a complete description of connection handling in PHP.   
+            </summary>  
+            <param name="_setting">bool setting</param>  
+        </member>
+        <member name="M:ScriptCoreLib.PHP.Native.API.set_time_limit(System.Int32)">
+            <summary>  
+            Set the number of seconds a script is allowed to run. If this is reached, the script returns a fatal error. The default limit is 30 seconds or, if it exists, the max_execution_time value defined in the php.ini. If seconds is set to zero, no time limit is imposed.   
+            </summary>  
+            <param name="_seconds">int seconds</param>  
+        </member>
+        <member name="M:ScriptCoreLib.PHP.Native.API.sprintf(System.String)">
+            <summary>  
+            Returns a string produced according to the formatting string format.   
+            </summary>  
+            <param name="_format">string format</param>  
+        </member>
+        <member name="M:ScriptCoreLib.PHP.Native.API.iconv(System.String,System.String,System.Object)">
+            <summary>  
+            Performs a character set conversion on the string str from in_charset to out_charset. Returns the converted string or FALSE on failure.   
+            </summary>  
+            <param name="_in_charset">string in_charset</param>  
+            <param name="_out_charset">string out_charset</param>  
+            <param name="_str">string str</param>  
+        </member>
+        <member name="M:ScriptCoreLib.PHP.Native.API.function_exists(System.String)">
+            <summary>  
+            Checks the list of defined functions, both built-in (internal) and user-defined, for function_name. Returns TRUE on success or FALSE on failure.   
+            </summary>  
+            <param name="_function_name">string function_name</param>  
+        </member>
+        <member name="M:ScriptCoreLib.PHP.Native.API.flush">
+            <summary>  
+            Flushes the output buffers of PHP and whatever backend PHP is using (CGI, a web server, etc). This effectively tries to push all the output so far to the user's browser.   
+            </summary>  
+        </member>
+        <member name="M:ScriptCoreLib.PHP.Native.API.utf8_encode(System.Object)">
+            <summary>  
+            This function encodes the string data to UTF-8, and returns the encoded version. UTF-8 is a standard mechanism used by Unicode for encoding wide character values into a byte stream. UTF-8 is transparent to plain ASCII characters, is self-synchronized (meaning it is possible for a program to figure out where in the bytestream characters start) and can be used with normal string comparison functions for sorting and such. PHP encodes UTF-8 characters in up to four bytes, like this:   
+            </summary>  
+            <param name="_data">string data</param>  
+        </member>
+        <member name="M:ScriptCoreLib.PHP.Native.API.utf8_decode(System.Object)">
+            <summary>  
+            This function decodes data, assumed to be UTF-8 encoded, to ISO-8859-1.   
+            </summary>  
+            <param name="_data">string data</param>  
+        </member>
+        <member name="M:ScriptCoreLib.PHP.Native.API.error_reporting(System.Int32)">
+            <summary>  
+            The error_reporting() function sets the error_reporting directive at runtime. PHP has many levels of errors, using this function sets that level for the duration (runtime) of your script.   
+            </summary>  
+            <param name="_level">int level</param>  
+        </member>
+        <member name="M:ScriptCoreLib.PHP.Native.API.set_error_handler(System.String)">
+            <summary>
+            Sets a user function (error_handler) to handle errors in a script.
+            </summary>
+            <param name="_error_handler">callback error_handler</param>
+        </member>
+        <member name="M:ScriptCoreLib.PHP.Native.API.header(System.String)">
+            <summary>  
+            header() is used to send raw HTTP headers. See the HTTP/1.1 specification for more information on HTTP headers.   
+            </summary>  
+            <param name="_string">string string</param>  
+        </member>
+        <member name="M:ScriptCoreLib.PHP.Native.API.urldecode(System.String)">
+            <summary>  
+            Decodes any %## encoding in the given string. The decoded string is returned.  
+            </summary>  
+            <param name="_str">string str</param>  
+        </member>
+        <member name="M:ScriptCoreLib.PHP.Native.API.urlencode(System.String)">
+            <summary>  
+            Returns a string in which all non-alphanumeric characters except -_. have been replaced with a percent (%) sign followed by two hex digits and spaces encoded as plus (+) signs. It is encoded the same way that the posted data from a WWW form is encoded, that is the same way as in application/x-www-form-urlencoded media type. This differs from the RFC1738 encoding (see rawurlencode()) in that for historical reasons, spaces are encoded as plus (+) signs. This function is convenient when encoding a string to be used in a query part of a URL, as a convenient way to pass variables to the next page:  
+            </summary>  
+            <param name="_str">string str</param>  
+        </member>
+        <member name="M:ScriptCoreLib.PHP.Native.API.rawurlencode(System.String)">
+            <summary>  
+            Returns a string in which all non-alphanumeric characters except -_. have been replaced with a percent (%) sign followed by two hex digits. This is the encoding described in RFC 1738 for protecting literal characters from being interpreted as special URL delimiters, and for protecting URLs from being mangled by transmission media with character conversions (like some email systems). For example, if you want to include a password in an FTP URL:   
+            </summary>  
+            <param name="_str">string str</param>  
+        </member>
+        <member name="M:ScriptCoreLib.PHP.Native.API.rawurldecode(System.String)">
+            <summary>  
+            Returns a string in which the sequences with percent (%) signs followed by two hex digits have been replaced with literal characters.   
+            </summary>  
+            <param name="_str">string str</param>  
+        </member>
+        <member name="M:ScriptCoreLib.PHP.Native.API.base64_encode(System.String)">
+            <summary>  
+            base64_encode() returns data encoded with base64. This encoding is designed to make binary data survive transport through transport layers that are not 8-bit clean, such as mail bodies.   
+            </summary>  
+            <param name="_data">string data</param>  
+        </member>
+        <member name="M:ScriptCoreLib.PHP.Native.API.base64_decode(System.String)">
+            <summary>  
+            base64_decode() decodes encoded_data and returns the original data or FALSE on failure. The returned data may be binary.   
+            </summary>  
+            <param name="_encoded_data">string encoded_data</param>  
+        </member>
+        <member name="M:ScriptCoreLib.PHP.Native.API.highlight_string(System.String)">
+            <summary>  
+            The highlight_string() function outputs a syntax highlighted version of str using the colors defined in the built-in syntax highlighter for PHP.   
+            </summary>  
+            <param name="_str">string str</param>  
+        </member>
+        <member name="M:ScriptCoreLib.PHP.Native.API.file_get_contents(System.String)">
+            <summary>  
+            Identical to file(), except that file_get_contents() returns the file in a string, starting at the specified offset up to maxlen bytes. On failure, file_get_contents() will return FALSE.   
+            </summary>  
+            <param name="_filename">string filename</param>  
+        </member>
+        <member name="M:ScriptCoreLib.PHP.Native.API.serialize(System.Object)">
+            <summary>  
+            serialize() returns a string containing a byte-stream representation of value that can be stored anywhere.   
+            </summary>  
+            <param name="_value">mixed value</param>  
+        </member>
+        <member name="M:ScriptCoreLib.PHP.Native.API.unserialize(System.String)">
+            <summary>  
+            unserialize() takes a single serialized variable (see serialize()) and converts it back into a PHP value. The converted value is returned, and can be a boolean, integer, float, string, array or object. In case the passed string is not unserializeable, FALSE is returned and E_NOTICE is issued.   
+            </summary>  
+            <param name="_str">string str</param>  
+        </member>
+        <member name="M:ScriptCoreLib.PHP.Native.API.ob_start">
+            <summary>
+            This function will turn output buffering on. While output buffering is active no output is sent from the script (other than headers), instead the output is stored in an internal buffer. 
+            </summary>
+        </member>
+        <member name="M:ScriptCoreLib.PHP.Native.API.ob_get_clean">
+            <summary>
+            This will return the contents of the output buffer and end output buffering. If output buffering isn't active then FALSE is returned. ob_get_clean() essentially executes both ob_get_contents() and ob_end_clean(). 
+            </summary>
+        </member>
+        <member name="M:ScriptCoreLib.PHP.Native.API.exit">
+            <summary>  
+            The exit() function terminates execution of the script. It prints status just before exiting.   
+            </summary>  
+        </member>
+        <member name="M:ScriptCoreLib.PHP.Native.API.var_dump(System.Object)">
+            <summary>
+            This function displays structured information about one or more expressions that includes its type and value. Arrays and objects are explored recursively with values indented to show structure. 
+            </summary>
+            <param name="_mixed">mixed expression </param>
+        </member>
+        <member name="M:ScriptCoreLib.PHP.Native.API.ord(System.String)">
+            <summary>
+            Returns the ASCII value of the first character of string. This function complements chr().
+            </summary>
+            <param name="_string">string string</param>
+        </member>
+        <member name="M:ScriptCoreLib.PHP.Native.API.dechex(System.Int32)">
+            <summary>  
+            Returns a string containing a hexadecimal representation of the given number argument. The largest number that can be converted is 4294967295 in decimal resulting to "ffffffff".   
+            </summary>  
+            <param name="_number">int number</param>  
+        </member>
+        <member name="M:ScriptCoreLib.PHP.Native.API.hexdec(System.String)">
+            <summary>  
+            Returns the decimal equivalent of the hexadecimal number represented by the hex_string argument. hexdec() converts a hexadecimal string to a decimal number. The largest number that can be converted is 7fffffff or 2147483647 in decimal. As of PHP 4.1.0, this function can also convert larger numbers. It returns float in that case.   
+            </summary>  
+            <param name="_hex_string">string hex_string</param>  
+        </member>
+        <member name="M:ScriptCoreLib.PHP.Native.API.htmlspecialchars(System.String)">
+            <summary>  
+            Certain characters have special significance in HTML, and should be represented by HTML entities if they are to preserve their meanings. This function returns a string with some of these conversions made; the translations made are those most useful for everyday web programming. If you require all HTML character entities to be translated, use htmlentities() instead.   
+            </summary>  
+            <param name="_string">string string</param>  
+        </member>
+        <member name="M:ScriptCoreLib.PHP.Native.API.htmlentities(System.String)">
+            <summary>  
+            This function is identical to htmlspecialchars() in all ways, except with htmlentities(), all characters which have HTML character entity equivalents are translated into these entities.   
+            </summary>  
+            <param name="_string">string string</param>  
+        </member>
+        <member name="T:ScriptCoreLib.PHP.Native.SuperGlobals">
+            <summary>
+            http://ee.php.net/variables.predefined
+            </summary>
+        </member>
+        <member name="F:ScriptCoreLib.PHP.Native.SuperGlobals.Server">
+            <summary>    
+            Variables set by the web server or otherwise directly related to the execution environment of the current script. Analogous to the old $HTTP_SERVER_VARS array (which is still available, but deprecated).    
+            </summary>    
+        </member>
+        <member name="F:ScriptCoreLib.PHP.Native.SuperGlobals.Get">
+            <summary>    
+            Variables provided to the script via URL query string. Analogous to the old $HTTP_GET_VARS array (which is still available, but deprecated).    
+            </summary>    
+        </member>
+        <member name="F:ScriptCoreLib.PHP.Native.SuperGlobals.Post">
+            <summary>    
+            Variables provided to the script via HTTP POST. Analogous to the old $HTTP_POST_VARS array (which is still available, but deprecated).    
+            </summary>    
+        </member>
+        <member name="F:ScriptCoreLib.PHP.Native.SuperGlobals.Cookie">
+            <summary>    
+            Variables provided to the script via HTTP cookies. Analogous to the old $HTTP_COOKIE_VARS array (which is still available, but deprecated).    
+            </summary>    
+        </member>
+        <member name="F:ScriptCoreLib.PHP.Native.SuperGlobals.Files">
+            <summary>    
+            Variables provided to the script via HTTP post file uploads. Analogous to the old $HTTP_POST_FILES array (which is still available, but deprecated). See POST method uploads for more information.    
+            </summary>    
+        </member>
+        <member name="F:ScriptCoreLib.PHP.Native.SuperGlobals.Env">
+            <summary>    
+            Variables provided to the script via the environment. Analogous to the old $HTTP_ENV_VARS array (which is still available, but deprecated).    
+            </summary>    
+        </member>
+        <member name="F:ScriptCoreLib.PHP.Native.SuperGlobals.Request">
+            <summary>    
+            Variables provided to the script via the GET, POST, and COOKIE input mechanisms, and which therefore cannot be trusted. The presence and order of variable inclusion in this array is defined according to the PHP variables_order configuration directive. This array has no direct analogue in versions of PHP prior to 4.1.0. See also import_request_variables().    
+            </summary>    
+        </member>
+        <member name="P:ScriptCoreLib.PHP.Native.SuperGlobals.Globals">
+            <summary>    
+            Contains a reference to every variable which is currently available within the global scope of the script. The keys of this array are the names of the global variables. $GLOBALS has existed since PHP 3.    
+            </summary>    
+        </member>
+        <member name="P:ScriptCoreLib.PHP.Native.SuperGlobals.Session">
+            <summary>    
+            Variables which are currently registered to a script's session. Analogous to the old $HTTP_SESSION_VARS array (which is still available, but deprecated). See the Session handling functions section for more information.    
+            </summary>    
+        </member>
+        <member name="F:ScriptCoreLib.PHP.Native.SuperGlobals.ServerVariables.PHP_SELF">
+            <summary>  
+                The filename of the currently executing script, relative to the document root. For instance, $_SERVER['PHP_SELF'] in a script at the address http://example.com/test.php/foo.bar would be /test.php/foo.bar. The __FILE__ constant contains the full path and filename of the current (i.e. included) file.  
+            </summary>  
+        </member>
+        <member name="F:ScriptCoreLib.PHP.Native.SuperGlobals.ServerVariables.argv">
+            <summary>  
+                Array of arguments passed to the script. When the script is run on the command line, this gives C-style access to the command line parameters. When called via the GET method, this will contain the query string.   
+            </summary>  
+        </member>
+        <member name="F:ScriptCoreLib.PHP.Native.SuperGlobals.ServerVariables.argc">
+            <summary>  
+                Contains the number of command line parameters passed to the script (if run on the command line).   
+            </summary>  
+        </member>
+        <member name="F:ScriptCoreLib.PHP.Native.SuperGlobals.ServerVariables.GATEWAY_INTERFACE">
+            <summary>  
+                What revision of the CGI specification the server is using; i.e. 'CGI/1.1'.   
+            </summary>  
+        </member>
+        <member name="F:ScriptCoreLib.PHP.Native.SuperGlobals.ServerVariables.SERVER_NAME">
+            <summary>  
+                The name of the server host under which the current script is executing. If the script is running on a virtual host, this will be the value defined for that virtual host.   
+            </summary>  
+        </member>
+        <member name="F:ScriptCoreLib.PHP.Native.SuperGlobals.ServerVariables.SERVER_SOFTWARE">
+            <summary>  
+                Server identification string, given in the headers when responding to requests.   
+            </summary>  
+        </member>
+        <member name="F:ScriptCoreLib.PHP.Native.SuperGlobals.ServerVariables.SERVER_PROTOCOL">
+            <summary>  
+                Name and revision of the information protocol via which the page was requested; i.e. 'HTTP/1.0';   
+            </summary>  
+        </member>
+        <member name="F:ScriptCoreLib.PHP.Native.SuperGlobals.ServerVariables.REQUEST_METHOD">
+            <summary>  
+                Which request method was used to access the page; i.e. 'GET', 'HEAD', 'POST', 'PUT'.  
+            </summary>  
+        </member>
+        <member name="F:ScriptCoreLib.PHP.Native.SuperGlobals.ServerVariables.REQUEST_TIME">
+            <summary>  
+                The timestamp of the start of the request. Available since PHP 5.1.0.   
+            </summary>  
+        </member>
+        <member name="F:ScriptCoreLib.PHP.Native.SuperGlobals.ServerVariables.QUERY_STRING">
+            <summary>  
+                The query string, if any, via which the page was accessed.   
+            </summary>  
+        </member>
+        <member name="F:ScriptCoreLib.PHP.Native.SuperGlobals.ServerVariables.DOCUMENT_ROOT">
+            <summary>  
+                The document root directory under which the current script is executing, as defined in the server's configuration file.   
+            </summary>  
+        </member>
+        <member name="F:ScriptCoreLib.PHP.Native.SuperGlobals.ServerVariables.HTTP_ACCEPT">
+            <summary>  
+                Contents of the Accept: header from the current request, if there is one.   
+            </summary>  
+        </member>
+        <member name="F:ScriptCoreLib.PHP.Native.SuperGlobals.ServerVariables.HTTP_ACCEPT_CHARSET">
+            <summary>  
+                Contents of the Accept-Charset: header from the current request, if there is one. Example: 'iso-8859-1,*,utf-8'.   
+            </summary>  
+        </member>
+        <member name="F:ScriptCoreLib.PHP.Native.SuperGlobals.ServerVariables.HTTP_ACCEPT_ENCODING">
+            <summary>  
+                Contents of the Accept-Encoding: header from the current request, if there is one. Example: 'gzip'.   
+            </summary>  
+        </member>
+        <member name="F:ScriptCoreLib.PHP.Native.SuperGlobals.ServerVariables.HTTP_ACCEPT_LANGUAGE">
+            <summary>  
+                Contents of the Accept-Language: header from the current request, if there is one. Example: 'en'.   
+            </summary>  
+        </member>
+        <member name="F:ScriptCoreLib.PHP.Native.SuperGlobals.ServerVariables.HTTP_CONNECTION">
+            <summary>  
+                Contents of the Connection: header from the current request, if there is one. Example: 'Keep-Alive'.   
+            </summary>  
+        </member>
+        <member name="F:ScriptCoreLib.PHP.Native.SuperGlobals.ServerVariables.HTTP_HOST">
+            <summary>  
+                Contents of the Host: header from the current request, if there is one.   
+            </summary>  
+        </member>
+        <member name="F:ScriptCoreLib.PHP.Native.SuperGlobals.ServerVariables.HTTP_REFERER">
+            <summary>  
+                The address of the page (if any) which referred the user agent to the current page. This is set by the user agent. Not all user agents will set this, and some provide the ability to modify HTTP_REFERER as a feature. In short, it cannot really be trusted.   
+            </summary>  
+        </member>
+        <member name="F:ScriptCoreLib.PHP.Native.SuperGlobals.ServerVariables.HTTP_USER_AGENT">
+            <summary>  
+                Contents of the User-Agent: header from the current request, if there is one. This is a string denoting the user agent being which is accessing the page. A typical example is: Mozilla/4.5 [en] (X11; U; Linux 2.2.9 i586). Among other things, you can use this value with get_browser() to tailor your page's output to the capabilities of the user agent.   
+            </summary>  
+        </member>
+        <member name="F:ScriptCoreLib.PHP.Native.SuperGlobals.ServerVariables.HTTPS">
+            <summary>  
+                Set to a non-empty value if the script was queried through the HTTPS protocol.   
+            </summary>  
+        </member>
+        <member name="F:ScriptCoreLib.PHP.Native.SuperGlobals.ServerVariables.REMOTE_ADDR">
+            <summary>  
+                The IP address from which the user is viewing the current page.   
+            </summary>  
+        </member>
+        <member name="F:ScriptCoreLib.PHP.Native.SuperGlobals.ServerVariables.REMOTE_HOST">
+            <summary>  
+                The Host name from which the user is viewing the current page. The reverse dns lookup is based off the REMOTE_ADDR of the user.  
+            </summary>  
+        </member>
+        <member name="F:ScriptCoreLib.PHP.Native.SuperGlobals.ServerVariables.REMOTE_PORT">
+            <summary>  
+                The port being used on the user's machine to communicate with the web server.   
+            </summary>  
+        </member>
+        <member name="F:ScriptCoreLib.PHP.Native.SuperGlobals.ServerVariables.SCRIPT_FILENAME">
+            <summary>  
+                The absolute pathname of the currently executing script.  
+            </summary>  
+        </member>
+        <member name="F:ScriptCoreLib.PHP.Native.SuperGlobals.ServerVariables.SERVER_ADMIN">
+            <summary>  
+                The value given to the SERVER_ADMIN (for Apache) directive in the web server configuration file. If the script is running on a virtual host, this will be the value defined for that virtual host.   
+            </summary>  
+        </member>
+        <member name="F:ScriptCoreLib.PHP.Native.SuperGlobals.ServerVariables.SERVER_PORT">
+            <summary>  
+                The port on the server machine being used by the web server for communication. For default setups, this will be '80'; using SSL, for instance, will change this to whatever your defined secure HTTP port is.   
+            </summary>  
+        </member>
+        <member name="F:ScriptCoreLib.PHP.Native.SuperGlobals.ServerVariables.SERVER_SIGNATURE">
+            <summary>  
+                String containing the server version and virtual host name which are added to server-generated pages, if enabled.   
+            </summary>  
+        </member>
+        <member name="F:ScriptCoreLib.PHP.Native.SuperGlobals.ServerVariables.PATH_TRANSLATED">
+            <summary>  
+                Filesystem- (not document root-) based path to the current script, after the server has done any virtual-to-real mapping.  
+            </summary>  
+        </member>
+        <member name="F:ScriptCoreLib.PHP.Native.SuperGlobals.ServerVariables.SCRIPT_NAME">
+            <summary>  
+                Contains the current script's path. This is useful for pages which need to point to themselves. The __FILE__ constant contains the full path and filename of the current (i.e. included) file.   
+            </summary>  
+        </member>
+        <member name="F:ScriptCoreLib.PHP.Native.SuperGlobals.ServerVariables.REQUEST_URI">
+            <summary>  
+                The URI which was given in order to access this page; for instance, '/index.html'.   
+            </summary>  
+        </member>
+        <member name="F:ScriptCoreLib.PHP.Native.SuperGlobals.ServerVariables.PHP_AUTH_DIGEST">
+            <summary>  
+                When running under Apache as module doing Digest HTTP authentication this variable is set to the 'Authorization' header sent by the client (which you should then use to make the appropriate validation).   
+            </summary>  
+        </member>
+        <member name="F:ScriptCoreLib.PHP.Native.SuperGlobals.ServerVariables.PHP_AUTH_USER">
+            <summary>  
+                When running under Apache or IIS (ISAPI on PHP 5) as module doing HTTP authentication this variable is set to the username provided by the user.   
+            </summary>  
+        </member>
+        <member name="F:ScriptCoreLib.PHP.Native.SuperGlobals.ServerVariables.PHP_AUTH_PW">
+            <summary>  
+                When running under Apache or IIS (ISAPI on PHP 5) as module doing HTTP authentication this variable is set to the password provided by the user.   
+            </summary>  
+        </member>
+        <member name="F:ScriptCoreLib.PHP.Native.SuperGlobals.ServerVariables.AUTH_TYPE">
+            <summary>  
+                When running under Apache as module doing HTTP authenticated this variable is set to the authentication type.   
+            </summary>  
+        </member>
+        <member name="M:ScriptCoreLib.ActionScript.String.split(System.Object)">
+            <summary>
+            Splits a String object into an array of substrings by dividing it wherever the specified delimiter parameter occurs.
+            </summary>
+            <param name="delimiter"></param>
+            <returns></returns>
+        </member>
+        <member name="P:ScriptCoreLib.ActionScript.flash.display.DisplayObject.filters">
+            <summary>
+            An indexed array that contains each filter object currently associated with the display object.
+            </summary>
+        </member>
+        <member name="P:ScriptCoreLib.ActionScript.flash.display.DisplayObject.alpha">
+            <summary>
+            Indicates the alpha transparency value of the object specified.
+            </summary>
+        </member>
+        <member name="P:ScriptCoreLib.ActionScript.flash.display.DisplayObject.rotation">
+            <summary>
+            Indicates the rotation of the DisplayObject instance, in degrees, from its original orientation.
+            </summary>
+        </member>
+        <member name="P:ScriptCoreLib.ActionScript.flash.display.DisplayObject.x">
+            <summary>
+            Indicates the x coordinate of the DisplayObject instance relative to the local coordinates of the parent DisplayObjectContainer.
+            </summary>
+        </member>
+        <member name="P:ScriptCoreLib.ActionScript.flash.display.DisplayObject.y">
+            <summary>
+            Indicates the y coordinate of the DisplayObject instance relative to the local coordinates of the parent DisplayObjectContainer.
+            </summary>
+        </member>
+        <member name="P:ScriptCoreLib.ActionScript.flash.display.DisplayObject.root">
+            <summary>
+            For a display object in a loaded SWF file, the root property is the top-most display object in the portion of the display list's tree structure represented by that SWF file.
+            </summary>
+        </member>
+        <member name="P:ScriptCoreLib.ActionScript.flash.display.DisplayObject.width">
+            <summary>
+            Indicates the width of the display object, in pixels.
+            </summary>
+        </member>
+        <member name="P:ScriptCoreLib.ActionScript.flash.display.DisplayObject.height">
+            <summary>
+            Indicates the height of the display object, in pixels.
+            </summary>
+        </member>
+        <member name="P:ScriptCoreLib.ActionScript.flash.display.DisplayObject.stage">
+            <summary>
+            The Stage of the display object.
+            </summary>
+        </member>
+        <member name="P:ScriptCoreLib.ActionScript.flash.display.DisplayObject.parent">
+            <summary>
+            Indicates the DisplayObjectContainer object that contains this display object.
+            </summary>
+        </member>
+        <member name="P:ScriptCoreLib.ActionScript.flash.display.InteractiveObject.mouseEnabled">
+            <summary>
+            Specifies whether this object receives mouse messages.
+            </summary>
+        </member>
+        <member name="P:ScriptCoreLib.ActionScript.flash.display.InteractiveObject.contextMenu">
+            <summary>
+            Specifies the context menu associated with this object. 
+            </summary>
+        </member>
+        <member name="P:ScriptCoreLib.ActionScript.flash.display.InteractiveObject.buttonMode">
+            <summary>
+            Specifies the button mode of this sprite.
+            </summary>
+        </member>
+        <member name="P:ScriptCoreLib.Shared.AssemblyInfo.BuildDateTimeString">
+            <summary>
+            date when library was compiled
+            </summary>
+        </member>
+        <member name="M:ScriptCoreLib.JavaScript.DOM.IArray`1.splice(System.Int32,System.Int32,`0)">
+            <summary>
+            http://codepunk.hardwar.org.uk/ajs44.htm
+            </summary>
+        </member>
+        <member name="M:ScriptCoreLib.JavaScript.DOM.IArray`1.SplitLines(`0)">
+            <summary>
+            autodetects newline string
+            </summary>
+            <param name="p"></param>
+            <returns></returns>
+        </member>
+        <member name="T:ScriptCoreLib.JavaScript.DOM.HTML.IHTMLInput">
+            <summary>
+            http://www.w3.org/TR/REC-html40/interact/forms.html#adef-type-INPUT
+            </summary>
+        </member>
+        <member name="F:ScriptCoreLib.ActionScript.flash.events.TimerEvent.TIMER">
+            <summary>
+            Defines the value of the type property of a timer event object.
+            </summary>
+        </member>
+        <member name="F:ScriptCoreLib.ActionScript.flash.events.ContextMenuEvent.MENU_ITEM_SELECT">
+            <summary>
+            Defines the value of the type property of a menuItemSelect event object.
+            </summary>
+        </member>
+        <member name="F:ScriptCoreLib.ActionScript.flash.events.ContextMenuEvent.MENU_SELECT">
+            <summary>
+            Defines the value of the type property of a menuSelect event object.
+            </summary>
+        </member>
+        <member name="M:ScriptCoreLib.PHP.Runtime.Expando.Copy``1(``0,ScriptCoreLib.PHP.Runtime.IArray)">
+            <summary>
+            copy database array to a type, also convert to utf-8
+            </summary>
+            <typeparam name="TReturn"></typeparam>
+            <param name="p"></param>
+            <param name="pv"></param>
+            <returns></returns>
+        </member>
+        <member name="P:ScriptCoreLib.PHP.Runtime.Expando.TypeString">
+            <summary>
+            returns the typeof string
+            </summary>
+        </member>
+        <member name="M:ScriptCoreLib.PHP.Runtime.Expando.API.gettype(System.Object)">
+            <summary>  
+            Returns the type of the PHP variable var.   
+            </summary>  
+            <param name="_var">mixed var</param>  
+        </member>
+        <member name="T:ScriptCoreLib.ActionScript.flash.media.Video">
+            <summary>
+            http://livedocs.adobe.com/flash/9.0/ActionScriptLangRefV3/flash/media/Video.html
+            </summary>
+        </member>
+        <member name="M:ScriptCoreLib.ActionScript.flash.media.Video.attachCamera(ScriptCoreLib.ActionScript.flash.media.Camera)">
+            <summary>
+            Specifies a video stream from a camera to be displayed within the boundaries of the Video object in the application.
+            </summary>
+            <param name="camera"></param>
+        </member>
+        <member name="M:ScriptCoreLib.ActionScript.flash.display.DisplayObjectContainer.addChild(ScriptCoreLib.ActionScript.flash.display.DisplayObject)">
+            <summary>
+            Adds a child DisplayObject instance to this DisplayObjectContainer instance.
+            </summary>
+            <param name="child"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ScriptCoreLib.ActionScript.flash.display.DisplayObjectContainer.removeChild(ScriptCoreLib.ActionScript.flash.display.DisplayObject)">
+            <summary>
+            Removes the specified child DisplayObject instance from the child list of the DisplayObjectContainer instance.
+            </summary>
+            <param name="child"></param>
+            <returns></returns>
+        </member>
+        <member name="P:ScriptCoreLib.ActionScript.flash.display.Stage.stageHeight">
+            <summary>
+            The current height, in pixels, of the Stage.
+            </summary>
+        </member>
+        <member name="P:ScriptCoreLib.ActionScript.flash.display.Stage.stageWidth">
+            <summary>
+            Specifies the current width, in pixels, of the Stage.
+            </summary>
+        </member>
+        <member name="P:ScriptCoreLib.ActionScript.flash.display.Stage.displayState">
+            <summary>
+            A value from the StageDisplayState class that specifies which display state to use.
+            </summary>
+        </member>
+        <member name="P:ScriptCoreLib.ActionScript.flash.display.Stage.focus">
+            <summary>
+            The interactive object with keyboard focus; or null if focus is not set or if the focused object belongs to a security sandbox to which the calling object does not have access.
+            </summary>
+        </member>
+        <member name="P:ScriptCoreLib.PHP.Net.ServerTransport`1.IsValid">
+            <summary>
+            returns true if descriptor is not null and method is post
+            </summary>
+        </member>
+        <member name="M:ScriptCoreLib.ActionScript.mx.controls.Alert.show(System.String)">
+            <summary>
+            Static method that pops up the Alert control.
+            </summary>
+            <param name="text"></param>
+            <returns></returns>
+        </member>
+        <member name="T:ScriptCoreLib.JavaScript.Runtime.JSColor">
+            <summary>
+            http://www.utoronto.ca/ian/books/xhtml1/appd/update-23feb2000.html
+            http://www.codehouse.com/webmaster_tools/x11_color_palette/
+            </summary>
+        </member>
+        <member name="F:ScriptCoreLib.JavaScript.Runtime.JSColor.R">
+            <summary>
+            red
+            </summary>
+        </member>
+        <member name="F:ScriptCoreLib.JavaScript.Runtime.JSColor.G">
+            <summary>
+            green
+            </summary>
+        </member>
+        <member name="F:ScriptCoreLib.JavaScript.Runtime.JSColor.B">
+            <summary>
+            blue
+            </summary>
+        </member>
+        <member name="F:ScriptCoreLib.JavaScript.Runtime.JSColor.H">
+            <summary>
+            hue
+            </summary>
+        </member>
+        <member name="F:ScriptCoreLib.JavaScript.Runtime.JSColor.L">
+            <summary>
+            lum
+            </summary>
+        </member>
+        <member name="F:ScriptCoreLib.JavaScript.Runtime.JSColor.S">
+            <summary>
+            sat
+            </summary>
+        </member>
+        <member name="M:ScriptCoreLib.JavaScript.Runtime.JSColor.FromHLS(System.Byte,System.Byte,System.Byte)">
+            <summary>
+            returns color by HLS
+            </summary>
+            <param name="h">up to 240</param>
+            <param name="l">up to 120</param>
+            <param name="s">up to 240</param>
+            <returns></returns>
+        </member>
+        <member name="T:ScriptCoreLib.JavaScript.Runtime.JSColor.System">
+            <summary>
+            http://www.w3.org/TR/CSS21/ui.html#system-colors
+            </summary>
+        </member>
+        <member name="P:ScriptCoreLib.JavaScript.Runtime.JSColor.System.ActiveBorder">
+            <summary>
+            Active window border.
+            </summary>
+        </member>
+        <member name="P:ScriptCoreLib.JavaScript.Runtime.JSColor.System.ActiveCaption">
+            <summary>
+            Active window caption.
+            </summary>
+        </member>
+        <member name="P:ScriptCoreLib.JavaScript.Runtime.JSColor.System.AppWorkspace">
+            <summary>
+            Background color of multiple document interface.
+            </summary>
+        </member>
+        <member name="P:ScriptCoreLib.JavaScript.Runtime.JSColor.System.Background">
+            <summary>
+            Desktop background.
+            </summary>
+        </member>
+        <member name="P:ScriptCoreLib.JavaScript.Runtime.JSColor.System.ButtonFace">
+            <summary>
+            Face color for three-dimensional display elements.
+            </summary>
+        </member>
+        <member name="P:ScriptCoreLib.JavaScript.Runtime.JSColor.System.ButtonHighlight">
+            <summary>
+            Highlight color for three-dimensional display elements (for edges facing away from the light source).
+            </summary>
+        </member>
+        <member name="P:ScriptCoreLib.JavaScript.Runtime.JSColor.System.ButtonShadow">
+            <summary>
+            Shadow color for three-dimensional display elements.
+            </summary>
+        </member>
+        <member name="P:ScriptCoreLib.JavaScript.Runtime.JSColor.System.ButtonText">
+            <summary>
+            Text on push buttons.
+            </summary>
+        </member>
+        <member name="P:ScriptCoreLib.JavaScript.Runtime.JSColor.System.CaptionText">
+            <summary>
+            Text in caption, size box, and scrollbar arrow box.
+            </summary>
+        </member>
+        <member name="P:ScriptCoreLib.JavaScript.Runtime.JSColor.System.GrayText">
+            <summary>
+            Grayed (disabled) text. This color is set to #000 if the current display driver does not support a solid gray color.
+            </summary>
+        </member>
+        <member name="P:ScriptCoreLib.JavaScript.Runtime.JSColor.System.Highlight">
+            <summary>
+            Item(s) selected in a control.
+            </summary>
+        </member>
+        <member name="P:ScriptCoreLib.JavaScript.Runtime.JSColor.System.HighlightText">
+            <summary>
+            Text of item(s) selected in a control.
+            </summary>
+        </member>
+        <member name="P:ScriptCoreLib.JavaScript.Runtime.JSColor.System.InactiveBorder">
+            <summary>
+            Inactive window border.
+            </summary>
+        </member>
+        <member name="P:ScriptCoreLib.JavaScript.Runtime.JSColor.System.InactiveCaption">
+            <summary>
+            Inactive window caption.
+            </summary>
+        </member>
+        <member name="P:ScriptCoreLib.JavaScript.Runtime.JSColor.System.InactiveCaptionText">
+            <summary>
+            Color of text in an inactive caption.
+            </summary>
+        </member>
+        <member name="P:ScriptCoreLib.JavaScript.Runtime.JSColor.System.InfoBackground">
+            <summary>
+            Background color for tooltip controls.
+            </summary>
+        </member>
+        <member name="P:ScriptCoreLib.JavaScript.Runtime.JSColor.System.InfoText">
+            <summary>
+            Text color for tooltip controls.
+            </summary>
+        </member>
+        <member name="P:ScriptCoreLib.JavaScript.Runtime.JSColor.System.Menu">
+            <summary>
+            Menu background.
+            </summary>
+        </member>
+        <member name="P:ScriptCoreLib.JavaScript.Runtime.JSColor.System.MenuText">
+            <summary>
+            Text in menus.
+            </summary>
+        </member>
+        <member name="P:ScriptCoreLib.JavaScript.Runtime.JSColor.System.Scrollbar">
+            <summary>
+            Scroll bar gray area.
+            </summary>
+        </member>
+        <member name="P:ScriptCoreLib.JavaScript.Runtime.JSColor.System.ThreeDDarkShadow">
+            <summary>
+            Dark shadow for three-dimensional display elements.
+            </summary>
+        </member>
+        <member name="P:ScriptCoreLib.JavaScript.Runtime.JSColor.System.ThreeDFace">
+            <summary>
+            Face color for three-dimensional display elements.
+            </summary>
+        </member>
+        <member name="P:ScriptCoreLib.JavaScript.Runtime.JSColor.System.ThreeDHighlight">
+            <summary>
+            Highlight color for three-dimensional display elements.
+            </summary>
+        </member>
+        <member name="P:ScriptCoreLib.JavaScript.Runtime.JSColor.System.ThreeDLightShadow">
+            <summary>
+            Light color for three-dimensional display elements (for edges facing the light source).
+            </summary>
+        </member>
+        <member name="P:ScriptCoreLib.JavaScript.Runtime.JSColor.System.ThreeDShadow">
+            <summary>
+            Dark shadow for three-dimensional display elements.
+            </summary>
+        </member>
+        <member name="P:ScriptCoreLib.JavaScript.Runtime.JSColor.System.Window">
+            <summary>
+            Window background.
+            </summary>
+        </member>
+        <member name="P:ScriptCoreLib.JavaScript.Runtime.JSColor.System.WindowFrame">
+            <summary>
+            Window frame.
+            </summary>
+        </member>
+        <member name="P:ScriptCoreLib.JavaScript.Runtime.JSColor.System.WindowText">
+            <summary>
+            Text in windows.
+            </summary>
+        </member>
+        <member name="M:ScriptCoreLib.Shared.Helper.Invoke``1(ScriptCoreLib.Shared.EventHandler{``0},``0)">
+            <summary>
+            will invoke a handler with one parameter, or if handler is null, will just return
+            </summary>
+            <typeparam name="TArg"></typeparam>
+            <param name="h"></param>
+            <param name="x"></param>
+        </member>
+        <member name="P:ScriptCoreLib.Shared.Helper.BuildDateString">
+            <summary>
+            date when library was compiled
+            </summary>
+        </member>
+        <member name="P:ScriptCoreLib.Shared.Helper.CompilerBuildDateString">
+            <summary>
+            date the compiler was compiled
+            </summary>
+        </member>
+        <member name="M:ScriptCoreLib.PHP.Runtime.FTPClient.API.ftp_delete(System.Object,System.String)">
+            <summary>
+            ftp_delete() deletes the file specified by path from the FTP server. 
+            </summary>
+            <param name="_ftp_stream">resource ftp_stream</param>
+            <param name="_path">string path</param>
+        </member>
+        <member name="M:ScriptCoreLib.PHP.Runtime.FTPClient.API.ftp_rename(System.Object,System.String,System.String)">
+            <summary>
+            ftp_rename() renames a file or a directory on the FTP server. 
+            </summary>
+            <param name="_ftp_stream">resource ftp_stream</param>
+            <param name="_oldname">string oldname</param>
+            <param name="_newname">string newname</param>
+        </member>
+        <member name="M:ScriptCoreLib.PHP.Runtime.FTPClient.API.ftp_mdtm(System.Object,System.String)">
+            <summary>
+            ftp_mdtm() gets the last modified time for a remote file. 
+            </summary>
+            <param name="_ftp_stream">resource ftp_stream</param>
+            <param name="_remote_file">string remote_file</param>
+        </member>
+        <member name="M:ScriptCoreLib.PHP.Runtime.FTPClient.API.ftp_chdir(System.Object,System.String)">
+            <summary>
+            Changes the current directory to the specified one. 
+            </summary>
+            <param name="_ftp_stream">resource ftp_stream</param>
+            <param name="_directory">string directory</param>
+        </member>
+        <member name="M:ScriptCoreLib.PHP.Runtime.FTPClient.API.ftp_connect(System.String)">
+            <summary>
+            ftp_connect() opens an FTP connection to the specified host. 
+            </summary>
+            <param name="_host">string host</param>
+        </member>
+        <member name="M:ScriptCoreLib.PHP.Runtime.FTPClient.API.ftp_login(System.Object,System.String,System.String)">
+            <summary>
+            Logs in to the given FTP stream. 
+            </summary>
+            <param name="_ftp_stream">resource ftp_stream</param>
+            <param name="_username">string username</param>
+            <param name="_password">string password</param>
+        </member>
+        <member name="M:ScriptCoreLib.PHP.Runtime.FTPClient.API.ftp_fput(System.Object,System.String,System.Object,System.Int32)">
+            <summary>
+            ftp_fput() uploads the data from a file pointer to a remote file on the FTP server. 
+            </summary>
+            <param name="_ftp_stream">resource ftp_stream</param>
+            <param name="_remote_file">string remote_file</param>
+            <param name="_handle">resource handle</param>
+            <param name="_mode">int mode</param>
+        </member>
+        <member name="M:ScriptCoreLib.PHP.Runtime.FTPClient.API.ftp_close(System.Object)">
+            <summary>
+            ftp_close() closes the given link identifier and releases the resource. 
+            </summary>
+            <param name="_ftp_stream">resource ftp_stream</param>
+        </member>
+        <member name="M:ScriptCoreLib.PHP.Runtime.FTPClient.API.ftp_pasv(System.Object,System.Boolean)">
+            <summary>
+            ftp_pasv() turns on or off passive mode. In passive mode, data connections are initiated by the client, rather than by the server. It may be needed if the client is behind firewall. 
+            </summary>
+            <param name="_ftp_stream">resource ftp_stream</param>
+            <param name="_pasv">bool pasv</param>
+        </member>
+        <member name="M:ScriptCoreLib.PHP.Runtime.FTPClient.API.ftp_pwd(System.Object)">
+            <summary>
+            
+            </summary>
+            <param name="_ftp_stream">resource ftp_stream</param>
+        </member>
+        <member name="M:ScriptCoreLib.PHP.Net.LDAPClient.API.ldap_8859_to_t61(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="value">string</param>
+        </member>
+        <member name="M:ScriptCoreLib.PHP.Net.LDAPClient.API.ldap_add(System.Object,System.String,System.Object)">
+            <summary>
+            Returns TRUE on success or FALSE on failure. 
+            </summary>
+            <param name="link_identifier">resource</param>
+            <param name="dn">string</param>
+            <param name="entry">array</param>
+        </member>
+        <member name="M:ScriptCoreLib.PHP.Net.LDAPClient.API.ldap_bind(System.Object)">
+            <summary>
+            Binds to the LDAP directory with specified RDN and password. Returns TRUE on success or FALSE on failure.
+            </summary>
+            <param name="link_identifier">resource</param>
+        </member>
+        <member name="M:ScriptCoreLib.PHP.Net.LDAPClient.API.ldap_bind(System.Object,System.String)">
+            <summary>
+            Binds to the LDAP directory with specified RDN and password. Returns TRUE on success or FALSE on failure.
+            </summary>
+            <param name="link_identifier">resource</param>
+            <param name="bind_rdn">string</param>
+        </member>
+        <member name="M:ScriptCoreLib.PHP.Net.LDAPClient.API.ldap_bind(System.Object,System.String,System.String)">
+            <summary>
+            Binds to the LDAP directory with specified RDN and password. Returns TRUE on success or FALSE on failure.
+            </summary>
+            <param name="link_identifier">resource</param>
+            <param name="bind_rdn">string</param>
+            <param name="bind_password">string</param>
+        </member>
+        <member name="M:ScriptCoreLib.PHP.Net.LDAPClient.API.ldap_compare(System.Object,System.String,System.String,System.String)">
+            <summary>
+            Returns TRUE if value matches otherwise returns FALSE. Returns -1 on error. 
+            </summary>
+            <param name="link_identifier">resource</param>
+            <param name="dn">string</param>
+            <param name="attribute">string</param>
+            <param name="value">string</param>
+        </member>
+        <member name="M:ScriptCoreLib.PHP.Net.LDAPClient.API.ldap_connect">
+            <summary>
+            Returns a positive LDAP link identifier on success, or FALSE on error. When OpenLDAP 2.x.x is used, ldap_connect() will always return a resource as it does not actually connect but just initializes the connecting parameters. The actual connect happens with the next calls to ldap_* funcs, usually with ldap_bind(). 
+            </summary>
+        </member>
+        <member name="M:ScriptCoreLib.PHP.Net.LDAPClient.API.ldap_connect(System.String)">
+            <summary>
+            Returns a positive LDAP link identifier on success, or FALSE on error. When OpenLDAP 2.x.x is used, ldap_connect() will always return a resource as it does not actually connect but just initializes the connecting parameters. The actual connect happens with the next calls to ldap_* funcs, usually with ldap_bind(). 
+            </summary>
+            <param name="hostname">string</param>
+        </member>
+        <member name="M:ScriptCoreLib.PHP.Net.LDAPClient.API.ldap_connect(System.String,System.Int32)">
+            <summary>
+            Returns a positive LDAP link identifier on success, or FALSE on error. When OpenLDAP 2.x.x is used, ldap_connect() will always return a resource as it does not actually connect but just initializes the connecting parameters. The actual connect happens with the next calls to ldap_* funcs, usually with ldap_bind(). 
+            </summary>
+            <param name="hostname">string</param>
+            <param name="port">int</param>
+        </member>
+        <member name="M:ScriptCoreLib.PHP.Net.LDAPClient.API.ldap_count_entries(System.Object,System.Object)">
+            <summary>
+            Returns number of entries in the result or FALSE on error.
+            </summary>
+            <param name="link_identifier">resource</param>
+            <param name="result_identifier">resource</param>
+        </member>
+        <member name="M:ScriptCoreLib.PHP.Net.LDAPClient.API.ldap_delete(System.Object,System.String)">
+            <summary>
+            Returns TRUE on success or FALSE on failure.
+            </summary>
+            <param name="link_identifier">resource</param>
+            <param name="dn">string</param>
+        </member>
+        <member name="M:ScriptCoreLib.PHP.Net.LDAPClient.API.ldap_dn2ufn(System.String)">
+            <summary>
+            ldap_dn2ufn() function is used to turn a DN, specified by dn, into a more user-friendly form, stripping off type names. 
+            </summary>
+            <param name="dn">string</param>
+        </member>
+        <member name="M:ScriptCoreLib.PHP.Net.LDAPClient.API.ldap_err2str(System.Int32)">
+            <summary>
+            Returns string error message.
+            </summary>
+            <param name="errno">int</param>
+        </member>
+        <member name="M:ScriptCoreLib.PHP.Net.LDAPClient.API.ldap_errno(System.Object)">
+            <summary>
+            Return the LDAP error number of the last LDAP command for this link.
+            </summary>
+            <param name="link_identifier">resource</param>
+        </member>
+        <member name="M:ScriptCoreLib.PHP.Net.LDAPClient.API.ldap_error(System.Object)">
+            <summary>
+            Returns string error message.
+            </summary>
+            <param name="link_identifier">resource</param>
+        </member>
+        <member name="M:ScriptCoreLib.PHP.Net.LDAPClient.API.ldap_explode_dn(System.String,System.Int32)">
+            <summary>
+            ldap_explode_dn() function is used to split the DN returned by ldap_get_dn() and breaks it up into its component parts. Each part is known as Relative Distinguished Name, or RDN. ldap_explode_dn() returns an array of all those components. with_attrib is used to request if the RDNs are returned with only values or their attributes as well. To get RDNs with the attributes (i.e. in attribute=value format) set with_attrib to 0 and to get only values set it to 1.
+            </summary>
+            <param name="dn">string</param>
+            <param name="with_attrib">int</param>
+        </member>
+        <member name="M:ScriptCoreLib.PHP.Net.LDAPClient.API.ldap_first_attribute(System.Object,System.Object,System.Int32)">
+            <summary>
+            Returns the first attribute in the entry on success and FALSE on error. 
+            </summary>
+            <param name="link_identifier">resource</param>
+            <param name="result_entry_identifier">resource</param>
+            <param name="ber_identifier">int</param>
+        </member>
+        <member name="M:ScriptCoreLib.PHP.Net.LDAPClient.API.ldap_first_reference(System.Object,System.Object)">
+            <summary>
+            
+            </summary>
+            <param name="link">resource</param>
+            <param name="result">resource</param>
+        </member>
+        <member name="M:ScriptCoreLib.PHP.Net.LDAPClient.API.ldap_free_result(System.Object)">
+            <summary>
+            Returns TRUE on success or FALSE on failure.
+            </summary>
+            <param name="result_identifier">resource</param>
+        </member>
+        <member name="M:ScriptCoreLib.PHP.Net.LDAPClient.API.ldap_get_attributes(System.Object,System.Object)">
+            <summary>
+            Returns a complete entry information in a multi-dimensional array on success and FALSE on error.
+            </summary>
+            <param name="link_identifier">resource</param>
+            <param name="result_entry_identifier">resource</param>
+        </member>
+        <member name="M:ScriptCoreLib.PHP.Net.LDAPClient.API.ldap_get_dn(System.Object,System.Object)">
+            <summary>
+            Returns the DN of the result entry and FALSE on error.
+            </summary>
+            <param name="link_identifier">resource</param>
+            <param name="result_entry_identifier">resource</param>
+        </member>
+        <member name="M:ScriptCoreLib.PHP.Net.LDAPClient.API.ldap_get_option(System.Object,System.Int32,System.Object)">
+            <summary>
+            Sets retval to the value of the specified option. Returns TRUE on success or FALSE on failure. 
+            </summary>
+            <param name="link_identifier">resource</param>
+            <param name="option">int</param>
+            <param name="retval">mixed</param>
+        </member>
+        <member name="M:ScriptCoreLib.PHP.Net.LDAPClient.API.ldap_get_values_len(System.Object,System.Object,System.String)">
+            <summary>
+            Returns an array of values for the attribute on success and FALSE on error.
+            </summary>
+            <param name="link_identifier">resource</param>
+            <param name="result_entry_identifier">resource</param>
+            <param name="attribute">string</param>
+        </member>
+        <member name="M:ScriptCoreLib.PHP.Net.LDAPClient.API.ldap_get_values(System.Object,System.Object,System.String)">
+            <summary>
+            Returns an array of values for the attribute on success and FALSE on error.
+            </summary>
+            <param name="link_identifier">resource</param>
+            <param name="result_entry_identifier">resource</param>
+            <param name="attribute">string</param>
+        </member>
+        <member name="M:ScriptCoreLib.PHP.Net.LDAPClient.API.ldap_list(System.Object,System.String,System.String)">
+            <summary>
+            Returns a search result identifier or FALSE on error.
+            </summary>
+            <param name="link_identifier">resource</param>
+            <param name="base_dn">string</param>
+            <param name="filter">string</param>
+        </member>
+        <member name="M:ScriptCoreLib.PHP.Net.LDAPClient.API.ldap_list(System.Object,System.String,System.String,System.Object)">
+            <summary>
+            Returns a search result identifier or FALSE on error.
+            </summary>
+            <param name="link_identifier">resource</param>
+            <param name="base_dn">string</param>
+            <param name="filter">string</param>
+            <param name="attributes">array</param>
+        </member>
+        <member name="M:ScriptCoreLib.PHP.Net.LDAPClient.API.ldap_list(System.Object,System.String,System.String,System.Object,System.Int32)">
+            <summary>
+            Returns a search result identifier or FALSE on error.
+            </summary>
+            <param name="link_identifier">resource</param>
+            <param name="base_dn">string</param>
+            <param name="filter">string</param>
+            <param name="attributes">array</param>
+            <param name="attrsonly">int</param>
+        </member>
+        <member name="M:ScriptCoreLib.PHP.Net.LDAPClient.API.ldap_list(System.Object,System.String,System.String,System.Object,System.Int32,System.Int32)">
+            <summary>
+            Returns a search result identifier or FALSE on error.
+            </summary>
+            <param name="link_identifier">resource</param>
+            <param name="base_dn">string</param>
+            <param name="filter">string</param>
+            <param name="attributes">array</param>
+            <param name="attrsonly">int</param>
+            <param name="sizelimit">int</param>
+        </member>
+        <member name="M:ScriptCoreLib.PHP.Net.LDAPClient.API.ldap_list(System.Object,System.String,System.String,System.Object,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Returns a search result identifier or FALSE on error.
+            </summary>
+            <param name="link_identifier">resource</param>
+            <param name="base_dn">string</param>
+            <param name="filter">string</param>
+            <param name="attributes">array</param>
+            <param name="attrsonly">int</param>
+            <param name="sizelimit">int</param>
+            <param name="timelimit">int</param>
+        </member>
+        <member name="M:ScriptCoreLib.PHP.Net.LDAPClient.API.ldap_list(System.Object,System.String,System.String,System.Object,System.Int32,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Returns a search result identifier or FALSE on error.
+            </summary>
+            <param name="link_identifier">resource</param>
+            <param name="base_dn">string</param>
+            <param name="filter">string</param>
+            <param name="attributes">array</param>
+            <param name="attrsonly">int</param>
+            <param name="sizelimit">int</param>
+            <param name="timelimit">int</param>
+            <param name="deref">int</param>
+        </member>
+        <member name="M:ScriptCoreLib.PHP.Net.LDAPClient.API.ldap_mod_del(System.Object,System.String,System.Object)">
+            <summary>
+            Returns TRUE on success or FALSE on failure.
+            </summary>
+            <param name="link_identifier">resource</param>
+            <param name="dn">string</param>
+            <param name="entry">array</param>
+        </member>
+        <member name="M:ScriptCoreLib.PHP.Net.LDAPClient.API.ldap_mod_replace(System.Object,System.String,System.Object)">
+            <summary>
+            Returns TRUE on success or FALSE on failure.
+            </summary>
+            <param name="link_identifier">resource</param>
+            <param name="dn">string</param>
+            <param name="entry">array</param>
+        </member>
+        <member name="M:ScriptCoreLib.PHP.Net.LDAPClient.API.ldap_modify(System.Object,System.String,System.Object)">
+            <summary>
+            Returns TRUE on success or FALSE on failure.
+            </summary>
+            <param name="link_identifier">resource</param>
+            <param name="dn">string</param>
+            <param name="entry">array</param>
+        </member>
+        <member name="M:ScriptCoreLib.PHP.Net.LDAPClient.API.ldap_next_entry(System.Object,System.Object)">
+            <summary>
+            Returns entry identifier for the next entry in the result whose entries are being read starting with ldap_first_entry(). If there are no more entries in the result then it returns FALSE.
+            </summary>
+            <param name="link_identifier">resource</param>
+            <param name="result_entry_identifier">resource</param>
+        </member>
+        <member name="M:ScriptCoreLib.PHP.Net.LDAPClient.API.ldap_next_reference(System.Object,System.Object)">
+            <summary>
+            
+            </summary>
+            <param name="link">resource</param>
+            <param name="entry">resource</param>
+        </member>
+        <member name="M:ScriptCoreLib.PHP.Net.LDAPClient.API.ldap_parse_reference(System.Object,System.Object,System.Object)">
+            <summary>
+            
+            </summary>
+            <param name="link">resource</param>
+            <param name="entry">resource</param>
+            <param name="referrals">array</param>
+        </member>
+        <member name="M:ScriptCoreLib.PHP.Net.LDAPClient.API.ldap_parse_result(System.Object,System.Object,System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="link">resource</param>
+            <param name="result">resource</param>
+            <param name="errcode">int</param>
+        </member>
+        <member name="M:ScriptCoreLib.PHP.Net.LDAPClient.API.ldap_parse_result(System.Object,System.Object,System.Int32,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="link">resource</param>
+            <param name="result">resource</param>
+            <param name="errcode">int</param>
+            <param name="matcheddn">string</param>
+        </member>
+        <member name="M:ScriptCoreLib.PHP.Net.LDAPClient.API.ldap_parse_result(System.Object,System.Object,System.Int32,System.String,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="link">resource</param>
+            <param name="result">resource</param>
+            <param name="errcode">int</param>
+            <param name="matcheddn">string</param>
+            <param name="errmsg">string</param>
+        </member>
+        <member name="M:ScriptCoreLib.PHP.Net.LDAPClient.API.ldap_parse_result(System.Object,System.Object,System.Int32,System.String,System.String,System.Object)">
+            <summary>
+            
+            </summary>
+            <param name="link">resource</param>
+            <param name="result">resource</param>
+            <param name="errcode">int</param>
+            <param name="matcheddn">string</param>
+            <param name="errmsg">string</param>
+            <param name="referrals">array</param>
+        </member>
+        <member name="M:ScriptCoreLib.PHP.Net.LDAPClient.API.ldap_read(System.Object,System.String,System.String)">
+            <summary>
+            Returns a search result identifier or FALSE on error.
+            </summary>
+            <param name="link_identifier">resource</param>
+            <param name="base_dn">string</param>
+            <param name="filter">string</param>
+        </member>
+        <member name="M:ScriptCoreLib.PHP.Net.LDAPClient.API.ldap_read(System.Object,System.String,System.String,System.Object)">
+            <summary>
+            Returns a search result identifier or FALSE on error.
+            </summary>
+            <param name="link_identifier">resource</param>
+            <param name="base_dn">string</param>
+            <param name="filter">string</param>
+            <param name="attributes">array</param>
+        </member>
+        <member name="M:ScriptCoreLib.PHP.Net.LDAPClient.API.ldap_read(System.Object,System.String,System.String,System.Object,System.Int32)">
+            <summary>
+            Returns a search result identifier or FALSE on error.
+            </summary>
+            <param name="link_identifier">resource</param>
+            <param name="base_dn">string</param>
+            <param name="filter">string</param>
+            <param name="attributes">array</param>
+            <param name="attrsonly">int</param>
+        </member>
+        <member name="M:ScriptCoreLib.PHP.Net.LDAPClient.API.ldap_read(System.Object,System.String,System.String,System.Object,System.Int32,System.Int32)">
+            <summary>
+            Returns a search result identifier or FALSE on error.
+            </summary>
+            <param name="link_identifier">resource</param>
+            <param name="base_dn">string</param>
+            <param name="filter">string</param>
+            <param name="attributes">array</param>
+            <param name="attrsonly">int</param>
+            <param name="sizelimit">int</param>
+        </member>
+        <member name="M:ScriptCoreLib.PHP.Net.LDAPClient.API.ldap_read(System.Object,System.String,System.String,System.Object,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Returns a search result identifier or FALSE on error.
+            </summary>
+            <param name="link_identifier">resource</param>
+            <param name="base_dn">string</param>
+            <param name="filter">string</param>
+            <param name="attributes">array</param>
+            <param name="attrsonly">int</param>
+            <param name="sizelimit">int</param>
+            <param name="timelimit">int</param>
+        </member>
+        <member name="M:ScriptCoreLib.PHP.Net.LDAPClient.API.ldap_read(System.Object,System.String,System.String,System.Object,System.Int32,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Returns a search result identifier or FALSE on error.
+            </summary>
+            <param name="link_identifier">resource</param>
+            <param name="base_dn">string</param>
+            <param name="filter">string</param>
+            <param name="attributes">array</param>
+            <param name="attrsonly">int</param>
+            <param name="sizelimit">int</param>
+            <param name="timelimit">int</param>
+            <param name="deref">int</param>
+        </member>
+        <member name="M:ScriptCoreLib.PHP.Net.LDAPClient.API.ldap_rename(System.Object,System.String,System.String,System.String,System.Boolean)">
+            <summary>
+            The entry specified by dn is renamed/moved. The new RDN is specified by newrdn and the new parent/superior entry is specified by newparent. If the parameter deleteoldrdn is TRUE the old RDN value(s) is removed, else the old RDN value(s) is retained as non-distinguished values of the entry. Returns TRUE on success or FALSE on failure. 
+            </summary>
+            <param name="link_identifier">resource</param>
+            <param name="dn">string</param>
+            <param name="newrdn">string</param>
+            <param name="newparent">string</param>
+            <param name="deleteoldrdn">bool</param>
+        </member>
+        <member name="M:ScriptCoreLib.PHP.Net.LDAPClient.API.ldap_sasl_bind(System.Object)">
+            <summary>
+            Warning This function is currently not documented; only the argument list is available.
+            </summary>
+            <param name="link">resource</param>
+        </member>
+        <member name="M:ScriptCoreLib.PHP.Net.LDAPClient.API.ldap_sasl_bind(System.Object,System.String)">
+            <summary>
+            Warning This function is currently not documented; only the argument list is available.
+            </summary>
+            <param name="link">resource</param>
+            <param name="binddn">string</param>
+        </member>
+        <member name="M:ScriptCoreLib.PHP.Net.LDAPClient.API.ldap_sasl_bind(System.Object,System.String,System.String)">
+            <summary>
+            Warning This function is currently not documented; only the argument list is available.
+            </summary>
+            <param name="link">resource</param>
+            <param name="binddn">string</param>
+            <param name="password">string</param>
+        </member>
+        <member name="M:ScriptCoreLib.PHP.Net.LDAPClient.API.ldap_sasl_bind(System.Object,System.String,System.String,System.String)">
+            <summary>
+            Warning This function is currently not documented; only the argument list is available.
+            </summary>
+            <param name="link">resource</param>
+            <param name="binddn">string</param>
+            <param name="password">string</param>
+            <param name="sasl_mech">string</param>
+        </member>
+        <member name="M:ScriptCoreLib.PHP.Net.LDAPClient.API.ldap_sasl_bind(System.Object,System.String,System.String,System.String,System.String)">
+            <summary>
+            Warning This function is currently not documented; only the argument list is available.
+            </summary>
+            <param name="link">resource</param>
+            <param name="binddn">string</param>
+            <param name="password">string</param>
+            <param name="sasl_mech">string</param>
+            <param name="sasl_realm">string</param>
+        </member>
+        <member name="M:ScriptCoreLib.PHP.Net.LDAPClient.API.ldap_sasl_bind(System.Object,System.String,System.String,System.String,System.String,System.String)">
+            <summary>
+            Warning This function is currently not documented; only the argument list is available.
+            </summary>
+            <param name="link">resource</param>
+            <param name="binddn">string</param>
+            <param name="password">string</param>
+            <param name="sasl_mech">string</param>
+            <param name="sasl_realm">string</param>
+            <param name="sasl_authz_id">string</param>
+        </member>
+        <member name="M:ScriptCoreLib.PHP.Net.LDAPClient.API.ldap_sasl_bind(System.Object,System.String,System.String,System.String,System.String,System.String,System.String)">
+            <summary>
+            Warning This function is currently not documented; only the argument list is available.
+            </summary>
+            <param name="link">resource</param>
+            <param name="binddn">string</param>
+            <param name="password">string</param>
+            <param name="sasl_mech">string</param>
+            <param name="sasl_realm">string</param>
+            <param name="sasl_authz_id">string</param>
+            <param name="props">string</param>
+        </member>
+        <member name="M:ScriptCoreLib.PHP.Net.LDAPClient.API.ldap_search(System.Object,System.String,System.String)">
+            <summary>
+            Returns a search result identifier or FALSE on error.
+            </summary>
+            <param name="link_identifier">resource</param>
+            <param name="base_dn">string</param>
+            <param name="filter">string</param>
+        </member>
+        <member name="M:ScriptCoreLib.PHP.Net.LDAPClient.API.ldap_search(System.Object,System.String,System.String,System.Object)">
+            <summary>
+            Returns a search result identifier or FALSE on error.
+            </summary>
+            <param name="link_identifier">resource</param>
+            <param name="base_dn">string</param>
+            <param name="filter">string</param>
+            <param name="attributes">array</param>
+        </member>
+        <member name="M:ScriptCoreLib.PHP.Net.LDAPClient.API.ldap_search(System.Object,System.String,System.String,System.Object,System.Int32)">
+            <summary>
+            Returns a search result identifier or FALSE on error.
+            </summary>
+            <param name="link_identifier">resource</param>
+            <param name="base_dn">string</param>
+            <param name="filter">string</param>
+            <param name="attributes">array</param>
+            <param name="attrsonly">int</param>
+        </member>
+        <member name="M:ScriptCoreLib.PHP.Net.LDAPClient.API.ldap_search(System.Object,System.String,System.String,System.Object,System.Int32,System.Int32)">
+            <summary>
+            Returns a search result identifier or FALSE on error.
+            </summary>
+            <param name="link_identifier">resource</param>
+            <param name="base_dn">string</param>
+            <param name="filter">string</param>
+            <param name="attributes">array</param>
+            <param name="attrsonly">int</param>
+            <param name="sizelimit">int</param>
+        </member>
+        <member name="M:ScriptCoreLib.PHP.Net.LDAPClient.API.ldap_search(System.Object,System.String,System.String,System.Object,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Returns a search result identifier or FALSE on error.
+            </summary>
+            <param name="link_identifier">resource</param>
+            <param name="base_dn">string</param>
+            <param name="filter">string</param>
+            <param name="attributes">array</param>
+            <param name="attrsonly">int</param>
+            <param name="sizelimit">int</param>
+            <param name="timelimit">int</param>
+        </member>
+        <member name="M:ScriptCoreLib.PHP.Net.LDAPClient.API.ldap_search(System.Object,System.String,System.String,System.Object,System.Int32,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Returns a search result identifier or FALSE on error.
+            </summary>
+            <param name="link_identifier">resource</param>
+            <param name="base_dn">string</param>
+            <param name="filter">string</param>
+            <param name="attributes">array</param>
+            <param name="attrsonly">int</param>
+            <param name="sizelimit">int</param>
+            <param name="timelimit">int</param>
+            <param name="deref">int</param>
+        </member>
+        <member name="M:ScriptCoreLib.PHP.Net.LDAPClient.API.ldap_set_option(System.Object,System.Int32,System.Object)">
+            <summary>
+            Sets the value of the specified option to be newval. Returns TRUE on success or FALSE on failure. on error.
+            </summary>
+            <param name="link_identifier">resource</param>
+            <param name="option">int</param>
+            <param name="newval">mixed</param>
+        </member>
+        <member name="M:ScriptCoreLib.PHP.Net.LDAPClient.API.ldap_set_rebind_proc(System.Object,System.Object)">
+            <summary>
+            
+            </summary>
+            <param name="link">resource</param>
+            <param name="callback">callback</param>
+        </member>
+        <member name="M:ScriptCoreLib.PHP.Net.LDAPClient.API.ldap_sort(System.Object,System.Object,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="link">resource</param>
+            <param name="result">resource</param>
+            <param name="sortfilter">string</param>
+        </member>
+        <member name="M:ScriptCoreLib.PHP.Net.LDAPClient.API.ldap_start_tls(System.Object)">
+            <summary>
+            
+            </summary>
+            <param name="link">resource</param>
+        </member>
+        <member name="M:ScriptCoreLib.PHP.Net.LDAPClient.API.ldap_t61_to_8859(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="value">string</param>
+        </member>
+        <member name="M:ScriptCoreLib.PHP.Net.LDAPClient.API.ldap_unbind(System.Object)">
+            <summary>
+            Returns TRUE on success or FALSE on failure.
+            </summary>
+            <param name="link_identifier">resource</param>
+        </member>
+        <member name="T:ScriptCoreLib.JavaScript.DOM.XML.IXMLDocument">
+            <summary>
+            http://www.howtocreate.co.uk/tutorials/jsexamples/importingXML.html
+            http://www.faqts.com/knowledge_base/view.phtml/aid/34769/fid/616
+            http://webfx.eae.net/dhtml/xmlextras/demo.html
+            http://sarissa.sourceforge.net/doc/
+            </summary>
+        </member>
+        <member name="F:ScriptCoreLib.Shared.MyTransportDescriptor`1.Callback">
+            <summary>
+            callback id, so we can send back info, if file upload
+            </summary>
+        </member>
+        <member name="F:ScriptCoreLib.Shared.MyTransportDescriptor`1.Description">
+            <summary>
+            desribes what kind of transport this is
+            </summary>
+        </member>
+        <member name="F:ScriptCoreLib.Shared.MyTransportDescriptor`1.Data">
+            <summary>
+            user defined data
+            </summary>
+        </member>
+        <member name="F:ScriptCoreLib.Shared.HTMLInputTypeEnum.textarea">
+            <summary>
+            this is not actually a part of html input tag, but denotes to multiline text
+            </summary>
+        </member>
+        <member name="M:ScriptCoreLib.JavaScript.DOM.HTML.IHTMLTableBody.AddRow(System.Object[])">
+            <summary>
+            accepts either string or INode
+            </summary>
+            <param name="e"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ScriptCoreLib.JavaScript.DOM.HTML.IHTMLTableBody.AddRowAsColumns(ScriptCoreLib.JavaScript.DOM.INode[])">
+            <summary>
+            accepts either string or INode
+            </summary>
+            <param name="e"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ScriptCoreLib.ActionScript.flash.ui.ContextMenu.hideBuiltInItems">
+            <summary>
+            Hides all built-in menu items (except Settings) in the specified ContextMenu object.
+            </summary>
+        </member>
+        <member name="P:ScriptCoreLib.ActionScript.flash.ui.ContextMenu.customItems">
+            <summary>
+            An array of ContextMenuItem objects.
+            </summary>
+        </member>
+        <member name="M:ScriptCoreLib.ActionScript.flash.media.SoundChannel.stop">
+            <summary>
+            Stops the sound playing in the channel.
+            </summary>
+        </member>
+        <member name="F:ScriptCoreLib.ActionScript.flash.display.StageDisplayState.FULL_SCREEN">
+            <summary>
+            Specifies that the Stage is in full-screen mode.
+            </summary>
+        </member>
+        <member name="M:ScriptCoreLib.ActionScript.Array.push(System.Object)">
+            <summary>
+            Adds one or more elements to the end of an array and returns the new length of the array.
+            </summary>
+            <param name="e"></param>
+            <returns></returns>
+        </member>
+        <member name="P:ScriptCoreLib.ActionScript.Array.length">
+            <summary>
+            A non-negative integer specifying the number of elements in the array.
+            </summary>
+        </member>
+        <member name="M:ScriptCoreLib.JavaScript.DOM.IWindow.focus">
+            <summary>
+            brings window to foreground, if currently another browser window is active
+            </summary>
+        </member>
+        <member name="M:ScriptCoreLib.PHP.Runtime.MySQL.Command.ReadTable``1(``0)">
+            <summary>
+            reads a table
+            </summary>
+            <typeparam name="TReturn"></typeparam>
+            <param name="prototype"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ScriptCoreLib.PHP.Runtime.MySQL.API.mysql_insert_id">
+            <summary>
+            Retrieves the ID generated for an AUTO_INCREMENT column by the previous INSERT query. 
+            </summary>
+            <param name="_undefined"></param>
+        </member>
+        <member name="M:ScriptCoreLib.PHP.Runtime.MySQL.API.mysql_real_escape_string(System.String)">
+            <summary>
+            undefined
+            </summary>
+            <param name="_unescaped_string">string unescaped_string</param>
+        </member>
+        <member name="M:ScriptCoreLib.PHP.Runtime.MySQL.API.mysql_connect(System.String,System.String,System.String)">
+            <summary>
+            Opens or reuses a connection to a MySQL server.
+            </summary>
+            <param name="_server">string server</param>
+            <param name="_username">string username</param>
+            <param name="_password">string password</param>
+        </member>
+        <member name="M:ScriptCoreLib.PHP.Runtime.MySQL.API.mysql_select_db(System.String)">
+            <summary>
+            Sets the current active database on the server that's associated with the specified link identifier. Every subsequent call to mysql_query() will be made on the active database. 
+            </summary>
+            <param name="_database_name">string database_name</param>
+        </member>
+        <member name="M:ScriptCoreLib.PHP.Runtime.MySQL.API.mysql_query(System.String)">
+            <summary>
+            mysql_query() sends a query (to the currently active database on the server that's associated with the specified link_identifier). 
+            </summary>
+            <param name="_query">string query</param>
+        </member>
+        <member name="M:ScriptCoreLib.PHP.Runtime.MySQL.API.mysql_fetch_array(System.Object,ScriptCoreLib.PHP.Runtime.MySQL.API.FetchArrayResult)">
+            <summary>
+            Returns an array that corresponds to the fetched row and moves the internal data pointer ahead. 
+            </summary>
+            <param name="_result">resource result</param>
+            <param name="_result_type">int result_type</param>
+        </member>
+        <member name="M:ScriptCoreLib.PHP.Runtime.MySQL.API.mysql_error">
+            <summary>  
+            undefined  
+            </summary>  
+            <param name="_undefined"></param>  
+        </member>
+        <member name="M:ScriptCoreLib.PHP.Runtime.CustomSwitch`2.Run(`0,`1)">
+            <summary>
+            will return false if handler does not exist
+            or if the handler explicitly sets Done field
+            to false.
+            </summary>
+            <param name="sender"></param>
+            <param name="p"></param>
+            <returns></returns>
+        </member>
+        <member name="T:ScriptCoreLib.JavaScript.DOM.XML.IXMLSerializer`1">
+            <summary>
+            serializes to and from c# xml structure
+            </summary>
+            <typeparam name="TRoot"></typeparam>
+        </member>
+        <member name="T:ScriptCoreLib.JavaScript.BCLImplementation.System.__Console.__BrowserConsole">
+            <summary>
+            firefox: run with -console
+            and about:config must be altered
+            explorer: activex addin required
+            
+            <see>http://kb.mozillazine.org/Viewing_dump%28%29_output</see>
+            </summary>
+            
+        </member>
+        <member name="M:ScriptCoreLib.JavaScript.BCLImplementation.System.__Console.__BrowserConsole.EnableActiveXConsole">
+            <summary>
+            Your internet explorer needs to allow creating the activex object.
+            Also you should register the ActiveXConsole.dll
+            </summary>
+        </member>
+        <member name="M:ScriptCoreLib.JavaScript.Runtime.Timer.StartInterval">
+            <summary>
+            starts the timer with the default timeout (300 ms)
+            </summary>
+        </member>
+        <member name="M:ScriptCoreLib.PHP.Drawing.Image.EnsureThumbnail(ScriptCoreLib.Shared.Pair{ScriptCoreLib.PHP.IO.FileInfo},System.Int32)">
+            <summary>
+            var.A is the source image, and var.B will be the thumbnail
+            </summary>
+            <param name="var"></param>
+            <param name="p">size of the thumbnail</param>
+        </member>
+        <member name="M:ScriptCoreLib.PHP.Drawing.Image.API.getimagesize(System.String)">
+            <summary>
+            The getimagesize() function will determine the size of any GIF, JPG, PNG, SWF, SWC, PSD, TIFF, BMP, IFF, JP2, JPX, JB2, JPC, XBM, or WBMP image file and return the dimensions along with the file type and a height/width text string to be used inside a normal HTML &lt;IMG&gt; tag. 
+            </summary>
+            <param name="_filename">string filename</param>
+        </member>
+        <member name="M:ScriptCoreLib.PHP.Drawing.Image.API.imagecreatefromgif(System.String)">
+            <summary>
+            imagecreatefromgif() returns an image identifier representing the image obtained from the given filename. 
+            </summary>
+            <param name="_filename">string filename</param>
+        </member>
+        <member name="M:ScriptCoreLib.PHP.Drawing.Image.API.imagecreatefrompng(System.String)">
+            <summary>
+            imagecreatefrompng() returns an image identifier representing the image obtained from the given filename. 
+            </summary>
+            <param name="_filename">string filename</param>
+        </member>
+        <member name="M:ScriptCoreLib.PHP.Drawing.Image.API.imagecreatefromjpeg(System.String)">
+            <summary>
+            imagecreatefromjpeg() returns an image identifier representing the image obtained from the given filename.
+            </summary>
+            <param name="_filename">string filename</param>
+        </member>
+        <member name="M:ScriptCoreLib.PHP.Drawing.Image.API.imagejpeg(System.Object)">
+            <summary>
+            imagejpeg() creates the JPEG file in filename from the image image. The image argument is the return from the imagecreatetruecolor() function. 
+            </summary>
+            <param name="_image">resource image</param>
+        </member>
+        <member name="M:ScriptCoreLib.PHP.Drawing.Image.API.imagejpeg(System.Object,System.String,System.Int32)">
+            <summary>
+            imagejpeg() creates the JPEG file in filename from the image image. The image argument is the return from the imagecreatetruecolor() function. 
+            </summary>
+            <param name="_image">resource image</param>
+            <param name="_filename">string filename</param>
+            <param name="_quality">int quality</param>
+        </member>
+        <member name="M:ScriptCoreLib.PHP.Drawing.Image.API.imagedestroy(System.Object)">
+            <summary>
+            imagedestroy() frees any memory associated with image image. image is the image identifier returned by one of the image create functions, such as imagecreatetruecolor(). 
+            </summary>
+            <param name="_image">resource image</param>
+        </member>
+        <member name="M:ScriptCoreLib.PHP.Runtime.ApplicationSwitch.DoPage">
+            <summary>
+            runs with pagename and default
+            </summary>
+        </member>
+        <member name="M:ScriptCoreLib.PHP.Serialized.ObjectStreamHelper`1.ToStream(System.String)">
+            <summary>
+            echoes the stream to the client, 
+            encapsulationg the data within a hidden iput from a specific class
+            </summary>
+            <param name="p"></param>
+        </member>
+        <member name="P:ScriptCoreLib.PHP.Serialized.ObjectStreamHelper`1.Stream">
+            <summary>
+            will decode json base64 steam to an item object
+            </summary>
+        </member>
+        <member name="P:ScriptCoreLib.PHP.Serialized.ObjectStreamHelper`1.Item">
+            <summary>
+            will encode an item object to json base64
+            </summary>
+        </member>
+        <member name="M:ScriptCoreLib.JavaScript.Extensions.Extensions.Show``1(``0)">
+            <summary>
+            shows element and sets opacity to 1
+            </summary>
+        </member>
+        <member name="M:ScriptCoreLib.JavaScript.Extensions.Extensions.Dispose``1(``0)">
+            <summary>
+            detaches the node from dom
+            </summary>
+        </member>
+        <member name="M:ScriptCoreLib.JavaScript.Extensions.Extensions.AttachToDocument``1(``0)">
+            <summary>
+            attaches this element to the current document body
+            </summary>
+        </member>
+        <member name="M:ScriptCoreLib.ActionScript.flash.media.Sound.play(System.Double,System.Int32,ScriptCoreLib.ActionScript.flash.media.SoundTransform)">
+            <summary>
+            Generates a new SoundChannel object to play back the sound.
+            </summary>
+            <param name="startTime"></param>
+            <param name="loops"></param>
+            <param name="sndTransform"></param>
+            <returns></returns>
+        </member>
+        <member name="P:ScriptCoreLib.JavaScript.DOM.IEvent.KeyCode">
+            <summary>
+            returns the character code, escape (27) or enter (13)
+            </summary>
+        </member>
+        <member name="P:ScriptCoreLib.JavaScript.DOM.IEvent.MouseButton">
+            <summary>
+            firefox may not set this value at mousemove
+            </summary>
+        </member>
+        <member name="T:ScriptCoreLib.JavaScript.DOM.IRegExp">
+            <summary>
+            http://www.cuneytyilmaz.com/prog/jrx/
+            http://www.regular-expressions.info/examples.html
+            http://www.regular-expressions.info/javascriptexample.html
+            </summary>
+        </member>
+        <member name="M:ScriptCoreLib.PHP.Runtime.IArray.MembersToArray">
+            <summary>
+            converts each array member from object to array
+            </summary>
+            <returns></returns>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:ScriptCoreLib.PHP.Runtime.IArray.API.sort(System.Object)" -->
+        <member name="M:ScriptCoreLib.PHP.Runtime.IArray.API.array_keys(System.Object)">
+            <summary>  
+            array_keys() returns the keys, numeric and string, from the input array.   
+            </summary>  
+            <param name="_input">array input</param>  
+        </member>
+        <member name="M:ScriptCoreLib.PHP.Runtime.IArray.API.count(System.Object)">
+            <summary>
+            Returns the number of elements in var, which is typically an array, since anything else will have one element. 
+            </summary>
+            <param name="_var">mixed var</param>
+        </member>
+        <member name="M:ScriptCoreLib.PHP.Runtime.IArray.API.array_push(System.Object,System.Object)">
+            <summary>
+            array_push() treats array as a stack, and pushes the passed variables onto the end of array. The length of array increases by the number of variables pushed.
+            </summary>
+            <param name="_array">array &amp;array</param>
+            <param name="_mixed">mixed var </param>
+        </member>
+        <member name="M:ScriptCoreLib.PHP.Runtime.IArray.API.array_pop(System.Object)">
+            <summary>
+            array_pop() pops and returns the last value of the array, shortening the array by one element. If array is empty (or is not an array), NULL will be returned. 
+            </summary>
+            <param name="_array">array &amp;array </param>
+        </member>
+        <member name="M:ScriptCoreLib.PHP.Runtime.IArray.API.is_array(System.Object)">
+            <summary>
+            Finds whether the given variable is an array. 
+            </summary>
+            <param name="_mixed">mixed var </param>
+        </member>
+        <member name="P:ScriptCoreLib.JavaScript.Serialized.ObjectStreamHelper`1.Stream">
+            <summary>
+            will decode json base64 steam to an item object
+            </summary>
+        </member>
+        <member name="P:ScriptCoreLib.JavaScript.Serialized.ObjectStreamHelper`1.Item">
+            <summary>
+            will encode an item object to json base64
+            </summary>
+        </member>
+        <member name="M:ScriptCoreLib.ActionScript.Function.apply(System.Object,ScriptCoreLib.ActionScript.Array)">
+            <summary>
+            Specifies the value of thisObject to be used within any function that ActionScript calls.
+            </summary>
+            <param name="thisObject"></param>
+            <param name="argArray"></param>
+            <returns></returns>
+        </member>
+        <member name="P:ScriptCoreLib.ActionScript.flash.text.TextField.autoSize">
+            <summary>
+            Controls automatic sizing and alignment of text fields.
+            </summary>
+        </member>
+        <member name="P:ScriptCoreLib.ActionScript.flash.text.TextField.htmlText">
+            <summary>
+            Contains the HTML representation of the text field's contents.
+            </summary>
+        </member>
+        <member name="P:ScriptCoreLib.ActionScript.flash.text.TextField.text">
+            <summary>
+            A string that is the current text in the text field.
+            </summary>
+        </member>
+        <member name="P:ScriptCoreLib.ActionScript.flash.text.TextField.selectable">
+            <summary>
+            A Boolean value that indicates whether the text field is selectable.
+            </summary>
+        </member>
+        <member name="P:ScriptCoreLib.ActionScript.flash.text.TextField.sharpness">
+            <summary>
+            The sharpness of the glyph edges in this text field.
+            </summary>
+        </member>
+        <member name="P:ScriptCoreLib.ActionScript.flash.text.TextField.textColor">
+            <summary>
+            The color of the text in a text field, in hexadecimal format.
+            </summary>
+        </member>
+        <member name="P:ScriptCoreLib.ActionScript.flash.text.TextField.border">
+            <summary>
+            Specifies whether the text field has a border.
+            </summary>
+        </member>
+        <member name="P:ScriptCoreLib.ActionScript.flash.text.TextField.background">
+            <summary>
+            Specifies whether the text field has a background fill.
+            </summary>
+        </member>
+        <member name="P:ScriptCoreLib.ActionScript.flash.text.TextField.backgroundColor">
+            <summary>
+            The color of the text field background.
+            </summary>
+        </member>
+        <member name="P:ScriptCoreLib.ActionScript.flash.text.TextField.multiline">
+            <summary>
+            Indicates whether the text field is a multiline text field.
+            </summary>
+        </member>
+        <member name="P:ScriptCoreLib.ActionScript.flash.text.TextField.type">
+            <summary>
+            The type of the text field.
+            </summary>
+        </member>
+        <member name="P:ScriptCoreLib.ActionScript.flash.text.TextField.wordWrap">
+            <summary>
+            A Boolean value that indicates whether the text field has word wrap.
+            </summary>
+        </member>
+        <member name="M:ScriptCoreLib.JavaScript.Native.Spawn(System.String,ScriptCoreLib.Shared.EventHandler{ScriptCoreLib.JavaScript.DOM.HTML.IHTMLElement})">
+            <summary>
+            Searches all tags by className, and spawns a control in that element at window load
+            </summary>
+            <param name="e">className</param>
+            <param name="Spawn">delegate with owner element</param>
+        </member>
+        <member name="P:ScriptCoreLib.JavaScript.Runtime.Cookie`1.Value">
+            <summary>
+            this is a time expensive property
+            </summary>
+        </member>
+        <member name="P:ScriptCoreLib.Shared.Drawing.Color.None">
+            <summary>
+            returns empty string
+            </summary>
+        </member>
+        <member name="T:ScriptCoreLib.Shared.Drawing.Color.System">
+            <summary>
+            http://www.w3.org/TR/CSS21/ui.html#system-colors
+            </summary>
+        </member>
+        <member name="P:ScriptCoreLib.Shared.Drawing.Color.System.ActiveBorder">
+            <summary>
+            Active window border.
+            </summary>
+        </member>
+        <member name="P:ScriptCoreLib.Shared.Drawing.Color.System.ActiveCaption">
+            <summary>
+            Active window caption.
+            </summary>
+        </member>
+        <member name="P:ScriptCoreLib.Shared.Drawing.Color.System.AppWorkspace">
+            <summary>
+            Background color of multiple document interface.
+            </summary>
+        </member>
+        <member name="P:ScriptCoreLib.Shared.Drawing.Color.System.Background">
+            <summary>
+            Desktop background.
+            </summary>
+        </member>
+        <member name="P:ScriptCoreLib.Shared.Drawing.Color.System.ButtonFace">
+            <summary>
+            Face color for three-dimensional display elements.
+            </summary>
+        </member>
+        <member name="P:ScriptCoreLib.Shared.Drawing.Color.System.ButtonHighlight">
+            <summary>
+            Highlight color for three-dimensional display elements (for edges facing away from the light source).
+            </summary>
+        </member>
+        <member name="P:ScriptCoreLib.Shared.Drawing.Color.System.ButtonShadow">
+            <summary>
+            Shadow color for three-dimensional display elements.
+            </summary>
+        </member>
+        <member name="P:ScriptCoreLib.Shared.Drawing.Color.System.ButtonText">
+            <summary>
+            Text on push buttons.
+            </summary>
+        </member>
+        <member name="P:ScriptCoreLib.Shared.Drawing.Color.System.CaptionText">
+            <summary>
+            Text in caption, size box, and scrollbar arrow box.
+            </summary>
+        </member>
+        <member name="P:ScriptCoreLib.Shared.Drawing.Color.System.GrayText">
+            <summary>
+            Grayed (disabled) text. This color is set to #000 if the current display driver does not support a solid gray color.
+            </summary>
+        </member>
+        <member name="P:ScriptCoreLib.Shared.Drawing.Color.System.Highlight">
+            <summary>
+            Item(s) selected in a control.
+            </summary>
+        </member>
+        <member name="P:ScriptCoreLib.Shared.Drawing.Color.System.HighlightText">
+            <summary>
+            Text of item(s) selected in a control.
+            </summary>
+        </member>
+        <member name="P:ScriptCoreLib.Shared.Drawing.Color.System.InactiveBorder">
+            <summary>
+            Inactive window border.
+            </summary>
+        </member>
+        <member name="P:ScriptCoreLib.Shared.Drawing.Color.System.InactiveCaption">
+            <summary>
+            Inactive window caption.
+            </summary>
+        </member>
+        <member name="P:ScriptCoreLib.Shared.Drawing.Color.System.InactiveCaptionText">
+            <summary>
+            Color of text in an inactive caption.
+            </summary>
+        </member>
+        <member name="P:ScriptCoreLib.Shared.Drawing.Color.System.InfoBackground">
+            <summary>
+            Background color for tooltip controls.
+            </summary>
+        </member>
+        <member name="P:ScriptCoreLib.Shared.Drawing.Color.System.InfoText">
+            <summary>
+            Text color for tooltip controls.
+            </summary>
+        </member>
+        <member name="P:ScriptCoreLib.Shared.Drawing.Color.System.Menu">
+            <summary>
+            Menu background.
+            </summary>
+        </member>
+        <member name="P:ScriptCoreLib.Shared.Drawing.Color.System.MenuText">
+            <summary>
+            Text in menus.
+            </summary>
+        </member>
+        <member name="P:ScriptCoreLib.Shared.Drawing.Color.System.Scrollbar">
+            <summary>
+            Scroll bar gray area.
+            </summary>
+        </member>
+        <member name="P:ScriptCoreLib.Shared.Drawing.Color.System.ThreeDDarkShadow">
+            <summary>
+            Dark shadow for three-dimensional display elements.
+            </summary>
+        </member>
+        <member name="P:ScriptCoreLib.Shared.Drawing.Color.System.ThreeDFace">
+            <summary>
+            Face color for three-dimensional display elements.
+            </summary>
+        </member>
+        <member name="P:ScriptCoreLib.Shared.Drawing.Color.System.ThreeDHighlight">
+            <summary>
+            Highlight color for three-dimensional display elements.
+            </summary>
+        </member>
+        <member name="P:ScriptCoreLib.Shared.Drawing.Color.System.ThreeDLightShadow">
+            <summary>
+            Light color for three-dimensional display elements (for edges facing the light source).
+            </summary>
+        </member>
+        <member name="P:ScriptCoreLib.Shared.Drawing.Color.System.ThreeDShadow">
+            <summary>
+            Dark shadow for three-dimensional display elements.
+            </summary>
+        </member>
+        <member name="P:ScriptCoreLib.Shared.Drawing.Color.System.Window">
+            <summary>
+            Window background.
+            </summary>
+        </member>
+        <member name="P:ScriptCoreLib.Shared.Drawing.Color.System.WindowFrame">
+            <summary>
+            Window frame.
+            </summary>
+        </member>
+        <member name="P:ScriptCoreLib.Shared.Drawing.Color.System.WindowText">
+            <summary>
+            Text in windows.
+            </summary>
+        </member>
+        <member name="T:ScriptCoreLib.JavaScript.Runtime.TimeFilter">
+            <summary>
+            provides the functionality to deal with exessive event flushing, like mouse move
+            </summary>
+        </member>
+        <member name="T:ScriptCoreLib.JavaScript.Controls.SpawnControlBase">
+            <summary>
+            wrapper for a spawn control, defined by input element
+            </summary>
+        </member>
+        <member name="P:ScriptCoreLib.JavaScript.Controls.SpawnControlBase.SpawnString">
+            <summary>
+            returns the decoded value string of the input element 
+            </summary>
+        </member>
+        <member name="M:ScriptCoreLib.ActionScript.flash.events.MouseEvent.updateAfterEvent">
+            <summary>
+            Instructs Flash Player to render after processing of this event completes, if the display list has been modified. 
+            </summary>
+        </member>
+        <member name="P:ScriptCoreLib.ActionScript.flash.events.MouseEvent.stageX">
+            <summary>
+            The horizontal coordinate at which the event occurred in global Stage coordinates.
+            </summary>
+        </member>
+        <member name="P:ScriptCoreLib.ActionScript.flash.events.MouseEvent.stageY">
+            <summary>
+            The vertical coordinate at which the event occurred in global Stage coordinates.
+            </summary>
+        </member>
+        <member name="P:ScriptCoreLib.ActionScript.flash.events.MouseEvent.delta">
+            <summary>
+            Indicates how many lines should be scrolled for each unit the user rotates the mouse wheel.
+            </summary>
+        </member>
+        <member name="M:ScriptCoreLib.JavaScript.Runtime.Fader.Fade(ScriptCoreLib.JavaScript.DOM.HTML.IHTMLElement,System.Int32,System.Int32,ScriptCoreLib.Shared.EventHandler)">
+            <summary>
+            fades an element and provides async callback
+            </summary>
+            <param name="target"></param>
+            <param name="waittime"></param>
+            <param name="fadetime"></param>
+            <param name="done"></param>
+        </member>
+        <member name="T:ScriptCoreLib.JavaScript.DOM.HTML.IHTMLTable">
+            <summary>
+            http://developer.mozilla.org/en/docs/Traversing_an_HTML_table_with_JavaScript_and_DOM_Interfaces
+            </summary>
+        </member>
+        <member name="M:ScriptCoreLib.PHP.System.StringImpl.API.strrpos(System.Object,System.String)">
+            <summary>
+            Returns the numeric position of the last occurrence of needle in the haystack string. Note that the needle in this case can only be a single character in PHP 4. If a string is passed as the needle, then only the first character of that string will be used. 
+            </summary>
+            <param name="_haystack">string haystack</param>
+            <param name="_needle">string needle</param>
+        </member>
+        <member name="M:ScriptCoreLib.PHP.System.StringImpl.API.strpos(ScriptCoreLib.PHP.System.StringImpl,System.Object)">
+            <summary>
+            Returns the numeric position of the first occurrence of needle in the haystack string. Unlike the strrpos(), this function can take a full string as the needle parameter and the entire string will be used. 
+            </summary>
+            <param name="_haystack">string haystack</param>
+            <param name="_needle">mixed needle</param>
+        </member>
+        <member name="M:ScriptCoreLib.PHP.System.StringImpl.API.str_replace(System.Object,System.Object,System.Object)">
+            <summary>  
+            This function returns a string or an array with all occurrences of search in subject replaced with the given replace value. If you don't need fancy replacing rules (like regular expressions), you should always use this function instead of ereg_replace() or preg_replace().   
+            </summary>  
+            <param name="_search">mixed search</param>  
+            <param name="_replace">mixed replace</param>  
+            <param name="_subject">mixed subject</param>  
+        </member>
+        <member name="M:ScriptCoreLib.PHP.System.StringImpl.API.substr(ScriptCoreLib.PHP.System.StringImpl,System.Int32,System.Int32)">
+            <summary>  
+            substr() returns the portion of string specified by the start and length parameters.   
+            </summary>  
+            <param name="_string">string string</param>  
+            <param name="_start">int start</param>  
+            <param name="_length">int length</param>  
+        </member>
+        <member name="M:ScriptCoreLib.PHP.System.StringImpl.API.substr(ScriptCoreLib.PHP.System.StringImpl,System.Int32)">
+            <summary>  
+            substr() returns the portion of string specified by the start and length parameters.   
+            </summary>  
+            <param name="_string">string string</param>  
+            <param name="_start">int start</param>  
+        </member>
+        <member name="M:ScriptCoreLib.PHP.System.StringImpl.API.strlen(ScriptCoreLib.PHP.System.StringImpl)">
+            <summary>  
+            Returns the length of the given string.   
+            </summary>  
+            <param name="_string">string string</param>  
+        </member>
+        <member name="M:ScriptCoreLib.PHP.System.StringImpl.API.trim(ScriptCoreLib.PHP.System.StringImpl)">
+            <summary>  
+            This function returns a string with whitespace stripped from the beginning and end of str  
+            </summary>  
+            <param name="_str">string str</param>  
+        </member>
+        <member name="M:ScriptCoreLib.PHP.System.StringImpl.API.strtoupper(ScriptCoreLib.PHP.System.StringImpl)">
+            <summary>  
+            Returns string with all alphabetic characters converted to uppercase.   
+            </summary>  
+            <param name="_string">string string</param>  
+        </member>
+        <member name="M:ScriptCoreLib.PHP.System.StringImpl.API.strtolower(ScriptCoreLib.PHP.System.StringImpl)">
+            <summary>  
+            Returns string with all alphabetic characters converted to lowercase.   
+            </summary>  
+            <param name="_str">string str</param>  
+        </member>
+        <member name="M:ScriptCoreLib.PHP.System.StringImpl.API.strcmp(ScriptCoreLib.PHP.System.StringImpl,ScriptCoreLib.PHP.System.StringImpl)">
+            <summary>  
+            Returns &lt; 0 if str1 is less than str2; &gt; 0 if str1 is greater than str2, and 0 if they are equal.   
+            </summary>  
+            <param name="_str1">string str1</param>  
+            <param name="_str2">string str2</param>  
+        </member>
+        <member name="M:ScriptCoreLib.PHP.Runtime.Properties.#ctor(System.String)">
+            <summary>
+            will not behave with unicode BOM mark
+            </summary>
+            <param name="content"></param>
+        </member>
+        <member name="M:ScriptCoreLib.PHP.Runtime.Properties.Dump">
+            <summary>
+            dumps this object
+            </summary>
+        </member>
+        <member name="T:ScriptCoreLib.JavaScript.DOM.HTML.IHTMLSelect">
+            <summary>
+            http://www.htmlcodetutorial.com/forms/_SELECT.html
+            </summary>
+        </member>
+        <member name="M:ScriptCoreLib.JavaScript.DOM.HTML.IHTMLSelect.Add(ScriptCoreLib.JavaScript.Runtime.Expando)">
+            <summary>
+            adds object field names to the list
+            </summary>
+            <param name="p"></param>
+        </member>
+        <member name="P:ScriptCoreLib.ActionScript.flash.display.Sprite.graphics">
+            <summary>
+            Specifies the Graphics object that belongs to this sprite where vector drawing commands can occur.
+            </summary>
+        </member>
+        <member name="M:ScriptCoreLib.ActionScript.flash.display.Loader.load(ScriptCoreLib.ActionScript.flash.net.URLRequest)">
+            <summary>
+            Loads a SWF, JPEG, progressive JPEG, unanimated GIF, or PNG file into an object that is a child of this Loader object.
+            </summary>
+            <param name="request"></param>
+        </member>
+        <member name="M:ScriptCoreLib.JavaScript.DOM.HTML.IHTMLDiv.ToFullscreen">
+            <summary>
+            will hide scrollbars, attach this element to the body and resize it 
+            as fullscreen
+            </summary>
+        </member>
+        <member name="M:ScriptCoreLib.ActionScript.flash.media.Camera.getCamera">
+            <summary>
+            Returns a reference to a Camera object for capturing video.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ScriptCoreLib.ActionScript.flash.media.Camera.setQuality(System.Int32,System.Int32)">
+            <summary>
+            Sets the maximum amount of bandwidth per second or the required picture quality of the current outgoing video feed.
+            </summary>
+            <param name="bandwidth">Specifies the maximum amount of bandwidth that the current outgoing video feed can use, in bytes per second. To specify that Flash Player video can use as much bandwidth as needed to maintain the value of quality, pass 0 for bandwidth. The default value is 16384.</param>
+            <param name="quality">An integer that specifies the required level of picture quality, as determined by the amount of compression being applied to each video frame. Acceptable values range from 1 (lowest quality, maximum compression) to 100 (highest quality, no compression). To specify that picture quality can vary as needed to avoid exceeding bandwidth, pass 0 for quality.</param>
+        </member>
+        <member name="M:ScriptCoreLib.PHP.Runtime.CacheHelper.StreamCache(System.String,System.Int32)">
+            <summary>
+            returns true, if file exists and is not too old, also echos the file
+            </summary>
+            <param name="cfile"></param>
+            <param name="time">seconds</param>
+            <returns></returns>
+        </member>
+        <member name="M:ScriptCoreLib.PHP.Runtime.CacheHelper.CachedDownloadName(System.String,System.String)">
+            <summary>
+            returns the name based on the given url
+            </summary>
+            <param name="cachepath"></param>
+            <param name="url"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ScriptCoreLib.PHP.Runtime.CacheHelper.CachedDownload(System.String,System.String)">
+            <summary>
+            actually downloads the file, hard cache method
+            </summary>
+            <param name="cachepath"></param>
+            <param name="url"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ScriptCoreLib.ActionScript.flash.utils.Timer.#ctor(System.Double,System.Int32)">
+            <summary>
+            Constructs a new Timer object with the specified delay and repeatCount states.
+            </summary>
+            <param name="delay"></param>
+        </member>
+        <member name="M:ScriptCoreLib.ActionScript.flash.utils.Timer.start">
+            <summary>
+            Starts the timer, if it is not already running.
+            </summary>
+        </member>
+        <member name="M:ScriptCoreLib.ActionScript.flash.utils.Timer.stop">
+            <summary>
+            Stops the timer.
+            </summary>
+        </member>
+        <member name="P:ScriptCoreLib.ActionScript.flash.utils.Timer.currentCount">
+            <summary>
+            The total number of times the timer has fired since it started at zero.
+            </summary>
+        </member>
+        <member name="P:ScriptCoreLib.ActionScript.flash.events.FocusEvent.keyCode">
+            <summary>
+            The key code value of the key pressed to trigger a keyFocusChange event.
+            </summary>
+        </member>
+        <member name="M:ScriptCoreLib.ActionScript.flash.display.Graphics.beginFill(System.UInt32,System.Double)">
+            <summary>
+            Specifies a simple one-color fill that Flash Player uses for subsequent calls to other Graphics methods (such as lineTo() or drawCircle()) for the object.
+            </summary>
+            <param name="color"></param>
+            <param name="alpha"></param>
+        </member>
+        <member name="M:ScriptCoreLib.ActionScript.flash.display.Graphics.drawCircle(System.Double,System.Double,System.Double)">
+            <summary>
+            Draws a circle.
+            </summary>
+            <param name="x"></param>
+            <param name="y"></param>
+            <param name="radius"></param>
+        </member>
+        <member name="M:ScriptCoreLib.ActionScript.flash.display.Graphics.drawRect(System.Double,System.Double,System.Double,System.Double)">
+            <summary>
+            Draws a rectangle.
+            </summary>
+            <param name="x"></param>
+            <param name="y"></param>
+            <param name="width"></param>
+            <param name="height"></param>
+        </member>
+        <member name="M:ScriptCoreLib.ActionScript.flash.display.Graphics.endFill">
+            <summary>
+            Applies a fill to the lines and curves that were added since the last call to the beginFill(), beginGradientFill(), or beginBitmapFill() method.
+            </summary>
+        </member>
+        <member name="M:ScriptCoreLib.JavaScript.DOM.IFunction.CreateType">
+            <summary>
+            returns new object from function
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ScriptCoreLib.PHP.IO.FileInfo.OfAny(System.String,ScriptCoreLib.PHP.IO.DirectoryInfo[])">
+            <summary>
+            returns the a fileinfo which will hold an invalid
+            link to the last directory in list, or to a directory 
+            where the given file is readable
+            </summary>
+            <param name="f"></param>
+            <param name="e"></param>
+            <returns></returns>
+        </member>
+        <member name="P:ScriptCoreLib.PHP.IO.FileInfo.FileName">
+            <summary>
+            returns the base name eg. just file.txt
+            </summary>
+        </member>
+        <member name="P:ScriptCoreLib.PHP.IO.FileInfo.Text">
+            <summary>
+            returns file content as string
+            </summary>
+        </member>
+        <member name="P:ScriptCoreLib.ActionScript.flash.filters.GlowFilter.alpha">
+            <summary>
+            The alpha transparency value for the color.
+            </summary>
+        </member>
+        <member name="P:ScriptCoreLib.ActionScript.flash.filters.GlowFilter.blurX">
+            <summary>
+            The amount of horizontal blur.
+            </summary>
+        </member>
+        <member name="P:ScriptCoreLib.ActionScript.flash.filters.GlowFilter.blurY">
+            <summary>
+            The amount of vertical blur.
+            </summary>
+        </member>
+        <member name="P:ScriptCoreLib.ActionScript.flash.filters.GlowFilter.color">
+            <summary>
+            The color of the glow.
+            </summary>
+        </member>
+        <member name="P:ScriptCoreLib.ActionScript.flash.filters.GlowFilter.inner">
+            <summary>
+            Specifies whether the glow is an inner glow.
+            </summary>
+        </member>
+        <member name="P:ScriptCoreLib.ActionScript.flash.filters.GlowFilter.knockout">
+            <summary>
+            Specifies whether the object has a knockout effect.
+            </summary>
+        </member>
+        <member name="P:ScriptCoreLib.ActionScript.flash.filters.GlowFilter.quality">
+            <summary>
+            The number of times to apply the filter.
+            </summary>
+        </member>
+        <member name="P:ScriptCoreLib.ActionScript.flash.filters.GlowFilter.strength">
+            <summary>
+            The strength of the imprint or spread.
+            </summary>
+        </member>
+        <member name="M:ScriptCoreLib.ActionScript.flash.events.KeyboardEvent.updateAfterEvent">
+            <summary>
+            Instructs Flash Player to render after processing of this event completes, if the display list has been modified. 
+            </summary>
+        </member>
+        <member name="P:ScriptCoreLib.ActionScript.flash.events.KeyboardEvent.keyCode">
+            <summary>
+            The key code value of the key pressed or released.
+            </summary>
+        </member>
+    </members>
+</doc>

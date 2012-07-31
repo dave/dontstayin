@@ -1,0 +1,68 @@
+﻿	#region ${table.Name}DataHolderTemplate
+	/*
+	/// This class is automatically-generated from the database. The contents 
+	/// should be copied into the correct DataHolder class and modified to suit. You'll 
+	/// probably have to change some int types to enum's etc.
+	#region ${table.Name}DataHolder
+	/// <summary>
+	/// ${table.Description}DataHolder
+	/// </summary>
+	[Serializable]
+	public partial class ${table.Name}DataHolder : DataHolder<${table.Name}>
+	{
+		${table.Name} dataHolder;
+		[NonSerializedAttribute] ${table.Name} bob;
+
+		public ${table.Name}DataHolder()
+		{
+			this.dataHolder = new ${table.Name}();
+		}
+		
+		void CopyValues(${table.Name} source, ${table.Name} destination)
+		{
+#foreach ($column in $table.Columns)
+			destination[Bobs.${table.Name}.Columns.${column.Name}] = source[Bobs.${table.Name}.Columns.${column.Name}];
+#end
+		}
+		
+		public ${table.Name}DataHolder(${table.Name} bob) : this()
+		{
+			CopyValues(bob, this.dataHolder);
+		}
+
+		#region Simple members
+#foreach ($column in $table.Columns)
+		/// <summary>
+		/// ${column.Description}
+		/// </summary>
+		public ${column.NativeType} ${column.Name}
+		{
+			get { return dataHolder.${column.Name}; }
+			set { this.dataHolder.${column.Name} = value; }
+		}
+#end
+		#endregion
+		public ${table.Name} ${table.Name}
+		{
+			get
+			{
+				if (bob == null || dataHolder.IsDirty())
+				{
+					if (K > 0)
+					{
+						bob = new ${table.Name}(K);
+					}
+					else
+					{
+						bob = new ${table.Name}();
+					}
+					CopyValues(this.dataHolder, bob);
+				}
+				return bob;
+			}
+		}
+	}
+	#endregion
+	*/
+
+	#endregion

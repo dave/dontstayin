@@ -1,0 +1,4 @@
+Type.registerNamespace('SpottedScript.Blank.LegalTermsPromoterAgree');
+SpottedScript.Blank.LegalTermsPromoterAgree.View=function(clientId){SpottedScript.Blank.LegalTermsPromoterAgree.View.initializeBase(this,[clientId]);this.clientId=clientId;}
+SpottedScript.Blank.LegalTermsPromoterAgree.View.prototype={clientId:null,get_validationsummary1:function(){return document.getElementById(this.clientId+'_Validationsummary1');},get_termsCheckbox:function(){return document.getElementById(this.clientId+'_TermsCheckbox');},get_customvalidator7:function(){return document.getElementById(this.clientId+'_Customvalidator7');},get_prefsUpdateButton:function(){return document.getElementById(this.clientId+'_PrefsUpdateButton');},get_genericContainerPage:function(){return document.getElementById(this.clientId+'_GenericContainerPage');}}
+SpottedScript.Blank.LegalTermsPromoterAgree.View.registerClass('SpottedScript.Blank.LegalTermsPromoterAgree.View',SpottedScript.BlankUserControl.View);

@@ -1,0 +1,44 @@
+﻿<#@ template language="C#v3.5" hostspecific="True" #>
+<#@ assembly name="LinqToSqlClassTemplate.dll" #> 
+<#@ assembly name="System.Data.Linq" #> 
+<#@ import namespace="LinqToSqlClassTemplate" #> 
+<#@ import namespace="System.CodeDom" #> 
+<#@ import namespace="System.Data.Linq.Mapping" #> 
+<#@ assembly name="System.Xml.Linq.dll" #>
+<#@ output extension=".cs" #>
+using System.Linq;
+using System.Reflection;
+<#
+string dbmlFile = Host.TemplateFile.Replace("ModelAbstractClasses.tt","DbSpotted.dbml.after"); // ensures correct path to dbml file
+Database database = new Database(dbmlFile); 
+CodeLanguage code = new CodeLanguage(new Microsoft.CSharp.CSharpCodeProvider());
+
+#>
+namespace Model.Entities
+{
+	using System;
+<# 
+	foreach(Table table in database.Tables) 
+	{
+		foreach(Class class1 in table.Classes) 
+		{ 
+					#>
+ 		public abstract partial class <#=class1.Name#> : I<#=class1.Name#>
+		{
+<#			foreach(Column column in class1.Columns) {			#>
+<#			if (column.EnumProperty == null && code.Format(column.Type) == "Binary") continue; #>
+			public abstract <#=column.EnumProperty ?? code.Format(column.Type)#> <#=column.Member#> { get; set; }
+<#			}#>
+		}
+		public partial interface I<#=class1.Name#>
+		{
+<#			foreach(Column column in class1.Columns) {#>
+<#			if (column.EnumProperty == null && code.Format(column.Type) == "Binary") continue; #>
+			<#=column.EnumProperty ?? code.Format(column.Type)#> <#=column.Member#> { get; set; }
+<#			} #>
+		}
+		
+<#
+		}
+	}#>
+}

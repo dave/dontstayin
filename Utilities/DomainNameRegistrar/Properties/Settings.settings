@@ -1,0 +1,12 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="DomainNameRegistrar.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="DomainNameRegistrar_com_wildwestdomains_ote_api_WAPI" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">https://api.ote.wildwestdomains.com/wswwdapi/wapi.asmx</Value>
+    </Setting>
+    <Setting Name="DomainNameRegistrar_com_wildwestdomains_api_WAPI" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">https://api.wildwestdomains.com/wswwdapi/wapi.asmx</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

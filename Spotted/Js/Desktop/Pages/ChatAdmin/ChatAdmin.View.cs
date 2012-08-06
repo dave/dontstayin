@@ -20,8 +20,6 @@ namespace Js.Pages.ChatAdmin
 		{
 			this.clientId = clientId;
 		}
-		public DivElement AdminPanel {get {if (_AdminPanel == null) {_AdminPanel = (DivElement)Document.GetElementById(clientId + "_AdminPanel");}; return _AdminPanel;}} private DivElement _AdminPanel;
-		public jQueryObject AdminPanelJ {get {if (_AdminPanelJ == null) {_AdminPanelJ = jQuery.Select("#" + clientId + "_AdminPanel");}; return _AdminPanelJ;}} private jQueryObject _AdminPanelJ;
 		public DivElement PanelOptions {get {if (_PanelOptions == null) {_PanelOptions = (DivElement)Document.GetElementById(clientId + "_PanelOptions");}; return _PanelOptions;}} private DivElement _PanelOptions;
 		public jQueryObject PanelOptionsJ {get {if (_PanelOptionsJ == null) {_PanelOptionsJ = jQuery.Select("#" + clientId + "_PanelOptions");}; return _PanelOptionsJ;}} private jQueryObject _PanelOptionsJ;
 		public Element Header {get {if (_Header == null) {_Header = (Element)Document.GetElementById(clientId + "_Header");}; return _Header;}} private Element _Header;
@@ -77,6 +75,8 @@ namespace Js.Pages.ChatAdmin
 		public jQueryObject Customvalidator4J {get {if (_Customvalidator4J == null) {_Customvalidator4J = jQuery.Select("#" + clientId + "_Customvalidator4");}; return _Customvalidator4J;}} private jQueryObject _Customvalidator4J;//mappings.Add("System.Web.UI.WebControls.CustomValidator", ElementGetter("Element"));
 		public Element Button2 {get {if (_Button2 == null) {_Button2 = (Element)Document.GetElementById(clientId + "_Button2");}; return _Button2;}} private Element _Button2;
 		public jQueryObject Button2J {get {if (_Button2J == null) {_Button2J = jQuery.Select("#" + clientId + "_Button2");}; return _Button2J;}} private jQueryObject _Button2J;//mappings.Add("System.Web.UI.WebControls.Button", ElementGetter("Element"));
+		public DivElement AdminPanel {get {if (_AdminPanel == null) {_AdminPanel = (DivElement)Document.GetElementById(clientId + "_AdminPanel");}; return _AdminPanel;}} private DivElement _AdminPanel;
+		public jQueryObject AdminPanelJ {get {if (_AdminPanelJ == null) {_AdminPanelJ = jQuery.Select("#" + clientId + "_AdminPanel");}; return _AdminPanelJ;}} private jQueryObject _AdminPanelJ;
 		public Element GenericContainerPage {get {if (_GenericContainerPage == null) {_GenericContainerPage = (Element)Document.GetElementById(clientId + "_GenericContainerPage");}; return _GenericContainerPage;}} private Element _GenericContainerPage;
 		public jQueryObject GenericContainerPageJ {get {if (_GenericContainerPageJ == null) {_GenericContainerPageJ = jQuery.Select("#" + clientId + "_GenericContainerPage");}; return _GenericContainerPageJ;}} private jQueryObject _GenericContainerPageJ;//mappings.Add("Spotted.GenericPage", ElementGetter("Element"));
 	}

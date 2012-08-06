@@ -23,6 +23,7 @@ Js.Pages.UploadPhotos.Controller = function Js_Pages_UploadPhotos_Controller(v) 
     /// </field>
     this.view = v;
     this.view.get_picker().eventSelectionSepcificationChanged = ss.Delegate.create(this, this.eventSelectionChange);
+    this.view.get_picker().handlersSet();
     if (Js.Library.Misc.get_browserIsIE()) {
         $(ss.Delegate.create(this, this._initialise));
     }

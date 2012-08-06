@@ -20,6 +20,12 @@ namespace Js.Admin.FlyerEdit
 		{
 			this.clientId = clientId;
 		}
+		public CheckBoxElement uiIsHtml {get {if (_uiIsHtml == null) {_uiIsHtml = (CheckBoxElement)Document.GetElementById(clientId + "_uiIsHtml");}; return _uiIsHtml;}} private CheckBoxElement _uiIsHtml;
+		public jQueryObject uiIsHtmlJ {get {if (_uiIsHtmlJ == null) {_uiIsHtmlJ = jQuery.Select("#" + clientId + "_uiIsHtml");}; return _uiIsHtmlJ;}} private jQueryObject _uiIsHtmlJ;
+		public InputElement uiHtml {get {if (_uiHtml == null) {_uiHtml = (InputElement)Document.GetElementById(clientId + "_uiHtml");}; return _uiHtml;}} private InputElement _uiHtml;
+		public jQueryObject uiHtmlJ {get {if (_uiHtmlJ == null) {_uiHtmlJ = jQuery.Select("#" + clientId + "_uiHtml");}; return _uiHtmlJ;}} private jQueryObject _uiHtmlJ;
+		public InputElement uiTextAlternative {get {if (_uiTextAlternative == null) {_uiTextAlternative = (InputElement)Document.GetElementById(clientId + "_uiTextAlternative");}; return _uiTextAlternative;}} private InputElement _uiTextAlternative;
+		public jQueryObject uiTextAlternativeJ {get {if (_uiTextAlternativeJ == null) {_uiTextAlternativeJ = jQuery.Select("#" + clientId + "_uiTextAlternative");}; return _uiTextAlternativeJ;}} private jQueryObject _uiTextAlternativeJ;
 		public DivElement uiBasicInfo {get {if (_uiBasicInfo == null) {_uiBasicInfo = (DivElement)Document.GetElementById(clientId + "_uiBasicInfo");}; return _uiBasicInfo;}} private DivElement _uiBasicInfo;
 		public jQueryObject uiBasicInfoJ {get {if (_uiBasicInfoJ == null) {_uiBasicInfoJ = jQuery.Select("#" + clientId + "_uiBasicInfo");}; return _uiBasicInfoJ;}} private jQueryObject _uiBasicInfoJ;
 		public Element uiFlyerKLabel {get {if (_uiFlyerKLabel == null) {_uiFlyerKLabel = (Element)Document.GetElementById(clientId + "_uiFlyerKLabel");}; return _uiFlyerKLabel;}} private Element _uiFlyerKLabel;
@@ -74,12 +80,6 @@ namespace Js.Admin.FlyerEdit
 		public jQueryObject uiTestEmailJ {get {if (_uiTestEmailJ == null) {_uiTestEmailJ = jQuery.Select("#" + clientId + "_uiTestEmail");}; return _uiTestEmailJ;}} private jQueryObject _uiTestEmailJ;
 		public Element uiTestEmailSuccess {get {if (_uiTestEmailSuccess == null) {_uiTestEmailSuccess = (Element)Document.GetElementById(clientId + "_uiTestEmailSuccess");}; return _uiTestEmailSuccess;}} private Element _uiTestEmailSuccess;
 		public jQueryObject uiTestEmailSuccessJ {get {if (_uiTestEmailSuccessJ == null) {_uiTestEmailSuccessJ = jQuery.Select("#" + clientId + "_uiTestEmailSuccess");}; return _uiTestEmailSuccessJ;}} private jQueryObject _uiTestEmailSuccessJ;//mappings.Add("System.Web.UI.WebControls.Label", ElementGetter("Element"));
-		public CheckBoxElement uiIsHtml {get {if (_uiIsHtml == null) {_uiIsHtml = (CheckBoxElement)Document.GetElementById(clientId + "_uiIsHtml");}; return _uiIsHtml;}} private CheckBoxElement _uiIsHtml;
-		public jQueryObject uiIsHtmlJ {get {if (_uiIsHtmlJ == null) {_uiIsHtmlJ = jQuery.Select("#" + clientId + "_uiIsHtml");}; return _uiIsHtmlJ;}} private jQueryObject _uiIsHtmlJ;
-		public InputElement uiHtml {get {if (_uiHtml == null) {_uiHtml = (InputElement)Document.GetElementById(clientId + "_uiHtml");}; return _uiHtml;}} private InputElement _uiHtml;
-		public jQueryObject uiHtmlJ {get {if (_uiHtmlJ == null) {_uiHtmlJ = jQuery.Select("#" + clientId + "_uiHtml");}; return _uiHtmlJ;}} private jQueryObject _uiHtmlJ;
-		public InputElement uiTextAlternative {get {if (_uiTextAlternative == null) {_uiTextAlternative = (InputElement)Document.GetElementById(clientId + "_uiTextAlternative");}; return _uiTextAlternative;}} private InputElement _uiTextAlternative;
-		public jQueryObject uiTextAlternativeJ {get {if (_uiTextAlternativeJ == null) {_uiTextAlternativeJ = jQuery.Select("#" + clientId + "_uiTextAlternative");}; return _uiTextAlternativeJ;}} private jQueryObject _uiTextAlternativeJ;
 		public Element GenericContainerPage {get {if (_GenericContainerPage == null) {_GenericContainerPage = (Element)Document.GetElementById(clientId + "_GenericContainerPage");}; return _GenericContainerPage;}} private Element _GenericContainerPage;
 		public jQueryObject GenericContainerPageJ {get {if (_GenericContainerPageJ == null) {_GenericContainerPageJ = jQuery.Select("#" + clientId + "_GenericContainerPage");}; return _GenericContainerPageJ;}} private jQueryObject _GenericContainerPageJ;//mappings.Add("Spotted.GenericPage", ElementGetter("Element"));
 	}

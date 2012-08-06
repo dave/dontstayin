@@ -267,9 +267,9 @@
 								<li runat="server" id="ActivityDetails"><a href="/pages/mydetails">Complete your details</a></li>
 								<li runat="server" id="ActivityDj"><a href="/pages/areyoudj">Are you a DJ? Click here to get your DJ icon!</a></li>
 								<li runat="server" id="ActivityTicketFeedback"></li>
-								<li runat="server" id="ActivityMixmag"><a href="/popup/mixmag?go=1" target="_blank">Get a FREE subscription to Mixmag Online!</a></li>
-								<li runat="server" id="ActivityBuddyImporter"><a href="/pages/friendinviter">Invite your friends to DontStayIn</a></li>
-								<li runat="server" id="ActivityExDirectoryOption"><a href="/pages/exdirectoryprivacyoption">Confirm your privacy settings</a></li>
+								<!--<li runat="server" id="ActivityMixmag"><a href="/popup/mixmag?go=1" target="_blank">Get a FREE subscription to Mixmag Online!</a></li>-->
+								<!--<li runat="server" id="ActivityBuddyImporter"><a href="/pages/friendinviter">Invite your friends to DontStayIn</a></li>-->
+								<!--<li runat="server" id="ActivityExDirectoryOption"><a href="/pages/exdirectoryprivacyoption">Confirm your privacy settings</a></li>-->
 							</ul>
 						</p>
 					</div>
@@ -322,7 +322,7 @@
 				</div>
 			</asp:Panel>
 			<asp:PlaceHolder runat="server" ID="AboveChatHtmlPh" />
-			<Navigation:ChatClient runat="Server" ID="ChatClient" />
+			<Navigation:ChatClient runat="Server" ID="ChatClient" Visible="false" />
 			<asp:Panel runat="server" ID="UnrulyBottomBox">
 				<dsi:h1 ID="H1" runat="server">Bored? Watch this!</dsi:h1>
 				<div class="ContentBorder">

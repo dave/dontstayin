@@ -1,7 +1,7 @@
-//mappings.Add("Spotted.CustomControls.h1", ElementGetter("Element"));
-//mappings.Add("Spotted.CustomControls.InlineScript", ElementGetter("Element"));
 //mappings.Add("System.Web.UI.HtmlControls.HtmlGenericControl", ElementGetter("Element"));
 //mappings.Add("System.Web.UI.WebControls.DataGrid", ElementGetter("Element"));
+//mappings.Add("Spotted.CustomControls.h1", ElementGetter("Element"));
+//mappings.Add("Spotted.CustomControls.InlineScript", ElementGetter("Element"));
 //mappings.Add("Spotted.GenericPage", ElementGetter("Element"));
 using System;
 using System.Collections.Generic;
@@ -20,12 +20,6 @@ namespace Js.Pages.Watching
 		{
 			this.clientId = clientId;
 		}
-		public Element H12 {get {if (_H12 == null) {_H12 = (Element)Document.GetElementById(clientId + "_H12");}; return _H12;}} private Element _H12;
-		public jQueryObject H12J {get {if (_H12J == null) {_H12J = jQuery.Select("#" + clientId + "_H12");}; return _H12J;}} private jQueryObject _H12J;//mappings.Add("Spotted.CustomControls.h1", ElementGetter("Element"));
-		public Element H13 {get {if (_H13 == null) {_H13 = (Element)Document.GetElementById(clientId + "_H13");}; return _H13;}} private Element _H13;
-		public jQueryObject H13J {get {if (_H13J == null) {_H13J = jQuery.Select("#" + clientId + "_H13");}; return _H13J;}} private jQueryObject _H13J;//mappings.Add("Spotted.CustomControls.h1", ElementGetter("Element"));
-		public Element InlineScript3 {get {if (_InlineScript3 == null) {_InlineScript3 = (Element)Document.GetElementById(clientId + "_InlineScript3");}; return _InlineScript3;}} private Element _InlineScript3;
-		public jQueryObject InlineScript3J {get {if (_InlineScript3J == null) {_InlineScript3J = jQuery.Select("#" + clientId + "_InlineScript3");}; return _InlineScript3J;}} private jQueryObject _InlineScript3J;//mappings.Add("Spotted.CustomControls.InlineScript", ElementGetter("Element"));
 		public DivElement PanelWatching {get {if (_PanelWatching == null) {_PanelWatching = (DivElement)Document.GetElementById(clientId + "_PanelWatching");}; return _PanelWatching;}} private DivElement _PanelWatching;
 		public jQueryObject PanelWatchingJ {get {if (_PanelWatchingJ == null) {_PanelWatchingJ = jQuery.Select("#" + clientId + "_PanelWatching");}; return _PanelWatchingJ;}} private jQueryObject _PanelWatchingJ;
 		public DivElement ThreadsPanel {get {if (_ThreadsPanel == null) {_ThreadsPanel = (DivElement)Document.GetElementById(clientId + "_ThreadsPanel");}; return _ThreadsPanel;}} private DivElement _ThreadsPanel;
@@ -46,6 +40,12 @@ namespace Js.Pages.Watching
 		public jQueryObject ThreadsPrevPageLink1J {get {if (_ThreadsPrevPageLink1J == null) {_ThreadsPrevPageLink1J = jQuery.Select("#" + clientId + "_ThreadsPrevPageLink1");}; return _ThreadsPrevPageLink1J;}} private jQueryObject _ThreadsPrevPageLink1J;
 		public Element ThreadsDataGrid {get {if (_ThreadsDataGrid == null) {_ThreadsDataGrid = (Element)Document.GetElementById(clientId + "_ThreadsDataGrid");}; return _ThreadsDataGrid;}} private Element _ThreadsDataGrid;
 		public jQueryObject ThreadsDataGridJ {get {if (_ThreadsDataGridJ == null) {_ThreadsDataGridJ = jQuery.Select("#" + clientId + "_ThreadsDataGrid");}; return _ThreadsDataGridJ;}} private jQueryObject _ThreadsDataGridJ;//mappings.Add("System.Web.UI.WebControls.DataGrid", ElementGetter("Element"));
+		public Element H12 {get {if (_H12 == null) {_H12 = (Element)Document.GetElementById(clientId + "_H12");}; return _H12;}} private Element _H12;
+		public jQueryObject H12J {get {if (_H12J == null) {_H12J = jQuery.Select("#" + clientId + "_H12");}; return _H12J;}} private jQueryObject _H12J;//mappings.Add("Spotted.CustomControls.h1", ElementGetter("Element"));
+		public Element H13 {get {if (_H13 == null) {_H13 = (Element)Document.GetElementById(clientId + "_H13");}; return _H13;}} private Element _H13;
+		public jQueryObject H13J {get {if (_H13J == null) {_H13J = jQuery.Select("#" + clientId + "_H13");}; return _H13J;}} private jQueryObject _H13J;//mappings.Add("Spotted.CustomControls.h1", ElementGetter("Element"));
+		public Element InlineScript3 {get {if (_InlineScript3 == null) {_InlineScript3 = (Element)Document.GetElementById(clientId + "_InlineScript3");}; return _InlineScript3;}} private Element _InlineScript3;
+		public jQueryObject InlineScript3J {get {if (_InlineScript3J == null) {_InlineScript3J = jQuery.Select("#" + clientId + "_InlineScript3");}; return _InlineScript3J;}} private jQueryObject _InlineScript3J;//mappings.Add("Spotted.CustomControls.InlineScript", ElementGetter("Element"));
 		public Element GenericContainerPage {get {if (_GenericContainerPage == null) {_GenericContainerPage = (Element)Document.GetElementById(clientId + "_GenericContainerPage");}; return _GenericContainerPage;}} private Element _GenericContainerPage;
 		public jQueryObject GenericContainerPageJ {get {if (_GenericContainerPageJ == null) {_GenericContainerPageJ = jQuery.Select("#" + clientId + "_GenericContainerPage");}; return _GenericContainerPageJ;}} private jQueryObject _GenericContainerPageJ;//mappings.Add("Spotted.GenericPage", ElementGetter("Element"));
 	}

@@ -25,9 +25,6 @@ namespace Js.Pages.Spotters
 		{
 			this.clientId = clientId;
 		}
-		public DivElement PanelIntro1 {get {if (_PanelIntro1 == null) {_PanelIntro1 = (DivElement)Document.GetElementById(clientId + "_PanelIntro1");}; return _PanelIntro1;}} private DivElement _PanelIntro1;
-		public jQueryObject PanelIntro1J {get {if (_PanelIntro1J == null) {_PanelIntro1J = jQuery.Select("#" + clientId + "_PanelIntro1");}; return _PanelIntro1J;}} private jQueryObject _PanelIntro1J;
-		public Js.Controls.Picker.Controller uiEventPicker {get {return (Js.Controls.Picker.Controller) Script.Eval(clientId + "_uiEventPickerController");}}
 		public Element H19 {get {if (_H19 == null) {_H19 = (Element)Document.GetElementById(clientId + "_H19");}; return _H19;}} private Element _H19;
 		public jQueryObject H19J {get {if (_H19J == null) {_H19J = jQuery.Select("#" + clientId + "_H19");}; return _H19J;}} private jQueryObject _H19J;//mappings.Add("Spotted.CustomControls.h1", ElementGetter("Element"));
 		public Element Button1 {get {if (_Button1 == null) {_Button1 = (Element)Document.GetElementById(clientId + "_Button1");}; return _Button1;}} private Element _Button1;
@@ -180,6 +177,9 @@ namespace Js.Pages.Spotters
 		public jQueryObject Button8J {get {if (_Button8J == null) {_Button8J = jQuery.Select("#" + clientId + "_Button8");}; return _Button8J;}} private jQueryObject _Button8J;//mappings.Add("System.Web.UI.WebControls.Button", ElementGetter("Element"));
 		public Element Button9 {get {if (_Button9 == null) {_Button9 = (Element)Document.GetElementById(clientId + "_Button9");}; return _Button9;}} private Element _Button9;
 		public jQueryObject Button9J {get {if (_Button9J == null) {_Button9J = jQuery.Select("#" + clientId + "_Button9");}; return _Button9J;}} private jQueryObject _Button9J;//mappings.Add("System.Web.UI.WebControls.Button", ElementGetter("Element"));
+		public DivElement PanelIntro1 {get {if (_PanelIntro1 == null) {_PanelIntro1 = (DivElement)Document.GetElementById(clientId + "_PanelIntro1");}; return _PanelIntro1;}} private DivElement _PanelIntro1;
+		public jQueryObject PanelIntro1J {get {if (_PanelIntro1J == null) {_PanelIntro1J = jQuery.Select("#" + clientId + "_PanelIntro1");}; return _PanelIntro1J;}} private jQueryObject _PanelIntro1J;
+		public Js.Controls.Picker.Controller uiEventPicker {get {return (Js.Controls.Picker.Controller) Script.Eval(clientId + "_uiEventPickerController");}}
 		public Element GenericContainerPage {get {if (_GenericContainerPage == null) {_GenericContainerPage = (Element)Document.GetElementById(clientId + "_GenericContainerPage");}; return _GenericContainerPage;}} private Element _GenericContainerPage;
 		public jQueryObject GenericContainerPageJ {get {if (_GenericContainerPageJ == null) {_GenericContainerPageJ = jQuery.Select("#" + clientId + "_GenericContainerPage");}; return _GenericContainerPageJ;}} private jQueryObject _GenericContainerPageJ;//mappings.Add("Spotted.GenericPage", ElementGetter("Element"));
 	}

@@ -3299,6 +3299,10 @@ Js.Controls.Login.View = function Js_Controls_Login_View(clientId) {
     /// </field>
     /// <field name="server" type="Js.Controls.Login.Server">
     /// </field>
+    /// <field name="_ToggleAdminLinkButton" type="Object" domElement="true">
+    /// </field>
+    /// <field name="_ToggleAdminLinkButtonJ" type="jQueryObject">
+    /// </field>
     /// <field name="_ConnectDialog" type="Object" domElement="true">
     /// </field>
     /// <field name="_ConnectDialogJ" type="jQueryObject">
@@ -3959,16 +3963,32 @@ Js.Controls.Login.View = function Js_Controls_Login_View(clientId) {
     /// </field>
     /// <field name="_Connect_Debug_AuthButtonJ" type="jQueryObject">
     /// </field>
-    /// <field name="_ToggleAdminLinkButton" type="Object" domElement="true">
-    /// </field>
-    /// <field name="_ToggleAdminLinkButtonJ" type="jQueryObject">
-    /// </field>
     this.clientId = clientId;
     this.server = new Js.Controls.Login.Server();
 }
 Js.Controls.Login.View.prototype = {
     clientId: null,
     server: null,
+    
+    get_toggleAdminLinkButton: function Js_Controls_Login_View$get_toggleAdminLinkButton() {
+        /// <value type="Object" domElement="true"></value>
+        if (this._ToggleAdminLinkButton == null) {
+            this._ToggleAdminLinkButton = document.getElementById(this.clientId + '_ToggleAdminLinkButton');
+        }
+        return this._ToggleAdminLinkButton;
+    },
+    
+    _ToggleAdminLinkButton: null,
+    
+    get_toggleAdminLinkButtonJ: function Js_Controls_Login_View$get_toggleAdminLinkButtonJ() {
+        /// <value type="jQueryObject"></value>
+        if (this._ToggleAdminLinkButtonJ == null) {
+            this._ToggleAdminLinkButtonJ = $('#' + this.clientId + '_ToggleAdminLinkButton');
+        }
+        return this._ToggleAdminLinkButtonJ;
+    },
+    
+    _ToggleAdminLinkButtonJ: null,
     
     get_connectDialog: function Js_Controls_Login_View$get_connectDialog() {
         /// <value type="Object" domElement="true"></value>
@@ -7268,27 +7288,7 @@ Js.Controls.Login.View.prototype = {
         return this._Connect_Debug_AuthButtonJ;
     },
     
-    _Connect_Debug_AuthButtonJ: null,
-    
-    get_toggleAdminLinkButton: function Js_Controls_Login_View$get_toggleAdminLinkButton() {
-        /// <value type="Object" domElement="true"></value>
-        if (this._ToggleAdminLinkButton == null) {
-            this._ToggleAdminLinkButton = document.getElementById(this.clientId + '_ToggleAdminLinkButton');
-        }
-        return this._ToggleAdminLinkButton;
-    },
-    
-    _ToggleAdminLinkButton: null,
-    
-    get_toggleAdminLinkButtonJ: function Js_Controls_Login_View$get_toggleAdminLinkButtonJ() {
-        /// <value type="jQueryObject"></value>
-        if (this._ToggleAdminLinkButtonJ == null) {
-            this._ToggleAdminLinkButtonJ = $('#' + this.clientId + '_ToggleAdminLinkButton');
-        }
-        return this._ToggleAdminLinkButtonJ;
-    },
-    
-    _ToggleAdminLinkButtonJ: null
+    _Connect_Debug_AuthButtonJ: null
 }
 
 

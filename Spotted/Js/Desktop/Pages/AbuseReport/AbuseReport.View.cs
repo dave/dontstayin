@@ -1,8 +1,8 @@
+//mappings.Add("System.Web.UI.WebControls.Label", ElementGetter("Element"));
+//mappings.Add("System.Web.UI.HtmlControls.HtmlGenericControl", ElementGetter("Element"));
 //mappings.Add("Spotted.CustomControls.h1", ElementGetter("Element"));
 //mappings.Add("System.Web.UI.WebControls.RequiredFieldValidator", ElementGetter("Element"));
 //mappings.Add("System.Web.UI.WebControls.Button", ElementGetter("Element"));
-//mappings.Add("System.Web.UI.WebControls.Label", ElementGetter("Element"));
-//mappings.Add("System.Web.UI.HtmlControls.HtmlGenericControl", ElementGetter("Element"));
 //mappings.Add("Spotted.GenericPage", ElementGetter("Element"));
 using System;
 using System.Collections.Generic;
@@ -21,14 +21,6 @@ namespace Js.Pages.AbuseReport
 		{
 			this.clientId = clientId;
 		}
-		public Element Header {get {if (_Header == null) {_Header = (Element)Document.GetElementById(clientId + "_Header");}; return _Header;}} private Element _Header;
-		public jQueryObject HeaderJ {get {if (_HeaderJ == null) {_HeaderJ = jQuery.Select("#" + clientId + "_Header");}; return _HeaderJ;}} private jQueryObject _HeaderJ;//mappings.Add("Spotted.CustomControls.h1", ElementGetter("Element"));
-		public Element H11 {get {if (_H11 == null) {_H11 = (Element)Document.GetElementById(clientId + "_H11");}; return _H11;}} private Element _H11;
-		public jQueryObject H11J {get {if (_H11J == null) {_H11J = jQuery.Select("#" + clientId + "_H11");}; return _H11J;}} private jQueryObject _H11J;//mappings.Add("Spotted.CustomControls.h1", ElementGetter("Element"));
-		public Element RequiredFieldValidator1 {get {if (_RequiredFieldValidator1 == null) {_RequiredFieldValidator1 = (Element)Document.GetElementById(clientId + "_RequiredFieldValidator1");}; return _RequiredFieldValidator1;}} private Element _RequiredFieldValidator1;
-		public jQueryObject RequiredFieldValidator1J {get {if (_RequiredFieldValidator1J == null) {_RequiredFieldValidator1J = jQuery.Select("#" + clientId + "_RequiredFieldValidator1");}; return _RequiredFieldValidator1J;}} private jQueryObject _RequiredFieldValidator1J;//mappings.Add("System.Web.UI.WebControls.RequiredFieldValidator", ElementGetter("Element"));
-		public Element Button1 {get {if (_Button1 == null) {_Button1 = (Element)Document.GetElementById(clientId + "_Button1");}; return _Button1;}} private Element _Button1;
-		public jQueryObject Button1J {get {if (_Button1J == null) {_Button1J = jQuery.Select("#" + clientId + "_Button1");}; return _Button1J;}} private jQueryObject _Button1J;//mappings.Add("System.Web.UI.WebControls.Button", ElementGetter("Element"));
 		public DivElement PanelNone {get {if (_PanelNone == null) {_PanelNone = (DivElement)Document.GetElementById(clientId + "_PanelNone");}; return _PanelNone;}} private DivElement _PanelNone;
 		public jQueryObject PanelNoneJ {get {if (_PanelNoneJ == null) {_PanelNoneJ = jQuery.Select("#" + clientId + "_PanelNone");}; return _PanelNoneJ;}} private jQueryObject _PanelNoneJ;
 		public DivElement PanelAbuse {get {if (_PanelAbuse == null) {_PanelAbuse = (DivElement)Document.GetElementById(clientId + "_PanelAbuse");}; return _PanelAbuse;}} private DivElement _PanelAbuse;
@@ -81,6 +73,14 @@ namespace Js.Pages.AbuseReport
 		public jQueryObject AbuseDeleteBanModerateRadioJ {get {if (_AbuseDeleteBanModerateRadioJ == null) {_AbuseDeleteBanModerateRadioJ = jQuery.Select("#" + clientId + "_AbuseDeleteBanModerateRadio");}; return _AbuseDeleteBanModerateRadioJ;}} private jQueryObject _AbuseDeleteBanModerateRadioJ;
 		public InputElement ResolveDescriptionTextBox {get {if (_ResolveDescriptionTextBox == null) {_ResolveDescriptionTextBox = (InputElement)Document.GetElementById(clientId + "_ResolveDescriptionTextBox");}; return _ResolveDescriptionTextBox;}} private InputElement _ResolveDescriptionTextBox;
 		public jQueryObject ResolveDescriptionTextBoxJ {get {if (_ResolveDescriptionTextBoxJ == null) {_ResolveDescriptionTextBoxJ = jQuery.Select("#" + clientId + "_ResolveDescriptionTextBox");}; return _ResolveDescriptionTextBoxJ;}} private jQueryObject _ResolveDescriptionTextBoxJ;
+		public Element Header {get {if (_Header == null) {_Header = (Element)Document.GetElementById(clientId + "_Header");}; return _Header;}} private Element _Header;
+		public jQueryObject HeaderJ {get {if (_HeaderJ == null) {_HeaderJ = jQuery.Select("#" + clientId + "_Header");}; return _HeaderJ;}} private jQueryObject _HeaderJ;//mappings.Add("Spotted.CustomControls.h1", ElementGetter("Element"));
+		public Element H11 {get {if (_H11 == null) {_H11 = (Element)Document.GetElementById(clientId + "_H11");}; return _H11;}} private Element _H11;
+		public jQueryObject H11J {get {if (_H11J == null) {_H11J = jQuery.Select("#" + clientId + "_H11");}; return _H11J;}} private jQueryObject _H11J;//mappings.Add("Spotted.CustomControls.h1", ElementGetter("Element"));
+		public Element RequiredFieldValidator1 {get {if (_RequiredFieldValidator1 == null) {_RequiredFieldValidator1 = (Element)Document.GetElementById(clientId + "_RequiredFieldValidator1");}; return _RequiredFieldValidator1;}} private Element _RequiredFieldValidator1;
+		public jQueryObject RequiredFieldValidator1J {get {if (_RequiredFieldValidator1J == null) {_RequiredFieldValidator1J = jQuery.Select("#" + clientId + "_RequiredFieldValidator1");}; return _RequiredFieldValidator1J;}} private jQueryObject _RequiredFieldValidator1J;//mappings.Add("System.Web.UI.WebControls.RequiredFieldValidator", ElementGetter("Element"));
+		public Element Button1 {get {if (_Button1 == null) {_Button1 = (Element)Document.GetElementById(clientId + "_Button1");}; return _Button1;}} private Element _Button1;
+		public jQueryObject Button1J {get {if (_Button1J == null) {_Button1J = jQuery.Select("#" + clientId + "_Button1");}; return _Button1J;}} private jQueryObject _Button1J;//mappings.Add("System.Web.UI.WebControls.Button", ElementGetter("Element"));
 		public Element GenericContainerPage {get {if (_GenericContainerPage == null) {_GenericContainerPage = (Element)Document.GetElementById(clientId + "_GenericContainerPage");}; return _GenericContainerPage;}} private Element _GenericContainerPage;
 		public jQueryObject GenericContainerPageJ {get {if (_GenericContainerPageJ == null) {_GenericContainerPageJ = jQuery.Select("#" + clientId + "_GenericContainerPage");}; return _GenericContainerPageJ;}} private jQueryObject _GenericContainerPageJ;//mappings.Add("Spotted.GenericPage", ElementGetter("Element"));
 	}

@@ -50,8 +50,8 @@ post:
 
 Spotted/Spotted:
 post:
-	..\..\..\Utilities\Script\WebServiceStubGenerator\bin\WebServiceStubGenerator.exe /a:..\..\..\Spotted\Spotted\bin\Spotted.dll /o:..\..\..\Spotted\SpottedScript\WebServices\Generated.cs
-	..\..\..\Utilities\Script\ViewGenerator\bin\ViewScriptGenerator.exe /a:..\..\..\Spotted\Spotted\bin\Spotted.dll /o:..\..\..\Spotted\SpottedScript\Views\Generated.cs
+	..\..\..\Utilities\Script\WebServiceStubGenerator\bin\WebServiceStubGenerator.exe /a:..\..\..\..\Spotted\Spotted\bin\Spotted.dll /o:..\..\..\..\Spotted\SpottedScript\WebServices\Generated.cs
+	..\..\..\Utilities\Script\ViewGenerator\bin\ViewScriptGenerator.exe /a:..\..\..\..\Spotted\Spotted\bin\Spotted.dll /o:..\..\..\..\Spotted\SpottedScript\Views\Generated.cs
 
 
 Utilities/Cache/CacheTriggers:

@@ -27,6 +27,46 @@ Js.Controls.AddThread.View = function Js_Controls_AddThread_View(clientId) {
     /// </param>
     /// <field name="clientId" type="String">
     /// </field>
+    /// <field name="_AddThreadSubjectTextBox" type="Object" domElement="true">
+    /// </field>
+    /// <field name="_AddThreadSubjectTextBoxJ" type="jQueryObject">
+    /// </field>
+    /// <field name="_AddThreadPublicRadioButton" type="Object" domElement="true">
+    /// </field>
+    /// <field name="_AddThreadPublicRadioButtonJ" type="jQueryObject">
+    /// </field>
+    /// <field name="_AddThreadPrivateRadioButton" type="Object" domElement="true">
+    /// </field>
+    /// <field name="_AddThreadPrivateRadioButtonJ" type="jQueryObject">
+    /// </field>
+    /// <field name="_AddThreadGroupRadioButton" type="Object" domElement="true">
+    /// </field>
+    /// <field name="_AddThreadGroupRadioButtonJ" type="jQueryObject">
+    /// </field>
+    /// <field name="_AddThreadAdvancedCheckBox" type="Object" domElement="true">
+    /// </field>
+    /// <field name="_AddThreadAdvancedCheckBoxJ" type="jQueryObject">
+    /// </field>
+    /// <field name="_AddThreadGroupPrivateCheckBox" type="Object" domElement="true">
+    /// </field>
+    /// <field name="_AddThreadGroupPrivateCheckBoxJ" type="jQueryObject">
+    /// </field>
+    /// <field name="_AddThreadEventCheckBox" type="Object" domElement="true">
+    /// </field>
+    /// <field name="_AddThreadEventCheckBoxJ" type="jQueryObject">
+    /// </field>
+    /// <field name="_AddThreadSealedCheckBox" type="Object" domElement="true">
+    /// </field>
+    /// <field name="_AddThreadSealedCheckBoxJ" type="jQueryObject">
+    /// </field>
+    /// <field name="_AddThreadNewsCheckBox" type="Object" domElement="true">
+    /// </field>
+    /// <field name="_AddThreadNewsCheckBoxJ" type="jQueryObject">
+    /// </field>
+    /// <field name="_AddThreadInviteCheckBox" type="Object" domElement="true">
+    /// </field>
+    /// <field name="_AddThreadInviteCheckBoxJ" type="jQueryObject">
+    /// </field>
     /// <field name="_AddThreadNotGroupMemberPanel" type="Object" domElement="true">
     /// </field>
     /// <field name="_AddThreadNotGroupMemberPanelJ" type="jQueryObject">
@@ -103,50 +143,215 @@ Js.Controls.AddThread.View = function Js_Controls_AddThread_View(clientId) {
     /// </field>
     /// <field name="_InlineScript1J" type="jQueryObject">
     /// </field>
-    /// <field name="_AddThreadSubjectTextBox" type="Object" domElement="true">
-    /// </field>
-    /// <field name="_AddThreadSubjectTextBoxJ" type="jQueryObject">
-    /// </field>
-    /// <field name="_AddThreadPublicRadioButton" type="Object" domElement="true">
-    /// </field>
-    /// <field name="_AddThreadPublicRadioButtonJ" type="jQueryObject">
-    /// </field>
-    /// <field name="_AddThreadPrivateRadioButton" type="Object" domElement="true">
-    /// </field>
-    /// <field name="_AddThreadPrivateRadioButtonJ" type="jQueryObject">
-    /// </field>
-    /// <field name="_AddThreadGroupRadioButton" type="Object" domElement="true">
-    /// </field>
-    /// <field name="_AddThreadGroupRadioButtonJ" type="jQueryObject">
-    /// </field>
-    /// <field name="_AddThreadAdvancedCheckBox" type="Object" domElement="true">
-    /// </field>
-    /// <field name="_AddThreadAdvancedCheckBoxJ" type="jQueryObject">
-    /// </field>
-    /// <field name="_AddThreadGroupPrivateCheckBox" type="Object" domElement="true">
-    /// </field>
-    /// <field name="_AddThreadGroupPrivateCheckBoxJ" type="jQueryObject">
-    /// </field>
-    /// <field name="_AddThreadEventCheckBox" type="Object" domElement="true">
-    /// </field>
-    /// <field name="_AddThreadEventCheckBoxJ" type="jQueryObject">
-    /// </field>
-    /// <field name="_AddThreadSealedCheckBox" type="Object" domElement="true">
-    /// </field>
-    /// <field name="_AddThreadSealedCheckBoxJ" type="jQueryObject">
-    /// </field>
-    /// <field name="_AddThreadNewsCheckBox" type="Object" domElement="true">
-    /// </field>
-    /// <field name="_AddThreadNewsCheckBoxJ" type="jQueryObject">
-    /// </field>
-    /// <field name="_AddThreadInviteCheckBox" type="Object" domElement="true">
-    /// </field>
-    /// <field name="_AddThreadInviteCheckBoxJ" type="jQueryObject">
-    /// </field>
     this.clientId = clientId;
 }
 Js.Controls.AddThread.View.prototype = {
     clientId: null,
+    
+    get_addThreadSubjectTextBox: function Js_Controls_AddThread_View$get_addThreadSubjectTextBox() {
+        /// <value type="Object" domElement="true"></value>
+        if (this._AddThreadSubjectTextBox == null) {
+            this._AddThreadSubjectTextBox = document.getElementById(this.clientId + '_AddThreadSubjectTextBox');
+        }
+        return this._AddThreadSubjectTextBox;
+    },
+    
+    _AddThreadSubjectTextBox: null,
+    
+    get_addThreadSubjectTextBoxJ: function Js_Controls_AddThread_View$get_addThreadSubjectTextBoxJ() {
+        /// <value type="jQueryObject"></value>
+        if (this._AddThreadSubjectTextBoxJ == null) {
+            this._AddThreadSubjectTextBoxJ = $('#' + this.clientId + '_AddThreadSubjectTextBox');
+        }
+        return this._AddThreadSubjectTextBoxJ;
+    },
+    
+    _AddThreadSubjectTextBoxJ: null,
+    
+    get_commentHtml: function Js_Controls_AddThread_View$get_commentHtml() {
+        /// <value type="Js.Controls.Html.Controller"></value>
+        return eval(this.clientId + '_CommentHtmlController');
+    },
+    
+    get_addThreadPublicRadioButton: function Js_Controls_AddThread_View$get_addThreadPublicRadioButton() {
+        /// <value type="Object" domElement="true"></value>
+        if (this._AddThreadPublicRadioButton == null) {
+            this._AddThreadPublicRadioButton = document.getElementById(this.clientId + '_AddThreadPublicRadioButton');
+        }
+        return this._AddThreadPublicRadioButton;
+    },
+    
+    _AddThreadPublicRadioButton: null,
+    
+    get_addThreadPublicRadioButtonJ: function Js_Controls_AddThread_View$get_addThreadPublicRadioButtonJ() {
+        /// <value type="jQueryObject"></value>
+        if (this._AddThreadPublicRadioButtonJ == null) {
+            this._AddThreadPublicRadioButtonJ = $('#' + this.clientId + '_AddThreadPublicRadioButton');
+        }
+        return this._AddThreadPublicRadioButtonJ;
+    },
+    
+    _AddThreadPublicRadioButtonJ: null,
+    
+    get_addThreadPrivateRadioButton: function Js_Controls_AddThread_View$get_addThreadPrivateRadioButton() {
+        /// <value type="Object" domElement="true"></value>
+        if (this._AddThreadPrivateRadioButton == null) {
+            this._AddThreadPrivateRadioButton = document.getElementById(this.clientId + '_AddThreadPrivateRadioButton');
+        }
+        return this._AddThreadPrivateRadioButton;
+    },
+    
+    _AddThreadPrivateRadioButton: null,
+    
+    get_addThreadPrivateRadioButtonJ: function Js_Controls_AddThread_View$get_addThreadPrivateRadioButtonJ() {
+        /// <value type="jQueryObject"></value>
+        if (this._AddThreadPrivateRadioButtonJ == null) {
+            this._AddThreadPrivateRadioButtonJ = $('#' + this.clientId + '_AddThreadPrivateRadioButton');
+        }
+        return this._AddThreadPrivateRadioButtonJ;
+    },
+    
+    _AddThreadPrivateRadioButtonJ: null,
+    
+    get_addThreadGroupRadioButton: function Js_Controls_AddThread_View$get_addThreadGroupRadioButton() {
+        /// <value type="Object" domElement="true"></value>
+        if (this._AddThreadGroupRadioButton == null) {
+            this._AddThreadGroupRadioButton = document.getElementById(this.clientId + '_AddThreadGroupRadioButton');
+        }
+        return this._AddThreadGroupRadioButton;
+    },
+    
+    _AddThreadGroupRadioButton: null,
+    
+    get_addThreadGroupRadioButtonJ: function Js_Controls_AddThread_View$get_addThreadGroupRadioButtonJ() {
+        /// <value type="jQueryObject"></value>
+        if (this._AddThreadGroupRadioButtonJ == null) {
+            this._AddThreadGroupRadioButtonJ = $('#' + this.clientId + '_AddThreadGroupRadioButton');
+        }
+        return this._AddThreadGroupRadioButtonJ;
+    },
+    
+    _AddThreadGroupRadioButtonJ: null,
+    
+    get_addThreadAdvancedCheckBox: function Js_Controls_AddThread_View$get_addThreadAdvancedCheckBox() {
+        /// <value type="Object" domElement="true"></value>
+        if (this._AddThreadAdvancedCheckBox == null) {
+            this._AddThreadAdvancedCheckBox = document.getElementById(this.clientId + '_AddThreadAdvancedCheckBox');
+        }
+        return this._AddThreadAdvancedCheckBox;
+    },
+    
+    _AddThreadAdvancedCheckBox: null,
+    
+    get_addThreadAdvancedCheckBoxJ: function Js_Controls_AddThread_View$get_addThreadAdvancedCheckBoxJ() {
+        /// <value type="jQueryObject"></value>
+        if (this._AddThreadAdvancedCheckBoxJ == null) {
+            this._AddThreadAdvancedCheckBoxJ = $('#' + this.clientId + '_AddThreadAdvancedCheckBox');
+        }
+        return this._AddThreadAdvancedCheckBoxJ;
+    },
+    
+    _AddThreadAdvancedCheckBoxJ: null,
+    
+    get_addThreadGroupPrivateCheckBox: function Js_Controls_AddThread_View$get_addThreadGroupPrivateCheckBox() {
+        /// <value type="Object" domElement="true"></value>
+        if (this._AddThreadGroupPrivateCheckBox == null) {
+            this._AddThreadGroupPrivateCheckBox = document.getElementById(this.clientId + '_AddThreadGroupPrivateCheckBox');
+        }
+        return this._AddThreadGroupPrivateCheckBox;
+    },
+    
+    _AddThreadGroupPrivateCheckBox: null,
+    
+    get_addThreadGroupPrivateCheckBoxJ: function Js_Controls_AddThread_View$get_addThreadGroupPrivateCheckBoxJ() {
+        /// <value type="jQueryObject"></value>
+        if (this._AddThreadGroupPrivateCheckBoxJ == null) {
+            this._AddThreadGroupPrivateCheckBoxJ = $('#' + this.clientId + '_AddThreadGroupPrivateCheckBox');
+        }
+        return this._AddThreadGroupPrivateCheckBoxJ;
+    },
+    
+    _AddThreadGroupPrivateCheckBoxJ: null,
+    
+    get_addThreadEventCheckBox: function Js_Controls_AddThread_View$get_addThreadEventCheckBox() {
+        /// <value type="Object" domElement="true"></value>
+        if (this._AddThreadEventCheckBox == null) {
+            this._AddThreadEventCheckBox = document.getElementById(this.clientId + '_AddThreadEventCheckBox');
+        }
+        return this._AddThreadEventCheckBox;
+    },
+    
+    _AddThreadEventCheckBox: null,
+    
+    get_addThreadEventCheckBoxJ: function Js_Controls_AddThread_View$get_addThreadEventCheckBoxJ() {
+        /// <value type="jQueryObject"></value>
+        if (this._AddThreadEventCheckBoxJ == null) {
+            this._AddThreadEventCheckBoxJ = $('#' + this.clientId + '_AddThreadEventCheckBox');
+        }
+        return this._AddThreadEventCheckBoxJ;
+    },
+    
+    _AddThreadEventCheckBoxJ: null,
+    
+    get_addThreadSealedCheckBox: function Js_Controls_AddThread_View$get_addThreadSealedCheckBox() {
+        /// <value type="Object" domElement="true"></value>
+        if (this._AddThreadSealedCheckBox == null) {
+            this._AddThreadSealedCheckBox = document.getElementById(this.clientId + '_AddThreadSealedCheckBox');
+        }
+        return this._AddThreadSealedCheckBox;
+    },
+    
+    _AddThreadSealedCheckBox: null,
+    
+    get_addThreadSealedCheckBoxJ: function Js_Controls_AddThread_View$get_addThreadSealedCheckBoxJ() {
+        /// <value type="jQueryObject"></value>
+        if (this._AddThreadSealedCheckBoxJ == null) {
+            this._AddThreadSealedCheckBoxJ = $('#' + this.clientId + '_AddThreadSealedCheckBox');
+        }
+        return this._AddThreadSealedCheckBoxJ;
+    },
+    
+    _AddThreadSealedCheckBoxJ: null,
+    
+    get_addThreadNewsCheckBox: function Js_Controls_AddThread_View$get_addThreadNewsCheckBox() {
+        /// <value type="Object" domElement="true"></value>
+        if (this._AddThreadNewsCheckBox == null) {
+            this._AddThreadNewsCheckBox = document.getElementById(this.clientId + '_AddThreadNewsCheckBox');
+        }
+        return this._AddThreadNewsCheckBox;
+    },
+    
+    _AddThreadNewsCheckBox: null,
+    
+    get_addThreadNewsCheckBoxJ: function Js_Controls_AddThread_View$get_addThreadNewsCheckBoxJ() {
+        /// <value type="jQueryObject"></value>
+        if (this._AddThreadNewsCheckBoxJ == null) {
+            this._AddThreadNewsCheckBoxJ = $('#' + this.clientId + '_AddThreadNewsCheckBox');
+        }
+        return this._AddThreadNewsCheckBoxJ;
+    },
+    
+    _AddThreadNewsCheckBoxJ: null,
+    
+    get_addThreadInviteCheckBox: function Js_Controls_AddThread_View$get_addThreadInviteCheckBox() {
+        /// <value type="Object" domElement="true"></value>
+        if (this._AddThreadInviteCheckBox == null) {
+            this._AddThreadInviteCheckBox = document.getElementById(this.clientId + '_AddThreadInviteCheckBox');
+        }
+        return this._AddThreadInviteCheckBox;
+    },
+    
+    _AddThreadInviteCheckBox: null,
+    
+    get_addThreadInviteCheckBoxJ: function Js_Controls_AddThread_View$get_addThreadInviteCheckBoxJ() {
+        /// <value type="jQueryObject"></value>
+        if (this._AddThreadInviteCheckBoxJ == null) {
+            this._AddThreadInviteCheckBoxJ = $('#' + this.clientId + '_AddThreadInviteCheckBox');
+        }
+        return this._AddThreadInviteCheckBoxJ;
+    },
+    
+    _AddThreadInviteCheckBoxJ: null,
     
     get_addThreadNotGroupMemberPanel: function Js_Controls_AddThread_View$get_addThreadNotGroupMemberPanel() {
         /// <value type="Object" domElement="true"></value>
@@ -531,212 +736,7 @@ Js.Controls.AddThread.View.prototype = {
         return this._InlineScript1J;
     },
     
-    _InlineScript1J: null,
-    
-    get_addThreadSubjectTextBox: function Js_Controls_AddThread_View$get_addThreadSubjectTextBox() {
-        /// <value type="Object" domElement="true"></value>
-        if (this._AddThreadSubjectTextBox == null) {
-            this._AddThreadSubjectTextBox = document.getElementById(this.clientId + '_AddThreadSubjectTextBox');
-        }
-        return this._AddThreadSubjectTextBox;
-    },
-    
-    _AddThreadSubjectTextBox: null,
-    
-    get_addThreadSubjectTextBoxJ: function Js_Controls_AddThread_View$get_addThreadSubjectTextBoxJ() {
-        /// <value type="jQueryObject"></value>
-        if (this._AddThreadSubjectTextBoxJ == null) {
-            this._AddThreadSubjectTextBoxJ = $('#' + this.clientId + '_AddThreadSubjectTextBox');
-        }
-        return this._AddThreadSubjectTextBoxJ;
-    },
-    
-    _AddThreadSubjectTextBoxJ: null,
-    
-    get_commentHtml: function Js_Controls_AddThread_View$get_commentHtml() {
-        /// <value type="Js.Controls.Html.Controller"></value>
-        return eval(this.clientId + '_CommentHtmlController');
-    },
-    
-    get_addThreadPublicRadioButton: function Js_Controls_AddThread_View$get_addThreadPublicRadioButton() {
-        /// <value type="Object" domElement="true"></value>
-        if (this._AddThreadPublicRadioButton == null) {
-            this._AddThreadPublicRadioButton = document.getElementById(this.clientId + '_AddThreadPublicRadioButton');
-        }
-        return this._AddThreadPublicRadioButton;
-    },
-    
-    _AddThreadPublicRadioButton: null,
-    
-    get_addThreadPublicRadioButtonJ: function Js_Controls_AddThread_View$get_addThreadPublicRadioButtonJ() {
-        /// <value type="jQueryObject"></value>
-        if (this._AddThreadPublicRadioButtonJ == null) {
-            this._AddThreadPublicRadioButtonJ = $('#' + this.clientId + '_AddThreadPublicRadioButton');
-        }
-        return this._AddThreadPublicRadioButtonJ;
-    },
-    
-    _AddThreadPublicRadioButtonJ: null,
-    
-    get_addThreadPrivateRadioButton: function Js_Controls_AddThread_View$get_addThreadPrivateRadioButton() {
-        /// <value type="Object" domElement="true"></value>
-        if (this._AddThreadPrivateRadioButton == null) {
-            this._AddThreadPrivateRadioButton = document.getElementById(this.clientId + '_AddThreadPrivateRadioButton');
-        }
-        return this._AddThreadPrivateRadioButton;
-    },
-    
-    _AddThreadPrivateRadioButton: null,
-    
-    get_addThreadPrivateRadioButtonJ: function Js_Controls_AddThread_View$get_addThreadPrivateRadioButtonJ() {
-        /// <value type="jQueryObject"></value>
-        if (this._AddThreadPrivateRadioButtonJ == null) {
-            this._AddThreadPrivateRadioButtonJ = $('#' + this.clientId + '_AddThreadPrivateRadioButton');
-        }
-        return this._AddThreadPrivateRadioButtonJ;
-    },
-    
-    _AddThreadPrivateRadioButtonJ: null,
-    
-    get_addThreadGroupRadioButton: function Js_Controls_AddThread_View$get_addThreadGroupRadioButton() {
-        /// <value type="Object" domElement="true"></value>
-        if (this._AddThreadGroupRadioButton == null) {
-            this._AddThreadGroupRadioButton = document.getElementById(this.clientId + '_AddThreadGroupRadioButton');
-        }
-        return this._AddThreadGroupRadioButton;
-    },
-    
-    _AddThreadGroupRadioButton: null,
-    
-    get_addThreadGroupRadioButtonJ: function Js_Controls_AddThread_View$get_addThreadGroupRadioButtonJ() {
-        /// <value type="jQueryObject"></value>
-        if (this._AddThreadGroupRadioButtonJ == null) {
-            this._AddThreadGroupRadioButtonJ = $('#' + this.clientId + '_AddThreadGroupRadioButton');
-        }
-        return this._AddThreadGroupRadioButtonJ;
-    },
-    
-    _AddThreadGroupRadioButtonJ: null,
-    
-    get_addThreadAdvancedCheckBox: function Js_Controls_AddThread_View$get_addThreadAdvancedCheckBox() {
-        /// <value type="Object" domElement="true"></value>
-        if (this._AddThreadAdvancedCheckBox == null) {
-            this._AddThreadAdvancedCheckBox = document.getElementById(this.clientId + '_AddThreadAdvancedCheckBox');
-        }
-        return this._AddThreadAdvancedCheckBox;
-    },
-    
-    _AddThreadAdvancedCheckBox: null,
-    
-    get_addThreadAdvancedCheckBoxJ: function Js_Controls_AddThread_View$get_addThreadAdvancedCheckBoxJ() {
-        /// <value type="jQueryObject"></value>
-        if (this._AddThreadAdvancedCheckBoxJ == null) {
-            this._AddThreadAdvancedCheckBoxJ = $('#' + this.clientId + '_AddThreadAdvancedCheckBox');
-        }
-        return this._AddThreadAdvancedCheckBoxJ;
-    },
-    
-    _AddThreadAdvancedCheckBoxJ: null,
-    
-    get_addThreadGroupPrivateCheckBox: function Js_Controls_AddThread_View$get_addThreadGroupPrivateCheckBox() {
-        /// <value type="Object" domElement="true"></value>
-        if (this._AddThreadGroupPrivateCheckBox == null) {
-            this._AddThreadGroupPrivateCheckBox = document.getElementById(this.clientId + '_AddThreadGroupPrivateCheckBox');
-        }
-        return this._AddThreadGroupPrivateCheckBox;
-    },
-    
-    _AddThreadGroupPrivateCheckBox: null,
-    
-    get_addThreadGroupPrivateCheckBoxJ: function Js_Controls_AddThread_View$get_addThreadGroupPrivateCheckBoxJ() {
-        /// <value type="jQueryObject"></value>
-        if (this._AddThreadGroupPrivateCheckBoxJ == null) {
-            this._AddThreadGroupPrivateCheckBoxJ = $('#' + this.clientId + '_AddThreadGroupPrivateCheckBox');
-        }
-        return this._AddThreadGroupPrivateCheckBoxJ;
-    },
-    
-    _AddThreadGroupPrivateCheckBoxJ: null,
-    
-    get_addThreadEventCheckBox: function Js_Controls_AddThread_View$get_addThreadEventCheckBox() {
-        /// <value type="Object" domElement="true"></value>
-        if (this._AddThreadEventCheckBox == null) {
-            this._AddThreadEventCheckBox = document.getElementById(this.clientId + '_AddThreadEventCheckBox');
-        }
-        return this._AddThreadEventCheckBox;
-    },
-    
-    _AddThreadEventCheckBox: null,
-    
-    get_addThreadEventCheckBoxJ: function Js_Controls_AddThread_View$get_addThreadEventCheckBoxJ() {
-        /// <value type="jQueryObject"></value>
-        if (this._AddThreadEventCheckBoxJ == null) {
-            this._AddThreadEventCheckBoxJ = $('#' + this.clientId + '_AddThreadEventCheckBox');
-        }
-        return this._AddThreadEventCheckBoxJ;
-    },
-    
-    _AddThreadEventCheckBoxJ: null,
-    
-    get_addThreadSealedCheckBox: function Js_Controls_AddThread_View$get_addThreadSealedCheckBox() {
-        /// <value type="Object" domElement="true"></value>
-        if (this._AddThreadSealedCheckBox == null) {
-            this._AddThreadSealedCheckBox = document.getElementById(this.clientId + '_AddThreadSealedCheckBox');
-        }
-        return this._AddThreadSealedCheckBox;
-    },
-    
-    _AddThreadSealedCheckBox: null,
-    
-    get_addThreadSealedCheckBoxJ: function Js_Controls_AddThread_View$get_addThreadSealedCheckBoxJ() {
-        /// <value type="jQueryObject"></value>
-        if (this._AddThreadSealedCheckBoxJ == null) {
-            this._AddThreadSealedCheckBoxJ = $('#' + this.clientId + '_AddThreadSealedCheckBox');
-        }
-        return this._AddThreadSealedCheckBoxJ;
-    },
-    
-    _AddThreadSealedCheckBoxJ: null,
-    
-    get_addThreadNewsCheckBox: function Js_Controls_AddThread_View$get_addThreadNewsCheckBox() {
-        /// <value type="Object" domElement="true"></value>
-        if (this._AddThreadNewsCheckBox == null) {
-            this._AddThreadNewsCheckBox = document.getElementById(this.clientId + '_AddThreadNewsCheckBox');
-        }
-        return this._AddThreadNewsCheckBox;
-    },
-    
-    _AddThreadNewsCheckBox: null,
-    
-    get_addThreadNewsCheckBoxJ: function Js_Controls_AddThread_View$get_addThreadNewsCheckBoxJ() {
-        /// <value type="jQueryObject"></value>
-        if (this._AddThreadNewsCheckBoxJ == null) {
-            this._AddThreadNewsCheckBoxJ = $('#' + this.clientId + '_AddThreadNewsCheckBox');
-        }
-        return this._AddThreadNewsCheckBoxJ;
-    },
-    
-    _AddThreadNewsCheckBoxJ: null,
-    
-    get_addThreadInviteCheckBox: function Js_Controls_AddThread_View$get_addThreadInviteCheckBox() {
-        /// <value type="Object" domElement="true"></value>
-        if (this._AddThreadInviteCheckBox == null) {
-            this._AddThreadInviteCheckBox = document.getElementById(this.clientId + '_AddThreadInviteCheckBox');
-        }
-        return this._AddThreadInviteCheckBox;
-    },
-    
-    _AddThreadInviteCheckBox: null,
-    
-    get_addThreadInviteCheckBoxJ: function Js_Controls_AddThread_View$get_addThreadInviteCheckBoxJ() {
-        /// <value type="jQueryObject"></value>
-        if (this._AddThreadInviteCheckBoxJ == null) {
-            this._AddThreadInviteCheckBoxJ = $('#' + this.clientId + '_AddThreadInviteCheckBox');
-        }
-        return this._AddThreadInviteCheckBoxJ;
-    },
-    
-    _AddThreadInviteCheckBoxJ: null
+    _InlineScript1J: null
 }
 
 

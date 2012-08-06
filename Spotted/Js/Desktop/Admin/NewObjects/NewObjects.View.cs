@@ -1,8 +1,8 @@
-//mappings.Add("System.Web.UI.WebControls.Repeater", ElementGetter("Element"));
 //mappings.Add("System.Web.UI.WebControls.Label", ElementGetter("Element"));
 //mappings.Add("System.Web.UI.WebControls.DataList", ElementGetter("Element"));
 //mappings.Add("System.Web.UI.WebControls.DataGrid", ElementGetter("Element"));
 //mappings.Add("Spotted.Controls.Admin.BannerDataGrid", ElementGetter("Element"));
+//mappings.Add("System.Web.UI.WebControls.Repeater", ElementGetter("Element"));
 //mappings.Add("Spotted.GenericPage", ElementGetter("Element"));
 using System;
 using System.Collections.Generic;
@@ -21,10 +21,6 @@ namespace Js.Admin.NewObjects
 		{
 			this.clientId = clientId;
 		}
-		public DivElement PanelUnconfirmedVenues {get {if (_PanelUnconfirmedVenues == null) {_PanelUnconfirmedVenues = (DivElement)Document.GetElementById(clientId + "_PanelUnconfirmedVenues");}; return _PanelUnconfirmedVenues;}} private DivElement _PanelUnconfirmedVenues;
-		public jQueryObject PanelUnconfirmedVenuesJ {get {if (_PanelUnconfirmedVenuesJ == null) {_PanelUnconfirmedVenuesJ = jQuery.Select("#" + clientId + "_PanelUnconfirmedVenues");}; return _PanelUnconfirmedVenuesJ;}} private jQueryObject _PanelUnconfirmedVenuesJ;
-		public Element VenueRepeater {get {if (_VenueRepeater == null) {_VenueRepeater = (Element)Document.GetElementById(clientId + "_VenueRepeater");}; return _VenueRepeater;}} private Element _VenueRepeater;
-		public jQueryObject VenueRepeaterJ {get {if (_VenueRepeaterJ == null) {_VenueRepeaterJ = jQuery.Select("#" + clientId + "_VenueRepeater");}; return _VenueRepeaterJ;}} private jQueryObject _VenueRepeaterJ;//mappings.Add("System.Web.UI.WebControls.Repeater", ElementGetter("Element"));
 		public Element NewSpotterNumberLabel {get {if (_NewSpotterNumberLabel == null) {_NewSpotterNumberLabel = (Element)Document.GetElementById(clientId + "_NewSpotterNumberLabel");}; return _NewSpotterNumberLabel;}} private Element _NewSpotterNumberLabel;
 		public jQueryObject NewSpotterNumberLabelJ {get {if (_NewSpotterNumberLabelJ == null) {_NewSpotterNumberLabelJ = jQuery.Select("#" + clientId + "_NewSpotterNumberLabel");}; return _NewSpotterNumberLabelJ;}} private jQueryObject _NewSpotterNumberLabelJ;//mappings.Add("System.Web.UI.WebControls.Label", ElementGetter("Element"));
 		public Element SpotterCardRequestLabel {get {if (_SpotterCardRequestLabel == null) {_SpotterCardRequestLabel = (Element)Document.GetElementById(clientId + "_SpotterCardRequestLabel");}; return _SpotterCardRequestLabel;}} private Element _SpotterCardRequestLabel;
@@ -59,6 +55,10 @@ namespace Js.Admin.NewObjects
 		public jQueryObject PanelUnconfirmedBrandsJ {get {if (_PanelUnconfirmedBrandsJ == null) {_PanelUnconfirmedBrandsJ = jQuery.Select("#" + clientId + "_PanelUnconfirmedBrands");}; return _PanelUnconfirmedBrandsJ;}} private jQueryObject _PanelUnconfirmedBrandsJ;
 		public DivElement UpdateDonePanel {get {if (_UpdateDonePanel == null) {_UpdateDonePanel = (DivElement)Document.GetElementById(clientId + "_UpdateDonePanel");}; return _UpdateDonePanel;}} private DivElement _UpdateDonePanel;
 		public jQueryObject UpdateDonePanelJ {get {if (_UpdateDonePanelJ == null) {_UpdateDonePanelJ = jQuery.Select("#" + clientId + "_UpdateDonePanel");}; return _UpdateDonePanelJ;}} private jQueryObject _UpdateDonePanelJ;
+		public DivElement PanelUnconfirmedVenues {get {if (_PanelUnconfirmedVenues == null) {_PanelUnconfirmedVenues = (DivElement)Document.GetElementById(clientId + "_PanelUnconfirmedVenues");}; return _PanelUnconfirmedVenues;}} private DivElement _PanelUnconfirmedVenues;
+		public jQueryObject PanelUnconfirmedVenuesJ {get {if (_PanelUnconfirmedVenuesJ == null) {_PanelUnconfirmedVenuesJ = jQuery.Select("#" + clientId + "_PanelUnconfirmedVenues");}; return _PanelUnconfirmedVenuesJ;}} private jQueryObject _PanelUnconfirmedVenuesJ;
+		public Element VenueRepeater {get {if (_VenueRepeater == null) {_VenueRepeater = (Element)Document.GetElementById(clientId + "_VenueRepeater");}; return _VenueRepeater;}} private Element _VenueRepeater;
+		public jQueryObject VenueRepeaterJ {get {if (_VenueRepeaterJ == null) {_VenueRepeaterJ = jQuery.Select("#" + clientId + "_VenueRepeater");}; return _VenueRepeaterJ;}} private jQueryObject _VenueRepeaterJ;//mappings.Add("System.Web.UI.WebControls.Repeater", ElementGetter("Element"));
 		public Element GenericContainerPage {get {if (_GenericContainerPage == null) {_GenericContainerPage = (Element)Document.GetElementById(clientId + "_GenericContainerPage");}; return _GenericContainerPage;}} private Element _GenericContainerPage;
 		public jQueryObject GenericContainerPageJ {get {if (_GenericContainerPageJ == null) {_GenericContainerPageJ = jQuery.Select("#" + clientId + "_GenericContainerPage");}; return _GenericContainerPageJ;}} private jQueryObject _GenericContainerPageJ;//mappings.Add("Spotted.GenericPage", ElementGetter("Element"));
 	}

@@ -56,10 +56,6 @@ Js.Controls.ClientSideRepeater.Repeater.View = function Js_Controls_ClientSideRe
     /// </param>
     /// <field name="clientId" type="String">
     /// </field>
-    /// <field name="_uiContent" type="Object" domElement="true">
-    /// </field>
-    /// <field name="_uiContentJ" type="jQueryObject">
-    /// </field>
     /// <field name="_uiHeaderTemplateHolder" type="Object" domElement="true">
     /// </field>
     /// <field name="_uiHeaderTemplateHolderJ" type="jQueryObject">
@@ -72,35 +68,14 @@ Js.Controls.ClientSideRepeater.Repeater.View = function Js_Controls_ClientSideRe
     /// </field>
     /// <field name="_uiFooterTemplateHolderJ" type="jQueryObject">
     /// </field>
+    /// <field name="_uiContent" type="Object" domElement="true">
+    /// </field>
+    /// <field name="_uiContentJ" type="jQueryObject">
+    /// </field>
     this.clientId = clientId;
 }
 Js.Controls.ClientSideRepeater.Repeater.View.prototype = {
     clientId: null,
-    
-    get_uiItemTemplate: function Js_Controls_ClientSideRepeater_Repeater_View$get_uiItemTemplate() {
-        /// <value type="Js.Controls.ClientSideRepeater.Template.Controller"></value>
-        return eval(this.clientId + '_uiItemTemplateController');
-    },
-    
-    get_uiContent: function Js_Controls_ClientSideRepeater_Repeater_View$get_uiContent() {
-        /// <value type="Object" domElement="true"></value>
-        if (this._uiContent == null) {
-            this._uiContent = document.getElementById(this.clientId + '_uiContent');
-        }
-        return this._uiContent;
-    },
-    
-    _uiContent: null,
-    
-    get_uiContentJ: function Js_Controls_ClientSideRepeater_Repeater_View$get_uiContentJ() {
-        /// <value type="jQueryObject"></value>
-        if (this._uiContentJ == null) {
-            this._uiContentJ = $('#' + this.clientId + '_uiContent');
-        }
-        return this._uiContentJ;
-    },
-    
-    _uiContentJ: null,
     
     get_uiHeaderTemplateHolder: function Js_Controls_ClientSideRepeater_Repeater_View$get_uiHeaderTemplateHolder() {
         /// <value type="Object" domElement="true"></value>
@@ -160,7 +135,32 @@ Js.Controls.ClientSideRepeater.Repeater.View.prototype = {
         return this._uiFooterTemplateHolderJ;
     },
     
-    _uiFooterTemplateHolderJ: null
+    _uiFooterTemplateHolderJ: null,
+    
+    get_uiItemTemplate: function Js_Controls_ClientSideRepeater_Repeater_View$get_uiItemTemplate() {
+        /// <value type="Js.Controls.ClientSideRepeater.Template.Controller"></value>
+        return eval(this.clientId + '_uiItemTemplateController');
+    },
+    
+    get_uiContent: function Js_Controls_ClientSideRepeater_Repeater_View$get_uiContent() {
+        /// <value type="Object" domElement="true"></value>
+        if (this._uiContent == null) {
+            this._uiContent = document.getElementById(this.clientId + '_uiContent');
+        }
+        return this._uiContent;
+    },
+    
+    _uiContent: null,
+    
+    get_uiContentJ: function Js_Controls_ClientSideRepeater_Repeater_View$get_uiContentJ() {
+        /// <value type="jQueryObject"></value>
+        if (this._uiContentJ == null) {
+            this._uiContentJ = $('#' + this.clientId + '_uiContent');
+        }
+        return this._uiContentJ;
+    },
+    
+    _uiContentJ: null
 }
 
 

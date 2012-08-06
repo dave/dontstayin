@@ -44,9 +44,9 @@ namespace CacheTriggers
 				"Article"
 				, "D389F153",
 				new string[] {
-					"Country"
-					,
 					"Place"
+					,
+					"Country"
 					,
 					"Event"
 					,
@@ -97,9 +97,9 @@ namespace CacheTriggers
 				new string[] {
 					"Misc"
 					,
-					"BannerFolder"
-					,
 					"Promoter"
+					,
+					"BannerFolder"
 					,
 					"Brand"
 					,
@@ -378,13 +378,13 @@ namespace CacheTriggers
 				"Group"
 				, "81294206",
 				new string[] {
+					"Place"
+					,
 					"MusicType"
 					,
 					"Country"
 					,
 					"Brand"
-					,
-					"Place"
 					,
 					"Theme"
 				},
@@ -933,13 +933,13 @@ namespace CacheTriggers
 				new string[] {
 					"Region"
 					,
+					"Place"
+					,
 					"MusicType"
 					,
 					"Country"
 					,
 					"Brand"
-					,
-					"Place"
 					,
 					"Photo"
 					,
@@ -968,8 +968,6 @@ namespace CacheTriggers
 				"Ticket"
 				, "117368D6",
 				new string[] {
-					"InvoiceItem"
-					,
 					"Invoice"
 					,
 					"TicketRun"
@@ -977,6 +975,8 @@ namespace CacheTriggers
 					"Event"
 					,
 					"Domain"
+					,
+					"InvoiceItem"
 				},
 				new string[] {
 				}
@@ -1037,9 +1037,9 @@ namespace CacheTriggers
 				"UsrDonationIcon"
 				, "324FC462",
 				new string[] {
-					"DonationIcon"
-					,
 					"Usr"
+					,
+					"DonationIcon"
 				},
 				new string[] {
 				}

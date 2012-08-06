@@ -36,7 +36,7 @@ namespace Js.Controls.Picker
 		#region initialise()
 		void initialise()
 		{
-			Debug("initialise");
+			//Debug("initialise");
 
 			initialiseSearchType();
 			initialiseKey();
@@ -87,7 +87,7 @@ namespace Js.Controls.Picker
 		bool initialiseFinished = false;
 		void navigate(jQueryEvent e)
 		{
-			Debug("navigate");
+			//Debug("navigate");
 
 			if (!initialiseFinished)
 			{
@@ -169,15 +169,15 @@ namespace Js.Controls.Picker
 			updateUIEvent();
 		}
 		#endregion
-		//public void HandlersSet()
-		//{
-		//    //navigate happens BEFORE our controllers start, so we have to wait until here.
+		public void HandlersSet()
+		{
+			//navigate happens BEFORE our controllers start, so we have to wait until here.
 
-		//    firstEverNavigate = true;
+			firstEverNavigate = true;
 
-		//    if (initialNavigate)
-		//        navigate(initialHistoryEvent);
-		//}
+			if (initialNavigate)
+				navigate(initialHistoryEvent);
+		}
 
 
 		#region EventSelectionSepcification

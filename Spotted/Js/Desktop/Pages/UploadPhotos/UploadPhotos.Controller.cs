@@ -17,7 +17,7 @@ namespace Js.Pages.UploadPhotos
 			this.view = v;
 
 			view.Picker.EventSelectionSepcificationChanged = new Js.Controls.Picker.EventSelectionEvent(EventSelectionChange);
-			//view.Picker.HandlersSet();
+			view.Picker.HandlersSet();
 			
 			if (Misc.BrowserIsIE)
 				jQuery.OnDocumentReady(initialise);

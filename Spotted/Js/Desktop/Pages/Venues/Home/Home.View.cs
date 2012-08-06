@@ -1,7 +1,7 @@
+//mappings.Add("Spotted.CustomControls.h1", ElementGetter("Element"));
+//mappings.Add("System.Web.UI.HtmlControls.HtmlGenericControl", ElementGetter("Element"));
 //mappings.Add("System.Web.UI.WebControls.Label", ElementGetter("Element"));
 //mappings.Add("System.Web.UI.HtmlControls.HtmlTableCell", ElementGetter("Element"));
-//mappings.Add("System.Web.UI.HtmlControls.HtmlGenericControl", ElementGetter("Element"));
-//mappings.Add("Spotted.CustomControls.h1", ElementGetter("Element"));
 //mappings.Add("Spotted.Controls.Latest", ElementGetter("Element"));
 //mappings.Add("Spotted.GenericPage", ElementGetter("Element"));
 using System;
@@ -21,6 +21,26 @@ namespace Js.Pages.Venues.Home
 		{
 			this.clientId = clientId;
 		}
+		public Element H12 {get {if (_H12 == null) {_H12 = (Element)Document.GetElementById(clientId + "_H12");}; return _H12;}} private Element _H12;
+		public jQueryObject H12J {get {if (_H12J == null) {_H12J = jQuery.Select("#" + clientId + "_H12");}; return _H12J;}} private jQueryObject _H12J;//mappings.Add("Spotted.CustomControls.h1", ElementGetter("Element"));
+		public Element Div1 {get {if (_Div1 == null) {_Div1 = (Element)Document.GetElementById(clientId + "_Div1");}; return _Div1;}} private Element _Div1;
+		public jQueryObject Div1J {get {if (_Div1J == null) {_Div1J = jQuery.Select("#" + clientId + "_Div1");}; return _Div1J;}} private jQueryObject _Div1J;//mappings.Add("System.Web.UI.HtmlControls.HtmlGenericControl", ElementGetter("Element"));
+		public AnchorElement HotTicketsLink {get {if (_HotTicketsLink == null) {_HotTicketsLink = (AnchorElement)Document.GetElementById(clientId + "_HotTicketsLink");}; return _HotTicketsLink;}} private AnchorElement _HotTicketsLink;
+		public jQueryObject HotTicketsLinkJ {get {if (_HotTicketsLinkJ == null) {_HotTicketsLinkJ = jQuery.Select("#" + clientId + "_HotTicketsLink");}; return _HotTicketsLinkJ;}} private jQueryObject _HotTicketsLinkJ;
+		public Element HotTicketsLinkVenueLabel {get {if (_HotTicketsLinkVenueLabel == null) {_HotTicketsLinkVenueLabel = (Element)Document.GetElementById(clientId + "_HotTicketsLinkVenueLabel");}; return _HotTicketsLinkVenueLabel;}} private Element _HotTicketsLinkVenueLabel;
+		public jQueryObject HotTicketsLinkVenueLabelJ {get {if (_HotTicketsLinkVenueLabelJ == null) {_HotTicketsLinkVenueLabelJ = jQuery.Select("#" + clientId + "_HotTicketsLinkVenueLabel");}; return _HotTicketsLinkVenueLabelJ;}} private jQueryObject _HotTicketsLinkVenueLabelJ;//mappings.Add("System.Web.UI.WebControls.Label", ElementGetter("Element"));
+		public AnchorElement TicketsLink {get {if (_TicketsLink == null) {_TicketsLink = (AnchorElement)Document.GetElementById(clientId + "_TicketsLink");}; return _TicketsLink;}} private AnchorElement _TicketsLink;
+		public jQueryObject TicketsLinkJ {get {if (_TicketsLinkJ == null) {_TicketsLinkJ = jQuery.Select("#" + clientId + "_TicketsLink");}; return _TicketsLinkJ;}} private jQueryObject _TicketsLinkJ;
+		public Element TicketsLinkVenueLabel {get {if (_TicketsLinkVenueLabel == null) {_TicketsLinkVenueLabel = (Element)Document.GetElementById(clientId + "_TicketsLinkVenueLabel");}; return _TicketsLinkVenueLabel;}} private Element _TicketsLinkVenueLabel;
+		public jQueryObject TicketsLinkVenueLabelJ {get {if (_TicketsLinkVenueLabelJ == null) {_TicketsLinkVenueLabelJ = jQuery.Select("#" + clientId + "_TicketsLinkVenueLabel");}; return _TicketsLinkVenueLabelJ;}} private jQueryObject _TicketsLinkVenueLabelJ;//mappings.Add("System.Web.UI.WebControls.Label", ElementGetter("Element"));
+		public AnchorElement FreeGuestlistLink {get {if (_FreeGuestlistLink == null) {_FreeGuestlistLink = (AnchorElement)Document.GetElementById(clientId + "_FreeGuestlistLink");}; return _FreeGuestlistLink;}} private AnchorElement _FreeGuestlistLink;
+		public jQueryObject FreeGuestlistLinkJ {get {if (_FreeGuestlistLinkJ == null) {_FreeGuestlistLinkJ = jQuery.Select("#" + clientId + "_FreeGuestlistLink");}; return _FreeGuestlistLinkJ;}} private jQueryObject _FreeGuestlistLinkJ;
+		public Element FreeGuestlistLinkVenueLabel {get {if (_FreeGuestlistLinkVenueLabel == null) {_FreeGuestlistLinkVenueLabel = (Element)Document.GetElementById(clientId + "_FreeGuestlistLinkVenueLabel");}; return _FreeGuestlistLinkVenueLabel;}} private Element _FreeGuestlistLinkVenueLabel;
+		public jQueryObject FreeGuestlistLinkVenueLabelJ {get {if (_FreeGuestlistLinkVenueLabelJ == null) {_FreeGuestlistLinkVenueLabelJ = jQuery.Select("#" + clientId + "_FreeGuestlistLinkVenueLabel");}; return _FreeGuestlistLinkVenueLabelJ;}} private jQueryObject _FreeGuestlistLinkVenueLabelJ;//mappings.Add("System.Web.UI.WebControls.Label", ElementGetter("Element"));
+		public DivElement Panel1 {get {if (_Panel1 == null) {_Panel1 = (DivElement)Document.GetElementById(clientId + "_Panel1");}; return _Panel1;}} private DivElement _Panel1;
+		public jQueryObject Panel1J {get {if (_Panel1J == null) {_Panel1J = jQuery.Select("#" + clientId + "_Panel1");}; return _Panel1J;}} private jQueryObject _Panel1J;
+		public Element H11 {get {if (_H11 == null) {_H11 = (Element)Document.GetElementById(clientId + "_H11");}; return _H11;}} private Element _H11;
+		public jQueryObject H11J {get {if (_H11J == null) {_H11J = jQuery.Select("#" + clientId + "_H11");}; return _H11J;}} private jQueryObject _H11J;//mappings.Add("Spotted.CustomControls.h1", ElementGetter("Element"));
 		public Element VenueHeader {get {if (_VenueHeader == null) {_VenueHeader = (Element)Document.GetElementById(clientId + "_VenueHeader");}; return _VenueHeader;}} private Element _VenueHeader;
 		public jQueryObject VenueHeaderJ {get {if (_VenueHeaderJ == null) {_VenueHeaderJ = jQuery.Select("#" + clientId + "_VenueHeader");}; return _VenueHeaderJ;}} private jQueryObject _VenueHeaderJ;//mappings.Add("System.Web.UI.WebControls.Label", ElementGetter("Element"));
 		public Element VenueHeader1 {get {if (_VenueHeader1 == null) {_VenueHeader1 = (Element)Document.GetElementById(clientId + "_VenueHeader1");}; return _VenueHeader1;}} private Element _VenueHeader1;
@@ -63,26 +83,6 @@ namespace Js.Pages.Venues.Home
 		public jQueryObject PlaceNameLinkJ {get {if (_PlaceNameLinkJ == null) {_PlaceNameLinkJ = jQuery.Select("#" + clientId + "_PlaceNameLink");}; return _PlaceNameLinkJ;}} private jQueryObject _PlaceNameLinkJ;
 		public AnchorElement CalendarLink {get {if (_CalendarLink == null) {_CalendarLink = (AnchorElement)Document.GetElementById(clientId + "_CalendarLink");}; return _CalendarLink;}} private AnchorElement _CalendarLink;
 		public jQueryObject CalendarLinkJ {get {if (_CalendarLinkJ == null) {_CalendarLinkJ = jQuery.Select("#" + clientId + "_CalendarLink");}; return _CalendarLinkJ;}} private jQueryObject _CalendarLinkJ;
-		public Element H12 {get {if (_H12 == null) {_H12 = (Element)Document.GetElementById(clientId + "_H12");}; return _H12;}} private Element _H12;
-		public jQueryObject H12J {get {if (_H12J == null) {_H12J = jQuery.Select("#" + clientId + "_H12");}; return _H12J;}} private jQueryObject _H12J;//mappings.Add("Spotted.CustomControls.h1", ElementGetter("Element"));
-		public Element Div1 {get {if (_Div1 == null) {_Div1 = (Element)Document.GetElementById(clientId + "_Div1");}; return _Div1;}} private Element _Div1;
-		public jQueryObject Div1J {get {if (_Div1J == null) {_Div1J = jQuery.Select("#" + clientId + "_Div1");}; return _Div1J;}} private jQueryObject _Div1J;//mappings.Add("System.Web.UI.HtmlControls.HtmlGenericControl", ElementGetter("Element"));
-		public AnchorElement HotTicketsLink {get {if (_HotTicketsLink == null) {_HotTicketsLink = (AnchorElement)Document.GetElementById(clientId + "_HotTicketsLink");}; return _HotTicketsLink;}} private AnchorElement _HotTicketsLink;
-		public jQueryObject HotTicketsLinkJ {get {if (_HotTicketsLinkJ == null) {_HotTicketsLinkJ = jQuery.Select("#" + clientId + "_HotTicketsLink");}; return _HotTicketsLinkJ;}} private jQueryObject _HotTicketsLinkJ;
-		public Element HotTicketsLinkVenueLabel {get {if (_HotTicketsLinkVenueLabel == null) {_HotTicketsLinkVenueLabel = (Element)Document.GetElementById(clientId + "_HotTicketsLinkVenueLabel");}; return _HotTicketsLinkVenueLabel;}} private Element _HotTicketsLinkVenueLabel;
-		public jQueryObject HotTicketsLinkVenueLabelJ {get {if (_HotTicketsLinkVenueLabelJ == null) {_HotTicketsLinkVenueLabelJ = jQuery.Select("#" + clientId + "_HotTicketsLinkVenueLabel");}; return _HotTicketsLinkVenueLabelJ;}} private jQueryObject _HotTicketsLinkVenueLabelJ;//mappings.Add("System.Web.UI.WebControls.Label", ElementGetter("Element"));
-		public AnchorElement TicketsLink {get {if (_TicketsLink == null) {_TicketsLink = (AnchorElement)Document.GetElementById(clientId + "_TicketsLink");}; return _TicketsLink;}} private AnchorElement _TicketsLink;
-		public jQueryObject TicketsLinkJ {get {if (_TicketsLinkJ == null) {_TicketsLinkJ = jQuery.Select("#" + clientId + "_TicketsLink");}; return _TicketsLinkJ;}} private jQueryObject _TicketsLinkJ;
-		public Element TicketsLinkVenueLabel {get {if (_TicketsLinkVenueLabel == null) {_TicketsLinkVenueLabel = (Element)Document.GetElementById(clientId + "_TicketsLinkVenueLabel");}; return _TicketsLinkVenueLabel;}} private Element _TicketsLinkVenueLabel;
-		public jQueryObject TicketsLinkVenueLabelJ {get {if (_TicketsLinkVenueLabelJ == null) {_TicketsLinkVenueLabelJ = jQuery.Select("#" + clientId + "_TicketsLinkVenueLabel");}; return _TicketsLinkVenueLabelJ;}} private jQueryObject _TicketsLinkVenueLabelJ;//mappings.Add("System.Web.UI.WebControls.Label", ElementGetter("Element"));
-		public AnchorElement FreeGuestlistLink {get {if (_FreeGuestlistLink == null) {_FreeGuestlistLink = (AnchorElement)Document.GetElementById(clientId + "_FreeGuestlistLink");}; return _FreeGuestlistLink;}} private AnchorElement _FreeGuestlistLink;
-		public jQueryObject FreeGuestlistLinkJ {get {if (_FreeGuestlistLinkJ == null) {_FreeGuestlistLinkJ = jQuery.Select("#" + clientId + "_FreeGuestlistLink");}; return _FreeGuestlistLinkJ;}} private jQueryObject _FreeGuestlistLinkJ;
-		public Element FreeGuestlistLinkVenueLabel {get {if (_FreeGuestlistLinkVenueLabel == null) {_FreeGuestlistLinkVenueLabel = (Element)Document.GetElementById(clientId + "_FreeGuestlistLinkVenueLabel");}; return _FreeGuestlistLinkVenueLabel;}} private Element _FreeGuestlistLinkVenueLabel;
-		public jQueryObject FreeGuestlistLinkVenueLabelJ {get {if (_FreeGuestlistLinkVenueLabelJ == null) {_FreeGuestlistLinkVenueLabelJ = jQuery.Select("#" + clientId + "_FreeGuestlistLinkVenueLabel");}; return _FreeGuestlistLinkVenueLabelJ;}} private jQueryObject _FreeGuestlistLinkVenueLabelJ;//mappings.Add("System.Web.UI.WebControls.Label", ElementGetter("Element"));
-		public DivElement Panel1 {get {if (_Panel1 == null) {_Panel1 = (DivElement)Document.GetElementById(clientId + "_Panel1");}; return _Panel1;}} private DivElement _Panel1;
-		public jQueryObject Panel1J {get {if (_Panel1J == null) {_Panel1J = jQuery.Select("#" + clientId + "_Panel1");}; return _Panel1J;}} private jQueryObject _Panel1J;
-		public Element H11 {get {if (_H11 == null) {_H11 = (Element)Document.GetElementById(clientId + "_H11");}; return _H11;}} private Element _H11;
-		public jQueryObject H11J {get {if (_H11J == null) {_H11J = jQuery.Select("#" + clientId + "_H11");}; return _H11J;}} private jQueryObject _H11J;//mappings.Add("Spotted.CustomControls.h1", ElementGetter("Element"));
 		public Element GenericContainerPage {get {if (_GenericContainerPage == null) {_GenericContainerPage = (Element)Document.GetElementById(clientId + "_GenericContainerPage");}; return _GenericContainerPage;}} private Element _GenericContainerPage;
 		public jQueryObject GenericContainerPageJ {get {if (_GenericContainerPageJ == null) {_GenericContainerPageJ = jQuery.Select("#" + clientId + "_GenericContainerPage");}; return _GenericContainerPageJ;}} private jQueryObject _GenericContainerPageJ;//mappings.Add("Spotted.GenericPage", ElementGetter("Element"));
 	}

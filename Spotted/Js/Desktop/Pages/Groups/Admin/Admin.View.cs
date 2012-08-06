@@ -25,8 +25,6 @@ namespace Js.Pages.Groups.Admin
 		{
 			this.clientId = clientId;
 		}
-		public Js.Controls.Picker.Controller uiEventPicker {get {return (Js.Controls.Picker.Controller) Script.Eval(clientId + "_uiEventPickerController");}}
-		public Js.Controls.Picker.Controller uiRemoveEventPicker {get {return (Js.Controls.Picker.Controller) Script.Eval(clientId + "_uiRemoveEventPickerController");}}
 		public DivElement PanelOptions {get {if (_PanelOptions == null) {_PanelOptions = (DivElement)Document.GetElementById(clientId + "_PanelOptions");}; return _PanelOptions;}} private DivElement _PanelOptions;
 		public jQueryObject PanelOptionsJ {get {if (_PanelOptionsJ == null) {_PanelOptionsJ = jQuery.Select("#" + clientId + "_PanelOptions");}; return _PanelOptionsJ;}} private jQueryObject _PanelOptionsJ;
 		public Element GroupIntro {get {if (_GroupIntro == null) {_GroupIntro = (Element)Document.GetElementById(clientId + "_GroupIntro");}; return _GroupIntro;}} private Element _GroupIntro;
@@ -185,6 +183,8 @@ namespace Js.Pages.Groups.Admin
 		public jQueryObject H13J {get {if (_H13J == null) {_H13J = jQuery.Select("#" + clientId + "_H13");}; return _H13J;}} private jQueryObject _H13J;//mappings.Add("Spotted.CustomControls.h1", ElementGetter("Element"));
 		public CheckBoxElement MemberFavouriteCheckBox {get {if (_MemberFavouriteCheckBox == null) {_MemberFavouriteCheckBox = (CheckBoxElement)Document.GetElementById(clientId + "_MemberFavouriteCheckBox");}; return _MemberFavouriteCheckBox;}} private CheckBoxElement _MemberFavouriteCheckBox;
 		public jQueryObject MemberFavouriteCheckBoxJ {get {if (_MemberFavouriteCheckBoxJ == null) {_MemberFavouriteCheckBoxJ = jQuery.Select("#" + clientId + "_MemberFavouriteCheckBox");}; return _MemberFavouriteCheckBoxJ;}} private jQueryObject _MemberFavouriteCheckBoxJ;
+		public Js.Controls.Picker.Controller uiEventPicker {get {return (Js.Controls.Picker.Controller) Script.Eval(clientId + "_uiEventPickerController");}}
+		public Js.Controls.Picker.Controller uiRemoveEventPicker {get {return (Js.Controls.Picker.Controller) Script.Eval(clientId + "_uiRemoveEventPickerController");}}
 		public Element GenericContainerPage {get {if (_GenericContainerPage == null) {_GenericContainerPage = (Element)Document.GetElementById(clientId + "_GenericContainerPage");}; return _GenericContainerPage;}} private Element _GenericContainerPage;
 		public jQueryObject GenericContainerPageJ {get {if (_GenericContainerPageJ == null) {_GenericContainerPageJ = jQuery.Select("#" + clientId + "_GenericContainerPage");}; return _GenericContainerPageJ;}} private jQueryObject _GenericContainerPageJ;//mappings.Add("Spotted.GenericPage", ElementGetter("Element"));
 	}

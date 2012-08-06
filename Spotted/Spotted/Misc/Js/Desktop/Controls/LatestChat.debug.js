@@ -241,14 +241,6 @@ Js.Controls.LatestChat.View = function Js_Controls_LatestChat_View(clientId) {
     /// </param>
     /// <field name="clientId" type="String">
     /// </field>
-    /// <field name="_ExternalHeader" type="Object" domElement="true">
-    /// </field>
-    /// <field name="_ExternalHeaderJ" type="jQueryObject">
-    /// </field>
-    /// <field name="_ExternalHolder" type="Object" domElement="true">
-    /// </field>
-    /// <field name="_ExternalHolderJ" type="jQueryObject">
-    /// </field>
     /// <field name="_Holder" type="Object" domElement="true">
     /// </field>
     /// <field name="_HolderJ" type="jQueryObject">
@@ -329,50 +321,18 @@ Js.Controls.LatestChat.View = function Js_Controls_LatestChat_View(clientId) {
     /// </field>
     /// <field name="_uiHasGroupObjectFilterJ" type="jQueryObject">
     /// </field>
+    /// <field name="_ExternalHeader" type="Object" domElement="true">
+    /// </field>
+    /// <field name="_ExternalHeaderJ" type="jQueryObject">
+    /// </field>
+    /// <field name="_ExternalHolder" type="Object" domElement="true">
+    /// </field>
+    /// <field name="_ExternalHolderJ" type="jQueryObject">
+    /// </field>
     this.clientId = clientId;
 }
 Js.Controls.LatestChat.View.prototype = {
     clientId: null,
-    
-    get_externalHeader: function Js_Controls_LatestChat_View$get_externalHeader() {
-        /// <value type="Object" domElement="true"></value>
-        if (this._ExternalHeader == null) {
-            this._ExternalHeader = document.getElementById(this.clientId + '_ExternalHeader');
-        }
-        return this._ExternalHeader;
-    },
-    
-    _ExternalHeader: null,
-    
-    get_externalHeaderJ: function Js_Controls_LatestChat_View$get_externalHeaderJ() {
-        /// <value type="jQueryObject"></value>
-        if (this._ExternalHeaderJ == null) {
-            this._ExternalHeaderJ = $('#' + this.clientId + '_ExternalHeader');
-        }
-        return this._ExternalHeaderJ;
-    },
-    
-    _ExternalHeaderJ: null,
-    
-    get_externalHolder: function Js_Controls_LatestChat_View$get_externalHolder() {
-        /// <value type="Object" domElement="true"></value>
-        if (this._ExternalHolder == null) {
-            this._ExternalHolder = document.getElementById(this.clientId + '_ExternalHolder');
-        }
-        return this._ExternalHolder;
-    },
-    
-    _ExternalHolder: null,
-    
-    get_externalHolderJ: function Js_Controls_LatestChat_View$get_externalHolderJ() {
-        /// <value type="jQueryObject"></value>
-        if (this._ExternalHolderJ == null) {
-            this._ExternalHolderJ = $('#' + this.clientId + '_ExternalHolder');
-        }
-        return this._ExternalHolderJ;
-    },
-    
-    _ExternalHolderJ: null,
     
     get_holder: function Js_Controls_LatestChat_View$get_holder() {
         /// <value type="Object" domElement="true"></value>
@@ -772,7 +732,47 @@ Js.Controls.LatestChat.View.prototype = {
         return this._uiHasGroupObjectFilterJ;
     },
     
-    _uiHasGroupObjectFilterJ: null
+    _uiHasGroupObjectFilterJ: null,
+    
+    get_externalHeader: function Js_Controls_LatestChat_View$get_externalHeader() {
+        /// <value type="Object" domElement="true"></value>
+        if (this._ExternalHeader == null) {
+            this._ExternalHeader = document.getElementById(this.clientId + '_ExternalHeader');
+        }
+        return this._ExternalHeader;
+    },
+    
+    _ExternalHeader: null,
+    
+    get_externalHeaderJ: function Js_Controls_LatestChat_View$get_externalHeaderJ() {
+        /// <value type="jQueryObject"></value>
+        if (this._ExternalHeaderJ == null) {
+            this._ExternalHeaderJ = $('#' + this.clientId + '_ExternalHeader');
+        }
+        return this._ExternalHeaderJ;
+    },
+    
+    _ExternalHeaderJ: null,
+    
+    get_externalHolder: function Js_Controls_LatestChat_View$get_externalHolder() {
+        /// <value type="Object" domElement="true"></value>
+        if (this._ExternalHolder == null) {
+            this._ExternalHolder = document.getElementById(this.clientId + '_ExternalHolder');
+        }
+        return this._ExternalHolder;
+    },
+    
+    _ExternalHolder: null,
+    
+    get_externalHolderJ: function Js_Controls_LatestChat_View$get_externalHolderJ() {
+        /// <value type="jQueryObject"></value>
+        if (this._ExternalHolderJ == null) {
+            this._ExternalHolderJ = $('#' + this.clientId + '_ExternalHolder');
+        }
+        return this._ExternalHolderJ;
+    },
+    
+    _ExternalHolderJ: null
 }
 
 

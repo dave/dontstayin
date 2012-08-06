@@ -1,6 +1,6 @@
-//mappings.Add("Spotted.CustomControls.h1", ElementGetter("Element"));
 //mappings.Add("System.Web.UI.HtmlControls.HtmlGenericControl", ElementGetter("Element"));
 //mappings.Add("System.Web.UI.WebControls.LinkButton", ElementGetter("Element"));
+//mappings.Add("Spotted.CustomControls.h1", ElementGetter("Element"));
 //mappings.Add("Spotted.GenericPage", ElementGetter("Element"));
 using System;
 using System.Collections.Generic;
@@ -19,10 +19,6 @@ namespace Js.Pages.EmailVerify
 		{
 			this.clientId = clientId;
 		}
-		public Element H11 {get {if (_H11 == null) {_H11 = (Element)Document.GetElementById(clientId + "_H11");}; return _H11;}} private Element _H11;
-		public jQueryObject H11J {get {if (_H11J == null) {_H11J = jQuery.Select("#" + clientId + "_H11");}; return _H11J;}} private jQueryObject _H11J;//mappings.Add("Spotted.CustomControls.h1", ElementGetter("Element"));
-		public Element H12 {get {if (_H12 == null) {_H12 = (Element)Document.GetElementById(clientId + "_H12");}; return _H12;}} private Element _H12;
-		public jQueryObject H12J {get {if (_H12J == null) {_H12J = jQuery.Select("#" + clientId + "_H12");}; return _H12J;}} private jQueryObject _H12J;//mappings.Add("Spotted.CustomControls.h1", ElementGetter("Element"));
 		public DivElement enableCommsPanel {get {if (_enableCommsPanel == null) {_enableCommsPanel = (DivElement)Document.GetElementById(clientId + "_enableCommsPanel");}; return _enableCommsPanel;}} private DivElement _enableCommsPanel;
 		public jQueryObject enableCommsPanelJ {get {if (_enableCommsPanelJ == null) {_enableCommsPanelJ = jQuery.Select("#" + clientId + "_enableCommsPanel");}; return _enableCommsPanelJ;}} private jQueryObject _enableCommsPanelJ;
 		public DivElement disableCommsPanel {get {if (_disableCommsPanel == null) {_disableCommsPanel = (DivElement)Document.GetElementById(clientId + "_disableCommsPanel");}; return _disableCommsPanel;}} private DivElement _disableCommsPanel;
@@ -35,6 +31,10 @@ namespace Js.Pages.EmailVerify
 		public jQueryObject PanelErrorJ {get {if (_PanelErrorJ == null) {_PanelErrorJ = jQuery.Select("#" + clientId + "_PanelError");}; return _PanelErrorJ;}} private jQueryObject _PanelErrorJ;
 		public Element enableCommsH1 {get {if (_enableCommsH1 == null) {_enableCommsH1 = (Element)Document.GetElementById(clientId + "_enableCommsH1");}; return _enableCommsH1;}} private Element _enableCommsH1;
 		public jQueryObject enableCommsH1J {get {if (_enableCommsH1J == null) {_enableCommsH1J = jQuery.Select("#" + clientId + "_enableCommsH1");}; return _enableCommsH1J;}} private jQueryObject _enableCommsH1J;//mappings.Add("Spotted.CustomControls.h1", ElementGetter("Element"));
+		public Element H11 {get {if (_H11 == null) {_H11 = (Element)Document.GetElementById(clientId + "_H11");}; return _H11;}} private Element _H11;
+		public jQueryObject H11J {get {if (_H11J == null) {_H11J = jQuery.Select("#" + clientId + "_H11");}; return _H11J;}} private jQueryObject _H11J;//mappings.Add("Spotted.CustomControls.h1", ElementGetter("Element"));
+		public Element H12 {get {if (_H12 == null) {_H12 = (Element)Document.GetElementById(clientId + "_H12");}; return _H12;}} private Element _H12;
+		public jQueryObject H12J {get {if (_H12J == null) {_H12J = jQuery.Select("#" + clientId + "_H12");}; return _H12J;}} private jQueryObject _H12J;//mappings.Add("Spotted.CustomControls.h1", ElementGetter("Element"));
 		public Element GenericContainerPage {get {if (_GenericContainerPage == null) {_GenericContainerPage = (Element)Document.GetElementById(clientId + "_GenericContainerPage");}; return _GenericContainerPage;}} private Element _GenericContainerPage;
 		public jQueryObject GenericContainerPageJ {get {if (_GenericContainerPageJ == null) {_GenericContainerPageJ = jQuery.Select("#" + clientId + "_GenericContainerPage");}; return _GenericContainerPageJ;}} private jQueryObject _GenericContainerPageJ;//mappings.Add("Spotted.GenericPage", ElementGetter("Element"));
 	}

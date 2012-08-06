@@ -6832,8 +6832,8 @@
     </VisualStudio>
   </ProjectExtensions>
   <PropertyGroup>
-    <PostBuildEvent>..\..\..\Utilities\Script\WebServiceStubGenerator\bin\WebServiceStubGenerator.exe /a:..\..\..\Spotted\Spotted\bin\Spotted.dll /o:..\..\..\Spotted\Js\Desktop\WebServices\WebServices.Generated.cs
-..\..\..\Utilities\Script\ViewGenerator\bin\ViewScriptGenerator.exe /a:..\..\..\Spotted\Spotted\bin\Spotted.dll
+    <PostBuildEvent>..\..\..\Utilities\Script\WebServiceStubGenerator\bin\WebServiceStubGenerator.exe /a:..\..\..\Spotted\Spotted\bin\Spotted.dll /o:..\..\..\Spotted\SpottedScript\WebServices\Generated.cs
+..\..\..\Utilities\Script\ViewGenerator\bin\ViewScriptGenerator.exe /a:..\..\..\Spotted\Spotted\bin\Spotted.dll /o:..\..\..\Spotted\SpottedScript\Views\Generated.cs
 </PostBuildEvent>
   </PropertyGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />

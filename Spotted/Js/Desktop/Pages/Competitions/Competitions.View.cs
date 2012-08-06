@@ -1,7 +1,7 @@
-//mappings.Add("Spotted.CustomControls.h1", ElementGetter("Element"));
-//mappings.Add("System.Web.UI.HtmlControls.HtmlTableCell", ElementGetter("Element"));
 //mappings.Add("System.Web.UI.WebControls.Label", ElementGetter("Element"));
 //mappings.Add("System.Web.UI.WebControls.LinkButton", ElementGetter("Element"));
+//mappings.Add("Spotted.CustomControls.h1", ElementGetter("Element"));
+//mappings.Add("System.Web.UI.HtmlControls.HtmlTableCell", ElementGetter("Element"));
 //mappings.Add("Spotted.GenericPage", ElementGetter("Element"));
 using System;
 using System.Collections.Generic;
@@ -20,26 +20,6 @@ namespace Js.Pages.Competitions
 		{
 			this.clientId = clientId;
 		}
-		public Element H13 {get {if (_H13 == null) {_H13 = (Element)Document.GetElementById(clientId + "_H13");}; return _H13;}} private Element _H13;
-		public jQueryObject H13J {get {if (_H13J == null) {_H13J = jQuery.Select("#" + clientId + "_H13");}; return _H13J;}} private jQueryObject _H13J;//mappings.Add("Spotted.CustomControls.h1", ElementGetter("Element"));
-		public DivElement TopPhotosNewsPanel {get {if (_TopPhotosNewsPanel == null) {_TopPhotosNewsPanel = (DivElement)Document.GetElementById(clientId + "_TopPhotosNewsPanel");}; return _TopPhotosNewsPanel;}} private DivElement _TopPhotosNewsPanel;
-		public jQueryObject TopPhotosNewsPanelJ {get {if (_TopPhotosNewsPanelJ == null) {_TopPhotosNewsPanelJ = jQuery.Select("#" + clientId + "_TopPhotosNewsPanel");}; return _TopPhotosNewsPanelJ;}} private jQueryObject _TopPhotosNewsPanelJ;
-		public Element Header {get {if (_Header == null) {_Header = (Element)Document.GetElementById(clientId + "_Header");}; return _Header;}} private Element _Header;
-		public jQueryObject HeaderJ {get {if (_HeaderJ == null) {_HeaderJ = jQuery.Select("#" + clientId + "_Header");}; return _HeaderJ;}} private jQueryObject _HeaderJ;//mappings.Add("Spotted.CustomControls.h1", ElementGetter("Element"));
-		public Element PlaceImgCell {get {if (_PlaceImgCell == null) {_PlaceImgCell = (Element)Document.GetElementById(clientId + "_PlaceImgCell");}; return _PlaceImgCell;}} private Element _PlaceImgCell;
-		public jQueryObject PlaceImgCellJ {get {if (_PlaceImgCellJ == null) {_PlaceImgCellJ = jQuery.Select("#" + clientId + "_PlaceImgCell");}; return _PlaceImgCellJ;}} private jQueryObject _PlaceImgCellJ;//mappings.Add("System.Web.UI.HtmlControls.HtmlTableCell", ElementGetter("Element"));
-		public Element PlaceInfoTopPhotoCell {get {if (_PlaceInfoTopPhotoCell == null) {_PlaceInfoTopPhotoCell = (Element)Document.GetElementById(clientId + "_PlaceInfoTopPhotoCell");}; return _PlaceInfoTopPhotoCell;}} private Element _PlaceInfoTopPhotoCell;
-		public jQueryObject PlaceInfoTopPhotoCellJ {get {if (_PlaceInfoTopPhotoCellJ == null) {_PlaceInfoTopPhotoCellJ = jQuery.Select("#" + clientId + "_PlaceInfoTopPhotoCell");}; return _PlaceInfoTopPhotoCellJ;}} private jQueryObject _PlaceInfoTopPhotoCellJ;//mappings.Add("System.Web.UI.HtmlControls.HtmlTableCell", ElementGetter("Element"));
-		public DivElement TopPhotoPanel {get {if (_TopPhotoPanel == null) {_TopPhotoPanel = (DivElement)Document.GetElementById(clientId + "_TopPhotoPanel");}; return _TopPhotoPanel;}} private DivElement _TopPhotoPanel;
-		public jQueryObject TopPhotoPanelJ {get {if (_TopPhotoPanelJ == null) {_TopPhotoPanelJ = jQuery.Select("#" + clientId + "_TopPhotoPanel");}; return _TopPhotoPanelJ;}} private jQueryObject _TopPhotoPanelJ;
-		public Element H11 {get {if (_H11 == null) {_H11 = (Element)Document.GetElementById(clientId + "_H11");}; return _H11;}} private Element _H11;
-		public jQueryObject H11J {get {if (_H11J == null) {_H11J = jQuery.Select("#" + clientId + "_H11");}; return _H11J;}} private jQueryObject _H11J;//mappings.Add("Spotted.CustomControls.h1", ElementGetter("Element"));
-		public Element LatestCell {get {if (_LatestCell == null) {_LatestCell = (Element)Document.GetElementById(clientId + "_LatestCell");}; return _LatestCell;}} private Element _LatestCell;
-		public jQueryObject LatestCellJ {get {if (_LatestCellJ == null) {_LatestCellJ = jQuery.Select("#" + clientId + "_LatestCell");}; return _LatestCellJ;}} private jQueryObject _LatestCellJ;//mappings.Add("System.Web.UI.HtmlControls.HtmlTableCell", ElementGetter("Element"));
-		public DivElement SpottedPanel {get {if (_SpottedPanel == null) {_SpottedPanel = (DivElement)Document.GetElementById(clientId + "_SpottedPanel");}; return _SpottedPanel;}} private DivElement _SpottedPanel;
-		public jQueryObject SpottedPanelJ {get {if (_SpottedPanelJ == null) {_SpottedPanelJ = jQuery.Select("#" + clientId + "_SpottedPanel");}; return _SpottedPanelJ;}} private jQueryObject _SpottedPanelJ;
-		public Element H12 {get {if (_H12 == null) {_H12 = (Element)Document.GetElementById(clientId + "_H12");}; return _H12;}} private Element _H12;
-		public jQueryObject H12J {get {if (_H12J == null) {_H12J = jQuery.Select("#" + clientId + "_H12");}; return _H12J;}} private jQueryObject _H12J;//mappings.Add("Spotted.CustomControls.h1", ElementGetter("Element"));
 		public DivElement MoreInfoPanel {get {if (_MoreInfoPanel == null) {_MoreInfoPanel = (DivElement)Document.GetElementById(clientId + "_MoreInfoPanel");}; return _MoreInfoPanel;}} private DivElement _MoreInfoPanel;
 		public jQueryObject MoreInfoPanelJ {get {if (_MoreInfoPanelJ == null) {_MoreInfoPanelJ = jQuery.Select("#" + clientId + "_MoreInfoPanel");}; return _MoreInfoPanelJ;}} private jQueryObject _MoreInfoPanelJ;
 		public DivElement MoreInfoPanel1 {get {if (_MoreInfoPanel1 == null) {_MoreInfoPanel1 = (DivElement)Document.GetElementById(clientId + "_MoreInfoPanel1");}; return _MoreInfoPanel1;}} private DivElement _MoreInfoPanel1;
@@ -84,6 +64,26 @@ namespace Js.Pages.Competitions
 		public jQueryObject NoCompPanelJ {get {if (_NoCompPanelJ == null) {_NoCompPanelJ = jQuery.Select("#" + clientId + "_NoCompPanel");}; return _NoCompPanelJ;}} private jQueryObject _NoCompPanelJ;
 		public DivElement CompPanel {get {if (_CompPanel == null) {_CompPanel = (DivElement)Document.GetElementById(clientId + "_CompPanel");}; return _CompPanel;}} private DivElement _CompPanel;
 		public jQueryObject CompPanelJ {get {if (_CompPanelJ == null) {_CompPanelJ = jQuery.Select("#" + clientId + "_CompPanel");}; return _CompPanelJ;}} private jQueryObject _CompPanelJ;
+		public Element H13 {get {if (_H13 == null) {_H13 = (Element)Document.GetElementById(clientId + "_H13");}; return _H13;}} private Element _H13;
+		public jQueryObject H13J {get {if (_H13J == null) {_H13J = jQuery.Select("#" + clientId + "_H13");}; return _H13J;}} private jQueryObject _H13J;//mappings.Add("Spotted.CustomControls.h1", ElementGetter("Element"));
+		public DivElement TopPhotosNewsPanel {get {if (_TopPhotosNewsPanel == null) {_TopPhotosNewsPanel = (DivElement)Document.GetElementById(clientId + "_TopPhotosNewsPanel");}; return _TopPhotosNewsPanel;}} private DivElement _TopPhotosNewsPanel;
+		public jQueryObject TopPhotosNewsPanelJ {get {if (_TopPhotosNewsPanelJ == null) {_TopPhotosNewsPanelJ = jQuery.Select("#" + clientId + "_TopPhotosNewsPanel");}; return _TopPhotosNewsPanelJ;}} private jQueryObject _TopPhotosNewsPanelJ;
+		public Element Header {get {if (_Header == null) {_Header = (Element)Document.GetElementById(clientId + "_Header");}; return _Header;}} private Element _Header;
+		public jQueryObject HeaderJ {get {if (_HeaderJ == null) {_HeaderJ = jQuery.Select("#" + clientId + "_Header");}; return _HeaderJ;}} private jQueryObject _HeaderJ;//mappings.Add("Spotted.CustomControls.h1", ElementGetter("Element"));
+		public Element PlaceImgCell {get {if (_PlaceImgCell == null) {_PlaceImgCell = (Element)Document.GetElementById(clientId + "_PlaceImgCell");}; return _PlaceImgCell;}} private Element _PlaceImgCell;
+		public jQueryObject PlaceImgCellJ {get {if (_PlaceImgCellJ == null) {_PlaceImgCellJ = jQuery.Select("#" + clientId + "_PlaceImgCell");}; return _PlaceImgCellJ;}} private jQueryObject _PlaceImgCellJ;//mappings.Add("System.Web.UI.HtmlControls.HtmlTableCell", ElementGetter("Element"));
+		public Element PlaceInfoTopPhotoCell {get {if (_PlaceInfoTopPhotoCell == null) {_PlaceInfoTopPhotoCell = (Element)Document.GetElementById(clientId + "_PlaceInfoTopPhotoCell");}; return _PlaceInfoTopPhotoCell;}} private Element _PlaceInfoTopPhotoCell;
+		public jQueryObject PlaceInfoTopPhotoCellJ {get {if (_PlaceInfoTopPhotoCellJ == null) {_PlaceInfoTopPhotoCellJ = jQuery.Select("#" + clientId + "_PlaceInfoTopPhotoCell");}; return _PlaceInfoTopPhotoCellJ;}} private jQueryObject _PlaceInfoTopPhotoCellJ;//mappings.Add("System.Web.UI.HtmlControls.HtmlTableCell", ElementGetter("Element"));
+		public DivElement TopPhotoPanel {get {if (_TopPhotoPanel == null) {_TopPhotoPanel = (DivElement)Document.GetElementById(clientId + "_TopPhotoPanel");}; return _TopPhotoPanel;}} private DivElement _TopPhotoPanel;
+		public jQueryObject TopPhotoPanelJ {get {if (_TopPhotoPanelJ == null) {_TopPhotoPanelJ = jQuery.Select("#" + clientId + "_TopPhotoPanel");}; return _TopPhotoPanelJ;}} private jQueryObject _TopPhotoPanelJ;
+		public Element H11 {get {if (_H11 == null) {_H11 = (Element)Document.GetElementById(clientId + "_H11");}; return _H11;}} private Element _H11;
+		public jQueryObject H11J {get {if (_H11J == null) {_H11J = jQuery.Select("#" + clientId + "_H11");}; return _H11J;}} private jQueryObject _H11J;//mappings.Add("Spotted.CustomControls.h1", ElementGetter("Element"));
+		public Element LatestCell {get {if (_LatestCell == null) {_LatestCell = (Element)Document.GetElementById(clientId + "_LatestCell");}; return _LatestCell;}} private Element _LatestCell;
+		public jQueryObject LatestCellJ {get {if (_LatestCellJ == null) {_LatestCellJ = jQuery.Select("#" + clientId + "_LatestCell");}; return _LatestCellJ;}} private jQueryObject _LatestCellJ;//mappings.Add("System.Web.UI.HtmlControls.HtmlTableCell", ElementGetter("Element"));
+		public DivElement SpottedPanel {get {if (_SpottedPanel == null) {_SpottedPanel = (DivElement)Document.GetElementById(clientId + "_SpottedPanel");}; return _SpottedPanel;}} private DivElement _SpottedPanel;
+		public jQueryObject SpottedPanelJ {get {if (_SpottedPanelJ == null) {_SpottedPanelJ = jQuery.Select("#" + clientId + "_SpottedPanel");}; return _SpottedPanelJ;}} private jQueryObject _SpottedPanelJ;
+		public Element H12 {get {if (_H12 == null) {_H12 = (Element)Document.GetElementById(clientId + "_H12");}; return _H12;}} private Element _H12;
+		public jQueryObject H12J {get {if (_H12J == null) {_H12J = jQuery.Select("#" + clientId + "_H12");}; return _H12J;}} private jQueryObject _H12J;//mappings.Add("Spotted.CustomControls.h1", ElementGetter("Element"));
 		public Element GenericContainerPage {get {if (_GenericContainerPage == null) {_GenericContainerPage = (Element)Document.GetElementById(clientId + "_GenericContainerPage");}; return _GenericContainerPage;}} private Element _GenericContainerPage;
 		public jQueryObject GenericContainerPageJ {get {if (_GenericContainerPageJ == null) {_GenericContainerPageJ = jQuery.Select("#" + clientId + "_GenericContainerPage");}; return _GenericContainerPageJ;}} private jQueryObject _GenericContainerPageJ;//mappings.Add("Spotted.GenericPage", ElementGetter("Element"));
 	}

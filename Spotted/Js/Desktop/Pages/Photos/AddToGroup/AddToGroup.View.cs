@@ -1,7 +1,7 @@
-//mappings.Add("System.Web.UI.WebControls.Repeater", ElementGetter("Element"));
-//mappings.Add("System.Web.UI.WebControls.Label", ElementGetter("Element"));
 //mappings.Add("Spotted.CustomControls.h1", ElementGetter("Element"));
 //mappings.Add("System.Web.UI.WebControls.Button", ElementGetter("Element"));
+//mappings.Add("System.Web.UI.WebControls.Label", ElementGetter("Element"));
+//mappings.Add("System.Web.UI.WebControls.Repeater", ElementGetter("Element"));
 //mappings.Add("Spotted.GenericPage", ElementGetter("Element"));
 using System;
 using System.Collections.Generic;
@@ -20,6 +20,14 @@ namespace Js.Pages.Photos.AddToGroup
 		{
 			this.clientId = clientId;
 		}
+		public Element H11 {get {if (_H11 == null) {_H11 = (Element)Document.GetElementById(clientId + "_H11");}; return _H11;}} private Element _H11;
+		public jQueryObject H11J {get {if (_H11J == null) {_H11J = jQuery.Select("#" + clientId + "_H11");}; return _H11J;}} private jQueryObject _H11J;//mappings.Add("Spotted.CustomControls.h1", ElementGetter("Element"));
+		public CheckBoxElement CaptionCompetitionCheckBox {get {if (_CaptionCompetitionCheckBox == null) {_CaptionCompetitionCheckBox = (CheckBoxElement)Document.GetElementById(clientId + "_CaptionCompetitionCheckBox");}; return _CaptionCompetitionCheckBox;}} private CheckBoxElement _CaptionCompetitionCheckBox;
+		public jQueryObject CaptionCompetitionCheckBoxJ {get {if (_CaptionCompetitionCheckBoxJ == null) {_CaptionCompetitionCheckBoxJ = jQuery.Select("#" + clientId + "_CaptionCompetitionCheckBox");}; return _CaptionCompetitionCheckBoxJ;}} private jQueryObject _CaptionCompetitionCheckBoxJ;
+		public Element Button1 {get {if (_Button1 == null) {_Button1 = (Element)Document.GetElementById(clientId + "_Button1");}; return _Button1;}} private Element _Button1;
+		public jQueryObject Button1J {get {if (_Button1J == null) {_Button1J = jQuery.Select("#" + clientId + "_Button1");}; return _Button1J;}} private jQueryObject _Button1J;//mappings.Add("System.Web.UI.WebControls.Button", ElementGetter("Element"));
+		public Element SentEmailsLabel {get {if (_SentEmailsLabel == null) {_SentEmailsLabel = (Element)Document.GetElementById(clientId + "_SentEmailsLabel");}; return _SentEmailsLabel;}} private Element _SentEmailsLabel;
+		public jQueryObject SentEmailsLabelJ {get {if (_SentEmailsLabelJ == null) {_SentEmailsLabelJ = jQuery.Select("#" + clientId + "_SentEmailsLabel");}; return _SentEmailsLabelJ;}} private jQueryObject _SentEmailsLabelJ;//mappings.Add("System.Web.UI.WebControls.Label", ElementGetter("Element"));
 		public ImageElement PhotoImg {get {if (_PhotoImg == null) {_PhotoImg = (ImageElement)Document.GetElementById(clientId + "_PhotoImg");}; return _PhotoImg;}} private ImageElement _PhotoImg;
 		public jQueryObject PhotoImgJ {get {if (_PhotoImgJ == null) {_PhotoImgJ = jQuery.Select("#" + clientId + "_PhotoImg");}; return _PhotoImgJ;}} private jQueryObject _PhotoImgJ;
 		public AnchorElement PhotoAnchor {get {if (_PhotoAnchor == null) {_PhotoAnchor = (AnchorElement)Document.GetElementById(clientId + "_PhotoAnchor");}; return _PhotoAnchor;}} private AnchorElement _PhotoAnchor;
@@ -36,14 +44,6 @@ namespace Js.Pages.Photos.AddToGroup
 		public jQueryObject ShowCheckBoxJ {get {if (_ShowCheckBoxJ == null) {_ShowCheckBoxJ = jQuery.Select("#" + clientId + "_ShowCheckBox");}; return _ShowCheckBoxJ;}} private jQueryObject _ShowCheckBoxJ;
 		public InputElement CaptionTextBox {get {if (_CaptionTextBox == null) {_CaptionTextBox = (InputElement)Document.GetElementById(clientId + "_CaptionTextBox");}; return _CaptionTextBox;}} private InputElement _CaptionTextBox;
 		public jQueryObject CaptionTextBoxJ {get {if (_CaptionTextBoxJ == null) {_CaptionTextBoxJ = jQuery.Select("#" + clientId + "_CaptionTextBox");}; return _CaptionTextBoxJ;}} private jQueryObject _CaptionTextBoxJ;
-		public Element H11 {get {if (_H11 == null) {_H11 = (Element)Document.GetElementById(clientId + "_H11");}; return _H11;}} private Element _H11;
-		public jQueryObject H11J {get {if (_H11J == null) {_H11J = jQuery.Select("#" + clientId + "_H11");}; return _H11J;}} private jQueryObject _H11J;//mappings.Add("Spotted.CustomControls.h1", ElementGetter("Element"));
-		public CheckBoxElement CaptionCompetitionCheckBox {get {if (_CaptionCompetitionCheckBox == null) {_CaptionCompetitionCheckBox = (CheckBoxElement)Document.GetElementById(clientId + "_CaptionCompetitionCheckBox");}; return _CaptionCompetitionCheckBox;}} private CheckBoxElement _CaptionCompetitionCheckBox;
-		public jQueryObject CaptionCompetitionCheckBoxJ {get {if (_CaptionCompetitionCheckBoxJ == null) {_CaptionCompetitionCheckBoxJ = jQuery.Select("#" + clientId + "_CaptionCompetitionCheckBox");}; return _CaptionCompetitionCheckBoxJ;}} private jQueryObject _CaptionCompetitionCheckBoxJ;
-		public Element Button1 {get {if (_Button1 == null) {_Button1 = (Element)Document.GetElementById(clientId + "_Button1");}; return _Button1;}} private Element _Button1;
-		public jQueryObject Button1J {get {if (_Button1J == null) {_Button1J = jQuery.Select("#" + clientId + "_Button1");}; return _Button1J;}} private jQueryObject _Button1J;//mappings.Add("System.Web.UI.WebControls.Button", ElementGetter("Element"));
-		public Element SentEmailsLabel {get {if (_SentEmailsLabel == null) {_SentEmailsLabel = (Element)Document.GetElementById(clientId + "_SentEmailsLabel");}; return _SentEmailsLabel;}} private Element _SentEmailsLabel;
-		public jQueryObject SentEmailsLabelJ {get {if (_SentEmailsLabelJ == null) {_SentEmailsLabelJ = jQuery.Select("#" + clientId + "_SentEmailsLabel");}; return _SentEmailsLabelJ;}} private jQueryObject _SentEmailsLabelJ;//mappings.Add("System.Web.UI.WebControls.Label", ElementGetter("Element"));
 		public Element GenericContainerPage {get {if (_GenericContainerPage == null) {_GenericContainerPage = (Element)Document.GetElementById(clientId + "_GenericContainerPage");}; return _GenericContainerPage;}} private Element _GenericContainerPage;
 		public jQueryObject GenericContainerPageJ {get {if (_GenericContainerPageJ == null) {_GenericContainerPageJ = jQuery.Select("#" + clientId + "_GenericContainerPage");}; return _GenericContainerPageJ;}} private jQueryObject _GenericContainerPageJ;//mappings.Add("Spotted.GenericPage", ElementGetter("Element"));
 	}

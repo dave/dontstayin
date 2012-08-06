@@ -69,15 +69,15 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\Development\Media\Encoder\MediaEncoderBase\EncoderBase.csproj">
+    <ProjectReference Include="..\Encoder\MediaEncoderBase\EncoderBase.csproj">
       <Project>{F85E08C2-2A06-471E-BB7C-04AF264E26A3}</Project>
       <Name>EncoderBase</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\..\Development\Media\Encoder\PhotoEncoder\PhotoEncoder.csproj">
+    <ProjectReference Include="..\Encoder\PhotoEncoder\PhotoEncoder.csproj">
       <Project>{6B1A6A1A-4C84-4F45-A402-2683F2DFC6C1}</Project>
       <Name>PhotoEncoder</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\..\Development\Media\Service\PhotoEncoderService\PhotoEncoderService.csproj">
+    <ProjectReference Include="..\Service\PhotoEncoderService\PhotoEncoderService.csproj">
       <Project>{C2B1C917-2681-4DF7-A31F-33F9956C1CD9}</Project>
       <Name>PhotoEncoderService</Name>
     </ProjectReference>

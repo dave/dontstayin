@@ -1,8 +1,8 @@
+//mappings.Add("Spotted.CustomControls.UsrIntro", ElementGetter("Element"));
+//mappings.Add("Spotted.Controls.Cal", ElementGetter("Element"));
 //mappings.Add("Spotted.CustomControls.h1", ElementGetter("Element"));
 //mappings.Add("System.Web.UI.HtmlControls.HtmlGenericControl", ElementGetter("Element"));
 //mappings.Add("System.Web.UI.WebControls.DataList", ElementGetter("Element"));
-//mappings.Add("Spotted.CustomControls.UsrIntro", ElementGetter("Element"));
-//mappings.Add("Spotted.Controls.Cal", ElementGetter("Element"));
 //mappings.Add("Spotted.GenericPage", ElementGetter("Element"));
 using System;
 using System.Collections.Generic;
@@ -21,6 +21,10 @@ namespace Js.Pages.Usrs.MyGalleries
 		{
 			this.clientId = clientId;
 		}
+		public Element UsrIntro {get {if (_UsrIntro == null) {_UsrIntro = (Element)Document.GetElementById(clientId + "_UsrIntro");}; return _UsrIntro;}} private Element _UsrIntro;
+		public jQueryObject UsrIntroJ {get {if (_UsrIntroJ == null) {_UsrIntroJ = jQuery.Select("#" + clientId + "_UsrIntro");}; return _UsrIntroJ;}} private jQueryObject _UsrIntroJ;//mappings.Add("Spotted.CustomControls.UsrIntro", ElementGetter("Element"));
+		public Element Cal {get {if (_Cal == null) {_Cal = (Element)Document.GetElementById(clientId + "_Cal");}; return _Cal;}} private Element _Cal;
+		public jQueryObject CalJ {get {if (_CalJ == null) {_CalJ = jQuery.Select("#" + clientId + "_Cal");}; return _CalJ;}} private jQueryObject _CalJ;//mappings.Add("Spotted.Controls.Cal", ElementGetter("Element"));
 		public DivElement PanelItems {get {if (_PanelItems == null) {_PanelItems = (DivElement)Document.GetElementById(clientId + "_PanelItems");}; return _PanelItems;}} private DivElement _PanelItems;
 		public jQueryObject PanelItemsJ {get {if (_PanelItemsJ == null) {_PanelItemsJ = jQuery.Select("#" + clientId + "_PanelItems");}; return _PanelItemsJ;}} private jQueryObject _PanelItemsJ;
 		public DivElement NoItemsPanel {get {if (_NoItemsPanel == null) {_NoItemsPanel = (DivElement)Document.GetElementById(clientId + "_NoItemsPanel");}; return _NoItemsPanel;}} private DivElement _NoItemsPanel;
@@ -45,10 +49,6 @@ namespace Js.Pages.Usrs.MyGalleries
 		public jQueryObject PrevPageLink1J {get {if (_PrevPageLink1J == null) {_PrevPageLink1J = jQuery.Select("#" + clientId + "_PrevPageLink1");}; return _PrevPageLink1J;}} private jQueryObject _PrevPageLink1J;
 		public AnchorElement NextPageLink1 {get {if (_NextPageLink1 == null) {_NextPageLink1 = (AnchorElement)Document.GetElementById(clientId + "_NextPageLink1");}; return _NextPageLink1;}} private AnchorElement _NextPageLink1;
 		public jQueryObject NextPageLink1J {get {if (_NextPageLink1J == null) {_NextPageLink1J = jQuery.Select("#" + clientId + "_NextPageLink1");}; return _NextPageLink1J;}} private jQueryObject _NextPageLink1J;
-		public Element UsrIntro {get {if (_UsrIntro == null) {_UsrIntro = (Element)Document.GetElementById(clientId + "_UsrIntro");}; return _UsrIntro;}} private Element _UsrIntro;
-		public jQueryObject UsrIntroJ {get {if (_UsrIntroJ == null) {_UsrIntroJ = jQuery.Select("#" + clientId + "_UsrIntro");}; return _UsrIntroJ;}} private jQueryObject _UsrIntroJ;//mappings.Add("Spotted.CustomControls.UsrIntro", ElementGetter("Element"));
-		public Element Cal {get {if (_Cal == null) {_Cal = (Element)Document.GetElementById(clientId + "_Cal");}; return _Cal;}} private Element _Cal;
-		public jQueryObject CalJ {get {if (_CalJ == null) {_CalJ = jQuery.Select("#" + clientId + "_Cal");}; return _CalJ;}} private jQueryObject _CalJ;//mappings.Add("Spotted.Controls.Cal", ElementGetter("Element"));
 		public Element GenericContainerPage {get {if (_GenericContainerPage == null) {_GenericContainerPage = (Element)Document.GetElementById(clientId + "_GenericContainerPage");}; return _GenericContainerPage;}} private Element _GenericContainerPage;
 		public jQueryObject GenericContainerPageJ {get {if (_GenericContainerPageJ == null) {_GenericContainerPageJ = jQuery.Select("#" + clientId + "_GenericContainerPage");}; return _GenericContainerPageJ;}} private jQueryObject _GenericContainerPageJ;//mappings.Add("Spotted.GenericPage", ElementGetter("Element"));
 	}

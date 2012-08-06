@@ -1,10 +1,10 @@
-//mappings.Add("System.Web.UI.HtmlControls.HtmlContainerControl", ElementGetter("Element"));
 //mappings.Add("Spotted.CustomControls.h1", ElementGetter("Element"));
 //mappings.Add("System.Web.UI.HtmlControls.HtmlGenericControl", ElementGetter("Element"));
 //mappings.Add("System.Web.UI.WebControls.LinkButton", ElementGetter("Element"));
 //mappings.Add("Spotted.CustomControls.InlineScript", ElementGetter("Element"));
 //mappings.Add("System.Web.UI.WebControls.DataGrid", ElementGetter("Element"));
 //mappings.Add("System.Web.UI.WebControls.Label", ElementGetter("Element"));
+//mappings.Add("System.Web.UI.HtmlControls.HtmlContainerControl", ElementGetter("Element"));
 using System;
 using System.Collections.Generic;
 using System.Html;
@@ -20,10 +20,6 @@ namespace Js.Controls.LatestChat
 		{
 			this.clientId = clientId;
 		}
-		public Element ExternalHeader {get {if (_ExternalHeader == null) {_ExternalHeader = (Element)Document.GetElementById(clientId + "_ExternalHeader");}; return _ExternalHeader;}} private Element _ExternalHeader;
-		public jQueryObject ExternalHeaderJ {get {if (_ExternalHeaderJ == null) {_ExternalHeaderJ = jQuery.Select("#" + clientId + "_ExternalHeader");}; return _ExternalHeaderJ;}} private jQueryObject _ExternalHeaderJ;//mappings.Add("System.Web.UI.HtmlControls.HtmlContainerControl", ElementGetter("Element"));
-		public DivElement ExternalHolder {get {if (_ExternalHolder == null) {_ExternalHolder = (DivElement)Document.GetElementById(clientId + "_ExternalHolder");}; return _ExternalHolder;}} private DivElement _ExternalHolder;
-		public jQueryObject ExternalHolderJ {get {if (_ExternalHolderJ == null) {_ExternalHolderJ = jQuery.Select("#" + clientId + "_ExternalHolder");}; return _ExternalHolderJ;}} private jQueryObject _ExternalHolderJ;
 		public DivElement Holder {get {if (_Holder == null) {_Holder = (DivElement)Document.GetElementById(clientId + "_Holder");}; return _Holder;}} private DivElement _Holder;
 		public jQueryObject HolderJ {get {if (_HolderJ == null) {_HolderJ = jQuery.Select("#" + clientId + "_Holder");}; return _HolderJ;}} private jQueryObject _HolderJ;
 		public Element Header {get {if (_Header == null) {_Header = (Element)Document.GetElementById(clientId + "_Header");}; return _Header;}} private Element _Header;
@@ -64,5 +60,9 @@ namespace Js.Controls.LatestChat
 		public jQueryObject uiThreadsCountJ {get {if (_uiThreadsCountJ == null) {_uiThreadsCountJ = jQuery.Select("#" + clientId + "_uiThreadsCount");}; return _uiThreadsCountJ;}} private jQueryObject _uiThreadsCountJ;
 		public InputElement uiHasGroupObjectFilter {get {if (_uiHasGroupObjectFilter == null) {_uiHasGroupObjectFilter = (InputElement)Document.GetElementById(clientId + "_uiHasGroupObjectFilter");}; return _uiHasGroupObjectFilter;}} private InputElement _uiHasGroupObjectFilter;
 		public jQueryObject uiHasGroupObjectFilterJ {get {if (_uiHasGroupObjectFilterJ == null) {_uiHasGroupObjectFilterJ = jQuery.Select("#" + clientId + "_uiHasGroupObjectFilter");}; return _uiHasGroupObjectFilterJ;}} private jQueryObject _uiHasGroupObjectFilterJ;
+		public Element ExternalHeader {get {if (_ExternalHeader == null) {_ExternalHeader = (Element)Document.GetElementById(clientId + "_ExternalHeader");}; return _ExternalHeader;}} private Element _ExternalHeader;
+		public jQueryObject ExternalHeaderJ {get {if (_ExternalHeaderJ == null) {_ExternalHeaderJ = jQuery.Select("#" + clientId + "_ExternalHeader");}; return _ExternalHeaderJ;}} private jQueryObject _ExternalHeaderJ;//mappings.Add("System.Web.UI.HtmlControls.HtmlContainerControl", ElementGetter("Element"));
+		public DivElement ExternalHolder {get {if (_ExternalHolder == null) {_ExternalHolder = (DivElement)Document.GetElementById(clientId + "_ExternalHolder");}; return _ExternalHolder;}} private DivElement _ExternalHolder;
+		public jQueryObject ExternalHolderJ {get {if (_ExternalHolderJ == null) {_ExternalHolderJ = jQuery.Select("#" + clientId + "_ExternalHolder");}; return _ExternalHolderJ;}} private jQueryObject _ExternalHolderJ;
 	}
 }

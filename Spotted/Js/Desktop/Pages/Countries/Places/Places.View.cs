@@ -19,6 +19,8 @@ namespace Js.Pages.Countries.Places
 		{
 			this.clientId = clientId;
 		}
+		public DivElement Panel1 {get {if (_Panel1 == null) {_Panel1 = (DivElement)Document.GetElementById(clientId + "_Panel1");}; return _Panel1;}} private DivElement _Panel1;
+		public jQueryObject Panel1J {get {if (_Panel1J == null) {_Panel1J = jQuery.Select("#" + clientId + "_Panel1");}; return _Panel1J;}} private jQueryObject _Panel1J;
 		public Element PageHeadingNoPlace {get {if (_PageHeadingNoPlace == null) {_PageHeadingNoPlace = (Element)Document.GetElementById(clientId + "_PageHeadingNoPlace");}; return _PageHeadingNoPlace;}} private Element _PageHeadingNoPlace;
 		public jQueryObject PageHeadingNoPlaceJ {get {if (_PageHeadingNoPlaceJ == null) {_PageHeadingNoPlaceJ = jQuery.Select("#" + clientId + "_PageHeadingNoPlace");}; return _PageHeadingNoPlaceJ;}} private jQueryObject _PageHeadingNoPlaceJ;//mappings.Add("System.Web.UI.HtmlControls.HtmlContainerControl", ElementGetter("Element"));
 		public Element SizeOrderLink {get {if (_SizeOrderLink == null) {_SizeOrderLink = (Element)Document.GetElementById(clientId + "_SizeOrderLink");}; return _SizeOrderLink;}} private Element _SizeOrderLink;
@@ -45,8 +47,6 @@ namespace Js.Pages.Countries.Places
 		public jQueryObject NoPlaceSelectedCountryLinkJ {get {if (_NoPlaceSelectedCountryLinkJ == null) {_NoPlaceSelectedCountryLinkJ = jQuery.Select("#" + clientId + "_NoPlaceSelectedCountryLink");}; return _NoPlaceSelectedCountryLinkJ;}} private jQueryObject _NoPlaceSelectedCountryLinkJ;
 		public AnchorElement NoPlaceSelectedFlagAnchor {get {if (_NoPlaceSelectedFlagAnchor == null) {_NoPlaceSelectedFlagAnchor = (AnchorElement)Document.GetElementById(clientId + "_NoPlaceSelectedFlagAnchor");}; return _NoPlaceSelectedFlagAnchor;}} private AnchorElement _NoPlaceSelectedFlagAnchor;
 		public jQueryObject NoPlaceSelectedFlagAnchorJ {get {if (_NoPlaceSelectedFlagAnchorJ == null) {_NoPlaceSelectedFlagAnchorJ = jQuery.Select("#" + clientId + "_NoPlaceSelectedFlagAnchor");}; return _NoPlaceSelectedFlagAnchorJ;}} private jQueryObject _NoPlaceSelectedFlagAnchorJ;
-		public DivElement Panel1 {get {if (_Panel1 == null) {_Panel1 = (DivElement)Document.GetElementById(clientId + "_Panel1");}; return _Panel1;}} private DivElement _Panel1;
-		public jQueryObject Panel1J {get {if (_Panel1J == null) {_Panel1J = jQuery.Select("#" + clientId + "_Panel1");}; return _Panel1J;}} private jQueryObject _Panel1J;
 		public Element GenericContainerPage {get {if (_GenericContainerPage == null) {_GenericContainerPage = (Element)Document.GetElementById(clientId + "_GenericContainerPage");}; return _GenericContainerPage;}} private Element _GenericContainerPage;
 		public jQueryObject GenericContainerPageJ {get {if (_GenericContainerPageJ == null) {_GenericContainerPageJ = jQuery.Select("#" + clientId + "_GenericContainerPage");}; return _GenericContainerPageJ;}} private jQueryObject _GenericContainerPageJ;//mappings.Add("Spotted.GenericPage", ElementGetter("Element"));
 	}

@@ -1,6 +1,6 @@
+//mappings.Add("System.Web.UI.WebControls.LinkButton", ElementGetter("Element"));
 //mappings.Add("System.Web.UI.HtmlControls.HtmlGenericControl", ElementGetter("Element"));
 //mappings.Add("System.Web.UI.HtmlControls.HtmlTextArea", ElementGetter("Element"));
-//mappings.Add("System.Web.UI.WebControls.LinkButton", ElementGetter("Element"));
 using System;
 using System.Collections.Generic;
 using System.Html;
@@ -34,6 +34,8 @@ namespace Js.Controls.Login
 			this.clientId = clientId;
 			this.server = new Server();
 		}
+		public Element ToggleAdminLinkButton {get {if (_ToggleAdminLinkButton == null) {_ToggleAdminLinkButton = (Element)Document.GetElementById(clientId + "_ToggleAdminLinkButton");}; return _ToggleAdminLinkButton;}} private Element _ToggleAdminLinkButton;
+		public jQueryObject ToggleAdminLinkButtonJ {get {if (_ToggleAdminLinkButtonJ == null) {_ToggleAdminLinkButtonJ = jQuery.Select("#" + clientId + "_ToggleAdminLinkButton");}; return _ToggleAdminLinkButtonJ;}} private jQueryObject _ToggleAdminLinkButtonJ;//mappings.Add("System.Web.UI.WebControls.LinkButton", ElementGetter("Element"));
 		public Element ConnectDialog {get {if (_ConnectDialog == null) {_ConnectDialog = (Element)Document.GetElementById(clientId + "_ConnectDialog");}; return _ConnectDialog;}} private Element _ConnectDialog;
 		public jQueryObject ConnectDialogJ {get {if (_ConnectDialogJ == null) {_ConnectDialogJ = jQuery.Select("#" + clientId + "_ConnectDialog");}; return _ConnectDialogJ;}} private jQueryObject _ConnectDialogJ;//mappings.Add("System.Web.UI.HtmlControls.HtmlGenericControl", ElementGetter("Element"));
 		public Element Connect_Inner {get {if (_Connect_Inner == null) {_Connect_Inner = (Element)Document.GetElementById(clientId + "_Connect_Inner");}; return _Connect_Inner;}} private Element _Connect_Inner;
@@ -364,7 +366,5 @@ namespace Js.Controls.Login
 		public jQueryObject Connect_Debug_DisconnectButtonJ {get {if (_Connect_Debug_DisconnectButtonJ == null) {_Connect_Debug_DisconnectButtonJ = jQuery.Select("#" + clientId + "_Connect_Debug_DisconnectButton");}; return _Connect_Debug_DisconnectButtonJ;}} private jQueryObject _Connect_Debug_DisconnectButtonJ;
 		public InputElement Connect_Debug_AuthButton {get {if (_Connect_Debug_AuthButton == null) {_Connect_Debug_AuthButton = (InputElement)Document.GetElementById(clientId + "_Connect_Debug_AuthButton");}; return _Connect_Debug_AuthButton;}} private InputElement _Connect_Debug_AuthButton;
 		public jQueryObject Connect_Debug_AuthButtonJ {get {if (_Connect_Debug_AuthButtonJ == null) {_Connect_Debug_AuthButtonJ = jQuery.Select("#" + clientId + "_Connect_Debug_AuthButton");}; return _Connect_Debug_AuthButtonJ;}} private jQueryObject _Connect_Debug_AuthButtonJ;
-		public Element ToggleAdminLinkButton {get {if (_ToggleAdminLinkButton == null) {_ToggleAdminLinkButton = (Element)Document.GetElementById(clientId + "_ToggleAdminLinkButton");}; return _ToggleAdminLinkButton;}} private Element _ToggleAdminLinkButton;
-		public jQueryObject ToggleAdminLinkButtonJ {get {if (_ToggleAdminLinkButtonJ == null) {_ToggleAdminLinkButtonJ = jQuery.Select("#" + clientId + "_ToggleAdminLinkButton");}; return _ToggleAdminLinkButtonJ;}} private jQueryObject _ToggleAdminLinkButtonJ;//mappings.Add("System.Web.UI.WebControls.LinkButton", ElementGetter("Element"));
 	}
 }

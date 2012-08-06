@@ -169,7 +169,6 @@ Js.Controls.Picker.Controller.prototype = {
     _view: null,
     
     _initialise: function Js_Controls_Picker_Controller$_initialise() {
-        this.debug('initialise');
         this._initialiseSearchType();
         this._initialiseKey();
         this._initialiseMe();
@@ -212,7 +211,6 @@ Js.Controls.Picker.Controller.prototype = {
     _navigate: function Js_Controls_Picker_Controller$_navigate(e) {
         /// <param name="e" type="jQueryEvent">
         /// </param>
-        this.debug('navigate');
         if (!this._initialiseFinished) {
             this._initialNavigate = true;
             this._initialHistoryEvent = e;
@@ -286,6 +284,13 @@ Js.Controls.Picker.Controller.prototype = {
         this._updateUIMusic(false);
         this._updateUIDate(false);
         this._updateUIEvent();
+    },
+    
+    handlersSet: function Js_Controls_Picker_Controller$handlersSet() {
+        this._firstEverNavigate = true;
+        if (this._initialNavigate) {
+            this._navigate(this._initialHistoryEvent);
+        }
     },
     
     eventSelectionSepcificationChanged: null,

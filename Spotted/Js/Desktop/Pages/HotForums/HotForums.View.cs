@@ -1,5 +1,5 @@
-//mappings.Add("Spotted.CustomControls.h1", ElementGetter("Element"));
 //mappings.Add("System.Web.UI.WebControls.DataGrid", ElementGetter("Element"));
+//mappings.Add("Spotted.CustomControls.h1", ElementGetter("Element"));
 //mappings.Add("Spotted.GenericPage", ElementGetter("Element"));
 using System;
 using System.Collections.Generic;
@@ -18,8 +18,6 @@ namespace Js.Pages.HotForums
 		{
 			this.clientId = clientId;
 		}
-		public Element H11 {get {if (_H11 == null) {_H11 = (Element)Document.GetElementById(clientId + "_H11");}; return _H11;}} private Element _H11;
-		public jQueryObject H11J {get {if (_H11J == null) {_H11J = jQuery.Select("#" + clientId + "_H11");}; return _H11J;}} private jQueryObject _H11J;//mappings.Add("Spotted.CustomControls.h1", ElementGetter("Element"));
 		public DivElement PanelBoardList {get {if (_PanelBoardList == null) {_PanelBoardList = (DivElement)Document.GetElementById(clientId + "_PanelBoardList");}; return _PanelBoardList;}} private DivElement _PanelBoardList;
 		public jQueryObject PanelBoardListJ {get {if (_PanelBoardListJ == null) {_PanelBoardListJ = jQuery.Select("#" + clientId + "_PanelBoardList");}; return _PanelBoardListJ;}} private jQueryObject _PanelBoardListJ;
 		public DivElement BoardPlacePanel {get {if (_BoardPlacePanel == null) {_BoardPlacePanel = (DivElement)Document.GetElementById(clientId + "_BoardPlacePanel");}; return _BoardPlacePanel;}} private DivElement _BoardPlacePanel;
@@ -44,6 +42,8 @@ namespace Js.Pages.HotForums
 		public jQueryObject HotTopicsCountryPanelJ {get {if (_HotTopicsCountryPanelJ == null) {_HotTopicsCountryPanelJ = jQuery.Select("#" + clientId + "_HotTopicsCountryPanel");}; return _HotTopicsCountryPanelJ;}} private jQueryObject _HotTopicsCountryPanelJ;
 		public DivElement HotTopicsWorldwidePanel {get {if (_HotTopicsWorldwidePanel == null) {_HotTopicsWorldwidePanel = (DivElement)Document.GetElementById(clientId + "_HotTopicsWorldwidePanel");}; return _HotTopicsWorldwidePanel;}} private DivElement _HotTopicsWorldwidePanel;
 		public jQueryObject HotTopicsWorldwidePanelJ {get {if (_HotTopicsWorldwidePanelJ == null) {_HotTopicsWorldwidePanelJ = jQuery.Select("#" + clientId + "_HotTopicsWorldwidePanel");}; return _HotTopicsWorldwidePanelJ;}} private jQueryObject _HotTopicsWorldwidePanelJ;
+		public Element H11 {get {if (_H11 == null) {_H11 = (Element)Document.GetElementById(clientId + "_H11");}; return _H11;}} private Element _H11;
+		public jQueryObject H11J {get {if (_H11J == null) {_H11J = jQuery.Select("#" + clientId + "_H11");}; return _H11J;}} private jQueryObject _H11J;//mappings.Add("Spotted.CustomControls.h1", ElementGetter("Element"));
 		public Element GenericContainerPage {get {if (_GenericContainerPage == null) {_GenericContainerPage = (Element)Document.GetElementById(clientId + "_GenericContainerPage");}; return _GenericContainerPage;}} private Element _GenericContainerPage;
 		public jQueryObject GenericContainerPageJ {get {if (_GenericContainerPageJ == null) {_GenericContainerPageJ = jQuery.Select("#" + clientId + "_GenericContainerPage");}; return _GenericContainerPageJ;}} private jQueryObject _GenericContainerPageJ;//mappings.Add("Spotted.GenericPage", ElementGetter("Element"));
 	}

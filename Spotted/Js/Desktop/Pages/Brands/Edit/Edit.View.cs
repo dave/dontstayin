@@ -1,7 +1,7 @@
-//mappings.Add("System.Web.UI.HtmlControls.HtmlGenericControl", ElementGetter("Element"));
 //mappings.Add("Spotted.CustomControls.h1", ElementGetter("Element"));
 //mappings.Add("System.Web.UI.WebControls.Button", ElementGetter("Element"));
 //mappings.Add("Spotted.Controls.Pic", ElementGetter("Element"));
+//mappings.Add("System.Web.UI.HtmlControls.HtmlGenericControl", ElementGetter("Element"));
 //mappings.Add("Spotted.GenericPage", ElementGetter("Element"));
 using System;
 using System.Collections.Generic;
@@ -20,8 +20,6 @@ namespace Js.Pages.Brands.Edit
 		{
 			this.clientId = clientId;
 		}
-		public Element RenameError {get {if (_RenameError == null) {_RenameError = (Element)Document.GetElementById(clientId + "_RenameError");}; return _RenameError;}} private Element _RenameError;
-		public jQueryObject RenameErrorJ {get {if (_RenameErrorJ == null) {_RenameErrorJ = jQuery.Select("#" + clientId + "_RenameError");}; return _RenameErrorJ;}} private jQueryObject _RenameErrorJ;//mappings.Add("System.Web.UI.HtmlControls.HtmlGenericControl", ElementGetter("Element"));
 		public DivElement PanelManage {get {if (_PanelManage == null) {_PanelManage = (DivElement)Document.GetElementById(clientId + "_PanelManage");}; return _PanelManage;}} private DivElement _PanelManage;
 		public jQueryObject PanelManageJ {get {if (_PanelManageJ == null) {_PanelManageJ = jQuery.Select("#" + clientId + "_PanelManage");}; return _PanelManageJ;}} private jQueryObject _PanelManageJ;
 		public Element H14 {get {if (_H14 == null) {_H14 = (Element)Document.GetElementById(clientId + "_H14");}; return _H14;}} private Element _H14;
@@ -51,6 +49,8 @@ namespace Js.Pages.Brands.Edit
 		public Js.ClientControls.HtmlAutoCompleteBehaviour uiManageGotoAutoComplete {get {return (Js.ClientControls.HtmlAutoCompleteBehaviour) Script.Eval(clientId + "_uiManageGotoAutoCompleteBehaviour");}}
 		public Element Button2 {get {if (_Button2 == null) {_Button2 = (Element)Document.GetElementById(clientId + "_Button2");}; return _Button2;}} private Element _Button2;
 		public jQueryObject Button2J {get {if (_Button2J == null) {_Button2J = jQuery.Select("#" + clientId + "_Button2");}; return _Button2J;}} private jQueryObject _Button2J;//mappings.Add("System.Web.UI.WebControls.Button", ElementGetter("Element"));
+		public Element RenameError {get {if (_RenameError == null) {_RenameError = (Element)Document.GetElementById(clientId + "_RenameError");}; return _RenameError;}} private Element _RenameError;
+		public jQueryObject RenameErrorJ {get {if (_RenameErrorJ == null) {_RenameErrorJ = jQuery.Select("#" + clientId + "_RenameError");}; return _RenameErrorJ;}} private jQueryObject _RenameErrorJ;//mappings.Add("System.Web.UI.HtmlControls.HtmlGenericControl", ElementGetter("Element"));
 		public Element GenericContainerPage {get {if (_GenericContainerPage == null) {_GenericContainerPage = (Element)Document.GetElementById(clientId + "_GenericContainerPage");}; return _GenericContainerPage;}} private Element _GenericContainerPage;
 		public jQueryObject GenericContainerPageJ {get {if (_GenericContainerPageJ == null) {_GenericContainerPageJ = jQuery.Select("#" + clientId + "_GenericContainerPage");}; return _GenericContainerPageJ;}} private jQueryObject _GenericContainerPageJ;//mappings.Add("Spotted.GenericPage", ElementGetter("Element"));
 	}

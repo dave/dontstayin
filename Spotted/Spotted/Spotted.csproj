@@ -746,9 +746,6 @@
     </Content>
     <Content Include="Master\MobilePageSkeleton.aspx" />
     <Content Include="Misc\border-radius.htc" />
-    <Content Include="Misc\cropper\cropper.dart.app.js" />
-    <Content Include="Misc\cropper\cropper.dart.js" />
-    <Content Include="Misc\cropper\cropper.html" />
     <Content Include="Misc\jQuery\Jcrop\css\Jcrop.gif" />
     <Content Include="Misc\jQuery\Jcrop\css\jquery.Jcrop.css" />
     <Content Include="Misc\jQuery\Jcrop\demos\demo_files\demos.css" />
@@ -1820,7 +1817,6 @@
     </Content>
     <None Include="App_Data\51Degrees.mobi-Lite-2012.01.05.xml.gz" />
     <None Include="Gfx\greatest\img\Thumbs.db" />
-    <None Include="Misc\cropper\cropper.dart" />
     <None Include="Misc\fonts\proximanova-bold-webfont.eot" />
     <None Include="Misc\fonts\proximanova-bold-webfont.svg" />
     <None Include="Misc\fonts\proximanova-bold-webfont.ttf" />

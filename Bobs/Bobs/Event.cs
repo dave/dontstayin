@@ -23,7 +23,7 @@ namespace Bobs
 	/// One single event - e.g Rhino Sat June 17th 2003 or Glasto 2003 Saturday Dance Tent
 	/// </summary>
 	[Serializable]
-	public partial class Event : IPic, IPage, IName, IReadableReference, IDiscussable, IBobType, IObjectPage, IRelevanceContributor, IArchive, IDeleteAll, IBuyableCredits, IConnectedTo, ILinkable, IBobAsHTML, IHasSpatialData, IHasParent
+	public partial class Event : IPic, IPage, IName, IReadableReference, IDiscussable, IBobType, IObjectPage, IRelevanceContributor, IArchive, IDeleteAll, IBuyableCredits, IConnectedTo, ILinkable, IBobAsHTML, IHasParent
 	{
 
 		#region simple members
@@ -101,7 +101,6 @@ namespace Bobs
 			{
 				this.venue = null;
 				this[Event.Columns.VenueK] = value;
-				this.CopySpatialDataFrom(Venue);
 					
 			}
 		}
@@ -440,38 +439,6 @@ namespace Bobs
 		{
 			get { return (bool)this[Event.Columns.IsPriceFixed]; }
 			set { this[Event.Columns.IsPriceFixed] = value; }
-		}
-		
-
-		/// <summary>
-		/// Hierarchical triangular mesh index
-		/// </summary>
-		long IHasSpatialData.HtmId
-		{
-			get { throw new NotImplementedException(); }
-			
-		}
-		/// <summary>
-		/// Latitude
-		/// </summary>
-		public override double Lat
-		{
-			get { return (double) this[Columns.Lat] ; }
-			set { this[Columns.Lat] = value; }
-		}
-		/// <summary>
-		/// Longitude
-		/// </summary>
-		public override double Lon
-		{
-			get { return (double) this[Columns.Lon] ; }
-			set { this[Columns.Lon] = value; }
-		}
-
-		public override long HtmId
-		{
-			get { throw new NotImplementedException(); }
-			set { throw new NotImplementedException(); }
 		}
 		/// <summary>
 		/// Exclude this event from showing "Find Hotel" banners etc

@@ -75,7 +75,6 @@
     <Compile Include="Entities\Brand.cs" />
     <Compile Include="Entities\IEventFactory.cs" />
     <Compile Include="Entities\IEvent.cs" />
-    <Compile Include="Entities\IFHtmCoverRegionResult.cs" />
     <Compile Include="Entities\Place.cs" />
     <Compile Include="Entities\Theme.cs" />
     <Compile Include="Entities\Thread.cs" />
@@ -84,9 +83,7 @@
     <Compile Include="Entities\Properties\IHasIconPic.cs" />
     <Compile Include="Entities\Properties\IHasSinglePrimaryKey.cs" />
     <Compile Include="Entities\Venue.cs" />
-    <Compile Include="Entities\Properties\IHasSpatialData.cs" />
     <Compile Include="IDsiDataContext.cs" />
-    <Compile Include="Entities\IFHtmCoverCircleLatLonResult.cs" />
     <Compile Include="Entities\IEventMusicType.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\IVenues.cs" />

@@ -11,11 +11,7 @@ namespace Bobs.CachedDataAccess
 		[Test]
 		public void AddingAChildUsingDatabaseAddsToChildren()
 		{
-			Venue venue = new Venue
-			{
-				Lat = 1,
-				Lon = 1
-			};
+			Venue venue = new Venue();
 			venue.Update();
 			Assert.AreEqual(0, venue.ChildEvents().Count);
 			Event ev = new Event();
@@ -26,17 +22,9 @@ namespace Bobs.CachedDataAccess
 		[Test]
 		public void RemovingAChildUsingDatabaseRemovesFromChildren()
 		{
-			Venue venue = new Venue
-			{
-				Lat = 1,
-				Lon = 1
-			};
+			Venue venue = new Venue();
 			venue.Update();
-			Venue venue2 = new Venue
-			{
-				Lat = 1,
-				Lon = 1
-			};
+			Venue venue2 = new Venue();
 			venue2.Update();
 			Event ev = new Event();
 			ev.VenueK = venue.K;
@@ -49,11 +37,7 @@ namespace Bobs.CachedDataAccess
 		[Test]
 		public void PagingWorks()
 		{
-			Venue venue = new Venue
-			{
-				Lat = 1,
-				Lon = 1
-			};
+			Venue venue = new Venue();
 			venue.Update();
 			Random r = new Random();
 			int pageSize = r.Next(10) + 5;
@@ -75,11 +59,7 @@ namespace Bobs.CachedDataAccess
 		[Test]
 		public void OrderBysWork()
 		{
-			Venue venue = new Venue
-			{
-				Lat = 1,
-				Lon = 1
-			};
+			Venue venue = new Venue();
 			venue.Update();
 			List<Event> events = new List<Event>();
 			for (int i = 0; i < 10; i++)
@@ -108,11 +88,7 @@ namespace Bobs.CachedDataAccess
 		public void WheresWork()
 		{
 
-			Venue venue = new Venue
-			{
-				Lat = 1,
-				Lon = 1
-			};
+			Venue venue = new Venue();
 			venue.Update();
 			List<Event> events = new List<Event>();
 			for (int i = 0; i < 10; i++)

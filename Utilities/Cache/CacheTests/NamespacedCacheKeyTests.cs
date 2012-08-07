@@ -71,17 +71,9 @@ namespace CacheTests
 		public void TestThatGeneratedCacheKeysAreInvalidatedWhenAForeignKeyIsChangedInAChildTable()
 		{
 			Caching.Instances.Main.FlushAll();
-			Venue venue = new Venue
-			{
-				Lat = 1,
-				Lon = 1
-			};
+			Venue venue = new Venue();
 			venue.Update();
-			Venue venue2 = new Venue
-			{
-				Lat = 1,
-				Lon = 1
-			};
+			Venue venue2 = new Venue();
 			venue2.Update();
 			Event ev = new Event() { VenueK = venue.K };
 			ev.Update();

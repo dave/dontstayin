@@ -19,9 +19,6 @@ namespace Model
 		ITable<Group> Groups { get; }
 		ITable<Thread> Threads { get; }
 		DataLoadOptions LoadOptions { get; set; }
-		IQueryable<IFHtmCoverCircleLatLonResult> FHtmCoverCircleLatLon(double lat, double lon, double radius);
-		IQueryable<IFHtmCoverCircleLatLonResult> FHtmCoverCircleLatLon(double south, double west, double north, double east);
-		IQueryable<IFHtmCoverRegionResult> FHtmCoverRect(double south, double west, double north, double east);
 		double? FDistanceLatLon(double? lat1, double? lon1, double? lat2, double? lon2);
 	}
 }

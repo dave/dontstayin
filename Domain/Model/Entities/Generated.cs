@@ -1053,9 +1053,6 @@ namespace Model.Entities
 			public abstract int UsrAttendCount { get; set; }
 			public abstract double FixedDiscount { get; set; }
 			public abstract bool IsPriceFixed { get; set; }
-			public abstract double Lat { get; set; }
-			public abstract double Lon { get; set; }
-			public abstract long HtmId { get; set; }
 			public abstract bool? DontShowHotelLink { get; set; }
 			public abstract bool? SpotterRequest { get; set; }
 			public abstract string SpotterRequestName { get; set; }
@@ -1115,9 +1112,6 @@ namespace Model.Entities
 			int UsrAttendCount { get; set; }
 			double FixedDiscount { get; set; }
 			bool IsPriceFixed { get; set; }
-			double Lat { get; set; }
-			double Lon { get; set; }
-			long HtmId { get; set; }
 			bool? DontShowHotelLink { get; set; }
 			bool? SpotterRequest { get; set; }
 			string SpotterRequestName { get; set; }
@@ -4163,9 +4157,6 @@ namespace Model.Entities
 			public abstract bool DetailsPlain { get; set; }
 			public abstract string StyledCss { get; set; }
 			public abstract string StyledXml { get; set; }
-			public abstract double Lat { get; set; }
-			public abstract double Lon { get; set; }
-			public abstract long HtmId { get; set; }
 		}
 		public partial interface IVenue
 		{
@@ -4205,9 +4196,6 @@ namespace Model.Entities
 			bool DetailsPlain { get; set; }
 			string StyledCss { get; set; }
 			string StyledXml { get; set; }
-			double Lat { get; set; }
-			double Lon { get; set; }
-			long HtmId { get; set; }
 		}
 		
  		public abstract partial class Visit : IVisit

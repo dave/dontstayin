@@ -17,7 +17,7 @@ namespace Bobs
 	/// A club or location
 	/// </summary>
 	[Serializable]
-	public partial class Venue : IPic, IName, IReadableReference, IPage, IDiscussable, IBobType, ICalendar, IObjectPage, IRelevanceContributor, IHasArchive, IDeleteAll, IConnectedTo, ILinkable, IStyledEventHolder, IHasSpatialData, IHasParent
+	public partial class Venue : IPic, IName, IReadableReference, IPage, IDiscussable, IBobType, ICalendar, IObjectPage, IRelevanceContributor, IHasArchive, IDeleteAll, IConnectedTo, ILinkable, IStyledEventHolder, IHasParent
 	{
 
 		#region simple members
@@ -63,7 +63,6 @@ namespace Bobs
 			{
 				place = null;
 				this[Venue.Columns.PlaceK] = value;
-				this.CopySpatialDataFrom(Place);
 			}
 		}
 		/// <summary>
@@ -314,34 +313,6 @@ namespace Bobs
 			get { return (string)this[Venue.Columns.StyledXml]; }
 			set { this[Venue.Columns.StyledXml] = value; }
 		}
-		bool spatialDataChanged = false;
-		/// <summary>
-		/// Hierarchical triangular mesh index
-		/// </summary>
-		public override long HtmId
-		{
-			get { throw new NotImplementedException(); }
-			set { throw new NotImplementedException(); }
-		}
-		/// <summary>
-		/// Latitude
-		/// </summary>
-		public override double Lat
-		{
-			get {  return (double) this[Columns.Lat]; }
-			set { this[Columns.Lat] = value; spatialDataChanged = true; }
-		}
-		/// <summary>
-		/// Longitude
-		/// </summary>
-		public override double Lon
-		{
-			get { return (double) this[Columns.Lon] ; }
-			set { this[Columns.Lon] = value; spatialDataChanged = true; }
-		}
-
-		 
-		 
 		#endregion
 
 		#region IStyledEventHolder Members
@@ -1212,14 +1183,6 @@ namespace Bobs
 		#region Url
 		partial void AfterUpdate(Transaction t)
 		{
-			if (spatialDataChanged)
-			{
-				foreach(var child in this.ChildEvents())
-				{
-					child.CopySpatialDataFrom(this);
-					child.Update(t);
-				}
-			}
 		}
 		public void UpdateUrlFragment(bool UpdateChildUrlFragments)
 		{

@@ -137,10 +137,10 @@
   </Target>
   -->
   <PropertyGroup>
-    <PostBuildEvent>attrib -R ..\..\LinqToSqlClassTemplate\DbSpotted.dbml.after
-del ..\..\LinqToSqlClassTemplate\DbSpotted.dbml.after
-..\..\LinqToDbmlRunner\bin\LinqToDbmlRunner.exe $(TargetFileName) ..\DbSpotted.dbml.before ..\..\LinqToSqlClassTemplate\DbSpotted.dbml.after
-attrib +R ..\..\LinqToSqlClassTemplate\DbSpotted.dbml.after
+    <PostBuildEvent>rem attrib -R ..\..\LinqToSqlClassTemplate\DbSpotted.dbml.after
+rem del ..\..\LinqToSqlClassTemplate\DbSpotted.dbml.after
+rem ..\..\LinqToDbmlRunner\bin\LinqToDbmlRunner.exe $(TargetFileName) ..\DbSpotted.dbml.before ..\..\LinqToSqlClassTemplate\DbSpotted.dbml.after
+rem attrib +R ..\..\LinqToSqlClassTemplate\DbSpotted.dbml.after
 </PostBuildEvent>
   </PropertyGroup>
 </Project>

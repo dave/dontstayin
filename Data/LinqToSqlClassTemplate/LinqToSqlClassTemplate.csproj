@@ -137,11 +137,11 @@
   </Target>
   -->
   <PropertyGroup>
-    <PostBuildEvent>attrib -R ..\..\LinqToSql\Classes\Generated.cs 
-"C:\Program Files\Common Files\Microsoft Shared\TextTemplating\1.2\TextTransform.exe" -out ..\..\LinqToSql\Classes\Generated.cs ..\DataClassesContext.tt
-attrib +R ..\..\LinqToSql\Classes\Generated.cs 
-attrib -R ..\..\..\Domain\Model\Entities\Generated.cs 
-"C:\Program Files\Common Files\Microsoft Shared\TextTemplating\1.2\TextTransform.exe" -out ..\..\..\Domain\Model\Entities\Generated.cs  ..\ModelAbstractClasses.tt
-attrib +R ..\..\..\Domain\Model\Entities\Generated.cs</PostBuildEvent>
+    <PostBuildEvent>rem attrib -R ..\..\LinqToSql\Classes\Generated.cs 
+rem "C:\Program Files\Common Files\Microsoft Shared\TextTemplating\1.2\TextTransform.exe" -out ..\..\LinqToSql\Classes\Generated.cs ..\DataClassesContext.tt
+rem attrib +R ..\..\LinqToSql\Classes\Generated.cs 
+rem attrib -R ..\..\..\Domain\Model\Entities\Generated.cs 
+rem "C:\Program Files\Common Files\Microsoft Shared\TextTemplating\1.2\TextTransform.exe" -out ..\..\..\Domain\Model\Entities\Generated.cs  ..\ModelAbstractClasses.tt
+rem attrib +R ..\..\..\Domain\Model\Entities\Generated.cs</PostBuildEvent>
   </PropertyGroup>
 </Project>

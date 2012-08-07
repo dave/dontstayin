@@ -40,23 +40,6 @@ namespace LinqToSql.Classes
 			get { return new Venues(this.Venues); }
 		}
 
-		IQueryable<Model.Entities.IFHtmCoverCircleLatLonResult> IDsiDataContext.FHtmCoverCircleLatLon(double lat, double lon, double radius)
-		{
-			return this.FHtmCoverCircleLatLon(lat, lon, radius).Cast<IFHtmCoverCircleLatLonResult>();
-		}
-		IQueryable<Model.Entities.IFHtmCoverCircleLatLonResult> IDsiDataContext.FHtmCoverCircleLatLon(double south, double west, double north, double east)
-		{
-			double lat = south + (north - south)/2;
-			double lon = west + (east - west) / 2;
-			double radius = Microsoft.Samples.SqlServer.Sql.fDistanceLatLon(north, west, south, east).Value;
-			return this.FHtmCoverCircleLatLon(lat, lon, radius).Cast<IFHtmCoverCircleLatLonResult>();
-		}
-
-
-		IQueryable<Model.Entities.IFHtmCoverRegionResult> IDsiDataContext.FHtmCoverRect(double south, double west, double north, double east)
-		{
-			return this.FHtmCoverRegion(string.Format("RECT LATLON {0} {1} {2} {3}", south, west, north, east)).Cast<IFHtmCoverRegionResult>();
-		}
 
 		void IUnitOfWork.Submit()
 		{

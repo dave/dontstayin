@@ -9728,56 +9728,7 @@ namespace LinqToSql.Classes
 				}
 			}
 
-			partial void OnLatChanging(double value);
-			partial void OnLatChanged();
-			private double _Lat;
-			[Column(Storage="_Lat", DbType="Float NOT NULL", CanBeNull=false)]
-			public  override double Lat {
-				get { return _Lat; }
-				set {
-					if (_Lat != value) {
-						OnLatChanging(value);
-						SendPropertyChanging();
-						_Lat = value;
-						SendPropertyChanged("Lat");
-						OnLatChanged();
-					}
-				}
-			}
 
-			partial void OnLonChanging(double value);
-			partial void OnLonChanged();
-			private double _Lon;
-			[Column(Storage="_Lon", DbType="Float NOT NULL", CanBeNull=false)]
-			public  override double Lon {
-				get { return _Lon; }
-				set {
-					if (_Lon != value) {
-						OnLonChanging(value);
-						SendPropertyChanging();
-						_Lon = value;
-						SendPropertyChanged("Lon");
-						OnLonChanged();
-					}
-				}
-			}
-
-			partial void OnHtmIdChanging(long value);
-			partial void OnHtmIdChanged();
-			private long _HtmId;
-			[Column(Storage="_HtmId", DbType="BigInt", CanBeNull=false, UpdateCheck=UpdateCheck.Never)]
-			public  override long HtmId {
-				get { return _HtmId; }
-				set {
-					if (_HtmId != value) {
-						OnHtmIdChanging(value);
-						SendPropertyChanging();
-						_HtmId = value;
-						SendPropertyChanged("HtmId");
-						OnHtmIdChanged();
-					}
-				}
-			}
 
 			partial void OnDontShowHotelLinkChanging(bool? value);
 			partial void OnDontShowHotelLinkChanged();
@@ -34421,56 +34372,6 @@ namespace LinqToSql.Classes
 				}
 			}
 
-			partial void OnLatChanging(double value);
-			partial void OnLatChanged();
-			private double _Lat;
-			[Column(Storage="_Lat", DbType="Float NOT NULL", CanBeNull=false)]
-			public  override double Lat {
-				get { return _Lat; }
-				set {
-					if (_Lat != value) {
-						OnLatChanging(value);
-						SendPropertyChanging();
-						_Lat = value;
-						SendPropertyChanged("Lat");
-						OnLatChanged();
-					}
-				}
-			}
-
-			partial void OnLonChanging(double value);
-			partial void OnLonChanged();
-			private double _Lon;
-			[Column(Storage="_Lon", DbType="Float NOT NULL", CanBeNull=false)]
-			public  override double Lon {
-				get { return _Lon; }
-				set {
-					if (_Lon != value) {
-						OnLonChanging(value);
-						SendPropertyChanging();
-						_Lon = value;
-						SendPropertyChanged("Lon");
-						OnLonChanged();
-					}
-				}
-			}
-
-			partial void OnHtmIdChanging(long value);
-			partial void OnHtmIdChanged();
-			private long _HtmId;
-			[Column(Storage="_HtmId", DbType="BigInt", CanBeNull=false, UpdateCheck=UpdateCheck.Never)]
-			public  override long HtmId {
-				get { return _HtmId; }
-				set {
-					if (_HtmId != value) {
-						OnHtmIdChanging(value);
-						SendPropertyChanging();
-						_HtmId = value;
-						SendPropertyChanged("HtmId");
-						OnHtmIdChanged();
-					}
-				}
-			}
 
 			#endregion
 

@@ -50,7 +50,7 @@
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
+    <DefineConstants>TRACE;NOTSCRIPT</DefineConstants>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Cambro.Web.DbCombo, Version=4.1.9.26068, Culture=neutral, processorArchitecture=MSIL">

@@ -5150,6 +5150,8 @@ If you break these rules you will be removed from the group without warning.
 		{
 			get
 			{
+				return null;
+
 				if (HttpContext.Current == null)
 				{
 					return null;

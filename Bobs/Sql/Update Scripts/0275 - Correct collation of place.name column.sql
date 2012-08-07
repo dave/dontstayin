@@ -47,8 +47,7 @@ CREATE TABLE dbo.Tmp_Place
 	FailedAmazonCheck bit NULL,
 	MeridianFeatureId int NOT NULL,
 	Lat float(53) NOT NULL,
-	Lon float(53) NOT NULL,
-	HtmId  AS ([dbo].[fHtmLatLon]([Lat],[Lon])) PERSISTED 
+	Lon float(53) NOT NULL 
 	)  ON [PRIMARY]
 	 TEXTIMAGE_ON [PRIMARY]
 GO

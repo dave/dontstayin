@@ -113,6 +113,6 @@
   </Target>
   -->
   <PropertyGroup>
-    <PostBuildEvent>ViewScriptGenerator.exe /a:..\..\..\..\Spotted\Spotted\bin\Spotted.dll</PostBuildEvent>
+    <PostBuildEvent>rem ViewScriptGenerator.exe /a:..\..\..\..\Spotted\Spotted\bin\Spotted.dll</PostBuildEvent>
   </PropertyGroup>
 </Project>

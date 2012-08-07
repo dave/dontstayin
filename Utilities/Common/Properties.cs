@@ -364,11 +364,11 @@ namespace Common
 		//public static IPEndPoint[] ViewStateCacheServerIPEndPoints = new IPEndPoint[] { IsDevelopmentEnvironment ? new IPEndPoint(IPAddress.Parse("192.168.3.25"), 11211) : new IPEndPoint(IPAddress.Parse("192.168.3.15"), 11211) };
 
 		//LIN2:
-		//public static IPEndPoint[] MainCacheServerIPEndPoints = new IPEndPoint[] { IsDevelopmentEnvironment ? new IPEndPoint(IPAddress.Parse("192.168.3.22"), 11211) : new IPEndPoint(IPAddress.Parse("192.168.3.20"), 11211) };
-		//public static IPEndPoint[] ViewStateCacheServerIPEndPoints = new IPEndPoint[] { IsDevelopmentEnvironment ? new IPEndPoint(IPAddress.Parse("192.168.3.23"), 11211) : new IPEndPoint(IPAddress.Parse("192.168.3.21"), 11211) };
+		public static IPEndPoint[] MainCacheServerIPEndPoints = new IPEndPoint[] { IsDevelopmentEnvironment ? new IPEndPoint(IPAddress.Parse("192.168.3.22"), 11211) : new IPEndPoint(IPAddress.Parse("192.168.3.20"), 11211) };
+		public static IPEndPoint[] ViewStateCacheServerIPEndPoints = new IPEndPoint[] { IsDevelopmentEnvironment ? new IPEndPoint(IPAddress.Parse("192.168.3.23"), 11211) : new IPEndPoint(IPAddress.Parse("192.168.3.21"), 11211) };
 
-		public static IPEndPoint[] MainCacheServerIPEndPoints = new IPEndPoint[] { IsDevelopmentEnvironment ? new IPEndPoint(IPAddress.Parse("192.168.3.20"), 11211) : new IPEndPoint(IPAddress.Parse("192.168.3.20"), 11211) };
-		public static IPEndPoint[] ViewStateCacheServerIPEndPoints = new IPEndPoint[] { IsDevelopmentEnvironment ? new IPEndPoint(IPAddress.Parse("192.168.3.21"), 11211) : new IPEndPoint(IPAddress.Parse("192.168.3.21"), 11211) };
+		//public static IPEndPoint[] MainCacheServerIPEndPoints = new IPEndPoint[] { IsDevelopmentEnvironment ? new IPEndPoint(IPAddress.Parse("192.168.3.20"), 11211) : new IPEndPoint(IPAddress.Parse("192.168.3.20"), 11211) };
+		//public static IPEndPoint[] ViewStateCacheServerIPEndPoints = new IPEndPoint[] { IsDevelopmentEnvironment ? new IPEndPoint(IPAddress.Parse("192.168.3.21"), 11211) : new IPEndPoint(IPAddress.Parse("192.168.3.21"), 11211) };
 
 
 		//LIN1 live, LIN2 test

@@ -71,8 +71,8 @@
   <PropertyGroup>
     <PreBuildEvent>..\..\SqlScriptRunner\bin\SqlScriptRunner.exe /p:..\..\..\Bobs /data:true
 </PreBuildEvent>
-    <PostBuildEvent>attrib -R ..\..\..\Data\LinqToSqlDbmlScript\DbSpotted.dbml.before
-..\..\ToolRunner\bin\ToolRunner.exe ..\SqlMetal.exe "/server:*SERVER* /database:*DATABASE* /dbml:..\..\..\Data\LinqToSqlDbmlScript\DbSpotted.dbml.before /pluralize /functions /views /sprocs /context:DbSpottedDataContext" /runondbupdated
-attrib +R ..\..\..\Data\LinqToSqlDbmlScript\DbSpotted.dbml.before</PostBuildEvent>
+    <PostBuildEvent>rem attrib -R ..\..\..\Data\LinqToSqlDbmlScript\DbSpotted.dbml.before
+rem ..\..\ToolRunner\bin\ToolRunner.exe ..\SqlMetal.exe "/server:*SERVER* /database:*DATABASE* /dbml:..\..\..\Data\LinqToSqlDbmlScript\DbSpotted.dbml.before /pluralize /functions /views /sprocs /context:DbSpottedDataContext" /runondbupdated
+rem attrib +R ..\..\..\Data\LinqToSqlDbmlScript\DbSpotted.dbml.before</PostBuildEvent>
   </PropertyGroup>
 </Project>

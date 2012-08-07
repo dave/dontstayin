@@ -83,6 +83,6 @@
   </Target>
   -->
   <PropertyGroup>
-    <PostBuildEvent>WebServiceStubGenerator.exe /a:..\..\..\..\Spotted\Spotted\bin\Spotted.dll /o:..\..\..\..\Spotted\Js\Desktop\WebServices\WebServices.Generated.cs</PostBuildEvent>
+    <PostBuildEvent>rem WebServiceStubGenerator.exe /a:..\..\..\..\Spotted\Spotted\bin\Spotted.dll /o:..\..\..\..\Spotted\Js\Desktop\WebServices\WebServices.Generated.cs</PostBuildEvent>
   </PropertyGroup>
 </Project>

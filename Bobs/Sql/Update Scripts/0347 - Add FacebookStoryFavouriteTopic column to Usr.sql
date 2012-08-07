@@ -1,0 +1,2 @@
+﻿IF NOT EXISTS(SELECT * FROM sys.tables [table] INNER JOIN sys.columns [column] ON [table].object_id = [column].object_id WHERE [table].name = 'Usr' AND	[column].name = 'FacebookStoryFavouriteTopic')      BEGIN ALTER TABLE dbo.Usr ADD FacebookStoryFavouriteTopic      bit NOT NULL DEFAULT 1 EXECUTE sp_addextendedproperty N'MS_Description', N'Post a facebook stream story when I put topics on my favourites',              N'SCHEMA', N'dbo', N'TABLE', N'Usr', N'COLUMN', N'FacebookStoryFavouriteTopic'      END
+

@@ -6,7 +6,7 @@ using Model.Entities.Properties;
 
 namespace Model.Entities
 {
-	public abstract partial class Venue : IHasSinglePrimaryKey, IHasSpatialData
+	public abstract partial class Venue : IHasSinglePrimaryKey
 	{
 	}
 }

@@ -30,7 +30,7 @@ namespace Bobs
 	/// e.g. Southampton, London
 	/// </summary>
 	[Serializable]
-	public partial class Place : IPic, IPage, IName, IReadableReference, IDiscussable, IBobType, ICalendar, IObjectPage, IHasArchive, IRelevanceContributor, IConnectedTo, ILinkable, IHasSpatialData, IHasParent, IHasSinglePrimaryKey
+	public partial class Place : IPic, IPage, IName, IReadableReference, IDiscussable, IBobType, ICalendar, IObjectPage, IHasArchive, IRelevanceContributor, IConnectedTo, ILinkable, IHasParent, IHasSinglePrimaryKey
 	{
 
 		#region simple members
@@ -295,14 +295,6 @@ namespace Bobs
 		{
 			get { return (int)this[Columns.MeridianFeatureId]; }
 			set { this[Columns.MeridianFeatureId] = value; }
-		}
-		/// <summary>
-		/// Hierarchical triangular mesh index
-		/// </summary>
-		public long HtmId
-		{
-			get { throw new NotImplementedException(); }
-			set { throw new NotImplementedException(); }
 		}
 		/// <summary>
 		/// Latitude

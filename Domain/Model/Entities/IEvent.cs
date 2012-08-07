@@ -4,7 +4,7 @@ using Model.Entities.Properties;
 
 namespace Model.Entities
 {
-	public partial interface IEvent : IHasSinglePrimaryKey, IHasSpatialData
+	public partial interface IEvent : IHasSinglePrimaryKey
 	{
 	}
 	

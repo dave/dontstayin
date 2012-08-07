@@ -1,23 +1,4 @@
-﻿IF NOT EXISTS(SELECT * FROM
-sys.tables AS tbl
-INNER JOIN sys.all_columns AS clmns ON clmns.object_id=tbl.object_id
-INNER JOIN sys.extended_properties AS p ON p.major_id=clmns.object_id AND p.minor_id=clmns.column_id AND p.class=1
-WHERE
-(p.name=N'MS_Description')and((clmns.name=N'HtmId')and((tbl.name=N'Event'and SCHEMA_NAME(tbl.schema_id)=N'dbo'))))
-BEGIN
-	EXECUTE sp_AddExtendedProperty N'MS_Description', N'database-calculated HtmID based on Lat/Lon', N'SCHEMA', N'dbo', N'TABLE', N'Event', N'COLUMN', N'HtmId'
-END
-
-IF NOT EXISTS(SELECT * FROM
-sys.tables AS tbl
-INNER JOIN sys.all_columns AS clmns ON clmns.object_id=tbl.object_id
-INNER JOIN sys.extended_properties AS p ON p.major_id=clmns.object_id AND p.minor_id=clmns.column_id AND p.class=1
-WHERE
-(p.name=N'MS_Description')and((clmns.name=N'HtmId')and((tbl.name=N'Venue'and SCHEMA_NAME(tbl.schema_id)=N'dbo'))))
-BEGIN
-	EXECUTE sp_AddExtendedProperty N'MS_Description', N'database-calculated HtmID based on Lat/Lon', N'SCHEMA', N'dbo', N'TABLE', N'Venue', N'COLUMN', N'HtmId'
-END
-
+﻿
 IF NOT EXISTS(SELECT * FROM
 sys.tables AS tbl
 INNER JOIN sys.all_columns AS clmns ON clmns.object_id=tbl.object_id

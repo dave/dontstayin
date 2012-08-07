@@ -38,7 +38,6 @@ Js.Controls.Banners.Generator.BannerRenderInfo = function Js_Controls_Banners_Ge
     /// <field name="html" type="String">
     /// </field>
     /// <field name="duration" type="Number" integer="true">
-    /// Number of ms to wait before changing banner
     /// </field>
     /// <field name="miscNeedsClickHelper" type="Boolean">
     /// </field>
@@ -139,9 +138,6 @@ Js.Controls.Banners.Generator.Controller.prototype = {
             Js.Library.Trace.write('User inactive. Stopping banner rotation');
             window.clearTimeout(this._timerId);
             this._stopped = true;
-        }
-        else {
-            Js.Library.Trace.write('Timeout in ' + (this._userInactivityPeriodDuration - Js.Controls.Banners.Generator.Controller._inactiveTime) / 1000);
         }
     },
     

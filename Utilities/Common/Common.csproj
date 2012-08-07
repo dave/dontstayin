@@ -56,11 +56,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Automation\Sql\ClrAssemblyFile.cs" />
     <Compile Include="Automation\Sql\ClrAssembly.cs" />
+    <Compile Include="Automation\Sql\ClrAssemblyFile.cs" />
     <Compile Include="Automation\Sql\Column.cs" />
-    <Compile Include="Automation\Sql\DatabaseClrAssembly.cs" />
     <Compile Include="Automation\Sql\Database.cs" />
+    <Compile Include="Automation\Sql\DatabaseClrAssembly.cs" />
     <Compile Include="Automation\Sql\DatabaseExtendedProperties.cs" />
     <Compile Include="Automation\Sql\ExtendedProperties.cs" />
     <Compile Include="Automation\Sql\Parameter.cs" />

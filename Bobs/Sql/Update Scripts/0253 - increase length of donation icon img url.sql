@@ -1,0 +1,2 @@
+﻿ALTER TABLE DonationIcon ALTER COLUMN ImgUrl varchar(MAX) NOT NULL
+

@@ -61,8 +61,7 @@ namespace Spotted.WebServices.Controls.PlacesChooser
 
 		PlaceStub GetPlaceStub(Place place)
 		{
-			var spatialData = (IHasSpatialData)place;
-			return new PlaceStub() { k = place.K, lat = spatialData.Lat, lng = spatialData.Lon, name = place.FriendlyName };
+			return new PlaceStub() { k = place.K, lat = place.Lat, lng = place.Lon, name = place.FriendlyName };
 		}
 	}
 }

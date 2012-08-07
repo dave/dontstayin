@@ -710,7 +710,6 @@
     <None Include="Sql\Update Scripts\0198 - Add K column to UsrPhotoFavourite table.sql" />
     <None Include="Sql\Update Scripts\0197 - Add IsSonyC902 column to Photo table.sql" />
     <None Include="Sql\Update Scripts\0211 - Add Meridian world data featureIds to Place tables.sql" />
-    <None Include="Sql\Update Scripts\0201 - Load Spatial assembly.sql" />
     <None Include="Sql\Update Scripts\0203 - create procs for creating SpatialIndex columns.sql" />
     <None Include="Sql\Update Scripts\0212 - add spatial columns and info to tables.sql" />
     <None Include="Sql\Update Scripts\0205 - delete unused tables.sql" />

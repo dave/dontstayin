@@ -25,7 +25,7 @@ namespace Spotted.WebServices.Controls.ChatClient
 	[WebServiceBinding(ConformsTo = WsiProfiles.BasicProfile1_1)]
 	[ToolboxItem(false)]
 	[ScriptService]
-	public class ChatClient : System.Web.Services.WebService
+	public class Service : System.Web.Services.WebService
 	{
 		public void WaitIfDevEnv()
 		{

@@ -1,1 +1,1 @@
-﻿<%@ WebService Language="C#" CodeBehind="Service.asmx.cs" Class="Spotted.WebServices.Controls.ChatClient" %>
+﻿<%@ WebService Language="C#" CodeBehind="Service.asmx.cs" Class="Spotted.WebServices.Controls.ChatClient.Service" %>

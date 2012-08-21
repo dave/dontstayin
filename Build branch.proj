@@ -39,10 +39,12 @@
   </PropertyGroup>
   <Target Name="Test" DependsOnTargets="Compile">
 	<Exec Command="$(AspNetCompilerCommand)" />
-	  <Exec Command=" $(NCoverEXE) $(NUnitEXE) $(NUnitArgs) @(TestAssembly, ' ')" />
+	<!--  <Exec Command=" $(NCoverEXE) $(NUnitEXE) $(NUnitArgs) @(TestAssembly, ' ')" />
 	  <Exec Command=" $(NCoverExplorerEXE) Coverage.xml /x /r:3" />
-    <Exec ContinueOnError="true" Command=" $(SimianEXE) -includes=**/*.cs -formatter=xml:Simian.xml" />
-    <XmlRead XmlFileName="TestResult.xml" XPath="string(count(//test-results[@failures!='0']))"><Output TaskParameter="Value" PropertyName="CriticalErrors" /></XmlRead>
+    <Exec ContinueOnError="true" Command=" $(SimianEXE) -includes=**/*.cs -formatter=xml:Simian.xml" />-->
+    <XmlRead XmlFileName="TestResult.xml" XPath="string(count(//test-results[@failures!='0']))">
+		<Output TaskParameter="Value" PropertyName="CriticalErrors" />
+	</XmlRead>
     <Error Text="Test error occurred" Condition="$(CriticalErrors)!='0'" />
   </Target>
   <Target Name="WriteTimeOfBuildToFile">

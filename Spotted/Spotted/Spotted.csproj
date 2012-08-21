@@ -177,7 +177,6 @@
     <Content Include="Admin\WeightedRevenue.ascx" />
     <Content Include="Blank\Accounts.ascx" />
     <Content Include="Blank\AutoLogin.ascx" />
-    <Content Include="Blank\AutoLogin1.ascx" />
     <Content Include="Blank\BankExportToLloydsAsXML.ascx" />
     <Content Include="Blank\Banned.ascx" />
     <Content Include="Blank\BannerChat.ascx" />
@@ -2282,15 +2281,10 @@
     </Compile>
     <Compile Include="Blank\AutoLogin.ascx.cs">
       <DependentUpon>AutoLogin.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Blank\AutoLogin.ascx.designer.cs">
       <DependentUpon>AutoLogin.ascx</DependentUpon>
-    </Compile>
-    <Compile Include="Blank\AutoLogin1.ascx.cs">
-      <DependentUpon>AutoLogin1.ascx</DependentUpon>
-    </Compile>
-    <Compile Include="Blank\AutoLogin1.ascx.designer.cs">
-      <DependentUpon>AutoLogin1.ascx</DependentUpon>
     </Compile>
     <Compile Include="Blank\BankExportToLloydsAsXML.ascx.cs">
       <DependentUpon>BankExportToLloydsAsXML.ascx</DependentUpon>

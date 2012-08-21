@@ -26,7 +26,7 @@
     <Attrib Files="Spotted\Spotted\web.config" ReadOnly="false" /><XmlUpdate XmlFileName="Spotted\Spotted\web.config" XPath="/configuration/appSettings/add[@key = 'ConnectionString']/@value" Value="$(SqlConnectionString)" /><Attrib Files="Spotted\Spotted\web.config" ReadOnly="true" />
 	<Attrib Files="Utilities\JobProcessorService\app.config" ReadOnly="false" /><XmlUpdate XmlFileName="Utilities\JobProcessorService\app.config" XPath="/configuration/appSettings/add[@key = 'ConnectionString']/@value" Value="$(SqlConnectionString)" /><Attrib Files="Utilities\JobProcessorService\app.config" ReadOnly="true" />
     <!--<MakeWebRequest ContinueOnError="true" Url="$(SiteUri)" TimeoutInSeconds="120" TextThatMustBeInResponse="Welcome to DontStayIn" MaxNumberOfAttempts="10"/>-->
-    <MakeWebRequest Url="$(SiteUri)" TimeoutInSeconds="120" TextThatMustBeInResponse="Welcome to DontStayIn" MaxNumberOfAttempts="10" />
+    <MakeWebRequest ContinueOnError="true" Url="$(SiteUri)" TimeoutInSeconds="120" TextThatMustBeInResponse="Welcome to DontStayIn" MaxNumberOfAttempts="10" />
   </Target>
   <PropertyGroup>
     <NUnitExe>"c:\Program Files\NUnit 2.4.1\bin\nunit-console.exe"</NUnitExe>

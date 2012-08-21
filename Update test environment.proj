@@ -42,7 +42,7 @@
 		<SqlScriptRunner ProjectPath="%(SqlScriptProject.Identity)" Server="$(SqlServer)" Database="$(SqlDatabase)" />
 	</Target>
 	<Target Name="Test" DependsOnTargets="UpdateDatabase">
-		<MakeWebRequest ContinueOnError="true" Url="$(SiteUri)" TimeoutInSeconds="120" TextThatMustBeInResponse="Welcome to DontStayIn" MaxNumberOfAttempts="10" />
+		<!--<MakeWebRequest ContinueOnError="true" Url="$(SiteUri)" TimeoutInSeconds="120" TextThatMustBeInResponse="Welcome to DontStayIn" MaxNumberOfAttempts="10" />-->
 		<Attrib Files="Spotted\SpottedTests\bin\SpottedTests.dll.config" Normal="true" />
 		<XmlUpdate XmlFileName="Spotted\SpottedTests\bin\SpottedTests.dll.config" XPath="/configuration/appSettings/add[@key = 'SpottedUri']/@value" Value="$(SiteUri)" />
 		<Exec Command="$(NUnitEXE) $(NUnitArgs) Spotted\SpottedTests\bin\SpottedTests.dll" />

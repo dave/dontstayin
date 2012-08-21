@@ -6162,7 +6162,6 @@
     <None Include="Web.config">
       <SubType>Designer</SubType>
     </None>
-    <Content Include="WebServices\CometAutoComplete\CometTimeServer.ashx" />
     <Compile Include="..\SpottedScript\Controls\CommentsDisplay\CommentStub.cs">
       <Link>WebServices\Controls\CommentsDisplay\CommentStub.cs</Link>
     </Compile>
@@ -6622,7 +6621,6 @@
       <DependentUpon>AutoComplete.asmx</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="WebServices\CometAutoComplete\CometAutoCompleteBase.cs" />
     <Compile Include="Pages\Rooms.ascx.cs">
       <DependentUpon>Rooms.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -6632,9 +6630,6 @@
     </Compile>
     <Compile Include="Support\Comet\ActionBatchRunner.cs" />
     <Compile Include="Support\Comet\CometHttpAsyncHandler.cs" />
-    <Compile Include="WebServices\CometAutoComplete\CometTimeServer.ashx.cs">
-      <DependentUpon>CometTimeServer.ashx</DependentUpon>
-    </Compile>
     <Compile Include="WebServices\CometAutoComplete\SuggestionGetters.cs" />
     <Compile Include="WebServices\Controls\Banners\Generator\Service.asmx.cs">
       <DependentUpon>Service.asmx</DependentUpon>

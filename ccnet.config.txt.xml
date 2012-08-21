@@ -1,5 +1,4 @@
 <?xml version="1.0" ?>
-<!-- \\kamino\C$\Program Files\CruiseControl.NET\server\ccnet.config -->
 <!DOCTYPE cruisecontrol
 [
 
@@ -27,23 +26,41 @@
 		<project name="Development" queue="development">
 			<workingDirectory>&ccnet.projectsDirectory;\Development</workingDirectory>
 			<webURL>&ccnet.webURLStart;Development&ccnet.webURLEnd;</webURL>
-			<sourcecontrol type="vsts" applyLabel="false" autoGetSource="true" server="&vsts.server;">
+      <!--			<sourcecontrol type="vsts" applyLabel="false" autoGetSource="true" server="&vsts.server;">
 				<project>$/Development</project>
 				<workingDirectory>&ccnet.projectsDirectory;\Development</workingDirectory>
 			</sourcecontrol>
+-->
+      <sourcecontrol type="git">
+        <repository>git@github.com:davelondon/dontstayin.git</repository>
+        <branch>master</branch>
+        <autoGetSource>true</autoGetSource>
+        <fetchSubmodules>true</fetchSubmodules>
+        <executable>C:\Program Files\Git\bin\git</executable>
+        <tagOnSuccess>false</tagOnSuccess>
+        <commitBuildModifications>false</commitBuildModifications>
+        <commitUntrackedFiles>false</commitUntrackedFiles>
+        <tagCommitMessage>CCNet Build {0}</tagCommitMessage>
+        <tagNameFormat>CCNet-Build-{0}</tagNameFormat>
+        <committerName>David Brophy</committerName>
+        <committerEMail>dave@davidbrophy.com</committerEMail>
+        <workingDirectory>&ccnet.projectsDirectory;\Development</workingDirectory>
+        <timeout>60000</timeout>
+      </sourcecontrol>
+
 			<triggers>
 				<!--intervalTrigger /-->
 			</triggers>
 			<tasks>
-				<msbuild timeout="3600" projectFile="Build branch.proj" buildArgs="/property:SiteUri=http:\\dev.dontstayin.com;SqlServer=kamino\sqlexpress;SqlDatabase=db_spotted_tfsservice_development &msbuild.args;" executable="&msbuild.path;" logger="&msbuild.logger;" />
+				<msbuild timeout="3600" projectFile="Build branch.proj" buildArgs="/property:SiteUri=http:\\dev.dontstayin.com;SqlServer=kamino\sqlexpress;SqlDatabase=db_spotted_dbrophy_development &msbuild.args;" executable="&msbuild.path;" logger="&msbuild.logger;" />
 				<msbuild timeout="3600" projectFile="Sync msbuild tasks.proj" buildArgs="&msbuild.args;" executable="&msbuild.path;" logger="&msbuild.logger;"	/>
 			</tasks>
 			<publishers>
 				<merge>
 					<files>
-						<file>TestResult.xml</file>
+						<!--<file>TestResult.xml</file>
 						<file>CoverageReport.xml</file>
-						<file>Simian.xml</file>
+						<file>Simian.xml</file>-->
 					</files>
 				</merge>
 				<xmllogger />
@@ -60,7 +77,7 @@
 			</sourcecontrol>
 			<triggers />
 			<tasks>
-				<msbuild timeout="3600" projectFile="Test.proj" buildArgs="/property:SiteUri=http:\\dev.dontstayin.com;SqlServer=kamino\sqlexpress;SqlDatabase=db_spotted_tfsservice_development &msbuild.args;" executable="&msbuild.path;" logger="&msbuild.logger;" />
+				<msbuild timeout="3600" projectFile="Test.proj" buildArgs="/property:SiteUri=http:\\dev.dontstayin.com;SqlServer=kamino\sqlexpress;SqlDatabase=db_spotted_dbrophy_development &msbuild.args;" executable="&msbuild.path;" logger="&msbuild.logger;" />
 			</tasks>
 			<publishers>
 				<merge>
@@ -87,12 +104,12 @@
       <ignoreMissingRoot>false</ignoreMissingRoot>
     </sourcecontrol>
     <tasks>
-      <msbuild timeout="3600" projectFile="Update test environment.proj" buildArgs="&msbuild.args; /property:SiteUri=http:\\test.dontstayin.com;SqlServer=anoth;SqlDatabase=db_spotted_test;ProductionStagingArea=..\www.dontstayin.com\Build_Next\" logger="&msbuild.logger;" executable="&msbuild.path;" />
+      <msbuild timeout="3600" projectFile="Update test environment.proj" buildArgs="&msbuild.args; /property:SiteUri=http:\\test.dontstayin.com;SqlServer=db1;SqlDatabase=db_spotted_test;ProductionStagingArea=..\www.dontstayin.com\Build_Next\" logger="&msbuild.logger;" executable="&msbuild.path;" />
     </tasks>
     <publishers>
       <merge>
         <files>
-          <file>TestResult.xml</file>
+          <!--<file>TestResult.xml</file>-->
         </files>
       </merge>
       <xmllogger />
@@ -110,7 +127,7 @@
 			<ignoreMissingRoot>false</ignoreMissingRoot>
 		</sourcecontrol>
 		<tasks>
-			<msbuild projectFile="Update test environment.proj" buildArgs="&msbuild.args; /property:SiteUri=http:\\harry.dontstayin.com;SqlServer=anoth;SqlDatabase=db_spotted_test" logger="&msbuild.logger;" executable="&msbuild.path;" />
+			<msbuild projectFile="Update test environment.proj" buildArgs="&msbuild.args; /property:SiteUri=http:\\harry.dontstayin.com;SqlServer=db1;SqlDatabase=db_spotted_test" logger="&msbuild.logger;" executable="&msbuild.path;" />
 		</tasks>
 		<publishers>
 			<merge>
@@ -133,7 +150,7 @@
 			<ignoreMissingRoot>false</ignoreMissingRoot>
 		</sourcecontrol>
 		<tasks>
-			<msbuild projectFile="Update beta environment.proj" buildArgs="&msbuild.args; /property:SiteUri=http:\\beta.dontstayin.com;SqlServer=anoth;SqlDatabase=db_spotted_test" logger="&msbuild.logger;" executable="&msbuild.path;" />
+			<msbuild projectFile="Update beta environment.proj" buildArgs="&msbuild.args; /property:SiteUri=http:\\beta.dontstayin.com;SqlServer=db1;SqlDatabase=db_spotted_test" logger="&msbuild.logger;" executable="&msbuild.path;" />
 		</tasks>
 		<publishers>
 			<merge>
@@ -156,7 +173,7 @@
 			<ignoreMissingRoot>false</ignoreMissingRoot>
 		</sourcecontrol>
 		<tasks>
-			<msbuild projectFile="Update test environment.proj" buildArgs="&msbuild.args; /property:SiteUri=http:\\tim.dontstayin.com;SqlServer=anoth;SqlDatabase=db_spotted_test" logger="&msbuild.logger;" executable="&msbuild.path;" />
+			<msbuild projectFile="Update test environment.proj" buildArgs="&msbuild.args; /property:SiteUri=http:\\tim.dontstayin.com;SqlServer=db1;SqlDatabase=db_spotted_test" logger="&msbuild.logger;" executable="&msbuild.path;" />
 		</tasks>
 		<publishers>
 			<merge>

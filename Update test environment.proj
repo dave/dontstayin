@@ -42,12 +42,12 @@
 		<SqlScriptRunner ProjectPath="%(SqlScriptProject.Identity)" Server="$(SqlServer)" Database="$(SqlDatabase)" />
 	</Target>
 	<Target Name="Test" DependsOnTargets="UpdateDatabase">
-		<!--<MakeWebRequest ContinueOnError="true" Url="$(SiteUri)" TimeoutInSeconds="120" TextThatMustBeInResponse="Welcome to DontStayIn" MaxNumberOfAttempts="10" />-->
+		<!--<MakeWebRequest ContinueOnError="true" Url="$(SiteUri)" TimeoutInSeconds="120" TextThatMustBeInResponse="Welcome to DontStayIn" MaxNumberOfAttempts="10" />
 		<Attrib Files="Spotted\SpottedTests\bin\SpottedTests.dll.config" Normal="true" />
 		<XmlUpdate XmlFileName="Spotted\SpottedTests\bin\SpottedTests.dll.config" XPath="/configuration/appSettings/add[@key = 'SpottedUri']/@value" Value="$(SiteUri)" />
-		<Exec Command="$(NUnitEXE) $(NUnitArgs) Spotted\SpottedTests\bin\SpottedTests.dll" />
+		<Exec Command="$(NUnitEXE) $(NUnitArgs) Spotted\SpottedTests\bin\SpottedTests.dll" />-->
 	</Target>
-		<Target Name="CopyToProductionStagingArea" DependsOnTargets="Test" Condition="'$(ProductionStagingArea)' != ''">
+	<Target Name="CopyToProductionStagingArea" DependsOnTargets="Test" Condition="'$(ProductionStagingArea)' != ''">
 		<SyncFolderUsingRobocopy SourceFolder="." DestinationFolder="$(ProductionStagingArea)" />
 		<Attrib Files="$(ProductionStagingArea)Spotted\Spotted\web.config" ReadOnly="false" />
 		<XmlUpdate XmlFileName="$(ProductionStagingArea)Spotted\Spotted\web.config" XPath="/configuration/appSettings/add[@key = 'ConnectionString']/@value" Value=" " />

@@ -183,8 +183,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Controllers\" />
-    <Folder Include="Controls\MapBrowserTabs\" />
-    <Folder Include="Controls\NewFolder1\" />
     <Folder Include="Pages\Photos\" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />

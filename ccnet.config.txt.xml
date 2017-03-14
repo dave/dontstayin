@@ -32,7 +32,7 @@
 			</sourcecontrol>
 -->
       <sourcecontrol type="git">
-        <repository>git@github.com:davelondon/dontstayin.git</repository>
+        <repository>git@github.com:dave/dontstayin.git</repository>
         <branch>master</branch>
         <autoGetSource>true</autoGetSource>
         <fetchSubmodules>true</fetchSubmodules>
